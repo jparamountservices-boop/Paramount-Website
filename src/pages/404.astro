@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { company } from '../data/company';
+import { hubServices } from '../data/services';
+---
+
+<BaseLayout
+  title="Page Not Found | Paramount Concrete & Hardscapes"
+  description="The page you’re looking for isn’t here. Explore our concrete and hardscape services or get a free estimate."
+  path="/404/"
+  noindex={true}
+>
+  <section class="wrap grid min-h-[55vh] place-items-center py-20 text-center">
+    <div class="max-w-xl">
+      <p class="text-6xl font-black text-[var(--color-flame)]">404</p>
+      <h1 class="mt-4 text-3xl font-black sm:text-4xl">This page took a wrong turn</h1>
+      <p class="mt-4 text-[var(--color-concrete)]">
+        The page you’re looking for isn’t here — but we’re still building great concrete and hardscapes
+        across East Tennessee.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn btn-primary">Back to home</a>
+        <a href={company.phoneHref} class="btn btn-ghost">Call {company.phone}</a>
+      </div>
+      <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+        {hubServices.map((s) => (
+          <a href={`/${s.path}/`} class="text-[var(--color-flame-300)] underline">{s.navLabel.replace(' (overview)', '')}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

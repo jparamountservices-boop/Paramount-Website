@@ -10,10 +10,16 @@ Each post's `category` frontmatter must be one of:
 
 ## Published (in `src/content/blog/`)
 - ✅ How Much Does a Concrete Driveway Cost in Knoxville? (2026) — *Cost*
-- ✅ Stamped Concrete vs. Pavers: Which Is Better in East Tennessee? — *Comparisons*
-- ✅ Does Stamped Concrete Crack? (An Honest Answer) — *Problems*
+- ✅ How Much Does a Concrete Patio Cost in Knoxville? (2026) — *Cost*
 - ✅ How Much Does a Paver Patio Cost in Knoxville? (2026) — *Cost*
+- ✅ How Much Does a Retaining Wall Cost in Knoxville? (2026) — *Cost*
+- ✅ Stamped Concrete vs. Pavers: Which Is Better in East Tennessee? — *Comparisons*
+- ✅ Concrete vs. Paver Driveway: Which Is Right for Your Home? — *Comparisons*
+- ✅ Wood vs. Composite Decking in Tennessee — *Comparisons*
+- ✅ Best Paver Brands: Belgard vs. Techo-Bloc vs. Unilock — *Best-of*
+- ✅ Does Stamped Concrete Crack? (An Honest Answer) — *Problems*
 - ✅ Why Retaining Walls Fail (And How to Build One That Won't) — *Problems*
+- ✅ Do I Need a Permit for a Patio, Deck or Retaining Wall in Knox County? — *How-to*
 
 ## Backlog — write next (priority order)
 

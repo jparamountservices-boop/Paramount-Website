@@ -1,8 +1,14 @@
 ---
 /**
- * Lead-capture quote form. Wired for Netlify Forms by default (data-netlify),
- * which also works as a plain POST elsewhere. Swap the `action`/provider at
- * build time (see docs/seo/ and Inputs Needed).
+ * Lead-capture quote form — self-host friendly.
+ *
+ * Submission target = company.formEndpoint:
+ *   - Set it to a Formspree/Basin/FormSubmit URL (no backend needed), or your
+ *     own handler (e.g. /api/quote proxied to a mailer). See docs/deployment.
+ *   - If left blank, the form falls back to a mailto: link so it always works.
+ *
+ * Hidden fields (_next, _subject) are understood by Formspree/FormSubmit and
+ * harmless to other handlers.
  */
 import { services } from '../data/services';
 import { company } from '../data/company';
@@ -13,18 +19,22 @@ interface Props {
 const { compact = false } = Astro.props;
 
 const serviceOptions = services.filter((s) => !s.isHub || s.path === 'masonry');
+const useMailto = !company.formEndpoint;
+const action = company.formEndpoint || `mailto:${company.email}`;
+const thankYou = new URL('/thank-you/', company.url).href;
 ---
 
 <form
   name="quote"
   method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/thank-you/"
+  action={action}
+  {...useMailto ? { enctype: 'text/plain' } : {}}
   class="grid gap-4"
 >
-  <input type="hidden" name="form-name" value="quote" />
-  <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+  <input type="hidden" name="_next" value={thankYou} />
+  <input type="hidden" name="_subject" value="New quote request — paramountknox.com" />
+  <!-- Honeypot: bots fill this, humans don't. -->
+  <p class="hidden" aria-hidden="true"><label>Leave this empty: <input name="_gotcha" tabindex="-1" autocomplete="off" /></label></p>
 
   <div class="grid gap-4 sm:grid-cols-2">
     <label class="block">

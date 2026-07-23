@@ -36,6 +36,12 @@ export const company = {
   logo: '/images/logo.png', // PLACEHOLDER — drop real logo in public/images/
   sisterSite: 'https://phrenovation.com',
 
+  // Lead-form submission endpoint. Self-hosted options (see docs/deployment):
+  //  - Formspree/Basin/FormSubmit URL (zero backend), OR
+  //  - your own handler, e.g. '/api/quote' proxied to a small mailer service.
+  // Leave '' to fall back to a mailto: link so the form always does *something*.
+  formEndpoint: '', // PLACEHOLDER — set to your form/handler URL
+
   // Business hours (edit to real hours).
   hours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
@@ -58,6 +64,14 @@ export const company = {
     tiktok: '', // not used
     google: '', // PLACEHOLDER — Google Business Profile URL
   },
+
+  // Instagram handle shown in the "Follow us" section.
+  instagramHandle: 'paramounthomerenovations',
+  // OPTIONAL live-feed embed. Paste the HTML snippet from a no-code widget
+  // (Behold.so, SnapWidget, LightWidget, EmbedSocial) to show real IG posts.
+  // Left blank = the section renders a "Follow us" grid linking to Instagram.
+  // See docs/deployment/instagram-feed.md.
+  instagramWidget: '',
 
   // Trust signals shown in the trust bar / hero.
   trust: {

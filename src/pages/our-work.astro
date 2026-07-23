@@ -2,25 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Gallery from '../components/Gallery.astro';
+import InstagramFeed from '../components/InstagramFeed.astro';
 import { breadcrumbSchema } from '../lib/schema';
 
 const path = '/our-work/';
 const crumbs = [
   { name: 'Home', path: '/' },
   { name: 'Our Work', path },
-];
-
-// Placeholder project categories — drop real photos into public/images/work/
-// and replace these tiles. Each links to the relevant service page.
-const categories = [
-  { label: 'Concrete Driveways', href: '/concrete/driveways/' },
-  { label: 'Stamped Concrete', href: '/concrete/decorative-and-stamped/' },
-  { label: 'Paver Patios', href: '/pavers/patios/' },
-  { label: 'Retaining Walls', href: '/retaining-walls/' },
-  { label: 'Fire Pits', href: '/hardscapes/fire-pits/' },
-  { label: 'Outdoor Kitchens', href: '/hardscapes/outdoor-kitchens/' },
-  { label: 'Decks', href: '/decks/' },
-  { label: 'Masonry', href: '/masonry/' },
 ];
 ---
 
@@ -37,24 +26,15 @@ const categories = [
     <h1 class="mt-3 text-4xl font-black sm:text-5xl">Our Work</h1>
     <p class="mt-4 max-w-2xl text-lg text-[var(--color-concrete)]">
       A look at recent driveways, patios, walls and outdoor living spaces we’ve built across East
-      Tennessee. Browse by project type — and picture what we could build for you.
+      Tennessee. Filter by project type — and picture what we could build for you.
     </p>
   </section>
 
-  <section class="wrap grid gap-5 pb-14 sm:grid-cols-2 lg:grid-cols-4">
-    {
-      categories.map((c) => (
-        <a href={c.href} class="group relative flex aspect-[4/3] items-end overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)] p-5">
-          <div class="pointer-events-none absolute inset-0 opacity-30" style="background-image: radial-gradient(80% 80% at 50% 0%, rgba(255,92,26,0.25), transparent 70%);"></div>
-          <span class="relative text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{c.label}</span>
-        </a>
-      ))
-    }
+  <section class="wrap pb-16">
+    <Gallery />
   </section>
 
-  <div class="wrap pb-16 text-center text-sm text-[var(--color-concrete-dim)]">
-    <p>Photo galleries coming soon — follow us on social for the latest projects.</p>
-  </div>
+  <InstagramFeed />
 
   <CtaBand />
 </BaseLayout>

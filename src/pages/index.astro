@@ -4,6 +4,8 @@ import TrustBar from '../components/TrustBar.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import Gallery from '../components/Gallery.astro';
+import InstagramFeed from '../components/InstagramFeed.astro';
 import { company } from '../data/company';
 import { hubServices, services } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
@@ -134,6 +136,18 @@ const homeFaqs = [
     </div>
   </section>
 
+  <!-- RECENT WORK -->
+  <section class="wrap py-16">
+    <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Recent work</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Built across East Tennessee</h2>
+      </div>
+      <a href="/our-work/" class="btn btn-ghost">See full portfolio →</a>
+    </div>
+    <Gallery limit={8} showFilters={false} />
+  </section>
+
   <!-- SERVICE AREAS -->
   <section class="border-t border-[var(--color-steel)] bg-[var(--color-graphite)]">
     <div class="wrap py-16">
@@ -152,6 +166,8 @@ const homeFaqs = [
       </div>
     </div>
   </section>
+
+  <InstagramFeed />
 
   <Faq faqs={homeFaqs} />
 

@@ -249,6 +249,122 @@ export const services: Service[] = [
     related: ['concrete', 'concrete/patio', 'concrete/pool-decks', 'pavers'],
   },
 
+  {
+    path: 'concrete/sidewalks-walkways',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Sidewalks & Walkways',
+    title: 'Concrete Sidewalks & Walkways Knoxville TN | Paramount',
+    metaDescription:
+      'Concrete sidewalk and walkway installation in Knoxville, TN — safe, level, properly-drained paths and steps that connect your property. Free estimates: (865) 237-9770.',
+    h1: 'Concrete Sidewalks & Walkways in Knoxville, TN',
+    heroSubhead:
+      'The paths that tie your property together — poured level, pitched to drain, and built to stay trip-free for decades.',
+    primaryKeyword: 'concrete sidewalk Knoxville TN',
+    intro: [
+      'A sidewalk or walkway is a small project with an outsized impact — it’s the first thing guests walk on and, done wrong, the first thing that heaves, cracks and becomes a trip hazard. We pour walkways that stay level and drain properly, from front-entry approaches to paths that connect a driveway to a patio or garden.',
+    ],
+    sections: [
+      {
+        h2: 'Walkway options',
+        bullets: [
+          'Broom-finish concrete paths and approaches',
+          'Stamped or decorative walkways to match your patio',
+          'Concrete steps and stoops with safe, consistent risers',
+          'ADA-friendly grading where needed',
+        ],
+      },
+      {
+        h2: 'Why walkways heave — and how we stop it',
+        body: [
+          'Thin, un-based walkways poured straight on our clay are the ones that lift and crack after a couple of freeze-thaw winters. We prep a compacted base, pour at the right thickness, and joint properly so your path stays flat and safe.',
+        ],
+      },
+    ],
+    costNote:
+      'Concrete walkways in Knoxville typically run about $8–$15 per square foot depending on width, finish and site prep. Steps and decorative finishes add to the cost.',
+    faqs: [
+      {
+        q: 'How wide should a walkway be?',
+        a: 'A comfortable primary walkway is 4 feet wide so two people can walk side by side; secondary garden paths can be 2–3 feet. We’ll recommend a width based on how the path is used.',
+      },
+    ],
+    related: ['concrete', 'concrete/patio', 'hardscapes/walkways', 'pavers/walkways'],
+  },
+  {
+    path: 'concrete/slabs-foundations',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Slabs & Foundations',
+    title: 'Concrete Slabs & Foundations Knoxville TN | Sheds, Garages & Pads',
+    metaDescription:
+      'Concrete slab and foundation pours in Knoxville, TN — shed, garage, addition and equipment pads built on a proper base and reinforced to last. Free estimates: (865) 237-9770.',
+    h1: 'Concrete Slabs & Foundations in Knoxville, TN',
+    heroSubhead:
+      'Flat, level, reinforced slabs for sheds, garages, additions, shops and equipment pads — built to carry the load.',
+    primaryKeyword: 'concrete slab Knoxville TN',
+    intro: [
+      'Whether you’re setting a shed, building a garage or shop, adding on to the house, or pouring a pad for a generator or hot tub, the slab underneath has to be flat, level and reinforced for the load it carries. We handle the excavation, base, forming, reinforcement and pour.',
+    ],
+    sections: [
+      {
+        h2: 'Slabs we pour',
+        bullets: [
+          'Shed and outbuilding slabs',
+          'Garage and shop floors',
+          'Room-addition slabs',
+          'Hot tub, generator and HVAC equipment pads',
+          'Monolithic and footed slabs',
+        ],
+      },
+    ],
+    costNote:
+      'Concrete slabs in Knoxville generally run about $6–$12 per square foot depending on thickness, reinforcement, footings and site prep. Thicker load-bearing slabs cost more.',
+    faqs: [
+      {
+        q: 'How thick should a concrete slab be?',
+        a: 'It depends on the load. A shed or patio slab is usually 4 inches; a garage or shop floor that carries vehicles is typically 5–6 inches with heavier reinforcement. We size the slab to what it’ll carry.',
+      },
+    ],
+    related: ['concrete', 'concrete/driveways', 'masonry'],
+  },
+  {
+    path: 'concrete/pool-decks',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Pool Decks',
+    title: 'Concrete Pool Decks Knoxville TN | Stamped & Slip-Resistant | Paramount',
+    metaDescription:
+      'Concrete pool deck installation in Knoxville, TN — stamped, decorative and slip-resistant finishes that stay cooler and drain away from the pool. Free estimates: (865) 237-9770.',
+    h1: 'Concrete Pool Decks in Knoxville, TN',
+    heroSubhead:
+      'A pool deck has a hard job: look great, drain away from the water, and stay slip-resistant underfoot. We build ours to do all three.',
+    primaryKeyword: 'concrete pool deck Knoxville TN',
+    intro: [
+      'Your pool deck takes constant wet feet, sunscreen, splash-out and full sun. It needs slip resistance, proper drainage away from the pool, and a finish that doesn’t get scorching hot. We build stamped and decorative concrete pool decks designed for exactly those demands.',
+    ],
+    sections: [
+      {
+        h2: 'Built for a pool environment',
+        bullets: [
+          'Slip-resistant textures and non-slip sealer additives',
+          'Grading that drains splash-out away from the pool and house',
+          'Stamped and decorative finishes in lighter, cooler colors',
+          'Expansion joints and detailing around the pool shell',
+        ],
+      },
+    ],
+    costNote:
+      'Concrete pool decks in Knoxville typically run about $10–$20 per square foot depending on finish, texture and drainage detailing.',
+    faqs: [
+      {
+        q: 'Is stamped concrete too slippery for a pool deck?',
+        a: 'Not when it’s finished right. We use non-slip additives in the sealer and slip-resistant textures so a stamped pool deck stays grippy even when wet.',
+      },
+    ],
+    related: ['concrete/decorative-and-stamped', 'concrete', 'pavers/pool-decks'],
+  },
+
   /* ================= PAVERS ================= */
   {
     path: 'pavers',
@@ -398,6 +514,79 @@ export const services: Service[] = [
       },
     ],
     related: ['pavers', 'concrete/driveways', 'pavers/patios', 'retaining-walls'],
+  },
+  {
+    path: 'pavers/walkways',
+    parent: 'pavers',
+    navGroup: 'Pavers',
+    navLabel: 'Paver Walkways',
+    title: 'Paver Walkways Knoxville TN | Paths & Steps | Paramount',
+    metaDescription:
+      'Paver walkway and pathway installation in Knoxville, TN — durable, elegant paths and steps that flex with the ground and never crack. Free estimates: (865) 237-9770.',
+    h1: 'Paver Walkways in Knoxville, TN',
+    heroSubhead:
+      'Curved, character-filled paths that flex with the ground and tie your whole landscape together.',
+    primaryKeyword: 'paver walkway Knoxville TN',
+    intro: [
+      'A paver walkway does what a straight concrete path can’t — it curves, changes materials, and adds real craftsmanship to the journey from the driveway to the door or through the garden. And because it’s built from individual units on a compacted base, it flexes with our soil instead of cracking.',
+    ],
+    sections: [
+      {
+        h2: 'Walkways and paths we build',
+        bullets: [
+          'Front-entry and approach walkways',
+          'Garden and landscape paths',
+          'Paver steps and stair landings',
+          'Borders and banding to match your patio or driveway',
+        ],
+      },
+    ],
+    costNote:
+      'Paver walkways in Knoxville generally run about $20–$40 per square foot installed depending on paver, pattern, curves and steps.',
+    faqs: [
+      {
+        q: 'Do paver walkways get uneven over time?',
+        a: 'Not when they’re built on a proper compacted base with edge restraint and polymeric sand — which is how we install them. And if a unit ever settles, it lifts and resets in minutes rather than requiring a whole new pour.',
+      },
+    ],
+    related: ['pavers', 'pavers/patios', 'concrete/sidewalks-walkways', 'hardscapes/walkways'],
+  },
+  {
+    path: 'pavers/pool-decks',
+    parent: 'pavers',
+    navGroup: 'Pavers',
+    navLabel: 'Paver Pool Decks',
+    title: 'Paver Pool Decks Knoxville TN | Cool, Slip-Resistant | Paramount',
+    metaDescription:
+      'Paver pool deck installation in Knoxville, TN — cooler underfoot, slip-resistant, repairable pool decks that drain and last. Free estimates: (865) 237-9770.',
+    h1: 'Paver Pool Decks in Knoxville, TN',
+    heroSubhead:
+      'Pavers stay cooler underfoot, grip when wet, and lift out one at a time for repairs — the ideal pool deck surface.',
+    primaryKeyword: 'paver pool deck Knoxville TN',
+    intro: [
+      'Pavers are one of the best surfaces you can put around a pool. They stay cooler than solid concrete in full sun, offer natural slip resistance, drain through their joints, and — critically around a pool where settling and plumbing repairs happen — they lift and reset individually.',
+    ],
+    sections: [
+      {
+        h2: 'Why pavers around a pool',
+        bullets: [
+          'Cooler underfoot than poured concrete',
+          'Naturally slip-resistant, textured surfaces',
+          'Drain through the joints; grade splash-out away from the pool',
+          'Repairable one unit at a time over plumbing or settling',
+          'Coping and border options that frame the pool',
+        ],
+      },
+    ],
+    costNote:
+      'Paver pool decks in Knoxville typically run about $20–$40 per square foot installed depending on paver, coping and pattern.',
+    faqs: [
+      {
+        q: 'Are pavers or concrete better for a pool deck?',
+        a: 'Pavers usually win around a pool: cooler underfoot, better traction when wet, and repairable over plumbing or settling without patching. Stamped concrete costs less up front but a crack or repair is much harder to hide.',
+      },
+    ],
+    related: ['pavers', 'concrete/pool-decks', 'pavers/patios'],
   },
 
   /* ================= HARDSCAPES ================= */
@@ -584,6 +773,117 @@ export const services: Service[] = [
       },
     ],
     related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-fireplaces', 'pavers/patios', 'masonry'],
+  },
+
+  {
+    path: 'hardscapes/walkways',
+    parent: 'hardscapes',
+    navGroup: 'Hardscapes',
+    navLabel: 'Walkways & Steps',
+    title: 'Walkways & Stone Steps Knoxville TN | Hardscape Paths | Paramount',
+    metaDescription:
+      'Custom walkways and stone steps in Knoxville, TN — paver, natural stone and flagstone paths and stairs that navigate slopes safely and beautifully. Free estimates: (865) 237-9770.',
+    h1: 'Walkways & Stone Steps in Knoxville, TN',
+    heroSubhead:
+      'On a hilly East Tennessee lot, the right steps and paths make the whole landscape usable — and safe underfoot.',
+    primaryKeyword: 'stone steps Knoxville TN',
+    intro: [
+      'Knoxville’s sloped lots often need more than a flat path — they need steps that navigate the grade safely and paths that connect different levels of the yard. We build walkways and stone steps in pavers, natural stone and flagstone, engineered with consistent risers and solid footing so they’re safe for years.',
+    ],
+    sections: [
+      {
+        h2: 'What we build',
+        bullets: [
+          'Natural stone and flagstone steps',
+          'Paver and stone walkways across grades',
+          'Boulder and stone stair treads',
+          'Landings and terraced paths on steep lots',
+        ],
+      },
+    ],
+    costNote:
+      'Walkways and steps vary widely with material and grade — natural stone steps in particular are labor-intensive. We provide itemized estimates after seeing the slope.',
+    faqs: [
+      {
+        q: 'Can you build steps into a steep hillside?',
+        a: 'Yes — that’s a specialty on our hilly lots. We build stone and paver steps with proper footing, consistent riser heights and landings so a steep grade becomes safe, usable space.',
+      },
+    ],
+    related: ['hardscapes', 'retaining-walls', 'pavers/walkways', 'concrete/sidewalks-walkways'],
+  },
+  {
+    path: 'hardscapes/outdoor-fireplaces',
+    parent: 'hardscapes',
+    navGroup: 'Hardscapes',
+    navLabel: 'Outdoor Fireplaces',
+    title: 'Outdoor Fireplaces Knoxville TN | Custom Masonry | Paramount',
+    metaDescription:
+      'Custom outdoor fireplace design and construction in Knoxville, TN — masonry, stone and brick fireplaces that anchor your patio and extend the season. Free estimates: (865) 237-9770.',
+    h1: 'Outdoor Fireplaces in Knoxville, TN',
+    heroSubhead:
+      'The centerpiece that turns a patio into a year-round outdoor room. Custom masonry fireplaces built to last.',
+    primaryKeyword: 'outdoor fireplace Knoxville TN',
+    intro: [
+      'An outdoor fireplace is a bigger statement than a fire pit — a true architectural centerpiece that anchors a patio, blocks wind, and extends your outdoor season deep into the cooler months. We design and build custom masonry fireplaces in stone and brick, wood-burning or gas.',
+    ],
+    sections: [
+      {
+        h2: 'What we build',
+        bullets: [
+          'Wood-burning and gas outdoor fireplaces',
+          'Natural stone, manufactured stone and brick finishes',
+          'Integrated wood storage, hearths and mantels',
+          'Chimney and firebox built to draft properly',
+          'Coordinated with your patio, seating and outdoor kitchen',
+        ],
+      },
+    ],
+    costNote:
+      'Custom outdoor fireplaces in Knoxville commonly run about $8,000–$20,000+ depending on size, materials, gas plumbing and chimney height.',
+    faqs: [
+      {
+        q: 'Fireplace or fire pit — which should I build?',
+        a: 'A fire pit is social (people gather around all sides), lower cost, and great for open patios. A fireplace is a dramatic architectural focal point that blocks wind and radiates heat in one direction — better against a wall or at the edge of a patio. We build both.',
+      },
+    ],
+    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'masonry'],
+  },
+  {
+    path: 'hardscapes/grill-islands',
+    parent: 'hardscapes',
+    navGroup: 'Hardscapes',
+    navLabel: 'Grill Islands',
+    title: 'Grill Islands Knoxville TN | Built-In BBQ Islands | Paramount',
+    metaDescription:
+      'Custom grill island and built-in BBQ construction in Knoxville, TN — masonry islands with built-in grills, counters and storage. Free estimates: (865) 237-9770.',
+    h1: 'Grill Islands in Knoxville, TN',
+    heroSubhead:
+      'The entry point to outdoor cooking — a built-in grill island with counters and storage, without the full outdoor-kitchen budget.',
+    primaryKeyword: 'grill island Knoxville TN',
+    intro: [
+      'A grill island is the most popular first step into outdoor cooking: a solid masonry structure with a built-in grill, counter space to work, and storage below — all built to match your patio. It delivers most of the outdoor-kitchen experience at a friendlier budget, and you can always expand later.',
+    ],
+    sections: [
+      {
+        h2: 'What goes into a grill island',
+        bullets: [
+          'Masonry or framed-and-veneered island structure',
+          'Built-in gas grill and side burners',
+          'Durable stone, granite or concrete counters',
+          'Storage doors, drawers and trash pull-outs',
+          'Gas and electrical rough-in',
+        ],
+      },
+    ],
+    costNote:
+      'Grill islands in Knoxville commonly run about $4,000–$12,000 depending on size, appliances, counters and utilities — a step below a full outdoor kitchen.',
+    faqs: [
+      {
+        q: 'Can I add to a grill island later?',
+        a: 'Yes — a grill island is a great phase-one project. We can design it so a future outdoor kitchen, fireplace or bar ties right in when you’re ready to expand.',
+      },
+    ],
+    related: ['hardscapes/outdoor-kitchens', 'hardscapes', 'hardscapes/fire-pits', 'masonry'],
   },
 
   /* ================= DECKS & MASONRY ================= */

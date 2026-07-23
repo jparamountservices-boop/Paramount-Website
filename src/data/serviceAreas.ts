@@ -197,6 +197,131 @@ export const serviceAreas: ServiceArea[] = [
       },
     ],
   },
+  {
+    slug: 'alcoa',
+    city: 'Alcoa',
+    county: 'Blount County',
+    title: 'Concrete & Hardscape Contractor Alcoa TN | Paramount',
+    metaDescription:
+      'Concrete, pavers, patios and retaining walls in Alcoa, TN. Driveways, outdoor living and hardscapes built to last. Free estimates: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Alcoa, TN',
+    heroSubhead:
+      'Driveways, patios and outdoor living for Alcoa and the greater Maryville area.',
+    primaryKeyword: 'concrete contractor Alcoa TN',
+    intro: [
+      'Alcoa sits at the heart of Blount County’s growth, and we build the full range of concrete and hardscape work throughout the area — driveways, patios, paver installations, retaining walls and complete outdoor living spaces. From the neighborhoods near Springbrook to newer developments along the Alcoa Highway corridor, we bring the same base-prep-first approach to every project.',
+    ],
+    localAngle: [
+      'Steady residential growth around Alcoa and Pellissippi means plenty of new-construction backyards ready for an upgraded patio or outdoor living space.',
+      'Foothills terrain shared with Maryville makes grading, drainage and retaining walls a frequent need.',
+    ],
+    faqs: [
+      {
+        q: 'Do you serve both Alcoa and Maryville?',
+        a: 'Yes — Alcoa, Maryville and the surrounding Blount County communities are all part of our regular service area.',
+      },
+    ],
+  },
+  {
+    slug: 'clinton',
+    city: 'Clinton',
+    county: 'Anderson County',
+    title: 'Concrete & Hardscape Contractor Clinton TN | Paramount',
+    metaDescription:
+      'Concrete, pavers, patios and retaining walls in Clinton, TN and Anderson County. Free estimates: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Clinton, TN',
+    heroSubhead:
+      'Concrete and hardscapes for Clinton, Oak Ridge and the Anderson County area.',
+    primaryKeyword: 'concrete contractor Clinton TN',
+    intro: [
+      'From Clinton to Oak Ridge, we build driveways, patios, retaining walls and outdoor living spaces across Anderson County. Clinton’s mix of established homes and riverside properties along the Clinch means everything from driveway replacements to terraced hardscapes on sloped lots.',
+    ],
+    localAngle: [
+      'Riverside and sloped lots near the Clinch River often call for retaining walls and drainage planning.',
+      'Established Clinton neighborhoods frequently need aging concrete torn out and rebuilt on a proper base.',
+    ],
+    faqs: [
+      {
+        q: 'Do you serve Clinton, Oak Ridge and the rest of Anderson County?',
+        a: 'Yes — Clinton, Oak Ridge and the surrounding Anderson County communities are all within our service area.',
+      },
+    ],
+  },
+  {
+    slug: 'seymour',
+    city: 'Seymour',
+    county: 'Sevier County',
+    title: 'Concrete & Hardscape Contractor Seymour TN | Paramount',
+    metaDescription:
+      'Concrete, pavers, decks, patios and retaining walls in Seymour, TN and Sevier County. Free estimates: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Seymour, TN',
+    heroSubhead:
+      'Concrete, decks and hardscapes for Seymour and the Sevierville area.',
+    primaryKeyword: 'concrete contractor Seymour TN',
+    intro: [
+      'Seymour bridges Knox and Sevier counties, and its hilly, wooded lots make for great outdoor living projects — decks that reach out over the grade, patios carved into slopes, and retaining walls that reclaim usable yard. We build the full range across Seymour and neighboring Sevierville.',
+    ],
+    localAngle: [
+      'Hilly, wooded lots in the Seymour area frequently need decks, retaining walls and drainage work.',
+      'Growing residential demand between Knoxville and Sevierville drives strong interest in outdoor living upgrades.',
+    ],
+    faqs: [
+      {
+        q: 'Do you build decks and retaining walls on steep lots?',
+        a: 'Yes — steep, wooded lots are common around Seymour, and we build engineered decks and retaining walls designed for exactly those grades.',
+      },
+    ],
+  },
+  {
+    slug: 'powell',
+    city: 'Powell',
+    county: 'Knox County',
+    title: 'Concrete & Hardscape Contractor Powell TN | Paramount',
+    metaDescription:
+      'Concrete driveways, patios, pavers and retaining walls in Powell, TN. Outdoor living built to last. Free estimates: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Powell, TN',
+    heroSubhead:
+      'Driveways, patios and outdoor living for Powell and North Knox County.',
+    primaryKeyword: 'concrete contractor Powell TN',
+    intro: [
+      'Powell and the North Knox County communities are a core part of our service area. We pour driveways, build patios and paver installations, and design complete outdoor living spaces for homes throughout Powell, Halls and the surrounding area — all built for our clay soil and freeze-thaw winters.',
+    ],
+    localAngle: [
+      'Powell’s established family neighborhoods often need driveway replacements and patio upgrades done cleanly around existing landscaping.',
+      'Newer subdivisions off Emory and Clinton Highway are prime for outdoor living build-outs.',
+    ],
+    faqs: [
+      {
+        q: 'Do you serve Powell and Halls?',
+        a: 'Yes — Powell, Halls and the North Knox County communities are all within our regular service area.',
+      },
+    ],
+  },
+  {
+    slug: 'karns',
+    city: 'Karns',
+    county: 'Knox County',
+    title: 'Concrete & Hardscape Contractor Karns TN | Paramount',
+    metaDescription:
+      'Concrete driveways, patios, pavers and retaining walls in Karns, TN and West Knox County. Free estimates: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Karns, TN',
+    heroSubhead:
+      'Concrete and hardscapes for Karns, Hardin Valley and West Knox County.',
+    primaryKeyword: 'concrete contractor Karns TN',
+    intro: [
+      'Karns and neighboring Hardin Valley are among West Knox County’s fastest-growing communities, full of homes ready for upgraded outdoor spaces. We build driveways, patios, paver installations, retaining walls and full outdoor living projects throughout the Karns area.',
+    ],
+    localAngle: [
+      'Rapid growth around Karns and Hardin Valley means many new-construction homes with builder-grade backyards ready for an upgrade.',
+      'Sloped lots off Beaver Ridge and Oak Ridge Highway often need grading and retaining walls.',
+    ],
+    faqs: [
+      {
+        q: 'Do you serve Karns and Hardin Valley?',
+        a: 'Yes — Karns, Hardin Valley and the surrounding West Knox County communities are core to our service area.',
+      },
+    ],
+  },
 ];
 
 export function getServiceArea(slug: string): ServiceArea | undefined {
