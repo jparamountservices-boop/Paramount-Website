@@ -9,8 +9,8 @@
 export const company = {
   name: 'Paramount Concrete & Hardscapes',
   legalName: 'Paramount Renovations',
-  // Keep ONE tagline number everywhere (site copy currently mixes "7+" and "20+").
-  yearsExperience: 7,
+  // Keep ONE tagline number everywhere.
+  yearsExperience: 20,
   tagline: 'Knoxville’s concrete & hardscape experts — built right the first time.',
   description:
     'Paramount Concrete & Hardscapes designs and builds concrete, pavers, retaining walls, patios, outdoor kitchens, and decks for homeowners across Knoxville and East Tennessee.',
@@ -54,8 +54,8 @@ export const company = {
   // Social profiles → used for UI links AND schema `sameAs` (entity/trust signal).
   social: {
     facebook: 'https://www.facebook.com/paramountknox/',
-    instagram: 'https://www.instagram.com/paramountknox/', // PLACEHOLDER — confirm handle
-    tiktok: 'https://www.tiktok.com/@paramountknox', // PLACEHOLDER — confirm handle
+    instagram: 'https://www.instagram.com/paramounthomerenovations/',
+    tiktok: '', // not used
     google: '', // PLACEHOLDER — Google Business Profile URL
   },
 
