@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { company } from '../data/company';
+import { hubServices, services } from '../data/services';
+import { serviceAreas } from '../data/serviceAreas';
+
+const path = '/';
+
+const featured = [
+  ...hubServices,
+  ...services.filter((s) => ['retaining-walls', 'decks'].includes(s.path)),
+];
+
+const steps = [
+  { n: '01', t: 'Free on-site estimate', d: 'We visit, listen to what you want, and give you an honest, itemized quote — no pressure.' },
+  { n: '02', t: 'Design & plan', d: 'We plan grading, drainage, materials and layout so the project is built right from the ground up.' },
+  { n: '03', t: 'Build it to last', d: 'Our crew handles prep, structure and finish with the details that make it last in East TN.' },
+  { n: '04', t: 'Enjoy it for decades', d: 'Backed by our workmanship warranty and a team that stands behind the work.' },
+];
+
+const whyUs = [
+  { t: 'Base prep obsessed', d: 'We build from the ground up — compacted base, real drainage, proper reinforcement — because that’s what makes concrete and hardscapes last here.' },
+  { t: 'One team, start to finish', d: 'From the first estimate to the final joint, you work with our crew — not a rotating cast of subs.' },
+  { t: 'Built for East TN', d: 'Clay soil, freeze-thaw winters, hilly lots — we build for the conditions that break lesser work.' },
+  { t: 'Honest pricing', d: 'Itemized estimates and straight answers on cost. No games, no surprise change orders.' },
+];
+
+const homeFaqs = [
+  { q: 'What areas do you serve?', a: 'We serve Knoxville and all of Knox County, plus Farragut, Maryville, Alcoa, Oak Ridge, Clinton, Sevierville, Seymour, Lenoir City and the surrounding East Tennessee communities.' },
+  { q: 'Are you licensed and insured?', a: 'Yes — Paramount is fully licensed and insured, and we back our work with a workmanship warranty. We’ll gladly provide proof of insurance before we start.' },
+  { q: 'Do you offer free estimates?', a: 'Always. We come to your property, discuss your project, and give you a free, itemized, no-pressure estimate.' },
+  { q: 'How soon can you start my project?', a: 'It depends on the season and our schedule, but we’ll give you a realistic timeline up front. Reach out early — spring and fall book up fast.' },
+];
+---
+
+<BaseLayout
+  title="Concrete & Hardscape Contractor Knoxville TN | Paramount Concrete & Hardscapes"
+  description="Paramount builds concrete driveways, patios, pavers, retaining walls, fire pits and outdoor kitchens across Knoxville & East Tennessee — done right the first time. Free estimates: (865) 237-9770."
+  path={path}
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-[var(--color-steel)]">
+    <div class="pointer-events-none absolute inset-0 opacity-40" style="background-image: radial-gradient(60% 60% at 70% 20%, rgba(255,92,26,0.18), transparent 60%);"></div>
+    <div class="wrap relative grid gap-12 py-16 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:py-24">
+      <div>
+        <p class="eyebrow">Knoxville · East Tennessee · Since 2018</p>
+        <h1 class="mt-4 text-4xl font-black leading-[1.02] sm:text-6xl">
+          Concrete &amp; hardscapes,<br />
+          <span class="text-[var(--color-flame)]">done right the first time.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-[var(--color-concrete)]">
+          Driveways, patios, pavers, retaining walls, fire pits and outdoor kitchens — engineered for
+          East Tennessee’s clay soil and freeze-thaw winters, and built to last for decades.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/contact/" class="btn btn-primary text-base">Get a Free Estimate</a>
+          <a href={company.phoneHref} class="btn btn-ghost text-base">Call {company.phone}</a>
+        </div>
+        <p class="mt-5 text-sm text-[var(--color-concrete-dim)]">
+          ★★★★★ {company.rating.value}/5 · Licensed &amp; insured · Free, no-pressure quotes
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 shadow-2xl">
+        <h2 class="text-xl font-extrabold text-[var(--color-bone)]">Get your free quote</h2>
+        <p class="mb-4 mt-1 text-sm text-[var(--color-concrete-dim)]">Tell us about your project. We’ll get right back to you.</p>
+        <QuoteForm compact />
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- SERVICES -->
+  <section class="wrap py-16">
+    <div class="max-w-2xl">
+      <p class="eyebrow">What we build</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">One team for your whole outdoor project</h2>
+      <p class="mt-4 text-[var(--color-concrete)]">From a single driveway to a full backyard with a paver patio, retaining walls and an outdoor kitchen — we design and build it as one cohesive space.</p>
+    </div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        featured.map((s) => (
+          <a href={`/${s.path}/`} class="group flex flex-col rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)] hover:-translate-y-1">
+            <p class="text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
+            <p class="mt-2 flex-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
+            <span class="mt-4 text-sm font-bold text-[var(--color-flame)]">Learn more →</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="border-y border-[var(--color-steel)] bg-[var(--color-graphite)]">
+    <div class="wrap py-16">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Why Paramount</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Why our work outlasts the other guys’</h2>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        {
+          whyUs.map((w) => (
+            <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-ink)] p-6">
+              <p class="text-lg font-extrabold text-[var(--color-bone)]">{w.t}</p>
+              <p class="mt-2 text-sm text-[var(--color-concrete-dim)]">{w.d}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="wrap py-16">
+    <div class="max-w-2xl">
+      <p class="eyebrow">How it works</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Simple process. Serious craftsmanship.</h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-4">
+      {
+        steps.map((s) => (
+          <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+            <p class="text-3xl font-black text-[var(--color-flame)]">{s.n}</p>
+            <p class="mt-3 font-extrabold text-[var(--color-bone)]">{s.t}</p>
+            <p class="mt-2 text-sm text-[var(--color-concrete-dim)]">{s.d}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="border-t border-[var(--color-steel)] bg-[var(--color-graphite)]">
+    <div class="wrap py-16">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Where we build</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Serving Knoxville &amp; East Tennessee</h2>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {
+          serviceAreas.map((a) => (
+            <a href={`/service-area/${a.slug}/`} class="rounded-full border border-[var(--color-steel)] bg-[var(--color-ink)] px-4 py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:border-[var(--color-flame)] hover:text-[var(--color-flame)]">
+              {a.city}, TN
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <Faq faqs={homeFaqs} />
+
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { company } from '../data/company';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/contact/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Contact', path },
+];
+---
+
+<BaseLayout
+  title="Contact | Free Concrete & Hardscape Estimate | Knoxville TN | Paramount"
+  description="Get a free, no-pressure estimate for concrete, pavers, patios, retaining walls or outdoor living in Knoxville & East TN. Call (865) 237-9770 or request a quote online."
+  path={path}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap grid gap-12 py-10 lg:grid-cols-[1fr_1.1fr]">
+    <div>
+      <p class="eyebrow">Let’s build something</p>
+      <h1 class="mt-3 text-4xl font-black sm:text-5xl">Get your free estimate</h1>
+      <p class="mt-5 text-lg text-[var(--color-concrete)]">
+        Tell us about your project and we’ll get right back to you with next steps. Prefer to talk it
+        through? Give us a call — we’re happy to answer questions before you commit to anything.
+      </p>
+
+      <div class="mt-8 space-y-5">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Call or text</p>
+          <a href={company.phoneHref} class="text-2xl font-black text-[var(--color-bone)] hover:text-[var(--color-flame)]">{company.phone}</a>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Email</p>
+          <a href={`mailto:${company.email}`} class="text-lg text-[var(--color-concrete)] hover:text-[var(--color-flame)]">{company.email}</a>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Location</p>
+          <p class="text-[var(--color-concrete)]">{company.address.street}<br />{company.address.city}, {company.address.state} {company.address.zip}</p>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Hours</p>
+          {company.hoursHuman.map((h) => (
+            <p class="text-[var(--color-concrete)]"><span class="inline-block w-24 text-[var(--color-concrete-dim)]">{h.label}</span>{h.value}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-7">
+      <h2 class="text-xl font-extrabold text-[var(--color-bone)]">Request a quote</h2>
+      <p class="mb-5 mt-1 text-sm text-[var(--color-concrete-dim)]">We typically respond the same or next business day.</p>
+      <QuoteForm />
+    </div>
+  </section>
+</BaseLayout>

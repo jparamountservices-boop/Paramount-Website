@@ -1,0 +1,107 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { company } from '../data/company';
+import { getService, type Service } from '../data/services';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../lib/schema';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+
+const path = `/${service.path}/`;
+const parent = service.parent ? getService(service.parent) : undefined;
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  ...(parent ? [{ name: parent.navLabel.replace(' (overview)', ''), path: `/${parent.path}/` }] : []),
+  { name: service.navLabel.replace(' (overview)', ''), path },
+];
+
+const related = service.related
+  .map((p) => getService(p))
+  .filter((s): s is Service => Boolean(s));
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  serviceSchema({ name: service.h1, description: service.metaDescription, path }),
+  ...(service.faqs.length ? [faqSchema(service.faqs)] : []),
+];
+---
+
+<BaseLayout
+  title={service.title}
+  description={service.metaDescription}
+  path={path}
+  schemas={schemas}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- Hero -->
+  <section class="wrap grid gap-10 pb-6 pt-4 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+    <div>
+      <p class="eyebrow">Knoxville · East Tennessee</p>
+      <h1 class="mt-3 text-4xl font-black sm:text-5xl">{service.h1}</h1>
+      <p class="mt-5 max-w-xl text-lg text-[var(--color-concrete)]">{service.heroSubhead}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/contact/" class="btn btn-primary">Get a Free Estimate</a>
+        <a href={company.phoneHref} class="btn btn-ghost">Call {company.phone}</a>
+      </div>
+    </div>
+    <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+      <p class="mb-1 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Free Quote</p>
+      <p class="mb-4 text-sm text-[var(--color-concrete-dim)]">Tell us about your project — we’ll get right back to you.</p>
+      <QuoteForm compact />
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- Body copy -->
+  <article class="wrap prose-dark py-14">
+    <div class="mx-auto max-w-3xl">
+      {service.intro.map((p) => <p>{p}</p>)}
+
+      {service.sections.map((sec) => (
+        <>
+          <h2>{sec.h2}</h2>
+          {sec.body?.map((p) => <p>{p}</p>)}
+          {sec.bullets && (
+            <ul>{sec.bullets.map((b) => <li>{b}</li>)}</ul>
+          )}
+        </>
+      ))}
+
+      {service.costNote && (
+        <div class="my-8 rounded-lg border-l-4 border-[var(--color-flame)] bg-[var(--color-graphite)] p-5">
+          <p class="m-0 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">What it costs</p>
+          <p class="m-0 mt-2">{service.costNote}</p>
+        </div>
+      )}
+    </div>
+  </article>
+
+  <!-- Related services (internal links) -->
+  {related.length > 0 && (
+    <section class="wrap pb-14">
+      <h2 class="mb-6 text-2xl font-extrabold">Related services</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {related.map((r) => (
+          <a href={`/${r.path}/`} class="group rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 transition hover:border-[var(--color-flame)]">
+            <p class="font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{r.navLabel.replace(' (overview)', '')}</p>
+            <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{r.heroSubhead}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {service.faqs.length > 0 && <Faq faqs={service.faqs} />}
+
+  <CtaBand />
+</BaseLayout>

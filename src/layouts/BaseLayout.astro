@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCall from '../components/StickyCall.astro';
+import { localBusinessSchema } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  schemas?: Record<string, unknown>[];
+  /** Include the global LocalBusiness node (default true). */
+  business?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  image,
+  type,
+  noindex,
+  schemas = [],
+  business = true,
+} = Astro.props;
+
+const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      description={description}
+      path={path}
+      image={image}
+      type={type}
+      noindex={noindex}
+      schemas={allSchemas}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <StickyCall />
+
+    <script>
+      // Lightweight scroll-reveal
+      const els = document.querySelectorAll('.reveal');
+      if (els.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -10% 0px' }
+        );
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
+  </body>
+</html>

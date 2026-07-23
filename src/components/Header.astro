@@ -1,0 +1,112 @@
+---
+import { company } from '../data/company';
+import { servicesByGroup } from '../data/services';
+import { serviceAreas } from '../data/serviceAreas';
+
+const groups = servicesByGroup();
+const groupOrder = ['Concrete', 'Pavers', 'Hardscapes', 'Decks & Masonry'] as const;
+---
+
+<header class="sticky top-0 z-50 border-b border-[var(--color-steel)] bg-[color-mix(in_srgb,var(--color-ink)_92%,transparent)] backdrop-blur">
+  <div class="wrap flex items-center justify-between gap-4 py-3">
+    <a href="/" class="flex items-center gap-2 font-[var(--font-display)]">
+      <span class="text-lg font-extrabold uppercase tracking-tight text-[var(--color-bone)]">
+        Paramount
+      </span>
+      <span class="hidden text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-flame)] sm:inline">
+        Concrete &amp; Hardscapes
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      <div class="group relative">
+        <button class="py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">
+          Services ▾
+        </button>
+        <div class="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+          <div class="grid w-[36rem] grid-cols-2 gap-x-6 gap-y-1 rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 shadow-2xl">
+            {
+              groupOrder.map((g) => (
+                <div>
+                  <p class="mb-1 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{g}</p>
+                  <ul class="mb-3 space-y-1">
+                    {groups[g]?.map((s) => (
+                      <li>
+                        <a href={`/${s.path}/`} class="block rounded px-2 py-1 text-sm text-[var(--color-concrete)] transition hover:bg-[var(--color-graphite-2)] hover:text-[var(--color-bone)]">
+                          {s.navLabel}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative">
+        <button class="py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">
+          Service Areas ▾
+        </button>
+        <div class="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+          <div class="w-56 rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-3 shadow-2xl">
+            <ul class="space-y-1">
+              <li><a href="/service-area/" class="block rounded px-2 py-1 text-sm font-semibold text-[var(--color-bone)] hover:bg-[var(--color-graphite-2)]">All Service Areas</a></li>
+              {serviceAreas.map((a) => (
+                <li><a href={`/service-area/${a.slug}/`} class="block rounded px-2 py-1 text-sm text-[var(--color-concrete)] transition hover:bg-[var(--color-graphite-2)] hover:text-[var(--color-bone)]">{a.city}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a href="/our-work/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Our Work</a>
+      <a href="/blog/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Blog</a>
+      <a href="/reviews/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Reviews</a>
+      <a href="/about/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">About</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href={company.phoneHref} class="hidden text-sm font-bold text-[var(--color-bone)] sm:block">
+        {company.phone}
+      </a>
+      <a href="/contact/" class="btn btn-primary text-sm">Free Quote</a>
+      <!-- Mobile menu toggle -->
+      <button id="menu-toggle" class="lg:hidden grid h-10 w-10 place-items-center rounded border border-[var(--color-steel)]" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav panel -->
+  <div id="mobile-nav" class="hidden border-t border-[var(--color-steel)] bg-[var(--color-graphite)] lg:hidden">
+    <nav class="wrap flex flex-col gap-1 py-4" aria-label="Mobile">
+      <p class="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">Services</p>
+      {groupOrder.flatMap((g) => groups[g] ?? []).map((s) => (
+        <a href={`/${s.path}/`} class="py-1.5 text-[var(--color-concrete)]">{s.navLabel}</a>
+      ))}
+      <p class="mt-3 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">Service Areas</p>
+      {serviceAreas.map((a) => (
+        <a href={`/service-area/${a.slug}/`} class="py-1.5 text-[var(--color-concrete)]">{a.city}</a>
+      ))}
+      <div class="mt-3 flex flex-col gap-2 border-t border-[var(--color-steel)] pt-3">
+        <a href="/our-work/" class="py-1.5 text-[var(--color-concrete)]">Our Work</a>
+        <a href="/blog/" class="py-1.5 text-[var(--color-concrete)]">Blog</a>
+        <a href="/reviews/" class="py-1.5 text-[var(--color-concrete)]">Reviews</a>
+        <a href="/about/" class="py-1.5 text-[var(--color-concrete)]">About</a>
+        <a href={company.phoneHref} class="py-1.5 font-bold text-[var(--color-bone)]">Call {company.phone}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const panel = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const open = panel?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(open === false));
+  });
+</script>

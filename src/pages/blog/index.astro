@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { breadcrumbSchema } from '../../lib/schema';
+
+const path = '/blog/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path },
+];
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const categories = ['Cost', 'Comparisons', 'Problems', 'Best-of', 'How-to'];
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog | Concrete & Hardscape Guides, Costs & Comparisons | Knoxville TN"
+  description="Honest guides on concrete and hardscape costs, comparisons and common problems for East Tennessee homeowners — from Paramount Concrete & Hardscapes."
+  path={path}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap py-10">
+    <p class="eyebrow">Learn before you build</p>
+    <h1 class="mt-3 text-4xl font-black sm:text-5xl">The Paramount Blog</h1>
+    <p class="mt-4 max-w-2xl text-lg text-[var(--color-concrete)]">
+      Straight answers on what things cost, how materials compare, and the mistakes that make concrete
+      and hardscapes fail in East Tennessee. The questions you’re already asking — answered honestly.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-wider">
+      {categories.map((c) => (
+        <span class="rounded-full border border-[var(--color-steel)] px-3 py-1 text-[var(--color-flame)]">{c}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap grid gap-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
+    {
+      posts.map((post) => (
+        <a href={`/blog/${post.id}/`} class="group flex flex-col rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{post.data.category}</span>
+          <h2 class="mt-2 text-xl font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{post.data.title}</h2>
+          <p class="mt-2 flex-1 text-sm text-[var(--color-concrete-dim)]">{post.data.description}</p>
+          <span class="mt-4 text-xs text-[var(--color-concrete-dim)]">{fmt(post.data.pubDate)}</span>
+        </a>
+      ))
+    }
+    {posts.length === 0 && <p class="text-[var(--color-concrete-dim)]">New guides publishing soon.</p>}
+  </section>
+
+  <CtaBand />
+</BaseLayout>

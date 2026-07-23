@@ -1,0 +1,22 @@
+---
+import { company } from '../data/company';
+
+const items = [
+  { label: `${company.trust.projectsCompleted} Projects Completed` },
+  { label: `${company.rating.value}★ Rated (${company.rating.count} reviews)` },
+  { label: 'Licensed & Insured' },
+  { label: `${company.trust.warrantyYears}-Year Workmanship Warranty` },
+  { label: 'Free, No-Pressure Estimates' },
+];
+---
+
+<div class="border-y border-[var(--color-steel)] bg-[var(--color-graphite-2)]">
+  <div class="wrap flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-4 text-center text-sm font-semibold text-[var(--color-concrete)]">
+    {items.map((i) => (
+      <span class="flex items-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-[var(--color-flame)]" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        {i.label}
+      </span>
+    ))}
+  </div>
+</div>

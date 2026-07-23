@@ -1,0 +1,62 @@
+---
+/**
+ * Central <head> SEO component: title, meta description, canonical, robots,
+ * Open Graph + Twitter cards, and any JSON-LD passed in via `schemas`.
+ */
+import { company } from '../data/company';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path only, e.g. "/concrete/". Canonical + OG url are derived from site. */
+  path: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  schemas?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path,
+  image = '/images/og-default.jpg',
+  type = 'website',
+  noindex = false,
+  schemas = [],
+} = Astro.props;
+
+const site = company.url;
+const canonical = new URL(path, site).href;
+const ogImage = new URL(image, site).href;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={company.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Geo -->
+<meta name="geo.region" content="US-TN" />
+<meta name="geo.placename" content="Knoxville" />
+
+{
+  schemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))
+}

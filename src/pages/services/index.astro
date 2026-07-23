@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { servicesByGroup } from '../../data/services';
+import { breadcrumbSchema } from '../../lib/schema';
+
+const path = '/services/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path },
+];
+const groups = servicesByGroup();
+const order = ['Concrete', 'Pavers', 'Hardscapes', 'Decks & Masonry'] as const;
+---
+
+<BaseLayout
+  title="Our Services | Concrete, Pavers & Hardscapes | Knoxville TN | Paramount"
+  description="Concrete driveways & patios, paver installations, retaining walls, fire pits, outdoor kitchens, decks and masonry in Knoxville & East TN. Free estimates: (865) 237-9770."
+  path={path}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap py-10">
+    <p class="eyebrow">What we build</p>
+    <h1 class="mt-3 text-4xl font-black sm:text-5xl">Our Services</h1>
+    <p class="mt-4 max-w-2xl text-lg text-[var(--color-concrete)]">
+      Everything you need to build out your outdoor space — designed and built by one team, engineered
+      for East Tennessee.
+    </p>
+  </section>
+
+  <section class="wrap space-y-12 pb-14">
+    {
+      order.map((g) => (
+        <div>
+          <h2 class="mb-5 text-2xl font-extrabold text-[var(--color-flame)]">{g}</h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {groups[g]?.map((s) => (
+              <a href={`/${s.path}/`} class="group rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
+                <p class="text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
+                <p class="mt-2 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <CtaBand />
+</BaseLayout>

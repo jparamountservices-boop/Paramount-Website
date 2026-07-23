@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { company } from '../data/company';
+---
+
+<BaseLayout
+  title="Thank You | Paramount Concrete & Hardscapes"
+  description="Thanks for reaching out to Paramount Concrete & Hardscapes. We’ll be in touch shortly."
+  path="/thank-you/"
+  noindex={true}
+>
+  <section class="wrap grid min-h-[50vh] place-items-center py-20 text-center">
+    <div class="max-w-xl">
+      <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[var(--color-flame)]">
+        <svg viewBox="0 0 24 24" class="h-8 w-8 text-white" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+      </div>
+      <h1 class="mt-6 text-4xl font-black">Thanks — we’ve got it.</h1>
+      <p class="mt-4 text-lg text-[var(--color-concrete)]">
+        Your request is in. We’ll reach out shortly to talk through your project. Need us sooner?
+      </p>
+      <a href={company.phoneHref} class="btn btn-primary mt-6">Call {company.phone}</a>
+      <div class="mt-8">
+        <a href="/our-work/" class="text-[var(--color-flame-300)] underline">See our recent work →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

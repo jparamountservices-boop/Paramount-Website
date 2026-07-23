@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Paramount Concrete & Hardscapes — design system
+   Dark, industrial, high-contrast. Concrete + molten-steel accent.
+   ============================================================ */
+@theme {
+  /* Brand */
+  --color-ink: #0b0d0f;          /* near-black base */
+  --color-graphite: #15181c;     /* surface */
+  --color-graphite-2: #1e2228;   /* raised surface */
+  --color-steel: #2b3138;        /* borders / lines */
+  --color-concrete: #c7c2b8;     /* warm concrete gray text */
+  --color-concrete-dim: #8b8880;
+  --color-bone: #f4f1ea;         /* headings on dark */
+
+  /* Accent — molten orange (safety/industrial) */
+  --color-flame: #ff5c1a;
+  --color-flame-600: #e94c0d;
+  --color-flame-300: #ff8c5a;
+  --color-amber: #ffb020;
+
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-lg: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-ink);
+  color: var(--color-concrete);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-bone);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utility: uppercase industrial eyebrow label */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--color-flame);
+}
+
+/* Section container */
+.wrap {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-lg);
+  transition: transform 0.12s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+.btn-primary {
+  background: var(--color-flame);
+  color: #fff;
+  box-shadow: 0 8px 24px -8px rgba(255, 92, 26, 0.6);
+}
+.btn-primary:hover { background: var(--color-flame-600); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--color-bone);
+  border: 1.5px solid var(--color-steel);
+}
+.btn-ghost:hover { border-color: var(--color-flame); color: var(--color-flame-300); }
+
+/* Prose defaults for long-form copy on dark backgrounds */
+.prose-dark { color: var(--color-concrete); line-height: 1.75; font-size: 1.05rem; }
+.prose-dark p { margin-block: 0 1.1rem; }
+.prose-dark h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-block: 2.5rem 1rem; }
+.prose-dark h3 { font-size: 1.25rem; margin-block: 1.75rem 0.6rem; }
+.prose-dark a { color: var(--color-flame-300); text-decoration: underline; text-underline-offset: 3px; }
+.prose-dark a:hover { color: var(--color-flame); }
+.prose-dark ul { margin: 0 0 1.2rem; padding-left: 1.2rem; list-style: none; }
+.prose-dark ul li { position: relative; padding-left: 1.2rem; margin-bottom: 0.55rem; }
+.prose-dark ul li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.62em;
+  width: 0.5rem; height: 0.5rem;
+  background: var(--color-flame);
+  transform: rotate(45deg);
+}
+.prose-dark strong { color: var(--color-bone); }
+
+/* Fade-up on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+}

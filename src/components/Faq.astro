@@ -1,0 +1,24 @@
+---
+interface Props {
+  faqs: { q: string; a: string }[];
+  heading?: string;
+}
+const { faqs, heading = 'Frequently Asked Questions' } = Astro.props;
+---
+
+<section class="wrap py-14">
+  <h2 class="mb-8 text-2xl font-extrabold sm:text-3xl">{heading}</h2>
+  <div class="mx-auto max-w-3xl divide-y divide-[var(--color-steel)] rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)]">
+    {
+      faqs.map((f) => (
+        <details class="group px-5 py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-[var(--color-bone)]">
+            {f.q}
+            <span class="text-[var(--color-flame)] transition group-open:rotate-45">＋</span>
+          </summary>
+          <p class="mt-3 leading-relaxed text-[var(--color-concrete)]">{f.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import { serviceAreas } from '../../data/serviceAreas';
+import { hubServices, services } from '../../data/services';
+import { company } from '../../data/company';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return serviceAreas.map((area) => ({
+    params: { slug: area.slug },
+    props: { area },
+  }));
+}
+
+const { area } = Astro.props;
+const path = `/service-area/${area.slug}/`;
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Service Areas', path: '/service-area/' },
+  { name: area.city, path },
+];
+
+const featured = [
+  ...hubServices,
+  ...services.filter((s) => ['retaining-walls', 'decks', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens'].includes(s.path)),
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  serviceSchema({
+    name: `Concrete & Hardscape Contractor in ${area.city}, TN`,
+    description: area.metaDescription,
+    path,
+    areaServed: `${area.city}, TN`,
+  }),
+  ...(area.faqs.length ? [faqSchema(area.faqs)] : []),
+];
+---
+
+<BaseLayout title={area.title} description={area.metaDescription} path={path} schemas={schemas}>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap grid gap-10 pb-6 pt-4 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+    <div>
+      <p class="eyebrow">{area.county}, Tennessee</p>
+      <h1 class="mt-3 text-4xl font-black sm:text-5xl">{area.h1}</h1>
+      <p class="mt-5 max-w-xl text-lg text-[var(--color-concrete)]">{area.heroSubhead}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/contact/" class="btn btn-primary">Get a Free Estimate</a>
+        <a href={company.phoneHref} class="btn btn-ghost">Call {company.phone}</a>
+      </div>
+    </div>
+    <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+      <p class="mb-1 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Free Quote in {area.city}</p>
+      <QuoteForm compact />
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <article class="wrap prose-dark py-14">
+    <div class="mx-auto max-w-3xl">
+      {area.intro.map((p) => <p>{p}</p>)}
+      <h2>Why {area.city} homeowners choose Paramount</h2>
+      <ul>{area.localAngle.map((l) => <li>{l}</li>)}</ul>
+    </div>
+  </article>
+
+  <!-- Services offered locally (internal links to service pages) -->
+  <section class="wrap pb-14">
+    <h2 class="mb-6 text-2xl font-extrabold">Our services in {area.city}, TN</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {featured.map((s) => (
+        <a href={`/${s.path}/`} class="group rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 transition hover:border-[var(--color-flame)]">
+          <p class="font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
+          <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {area.faqs.length > 0 && <Faq faqs={area.faqs} heading={`${area.city} — Common Questions`} />}
+
+  <CtaBand heading={`Building in ${area.city}? Let’s talk.`} />
+</BaseLayout>

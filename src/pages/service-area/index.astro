@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { serviceAreas } from '../../data/serviceAreas';
+import { breadcrumbSchema } from '../../lib/schema';
+
+const path = '/service-area/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Service Areas', path },
+];
+---
+
+<BaseLayout
+  title="Service Areas | Concrete & Hardscape Contractor | Knoxville & East TN"
+  description="Paramount Concrete & Hardscapes serves Knoxville, Farragut, West Knoxville, Maryville, Oak Ridge, Sevierville, Lenoir City and across East Tennessee."
+  path={path}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap py-10">
+    <p class="eyebrow">Where we build</p>
+    <h1 class="mt-3 text-4xl font-black sm:text-5xl">Service Areas</h1>
+    <p class="mt-5 max-w-2xl text-lg text-[var(--color-concrete)]">
+      Based in Knoxville, we design and build concrete and hardscapes across Knox County and the
+      surrounding East Tennessee communities. Find your area below.
+    </p>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        serviceAreas.map((a) => (
+          <a href={`/service-area/${a.slug}/`} class="group rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{a.county}</p>
+            <p class="mt-1 text-xl font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{a.city}, TN</p>
+            <p class="mt-2 text-sm text-[var(--color-concrete-dim)]">{a.heroSubhead}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

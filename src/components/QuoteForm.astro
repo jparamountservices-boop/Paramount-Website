@@ -1,0 +1,73 @@
+---
+/**
+ * Lead-capture quote form. Wired for Netlify Forms by default (data-netlify),
+ * which also works as a plain POST elsewhere. Swap the `action`/provider at
+ * build time (see docs/seo/ and Inputs Needed).
+ */
+import { services } from '../data/services';
+import { company } from '../data/company';
+
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+
+const serviceOptions = services.filter((s) => !s.isHub || s.path === 'masonry');
+---
+
+<form
+  name="quote"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/thank-you/"
+  class="grid gap-4"
+>
+  <input type="hidden" name="form-name" value="quote" />
+  <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Name</span>
+      <input required name="name" type="text" autocomplete="name" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" />
+    </label>
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Phone</span>
+      <input required name="phone" type="tel" autocomplete="tel" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" />
+    </label>
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Email</span>
+      <input required name="email" type="email" autocomplete="email" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" />
+    </label>
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">City / Area</span>
+      <input name="city" type="text" placeholder="Knoxville, Farragut…" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" />
+    </label>
+  </div>
+
+  <label class="block">
+    <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">What can we build for you?</span>
+    <select name="service" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]">
+      <option value="">Select a service…</option>
+      {serviceOptions.map((s) => (
+        <option value={s.navLabel}>{s.navLabel.replace(' (overview)', '')}</option>
+      ))}
+      <option value="Other">Something else</option>
+    </select>
+  </label>
+
+  {!compact && (
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Project details</span>
+      <textarea name="details" rows="4" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" placeholder="Tell us about your project, timeline and budget…"></textarea>
+    </label>
+  )}
+
+  <button type="submit" class="btn btn-primary w-full text-base">Get My Free Estimate</button>
+  <p class="text-center text-xs text-[var(--color-concrete-dim)]">
+    Prefer to talk? Call <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>. No pressure, no spam.
+  </p>
+</form>

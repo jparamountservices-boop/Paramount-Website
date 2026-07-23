@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { company } from '../data/company';
+import { reviews } from '../data/reviews';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/reviews/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Reviews', path },
+];
+
+// Review + AggregateRating schema (attached to the business).
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  '@id': `${company.url}/#business`,
+  name: company.name,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: company.rating.value,
+    reviewCount: company.rating.count,
+  },
+  review: reviews.map((r) => ({
+    '@type': 'Review',
+    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+    author: { '@type': 'Person', name: r.author },
+    reviewBody: r.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Reviews | Paramount Concrete & Hardscapes | Knoxville TN"
+  description="Read reviews for Paramount Concrete & Hardscapes — a 5-star-rated concrete and hardscape contractor serving Knoxville and East Tennessee."
+  path={path}
+  business={false}
+  schemas={[breadcrumbSchema(crumbs), reviewSchema]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap py-10 text-center">
+    <p class="eyebrow">What homeowners say</p>
+    <h1 class="mt-3 text-4xl font-black sm:text-5xl">Reviews</h1>
+    <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">★★★★★</p>
+    <p class="text-[var(--color-concrete)]">{company.rating.value} out of 5 · {company.rating.count}+ reviews</p>
+  </section>
+
+  <section class="wrap columns-1 gap-5 pb-14 md:columns-2 lg:columns-3">
+    {
+      reviews.map((r) => (
+        <figure class="mb-5 break-inside-avoid rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+          <div class="text-[var(--color-flame)]">{'★'.repeat(r.rating)}</div>
+          <blockquote class="mt-3 text-[var(--color-concrete)]">{r.text}</blockquote>
+          <figcaption class="mt-4 text-sm">
+            <span class="font-bold text-[var(--color-bone)]">{r.author}</span>
+            {r.location && <span class="text-[var(--color-concrete-dim)]"> · {r.location}</span>}
+            {r.service && <div class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{r.service}</div>}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </section>
+
+  <CtaBand heading="Ready to be our next 5-star review?" />
+</BaseLayout>
