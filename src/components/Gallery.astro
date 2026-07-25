@@ -1,57 +1,104 @@
 ---
 /**
- * Filterable portfolio grid with a lightweight lightbox.
- * Tiles with an `image` render the photo (lazy-loaded); tiles without render a
- * labeled placeholder so the layout is ready before real photos are added.
+ * Portfolio grid. Auto-loads photos from src/assets/projects/<folder>/ — drop
+ * images into the right folder and they appear here automatically, optimized to
+ * WebP with a thumbnail + a larger lightbox version. Until photos exist, it
+ * shows labeled placeholder tiles so the layout is ready.
+ * See docs/deployment/photos.md.
  */
-import { gallery, galleryCategories } from '../data/gallery';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { catByFolder, captionFromFilename, filterGroups } from '../data/projectCategories';
+import { gallery as placeholders } from '../data/gallery';
 
 interface Props {
   limit?: number;
   showFilters?: boolean;
 }
 const { limit, showFilters = true } = Astro.props;
-const items = limit ? gallery.slice(0, limit) : gallery;
+
+// Eager-glob every project photo. Key = file path; value = { default: ImageMetadata }.
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/projects/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true }
+);
+
+type Tile = { thumb: string; full: string; alt: string; label: string; group: string; href: string; w: number; h: number };
+let tiles: Tile[] = [];
+
+for (const [path, mod] of Object.entries(modules)) {
+  const parts = path.split('/');
+  const filename = parts.pop()!;
+  const folder = parts.pop()!;
+  const cat = catByFolder(folder);
+  if (!cat) continue;
+  const meta = mod.default;
+  const caption = captionFromFilename(filename) || cat.label;
+  const alt = `${caption} by Paramount Concrete & Hardscapes, Knoxville TN`;
+  const thumb = await getImage({ src: meta, width: 800, format: 'webp', quality: 78 });
+  const full = await getImage({ src: meta, width: 1600, format: 'webp', quality: 82 });
+  tiles.push({ thumb: thumb.src, full: full.src, alt, label: caption, group: cat.group, href: cat.href, w: 4, h: 3 });
+  // (sort key kept simple via filename order below)
+  (tiles[tiles.length - 1] as any)._sort = folder + '/' + filename;
+}
+tiles.sort((a, b) => ((a as any)._sort < (b as any)._sort ? -1 : 1));
+
+const hasPhotos = tiles.length > 0;
+if (limit) tiles = tiles.slice(0, limit);
+const placeholderItems = limit ? placeholders.slice(0, limit) : placeholders;
+const groups = filterGroups;
 ---
 
 <div>
-  {showFilters && (
+  {showFilters && hasPhotos && (
     <div class="mb-8 flex flex-wrap gap-2" role="tablist" aria-label="Filter projects">
       <button class="gallery-filter rounded-full border border-[var(--color-flame)] bg-[var(--color-flame)] px-4 py-1.5 text-sm font-semibold text-white" data-filter="all">All</button>
-      {galleryCategories.map((c) => (
+      {groups.map((c) => (
         <button class="gallery-filter rounded-full border border-[var(--color-steel)] px-4 py-1.5 text-sm font-semibold text-[var(--color-concrete)] transition hover:border-[var(--color-flame)]" data-filter={c}>{c}</button>
       ))}
     </div>
   )}
 
   <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4" id="gallery-grid">
-    {
-      items.map((item) => (
-        <figure class="gallery-item group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]" data-category={item.category}>
-          {item.image ? (
+    {hasPhotos
+      ? tiles.map((t) => (
+          <figure class="gallery-item group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]" data-category={t.group}>
             <img
-              src={item.image}
-              alt={item.alt}
+              src={t.thumb}
+              alt={t.alt}
               loading="lazy"
               decoding="async"
               class="gallery-photo absolute inset-0 h-full w-full cursor-zoom-in object-cover transition duration-300 group-hover:scale-105"
-              data-full={item.image}
-              data-caption={`${item.title}${item.location ? ' · ' + item.location + ', TN' : ''}`}
+              data-full={t.full}
+              data-caption={t.label}
             />
-          ) : (
+            <figcaption class="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <a href={t.href} class="block">
+                <span class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{t.group}</span>
+                <span class="block font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{t.label}</span>
+              </a>
+            </figcaption>
+          </figure>
+        ))
+      : placeholderItems.map((item) => (
+          <figure class="gallery-item group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]" data-category={item.category}>
             <div class="pointer-events-none absolute inset-0 opacity-40" style="background-image: radial-gradient(80% 80% at 50% 0%, rgba(255,92,26,0.28), transparent 70%);" />
-          )}
-          <figcaption class="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4">
-            <a href={item.href} class="block">
-              <span class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{item.category}</span>
-              <span class="block font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{item.title}</span>
-              {item.location && <span class="text-xs text-[var(--color-concrete-dim)]">{item.location}, TN</span>}
-            </a>
-          </figcaption>
-        </figure>
-      ))
-    }
+            <figcaption class="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <a href={item.href} class="block">
+                <span class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{item.category}</span>
+                <span class="block font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{item.title}</span>
+                {item.location && <span class="text-xs text-[var(--color-concrete-dim)]">{item.location}, TN</span>}
+              </a>
+            </figcaption>
+          </figure>
+        ))}
   </div>
+
+  {!hasPhotos && (
+    <p class="mt-6 text-center text-sm text-[var(--color-concrete-dim)]">
+      Project photos coming soon — real photos drop straight into these categories.
+    </p>
+  )}
 </div>
 
 <!-- Lightbox -->
@@ -64,7 +111,6 @@ const items = limit ? gallery.slice(0, limit) : gallery;
 </div>
 
 <script>
-  // Category filter
   const filters = document.querySelectorAll<HTMLButtonElement>('.gallery-filter');
   const tiles = document.querySelectorAll<HTMLElement>('.gallery-item');
   filters.forEach((btn) => {
@@ -82,7 +128,6 @@ const items = limit ? gallery.slice(0, limit) : gallery;
     });
   });
 
-  // Lightbox
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
   const lbCap = document.getElementById('lightbox-caption');
