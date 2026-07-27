@@ -27,8 +27,6 @@ export const projectCategories: ProjectCategory[] = [
   { folder: 'retaining-walls', label: 'Retaining Wall', group: 'Hardscapes', href: '/retaining-walls/' },
   { folder: 'walkways', label: 'Walkway & Steps', group: 'Hardscapes', href: '/hardscapes/walkways/' },
   { folder: 'fire-pits', label: 'Fire Pit', group: 'Hardscapes', href: '/hardscapes/fire-pits/' },
-  { folder: 'outdoor-kitchens', label: 'Outdoor Kitchen', group: 'Hardscapes', href: '/hardscapes/outdoor-kitchens/' },
-  { folder: 'outdoor-fireplaces', label: 'Outdoor Fireplace', group: 'Hardscapes', href: '/hardscapes/outdoor-fireplaces/' },
 ];
 
 export const projectFolders = projectCategories.map((c) => c.folder);

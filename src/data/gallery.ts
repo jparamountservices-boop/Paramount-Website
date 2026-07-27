@@ -39,9 +39,7 @@ export const gallery: GalleryItem[] = [
   { title: 'Paver Patio & Seat Wall', category: 'Pavers', href: '/pavers/patios/', location: 'Knoxville', alt: 'Paver patio with built-in seat wall in Knoxville, TN' },
   { title: 'Block Retaining Wall', category: 'Retaining Walls', href: '/retaining-walls/', location: 'Maryville', alt: 'Segmental block retaining wall on a sloped lot in Maryville, TN' },
   { title: 'Fire Pit & Patio', category: 'Fire & Outdoor Living', href: '/hardscapes/fire-pits/', location: 'Knoxville', alt: 'Custom stone fire pit built into a paver patio in Knoxville, TN' },
-  { title: 'Outdoor Kitchen', category: 'Fire & Outdoor Living', href: '/hardscapes/outdoor-kitchens/', location: 'Farragut', alt: 'Masonry outdoor kitchen with built-in grill in Farragut, TN' },
   { title: 'Paver Driveway', category: 'Pavers', href: '/pavers/driveways/', location: 'Farragut', alt: 'Interlocking paver driveway in Farragut, TN' },
   { title: 'Stone Steps & Walkway', category: 'Retaining Walls', href: '/hardscapes/walkways/', location: 'Knoxville', alt: 'Natural stone steps and walkway on a hillside in Knoxville, TN' },
-  { title: 'Outdoor Fireplace', category: 'Fire & Outdoor Living', href: '/hardscapes/outdoor-fireplaces/', location: 'Maryville', alt: 'Stone outdoor fireplace on a covered patio in Maryville, TN' },
   { title: 'Pool Deck', category: 'Stamped', href: '/concrete/pool-decks/', location: 'Farragut', alt: 'Stamped, slip-resistant concrete pool deck in Farragut, TN' },
 ];

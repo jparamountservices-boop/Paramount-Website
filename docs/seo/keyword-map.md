@@ -16,7 +16,6 @@ on the head term.
 | `/hardscapes/` | hardscaping Knoxville TN | hardscape contractor, outdoor living Knoxville |
 | `/retaining-walls/` | retaining walls Knoxville TN | retaining wall installation, block wall contractor |
 | `/hardscapes/fire-pits/` | fire pit Knoxville TN | custom fire pit builder, gas fire pit |
-| `/hardscapes/outdoor-kitchens/` | outdoor kitchen Knoxville TN | grill island, outdoor kitchen builder |
 | `/decks/` | deck builder Knoxville TN | composite deck, Trex deck Knoxville |
 | `/masonry/` | masonry contractor Knoxville TN | stone veneer, brick mason Knoxville |
 
@@ -32,7 +31,7 @@ capture research-phase searches and funnel to the money pages via internal links
 ## Expansion opportunities (add pages as capacity allows)
 - Spokes not yet built: `/concrete/sidewalks-walkways/`, `/concrete/slabs-foundations/`,
   `/concrete/pool-decks/`, `/pavers/driveways/`, `/pavers/walkways/`, `/pavers/pool-decks/`,
-  `/hardscapes/walkways/`, `/hardscapes/outdoor-fireplaces/`, `/hardscapes/grill-islands/`.
+  `/hardscapes/walkways/`.
   (Stubs are referenced in nav/related copy — flesh them out in `services.ts`.)
 - More cities: Alcoa, Clinton, Seymour, Powell, Karns, Louisville, Friendsville, Loudon.
 - Service × city money pages (e.g. "paver patio Farragut TN") only where search

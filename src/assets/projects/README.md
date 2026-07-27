@@ -18,8 +18,6 @@ photos *you* put in these folders.
 | `retaining-walls/` | Retaining walls | /retaining-walls/ |
 | `walkways/` | Walkways & stone steps | /hardscapes/walkways/ |
 | `fire-pits/` | Fire pits & fire features | /hardscapes/fire-pits/ |
-| `outdoor-kitchens/` | Outdoor kitchens & grill islands | /hardscapes/outdoor-kitchens/ |
-| `outdoor-fireplaces/` | Outdoor fireplaces | /hardscapes/outdoor-fireplaces/ |
 
 ## Naming your files (this controls the caption + order)
 

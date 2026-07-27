@@ -35,9 +35,10 @@ changes near property lines can matter.
 driveway permit** from the city/county or TDOT, especially for the apron. Replacing in the same
 footprint is usually simpler.
 
-## Outdoor kitchens & gas features
+## Gas fire features
 
-**Often yes** for the gas and electrical work involved. Those trades are permitted and inspected.
+**Often yes** for the gas work involved in a gas fire pit or fire feature — gas lines are permitted
+and inspected.
 
 ## How we handle it
 

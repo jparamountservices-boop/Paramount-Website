@@ -25,14 +25,14 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor Knoxville TN | Paramount',
     metaDescription:
-      'Paramount Concrete & Hardscapes serves Knoxville, TN with driveways, patios, pavers, retaining walls, fire pits and outdoor kitchens. Free estimates: (865) 237-9770.',
+      'Paramount Concrete & Hardscapes serves Knoxville, TN with driveways, patios, pavers, retaining walls and fire pits. Free estimates: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Knoxville, TN',
     heroSubhead:
       'Our home base. From Bearden to Halls, we build concrete and hardscapes engineered for Knoxville’s clay soil and freeze-thaw winters.',
     primaryKeyword: 'concrete contractor Knoxville TN',
     intro: [
       'Knoxville is home for Paramount, and we know exactly what our soil and weather do to a poorly-built slab or wall. The clay holds water, the winters freeze and thaw, and the hills mean drainage and grading matter on almost every project.',
-      'We build driveways, patios, paver installations, retaining walls, fire features and outdoor kitchens across Knoxville and all of Knox County — from established neighborhoods like Sequoyah Hills, Bearden and Fountain City to newer developments in West Knox and Hardin Valley.',
+      'We build driveways, patios, paver installations, retaining walls and fire features across Knoxville and all of Knox County — from established neighborhoods like Sequoyah Hills, Bearden and Fountain City to newer developments in West Knox and Hardin Valley.',
     ],
     localAngle: [
       'Knoxville’s older neighborhoods often mean tearing out and rebuilding aging concrete on lots that have settled for decades — base prep and drainage are everything.',
@@ -61,7 +61,7 @@ export const serviceAreas: ServiceArea[] = [
       'From subdivisions off Kingston Pike to lakeside properties near Fort Loudoun, we handle the design, drainage and craftsmanship that hold up and add real value.',
     ],
     localAngle: [
-      'Farragut’s newer, higher-end homes are a natural fit for paver patios, outdoor kitchens and stamped-concrete work that complements the architecture.',
+      'Farragut’s newer, higher-end homes are a natural fit for paver patios, fire pits and stamped-concrete work that complements the architecture.',
       'Lakeside and sloped lots near the Tennessee River often need engineered retaining walls and serious drainage planning.',
     ],
     faqs: [
@@ -84,7 +84,7 @@ export const serviceAreas: ServiceArea[] = [
     primaryKeyword: 'concrete contractor West Knoxville TN',
     intro: [
       'West Knoxville is where a lot of our work happens — Bearden, Cedar Bluff, Hardin Valley, Rocky Hill and the growing corridors off Kingston Pike and Northshore. These are neighborhoods where a well-built patio or paver driveway is both a lifestyle upgrade and a real resale asset.',
-      'We handle everything from replacing a cracked driveway to designing a full backyard with a paver patio, fire feature and outdoor kitchen.',
+      'We handle everything from replacing a cracked driveway to designing a full backyard with a paver patio, retaining wall and fire feature.',
     ],
     localAngle: [
       'Hardin Valley’s rapid growth means many new-construction homes with builder-grade basics ready for an upgraded patio, driveway or outdoor living space.',

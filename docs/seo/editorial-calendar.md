@@ -25,7 +25,6 @@ Each post's `category` frontmatter must be one of:
 ### Cost (highest commercial intent — competitors dodge these)
 - How Much Does a Concrete Patio Cost in Knoxville?
 - How Much Does a Retaining Wall Cost in East Tennessee?
-- How Much Does an Outdoor Kitchen Cost? (Knoxville pricing)
 - How Much Does Stamped Concrete Cost? (vs. plain concrete)
 - What Does a Paver Driveway Cost in Knoxville?
 - Concrete Sidewalk / Walkway Cost in Knoxville

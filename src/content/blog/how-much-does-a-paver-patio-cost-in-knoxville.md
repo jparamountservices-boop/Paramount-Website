@@ -35,8 +35,8 @@ The pavers themselves are only part of the cost. Here's the real breakdown:
   or natural stone, cost more.
 - **Pattern & cuts.** Herringbone, circles, borders and lots of curved cuts add labor.
 - **Edge restraint & polymeric sand.** Non-negotiable for a patio that stays tight and weed-free.
-- **Features.** Seat walls, fire pits, steps, lighting and outdoor kitchens each add to the total —
-  but they're also what turns a patio into an outdoor room.
+- **Features.** Seat walls, fire pits, steps and lighting each add to the total —
+  but they’re also what turns a patio into an outdoor room.
 
 ## Pavers vs. concrete on cost
 

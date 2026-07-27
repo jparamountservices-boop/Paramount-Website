@@ -448,7 +448,7 @@ export const services: Service[] = [
       {
         h2: 'Design it as one outdoor room',
         body: [
-          'We can integrate seat walls, fire pits, outdoor kitchens, steps and lighting so the patio reads as one designed space rather than a slab with furniture on it. See our related hardscape services to build the whole backyard at once.',
+          'We can integrate seat walls, fire pits, steps and lighting so the patio reads as one designed space rather than a slab with furniture on it. See our related hardscape services to build the whole backyard at once.',
         ],
       },
     ],
@@ -464,7 +464,7 @@ export const services: Service[] = [
         a: 'Most residential paver patios take about 3–7 working days depending on size, access and features. The base work is what takes the time — and it’s what makes the patio last.',
       },
     ],
-    related: ['pavers', 'concrete/patio', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'retaining-walls'],
+    related: ['pavers', 'concrete/patio', 'hardscapes/fire-pits', 'retaining-walls'],
   },
 
   {
@@ -595,15 +595,15 @@ export const services: Service[] = [
     isHub: true,
     navGroup: 'Hardscapes',
     navLabel: 'Hardscapes (overview)',
-    title: 'Hardscaping Knoxville TN | Retaining Walls, Fire Pits & Outdoor Living | Paramount',
+    title: 'Hardscaping Knoxville TN | Retaining Walls, Fire Pits & Walkways | Paramount',
     metaDescription:
-      'Full-service hardscaping in Knoxville, TN — retaining walls, walkways, fire pits, outdoor fireplaces and outdoor kitchens designed and built as one outdoor living space. Free estimates: (865) 237-9770.',
+      'Full-service hardscaping in Knoxville, TN — retaining walls, walkways, steps and fire pits designed and built as one outdoor living space. Free estimates: (865) 237-9770.',
     h1: 'Hardscaping in Knoxville, TN',
     heroSubhead:
-      'Retaining walls, fire features, outdoor kitchens and walkways — designed together so your whole backyard works as one outdoor living space.',
+      'Retaining walls, fire pits and walkways — designed together so your whole backyard works as one outdoor living space.',
     primaryKeyword: 'hardscaping Knoxville TN',
     intro: [
-      'Hardscaping is everything in your landscape that isn’t plants — the walls, patios, walkways, steps, fire pits and outdoor kitchens that make a yard usable. Done piecemeal, these features fight each other. Designed together, they turn a sloped, awkward lot into a series of outdoor rooms.',
+      'Hardscaping is everything in your landscape that isn’t plants — the walls, patios, walkways, steps and fire pits that make a yard usable. Done piecemeal, these features fight each other. Designed together, they turn a sloped, awkward lot into a series of outdoor rooms.',
       'Paramount plans and builds complete hardscapes across Knoxville and East Tennessee, handling grading, drainage, structure and finish so every element ties into the next.',
     ],
     sections: [
@@ -613,8 +613,6 @@ export const services: Service[] = [
           'Retaining walls and seat walls',
           'Paver and stone walkways, paths and steps',
           'Fire pits and fire features',
-          'Outdoor fireplaces',
-          'Outdoor kitchens and grill islands',
           'Patios in concrete, pavers or natural stone',
         ],
       },
@@ -628,14 +626,14 @@ export const services: Service[] = [
     faqs: [
       {
         q: 'What’s the difference between hardscaping and landscaping?',
-        a: 'Landscaping is the living material — grass, plants, trees. Hardscaping is the built material — patios, walls, walkways, fire features and outdoor kitchens. We focus on the hardscape: the structure that makes an outdoor space usable year-round.',
+        a: 'Landscaping is the living material — grass, plants, trees. Hardscaping is the built material — patios, walls, walkways and fire features. We focus on the hardscape: the structure that makes an outdoor space usable year-round.',
       },
       {
         q: 'Can you build my whole backyard in phases?',
         a: 'Yes. We can design the full plan up front and build it in phases as budget allows, so each stage fits the master plan instead of boxing you in later.',
       },
     ],
-    related: ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'pavers/patios'],
+    related: ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/walkways', 'pavers/patios'],
   },
   {
     path: 'retaining-walls',
@@ -730,49 +728,7 @@ export const services: Service[] = [
         a: 'Usually yes — we can build a fire feature into an existing patio and match the surrounding material. We’ll assess the surface and clearances first.',
       },
     ],
-    related: ['hardscapes', 'hardscapes/outdoor-fireplaces', 'pavers/patios', 'concrete/patio', 'hardscapes/outdoor-kitchens'],
-  },
-  {
-    path: 'hardscapes/outdoor-kitchens',
-    parent: 'hardscapes',
-    navGroup: 'Hardscapes',
-    navLabel: 'Outdoor Kitchens',
-    title: 'Outdoor Kitchens Knoxville TN | Design & Build | Paramount',
-    metaDescription:
-      'Custom outdoor kitchen design and construction in Knoxville, TN — grill islands, counters, masonry and utilities built to last. Free estimates: (865) 237-9770.',
-    h1: 'Outdoor Kitchens in Knoxville, TN',
-    heroSubhead:
-      'Cook, host and hang out without running back inside. Custom-built masonry outdoor kitchens and grill islands designed around how you entertain.',
-    primaryKeyword: 'outdoor kitchen Knoxville TN',
-    intro: [
-      'An outdoor kitchen turns your patio into the entertaining hub of the house. We design and build custom outdoor kitchens and grill islands — masonry structure, durable counters, and the gas, water and electrical to make them work — all tied into your patio and hardscape.',
-    ],
-    sections: [
-      {
-        h2: 'What we build into outdoor kitchens',
-        bullets: [
-          'Masonry grill islands with built-in grills',
-          'Counters in granite, stone or concrete',
-          'Bar seating, storage and refrigeration',
-          'Pizza ovens, side burners and smokers',
-          'Gas, water and electrical rough-in',
-          'Coordinated fireplace or fire-pit features',
-        ],
-      },
-    ],
-    costNote:
-      'Outdoor kitchens in Knoxville range widely — roughly $6,000 for a basic grill island to $30,000+ for a full kitchen with premium appliances, counters and utilities. We scope to your budget and how you entertain.',
-    faqs: [
-      {
-        q: 'How much does an outdoor kitchen cost in Knoxville?',
-        a: 'A simple masonry grill island can start around $6,000, while a full outdoor kitchen with premium appliances, stone counters, refrigeration and utilities can run $20,000–$30,000+. We design to your budget and priorities.',
-      },
-      {
-        q: 'Can you run gas, water and power to it?',
-        a: 'Yes. We coordinate the gas, water and electrical rough-in as part of the build so the kitchen is fully functional, not just a good-looking shell.',
-      },
-    ],
-    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-fireplaces', 'pavers/patios'],
+    related: ['hardscapes', 'hardscapes/walkways', 'pavers/patios', 'concrete/patio', 'retaining-walls'],
   },
 
   {
@@ -810,80 +766,6 @@ export const services: Service[] = [
       },
     ],
     related: ['hardscapes', 'retaining-walls', 'pavers/walkways', 'concrete/sidewalks-walkways'],
-  },
-  {
-    path: 'hardscapes/outdoor-fireplaces',
-    parent: 'hardscapes',
-    navGroup: 'Hardscapes',
-    navLabel: 'Outdoor Fireplaces',
-    title: 'Outdoor Fireplaces Knoxville TN | Custom Masonry | Paramount',
-    metaDescription:
-      'Custom outdoor fireplace design and construction in Knoxville, TN — masonry, stone and brick fireplaces that anchor your patio and extend the season. Free estimates: (865) 237-9770.',
-    h1: 'Outdoor Fireplaces in Knoxville, TN',
-    heroSubhead:
-      'The centerpiece that turns a patio into a year-round outdoor room. Custom masonry fireplaces built to last.',
-    primaryKeyword: 'outdoor fireplace Knoxville TN',
-    intro: [
-      'An outdoor fireplace is a bigger statement than a fire pit — a true architectural centerpiece that anchors a patio, blocks wind, and extends your outdoor season deep into the cooler months. We design and build custom masonry fireplaces in stone and brick, wood-burning or gas.',
-    ],
-    sections: [
-      {
-        h2: 'What we build',
-        bullets: [
-          'Wood-burning and gas outdoor fireplaces',
-          'Natural stone, manufactured stone and brick finishes',
-          'Integrated wood storage, hearths and mantels',
-          'Chimney and firebox built to draft properly',
-          'Coordinated with your patio, seating and outdoor kitchen',
-        ],
-      },
-    ],
-    costNote:
-      'Custom outdoor fireplaces in Knoxville commonly run about $8,000–$20,000+ depending on size, materials, gas plumbing and chimney height.',
-    faqs: [
-      {
-        q: 'Fireplace or fire pit — which should I build?',
-        a: 'A fire pit is social (people gather around all sides), lower cost, and great for open patios. A fireplace is a dramatic architectural focal point that blocks wind and radiates heat in one direction — better against a wall or at the edge of a patio. We build both.',
-      },
-    ],
-    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens'],
-  },
-  {
-    path: 'hardscapes/grill-islands',
-    parent: 'hardscapes',
-    navGroup: 'Hardscapes',
-    navLabel: 'Grill Islands',
-    title: 'Grill Islands Knoxville TN | Built-In BBQ Islands | Paramount',
-    metaDescription:
-      'Custom grill island and built-in BBQ construction in Knoxville, TN — masonry islands with built-in grills, counters and storage. Free estimates: (865) 237-9770.',
-    h1: 'Grill Islands in Knoxville, TN',
-    heroSubhead:
-      'The entry point to outdoor cooking — a built-in grill island with counters and storage, without the full outdoor-kitchen budget.',
-    primaryKeyword: 'grill island Knoxville TN',
-    intro: [
-      'A grill island is the most popular first step into outdoor cooking: a solid masonry structure with a built-in grill, counter space to work, and storage below — all built to match your patio. It delivers most of the outdoor-kitchen experience at a friendlier budget, and you can always expand later.',
-    ],
-    sections: [
-      {
-        h2: 'What goes into a grill island',
-        bullets: [
-          'Masonry or framed-and-veneered island structure',
-          'Built-in gas grill and side burners',
-          'Durable stone, granite or concrete counters',
-          'Storage doors, drawers and trash pull-outs',
-          'Gas and electrical rough-in',
-        ],
-      },
-    ],
-    costNote:
-      'Grill islands in Knoxville commonly run about $4,000–$12,000 depending on size, appliances, counters and utilities — a step below a full outdoor kitchen.',
-    faqs: [
-      {
-        q: 'Can I add to a grill island later?',
-        a: 'Yes — a grill island is a great phase-one project. We can design it so a future outdoor kitchen, fireplace or bar ties right in when you’re ready to expand.',
-      },
-    ],
-    related: ['hardscapes/outdoor-kitchens', 'hardscapes', 'hardscapes/fire-pits'],
   },
 ];
 
