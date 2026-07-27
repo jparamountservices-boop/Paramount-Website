@@ -7,7 +7,7 @@
  * concrete/decorative-and-stamped, pavers, hardscapes, retaining-walls, decks.
  */
 
-export type NavGroup = 'Concrete' | 'Pavers' | 'Hardscapes' | 'Decks & Masonry';
+export type NavGroup = 'Concrete' | 'Pavers' | 'Hardscapes';
 
 export interface Faq {
   q: string;
@@ -195,7 +195,7 @@ export const services: Service[] = [
         a: 'Yes — with stamped patterns, integral color and borders we can complement your home’s brick, stone or existing patio so the new space looks original to the house.',
       },
     ],
-    related: ['concrete', 'concrete/decorative-and-stamped', 'pavers/patios', 'hardscapes/fire-pits', 'decks'],
+    related: ['concrete', 'concrete/decorative-and-stamped', 'pavers/patios', 'hardscapes/fire-pits'],
   },
   {
     path: 'concrete/decorative-and-stamped',
@@ -326,7 +326,7 @@ export const services: Service[] = [
         a: 'It depends on the load. A shed or patio slab is usually 4 inches; a garage or shop floor that carries vehicles is typically 5–6 inches with heavier reinforcement. We size the slab to what it’ll carry.',
       },
     ],
-    related: ['concrete', 'concrete/driveways', 'masonry'],
+    related: ['concrete', 'concrete/driveways'],
   },
   {
     path: 'concrete/pool-decks',
@@ -635,7 +635,7 @@ export const services: Service[] = [
         a: 'Yes. We can design the full plan up front and build it in phases as budget allows, so each stage fits the master plan instead of boxing you in later.',
       },
     ],
-    related: ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'pavers/patios', 'decks'],
+    related: ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'pavers/patios'],
   },
   {
     path: 'retaining-walls',
@@ -772,7 +772,7 @@ export const services: Service[] = [
         a: 'Yes. We coordinate the gas, water and electrical rough-in as part of the build so the kitchen is fully functional, not just a good-looking shell.',
       },
     ],
-    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-fireplaces', 'pavers/patios', 'masonry'],
+    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-fireplaces', 'pavers/patios'],
   },
 
   {
@@ -846,7 +846,7 @@ export const services: Service[] = [
         a: 'A fire pit is social (people gather around all sides), lower cost, and great for open patios. A fireplace is a dramatic architectural focal point that blocks wind and radiates heat in one direction — better against a wall or at the edge of a patio. We build both.',
       },
     ],
-    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens', 'masonry'],
+    related: ['hardscapes', 'hardscapes/fire-pits', 'hardscapes/outdoor-kitchens'],
   },
   {
     path: 'hardscapes/grill-islands',
@@ -883,83 +883,7 @@ export const services: Service[] = [
         a: 'Yes — a grill island is a great phase-one project. We can design it so a future outdoor kitchen, fireplace or bar ties right in when you’re ready to expand.',
       },
     ],
-    related: ['hardscapes/outdoor-kitchens', 'hardscapes', 'hardscapes/fire-pits', 'masonry'],
-  },
-
-  /* ================= DECKS & MASONRY ================= */
-  {
-    path: 'decks',
-    navGroup: 'Decks & Masonry',
-    navLabel: 'Decks',
-    title: 'Deck Builders Knoxville TN | Custom Decks & Pergolas | Paramount',
-    metaDescription:
-      'Custom deck design and construction in Knoxville, TN — wood and composite decks, pergolas and covered structures built to last. Free estimates: (865) 237-9770.',
-    h1: 'Custom Decks in Knoxville, TN',
-    heroSubhead:
-      'Where a patio can’t reach — elevated, multi-level and covered outdoor space, built to code and built to last.',
-    primaryKeyword: 'deck builder Knoxville TN',
-    intro: [
-      'When your grade drops off or your living space is on the second floor, a deck is how you get usable outdoor space. We design and build custom decks and pergolas across Knoxville — wood and composite — engineered and built to code so they’re safe underfoot for the long haul.',
-    ],
-    sections: [
-      {
-        h2: 'Decks we build',
-        bullets: [
-          'Composite decks (Trex and similar) — low maintenance, long warranty',
-          'Pressure-treated and hardwood decks',
-          'Multi-level and wrap-around decks',
-          'Covered decks, pergolas and pavilions',
-          'Deck-and-patio combinations',
-        ],
-      },
-    ],
-    costNote:
-      'Decks in Knoxville typically run about $30–$60 per square foot depending on material (pressure-treated vs. composite), height, railings and covers.',
-    faqs: [
-      {
-        q: 'Composite or wood decking — which should I choose?',
-        a: 'Composite (like Trex) costs more up front but barely needs maintenance and carries long warranties — no staining or sealing. Pressure-treated wood is cheaper to build but needs regular upkeep and doesn’t last as long. We build both and will price them side by side.',
-      },
-      {
-        q: 'Do you pull permits for decks?',
-        a: 'Yes. Decks require permits and inspections in Knox County and surrounding jurisdictions. We build to code and handle the permitting.',
-      },
-    ],
-    related: ['concrete/patio', 'pavers/patios', 'hardscapes', 'masonry'],
-  },
-  {
-    path: 'masonry',
-    navGroup: 'Decks & Masonry',
-    navLabel: 'Masonry',
-    title: 'Masonry Contractor Knoxville TN | Brick, Block & Stone | Paramount',
-    metaDescription:
-      'Custom masonry in Knoxville, TN — brick, block and natural stone work, columns, veneers, steps and outdoor features. Free estimates: (865) 237-9770.',
-    h1: 'Masonry in Knoxville, TN',
-    heroSubhead:
-      'Brick, block and natural stone craftsmanship that adds architectural character and lasting value to your property.',
-    primaryKeyword: 'masonry contractor Knoxville TN',
-    intro: [
-      'Our masonry team works in brick, block, and natural stone to build the features that give a property permanence and character — from stone veneers and columns to steps, mailboxes and the structure behind fireplaces and outdoor kitchens.',
-    ],
-    sections: [
-      {
-        h2: 'Masonry work we do',
-        bullets: [
-          'Natural and manufactured stone veneer',
-          'Brick and block columns, piers and mailboxes',
-          'Stone and brick steps and stoops',
-          'Structural masonry for fireplaces, kitchens and walls',
-          'Repairs and tuckpointing',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        q: 'Do you do both structural masonry and veneer?',
-        a: 'Yes — from structural block and brick to decorative natural and manufactured stone veneer. Much of our masonry ties into fire features, outdoor kitchens and retaining walls.',
-      },
-    ],
-    related: ['hardscapes/outdoor-fireplaces', 'hardscapes/outdoor-kitchens', 'retaining-walls', 'decks'],
+    related: ['hardscapes/outdoor-kitchens', 'hardscapes', 'hardscapes/fire-pits'],
   },
 ];
 

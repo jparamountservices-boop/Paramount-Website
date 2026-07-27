@@ -18,7 +18,7 @@ interface Props {
 }
 const { compact = false } = Astro.props;
 
-const serviceOptions = services.filter((s) => !s.isHub || s.path === 'masonry');
+const serviceOptions = services.filter((s) => !s.isHub);
 const useMailto = !company.formEndpoint;
 const action = company.formEndpoint || `mailto:${company.email}`;
 const thankYou = new URL('/thank-you/', company.url).href;

@@ -20,8 +20,6 @@ photos *you* put in these folders.
 | `fire-pits/` | Fire pits & fire features | /hardscapes/fire-pits/ |
 | `outdoor-kitchens/` | Outdoor kitchens & grill islands | /hardscapes/outdoor-kitchens/ |
 | `outdoor-fireplaces/` | Outdoor fireplaces | /hardscapes/outdoor-fireplaces/ |
-| `decks/` | Decks & pergolas | /decks/ |
-| `masonry/` | Brick / block / stone masonry | /masonry/ |
 
 ## Naming your files (this controls the caption + order)
 

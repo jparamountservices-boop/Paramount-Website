@@ -7,15 +7,17 @@ import QuoteForm from '../components/QuoteForm.astro';
 import Gallery from '../components/Gallery.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
 import { company } from '../data/company';
-import { hubServices, services } from '../data/services';
+import { getService, services } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
 
 const path = '/';
 
-const featured = [
-  ...hubServices,
-  ...services.filter((s) => ['retaining-walls', 'decks'].includes(s.path)),
-];
+// Concrete is the flagship service — featured prominently.
+const concrete = getService('concrete')!;
+const concreteSubs = services.filter((s) => s.parent === 'concrete');
+const secondary = ['pavers', 'retaining-walls', 'hardscapes']
+  .map((p) => getService(p))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
 const steps = [
   { n: '01', t: 'Free on-site estimate', d: 'We visit, listen to what you want, and give you an honest, itemized quote — no pressure.' },
@@ -77,23 +79,44 @@ const homeFaqs = [
 
   <TrustBar />
 
-  <!-- SERVICES -->
+  <!-- SERVICES — concrete-first -->
   <section class="wrap py-16">
     <div class="max-w-2xl">
       <p class="eyebrow">What we build</p>
-      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">One team for your whole outdoor project</h2>
-      <p class="mt-4 text-[var(--color-concrete)]">From a single driveway to a full backyard with a paver patio, retaining walls and an outdoor kitchen — we design and build it as one cohesive space.</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Concrete is what we do best</h2>
+      <p class="mt-4 text-[var(--color-concrete)]">Concrete is our craft and our #1 service — driveways, patios and stamped work built to last. And because most projects don’t stop at the slab, we handle the pavers, walls and hardscapes around it too.</p>
     </div>
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        featured.map((s) => (
-          <a href={`/${s.path}/`} class="group flex flex-col rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)] hover:-translate-y-1">
-            <p class="text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
-            <p class="mt-2 flex-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
-            <span class="mt-4 text-sm font-bold text-[var(--color-flame)]">Learn more →</span>
-          </a>
-        ))
-      }
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <!-- Featured: Concrete -->
+      <a href="/concrete/" class="group flex flex-col justify-between rounded-2xl border-2 border-[var(--color-flame)] bg-[var(--color-graphite)] p-8 transition hover:-translate-y-1">
+        <div>
+          <span class="inline-block rounded-full bg-[var(--color-flame)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Our #1 service</span>
+          <h3 class="mt-4 text-2xl font-black sm:text-3xl group-hover:text-[var(--color-flame)]">Concrete in Knoxville, TN</h3>
+          <p class="mt-3 text-[var(--color-concrete)]">{concrete.heroSubhead}</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {concreteSubs.map((s) => (
+              <span class="rounded-full border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-1 text-sm text-[var(--color-concrete)]">{s.navLabel}</span>
+            ))}
+          </div>
+        </div>
+        <span class="mt-6 font-bold text-[var(--color-flame)]">Explore all concrete services →</span>
+      </a>
+
+      <!-- Secondary: pavers, retaining walls, hardscapes -->
+      <div class="grid gap-4">
+        {
+          secondary.map((s) => (
+            <a href={`/${s.path}/`} class="group flex items-start justify-between gap-4 rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
+              <div>
+                <p class="text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
+                <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
+              </div>
+              <span class="text-xl text-[var(--color-flame)]">→</span>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 

@@ -1,11 +1,11 @@
 ---
-title: "Do I Need a Permit for a Patio, Deck or Retaining Wall in Knox County?"
-description: "When you need a permit for a patio, deck, driveway or retaining wall in Knox County and Knoxville, TN — the general rules and how a good contractor handles it."
+title: "Do I Need a Permit for a Patio, Driveway or Retaining Wall in Knox County?"
+description: "When you need a permit for a patio, driveway or retaining wall in Knox County and Knoxville, TN — the general rules and how a good contractor handles it."
 pubDate: 2026-03-18
 category: "How-to"
 primaryKeyword: "patio permit Knox County"
 heroSubhead: "The short version: some projects need permits, some don't — and a good contractor handles it either way. Here's the lay of the land."
-related: ["retaining-walls", "decks", "concrete/patio"]
+related: ["retaining-walls", "concrete/patio", "concrete/driveways"]
 ---
 
 One of the most common questions we get before a project: **do I need a permit?** Rules vary by
@@ -22,12 +22,6 @@ the general lay of the land in the Knoxville / Knox County area, and how we hand
 of the footing — typically require an **engineered design and a permit.** Shorter garden and seat
 walls usually don't. Tiered walls can trigger requirements too, depending on spacing. This is safety,
 not red tape: a tall wall holds back tons of soil.
-
-## Decks
-
-**Usually yes.** Decks — especially attached and elevated ones — generally require a permit and
-inspections for structural safety (footings, ledger attachment, railings). We build to code and
-handle the permitting.
 
 ## Patios (on grade)
 

@@ -13,9 +13,7 @@ export type GalleryCategory =
   | 'Stamped'
   | 'Pavers'
   | 'Retaining Walls'
-  | 'Fire & Outdoor Living'
-  | 'Decks'
-  | 'Masonry';
+  | 'Fire & Outdoor Living';
 
 export interface GalleryItem {
   title: string;
@@ -33,8 +31,6 @@ export const galleryCategories: GalleryCategory[] = [
   'Pavers',
   'Retaining Walls',
   'Fire & Outdoor Living',
-  'Decks',
-  'Masonry',
 ];
 
 export const gallery: GalleryItem[] = [
@@ -45,9 +41,7 @@ export const gallery: GalleryItem[] = [
   { title: 'Fire Pit & Patio', category: 'Fire & Outdoor Living', href: '/hardscapes/fire-pits/', location: 'Knoxville', alt: 'Custom stone fire pit built into a paver patio in Knoxville, TN' },
   { title: 'Outdoor Kitchen', category: 'Fire & Outdoor Living', href: '/hardscapes/outdoor-kitchens/', location: 'Farragut', alt: 'Masonry outdoor kitchen with built-in grill in Farragut, TN' },
   { title: 'Paver Driveway', category: 'Pavers', href: '/pavers/driveways/', location: 'Farragut', alt: 'Interlocking paver driveway in Farragut, TN' },
-  { title: 'Composite Deck', category: 'Decks', href: '/decks/', location: 'Sevierville', alt: 'Multi-level composite deck on a sloped lot in Sevierville, TN' },
   { title: 'Stone Steps & Walkway', category: 'Retaining Walls', href: '/hardscapes/walkways/', location: 'Knoxville', alt: 'Natural stone steps and walkway on a hillside in Knoxville, TN' },
   { title: 'Outdoor Fireplace', category: 'Fire & Outdoor Living', href: '/hardscapes/outdoor-fireplaces/', location: 'Maryville', alt: 'Stone outdoor fireplace on a covered patio in Maryville, TN' },
-  { title: 'Stone Veneer & Columns', category: 'Masonry', href: '/masonry/', location: 'Knoxville', alt: 'Natural stone veneer columns and masonry work in Knoxville, TN' },
   { title: 'Pool Deck', category: 'Stamped', href: '/concrete/pool-decks/', location: 'Farragut', alt: 'Stamped, slip-resistant concrete pool deck in Farragut, TN' },
 ];

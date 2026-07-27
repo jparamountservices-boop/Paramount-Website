@@ -12,7 +12,7 @@ export interface ProjectCategory {
   /** Caption label */
   label: string;
   /** Gallery filter chip group */
-  group: 'Concrete' | 'Pavers' | 'Hardscapes' | 'Decks' | 'Masonry';
+  group: 'Concrete' | 'Pavers' | 'Hardscapes';
   /** Service page these photos link to */
   href: string;
 }
@@ -29,8 +29,6 @@ export const projectCategories: ProjectCategory[] = [
   { folder: 'fire-pits', label: 'Fire Pit', group: 'Hardscapes', href: '/hardscapes/fire-pits/' },
   { folder: 'outdoor-kitchens', label: 'Outdoor Kitchen', group: 'Hardscapes', href: '/hardscapes/outdoor-kitchens/' },
   { folder: 'outdoor-fireplaces', label: 'Outdoor Fireplace', group: 'Hardscapes', href: '/hardscapes/outdoor-fireplaces/' },
-  { folder: 'decks', label: 'Deck', group: 'Decks', href: '/decks/' },
-  { folder: 'masonry', label: 'Masonry', group: 'Masonry', href: '/masonry/' },
 ];
 
 export const projectFolders = projectCategories.map((c) => c.folder);

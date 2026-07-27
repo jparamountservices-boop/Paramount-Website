@@ -15,7 +15,7 @@ export const company = {
   yearsExperience: 20,
   tagline: 'Knoxville Tennessee’s favorite concrete & hardscape contractor.',
   description:
-    'Paramount Concrete & Hardscapes designs and builds concrete, pavers, retaining walls, patios, outdoor kitchens, and decks for homeowners across Knoxville and East Tennessee.',
+    'Paramount Concrete & Hardscapes designs and builds concrete, pavers, retaining walls, patios, fire features and outdoor kitchens for homeowners across Knoxville and East Tennessee.',
 
   // NAP — must match Google Business Profile + every citation exactly.
   phone: '(865) 237-9770',
