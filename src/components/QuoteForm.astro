@@ -76,8 +76,14 @@ const thankYou = new URL('/thank-you/', company.url).href;
     </label>
   )}
 
-  <button type="submit" class="btn btn-primary w-full text-base">Get My Free Estimate</button>
+  <button type="submit" class="btn btn-primary w-full text-base">Request My Free Phone Consultation</button>
   <p class="text-center text-xs text-[var(--color-concrete-dim)]">
-    Prefer to talk? Call <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>. No pressure, no spam.
+    We’ll call to talk through your project before anything else. Prefer to talk now? Call
+    <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>.
+  </p>
+  <p class="rounded-lg bg-[var(--color-graphite-2)] px-3 py-2 text-center text-xs text-[var(--color-bone)]">
+    📷 <strong>Have photos or measurements?</strong> Text them to
+    <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>
+    for a faster, more accurate price.
   </p>
 </form>

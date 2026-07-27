@@ -50,4 +50,4 @@ down the trade-offs.
 The only way to know your real number is to measure your yard and talk through what you want. We give
 free, itemized estimates — base prep, pavers, features and all — so nothing is hidden.
 
-**[Get your free paver patio estimate →](/contact/)** or call **(865) 237-9770.**
+**[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**

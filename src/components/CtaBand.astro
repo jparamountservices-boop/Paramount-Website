@@ -7,7 +7,7 @@ interface Props {
 }
 const {
   heading = 'Ready to build something that lasts?',
-  sub = 'Get a free, no-pressure estimate from Knoxville’s concrete & hardscape team.',
+  sub = 'Book a free phone consultation with Knoxville’s concrete & hardscape team — we’ll talk through your project and pricing before anyone drives out.',
 } = Astro.props;
 ---
 
@@ -18,7 +18,7 @@ const {
       <p class="mt-2 max-w-xl text-white/90">{sub}</p>
     </div>
     <div class="flex flex-col gap-3 sm:flex-row">
-      <a href="/contact/" class="btn bg-[var(--color-bone)] text-white hover:bg-black">Get a Free Quote</a>
+      <a href="/contact/" class="btn bg-[var(--color-bone)] text-white hover:bg-black">Book a Free Phone Consultation</a>
       <a href={company.phoneHref} class="btn border-2 border-white bg-transparent text-white hover:bg-white hover:text-[var(--color-flame)]">
         Call {company.phone}
       </a>

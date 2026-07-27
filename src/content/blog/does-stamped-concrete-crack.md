@@ -56,5 +56,5 @@ the savings are hiding — and it's exactly what leads to cracking down the road
 We build stamped concrete on a proper base with the reinforcement and jointing that keep cracking
 minor and out of sight, and we seal it to protect the color.
 
-Thinking about a stamped patio, driveway or pool deck? **[Get a free estimate →](/contact/)** or call
+Thinking about a stamped patio, driveway or pool deck? **[Book a free phone consultation →](/contact/)** or call
 **(865) 237-9770** and we'll walk you through exactly how we'd build yours to last.

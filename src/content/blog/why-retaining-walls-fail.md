@@ -63,5 +63,5 @@ Every retaining wall we build starts underground:
 The finish — block, natural stone or boulders — is the easy part. The reason our walls are still
 standing straight in ten years is everything behind them.
 
-Got a slope that needs holding back, or a wall that's already leaning? **[Get a free estimate
+Got a slope that needs holding back, or a wall that's already leaning? **[Book a free phone consultation
 →](/contact/)** or call **(865) 237-9770.**

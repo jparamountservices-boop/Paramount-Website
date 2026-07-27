@@ -47,4 +47,4 @@ Honestly, the **brand matters less than three other things:**
 We'll bring samples from all three, show you what works with your home, and give you an honest
 recommendation for your budget — then install it on a base built to last.
 
-**[Get a free paver estimate →](/contact/)** or call **(865) 237-9770.**
+**[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**

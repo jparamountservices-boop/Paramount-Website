@@ -61,5 +61,5 @@ installed with polymeric sand and edge restraint (ours are).
 Either way, the install quality matters more than the material. A cheap paver job on a bad base fails
 faster than good stamped concrete, and vice versa.
 
-Want a side-by-side quote for your patio? **[Get a free estimate →](/contact/)** — we'll price both
+Want a side-by-side quote for your patio? **[Book a free phone consultation →](/contact/)** — we'll price both
 and let you decide. Or call **(865) 237-9770.**

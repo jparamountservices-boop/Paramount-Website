@@ -46,5 +46,5 @@ You don't have to navigate this alone. We identify what your specific project ne
 engineered drawings, and pull the permits — so it's built to code and inspected, protecting you at
 resale and with your insurance.
 
-Planning a project and not sure about permits? **[Get a free estimate →](/contact/)** or call
+Planning a project and not sure about permits? **[Book a free phone consultation →](/contact/)** or call
 **(865) 237-9770** and we'll walk you through it.

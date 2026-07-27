@@ -45,4 +45,4 @@ Concrete offers broom, stamped and decorative finishes. Pavers offer a much wide
 - Choose **pavers** if you want maximum lifespan, easy repairs and the highest curb appeal — and you plan to stay a while.
 
 Either way, the base prep matters more than the material. Want both priced for your driveway?
-**[Get a free estimate →](/contact/)** or call **(865) 237-9770.**
+**[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**

@@ -40,4 +40,4 @@ and rebuilding a collapsed wall costs far more than building it right once.
 
 Wall cost depends on your slope, soil and height — we measure and give you a free, itemized estimate.
 
-**[Get your free retaining wall estimate →](/contact/)** or call **(865) 237-9770.**
+**[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**
