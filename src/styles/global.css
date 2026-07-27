@@ -2,23 +2,28 @@
 
 /* ============================================================
    Paramount Concrete & Hardscapes — design system
-   Dark, industrial, high-contrast. Concrete + molten-steel accent.
+   LIGHT theme matching paramountknox.com: white + warm orange,
+   soft peach section bands, black logo/headings.
+   NOTE: token names are legacy (ink/graphite/bone…) but now hold
+   LIGHT-theme values — see role comments.
    ============================================================ */
 @theme {
-  /* Brand */
-  --color-ink: #0b0d0f;          /* near-black base */
-  --color-graphite: #15181c;     /* surface */
-  --color-graphite-2: #1e2228;   /* raised surface */
-  --color-steel: #2b3138;        /* borders / lines */
-  --color-concrete: #c7c2b8;     /* warm concrete gray text */
-  --color-concrete-dim: #8b8880;
-  --color-bone: #f4f1ea;         /* headings on dark */
+  /* Surfaces */
+  --color-ink: #ffffff;          /* page background */
+  --color-graphite: #faf6f1;     /* cards / footer / raised surface (warm off-white) */
+  --color-graphite-2: #f7e3ce;   /* peach accent band */
+  --color-steel: #e9e2d8;        /* borders / hairlines */
 
-  /* Accent — molten orange (safety/industrial) */
-  --color-flame: #ff5c1a;
-  --color-flame-600: #e94c0d;
-  --color-flame-300: #ff8c5a;
-  --color-amber: #ffb020;
+  /* Text */
+  --color-bone: #1b1712;         /* headings (near-black, warm) */
+  --color-concrete: #4b463f;     /* body text */
+  --color-concrete-dim: #8a8377; /* muted text */
+
+  /* Accent — Paramount orange */
+  --color-flame: #e8792b;
+  --color-flame-600: #d1691f;    /* hover */
+  --color-flame-300: #bd6014;    /* link/accent text readable on white */
+  --color-amber: #e0a417;
 
   --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -52,7 +57,7 @@ a {
   text-decoration: none;
 }
 
-/* Utility: uppercase industrial eyebrow label */
+/* Uppercase industrial eyebrow label */
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -86,7 +91,7 @@ a {
 .btn-primary {
   background: var(--color-flame);
   color: #fff;
-  box-shadow: 0 8px 24px -8px rgba(255, 92, 26, 0.6);
+  box-shadow: 0 8px 20px -10px rgba(232, 121, 43, 0.7);
 }
 .btn-primary:hover { background: var(--color-flame-600); transform: translateY(-2px); }
 .btn-ghost {
@@ -94,9 +99,9 @@ a {
   color: var(--color-bone);
   border: 1.5px solid var(--color-steel);
 }
-.btn-ghost:hover { border-color: var(--color-flame); color: var(--color-flame-300); }
+.btn-ghost:hover { border-color: var(--color-flame); color: var(--color-flame); }
 
-/* Prose defaults for long-form copy on dark backgrounds */
+/* Long-form copy */
 .prose-dark { color: var(--color-concrete); line-height: 1.75; font-size: 1.05rem; }
 .prose-dark p { margin-block: 0 1.1rem; }
 .prose-dark h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-block: 2.5rem 1rem; }

@@ -31,7 +31,7 @@ The pavers themselves are only part of the cost. Here's the real breakdown:
 - **Base work (the big one).** A paver patio is only as good as its base — excavation, a deep
   compacted crushed-stone base, and a screeded bedding layer. This is the labor that makes it last 50
   years, and it's the first thing cheap installs skimp on.
-- **Paver choice.** Standard concrete pavers cost less; premium Belgard, Techo-Bloc and Unilock lines,
+- **Paver choice.** Standard concrete pavers cost less; premium Belgard, Techo-Bloc and Regal lines,
   or natural stone, cost more.
 - **Pattern & cuts.** Herringbone, circles, borders and lots of curved cuts add labor.
 - **Edge restraint & polymeric sand.** Non-negotiable for a patio that stays tight and weed-free.

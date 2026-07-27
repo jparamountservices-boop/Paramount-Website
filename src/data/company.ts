@@ -9,16 +9,18 @@
 export const company = {
   name: 'Paramount Concrete & Hardscapes',
   legalName: 'Paramount Renovations',
-  // Keep ONE tagline number everywhere.
+  // Company founded 2018 (per your live site: "Since 2018"). NOTE: elsewhere you
+  // mention 15+ years of trade experience and 20 years — pick which to feature.
+  yearFounded: 2018,
   yearsExperience: 20,
-  tagline: 'Knoxville’s concrete & hardscape experts — built right the first time.',
+  tagline: 'Knoxville Tennessee’s favorite concrete & hardscape contractor.',
   description:
     'Paramount Concrete & Hardscapes designs and builds concrete, pavers, retaining walls, patios, outdoor kitchens, and decks for homeowners across Knoxville and East Tennessee.',
 
   // NAP — must match Google Business Profile + every citation exactly.
   phone: '(865) 237-9770',
   phoneHref: 'tel:+18652379770',
-  email: 'info@paramountknox.com', // PLACEHOLDER — confirm
+  email: 'j.paramountservices@gmail.com',
   address: {
     street: '1201 Bob Kirby Rd',
     city: 'Knoxville',

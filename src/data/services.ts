@@ -396,7 +396,7 @@ export const services: Service[] = [
       {
         h2: 'We install premium paver systems',
         body: [
-          'We work with the manufacturers that back their products with real warranties — Belgard, Techo-Bloc and Unilock among them — so you get proven, color-fast pavers, not the cheapest unit on the rack. That means a manufacturer warranty on the pavers and our workmanship warranty on the install.',
+          'We work with the manufacturers that back their products with real warranties — Belgard, Techo-Bloc and Regal among them — so you get proven, color-fast pavers, not the cheapest unit on the rack. That means a manufacturer warranty on the pavers and our workmanship warranty on the install.',
         ],
       },
     ],
@@ -413,7 +413,7 @@ export const services: Service[] = [
       },
       {
         q: 'What paver brands do you use?',
-        a: 'We install premium, warrantied systems including Belgard, Techo-Bloc and Unilock, chosen for color-fastness and durability in East Tennessee’s freeze-thaw climate.',
+        a: 'We install premium, warrantied systems including Belgard, Techo-Bloc and Regal, chosen for color-fastness and durability in East Tennessee’s freeze-thaw climate.',
       },
     ],
     related: ['pavers/patios', 'pavers/driveways', 'pavers/walkways', 'concrete', 'retaining-walls'],
