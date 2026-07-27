@@ -34,30 +34,34 @@
   --radius-lg: 0.5rem;
 }
 
-html {
-  scroll-behavior: smooth;
-  background-color: var(--color-ink);
-  color: var(--color-concrete);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-}
+/* Base element styles live in @layer base so Tailwind utility classes
+   (e.g. text-white on an h1 over a photo) can override them. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ink);
+    color: var(--color-concrete);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
 
-h1, h2, h3, h4 {
-  color: var(--color-bone);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  text-wrap: balance;
-}
+  h1, h2, h3, h4 {
+    color: var(--color-bone);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* Uppercase industrial eyebrow label */

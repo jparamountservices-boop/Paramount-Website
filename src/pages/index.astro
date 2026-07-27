@@ -48,23 +48,32 @@ const homeFaqs = [
 >
   <!-- HERO -->
   <section class="relative overflow-hidden border-b border-[var(--color-steel)]">
-    <div class="pointer-events-none absolute inset-0 opacity-40" style="background-image: radial-gradient(60% 60% at 70% 20%, rgba(255,92,26,0.18), transparent 60%);"></div>
-    <div class="wrap relative grid gap-12 py-16 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:py-24">
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero-home.jpg"
+        alt="New Knoxville home with a wide, freshly-poured concrete driveway by Paramount Concrete & Hardscapes"
+        class="h-full w-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25"></div>
+    </div>
+    <div class="wrap relative grid gap-12 py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:py-28">
       <div>
-        <p class="eyebrow">Knoxville · East Tennessee · Since 2018</p>
-        <h1 class="mt-4 text-4xl font-black leading-[1.02] sm:text-6xl">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/80">Knoxville · East Tennessee · Since 2018</p>
+        <h1 class="mt-4 text-4xl font-black leading-[1.02] text-white sm:text-6xl">
           Concrete &amp; hardscapes,<br />
           <span class="text-[var(--color-flame)]">done right the first time.</span>
         </h1>
-        <p class="mt-6 max-w-xl text-lg text-[var(--color-concrete)]">
+        <p class="mt-6 max-w-xl text-lg text-white/90">
           Driveways, patios, pavers, retaining walls and fire pits — engineered for
           East Tennessee’s clay soil and freeze-thaw winters, and built to last for decades.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="/contact/" class="btn btn-primary text-base">Get a Free Estimate</a>
-          <a href={company.phoneHref} class="btn btn-ghost text-base">Call {company.phone}</a>
+          <a href={company.phoneHref} class="btn border-2 border-white/70 text-base text-white hover:bg-white hover:text-[var(--color-bone)]">Call {company.phone}</a>
         </div>
-        <p class="mt-5 text-sm text-[var(--color-concrete-dim)]">
+        <p class="mt-5 text-sm text-white/80">
           ★★★★★ {company.rating.value}/5 · Licensed &amp; insured · Free, no-pressure quotes
         </p>
       </div>
