@@ -62,13 +62,13 @@ export const company = {
   // Social profiles → used for UI links AND schema `sameAs` (entity/trust signal).
   social: {
     facebook: 'https://www.facebook.com/paramountknox/',
-    instagram: 'https://www.instagram.com/paramountconcretetn/',
+    instagram: 'https://www.instagram.com/parmounthomerenovations/',
     tiktok: '', // not used
     google: '', // PLACEHOLDER — Google Business Profile URL
   },
 
   // Instagram handle shown in the "Follow us" section.
-  instagramHandle: 'paramountconcretetn',
+  instagramHandle: 'parmounthomerenovations',
   // OPTIONAL live-feed embed. Paste the HTML snippet from a no-code widget
   // (Behold.so, SnapWidget, LightWidget, EmbedSocial) to show real IG posts.
   // Left blank = the section renders a "Follow us" grid linking to Instagram.
