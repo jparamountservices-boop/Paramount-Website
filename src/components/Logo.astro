@@ -1,0 +1,26 @@
+---
+/**
+ * Brand logo: mountain-peak mark + wordmark.
+ * NOTE: the mark is a stand-in inspired by the live logo. To use the real logo,
+ * drop it at public/images/logo.svg (or .png) and replace the <svg> below with
+ * an <img src="/images/logo.svg" alt="Paramount Concrete & Hardscapes" />.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<a href="/" class:list={['group flex items-center gap-2.5', className]} aria-label="Paramount Concrete & Hardscapes — home">
+  <svg viewBox="0 0 64 64" class="h-10 w-10 shrink-0 text-[var(--color-bone)]" aria-hidden="true">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="3" />
+    <path d="M8 48 L25 20 L33 31 L43 15 L56 48 Z" fill="currentColor" />
+    <!-- snow notches -->
+    <path d="M25 20 L21 27 L29 27 Z" fill="var(--color-ink)" />
+    <path d="M43 15 L39 23 L47 23 Z" fill="var(--color-ink)" />
+  </svg>
+  <span class="leading-none">
+    <span class="block text-xl font-extrabold uppercase tracking-tight text-[var(--color-bone)]">Paramount</span>
+    <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--color-flame)]">Concrete &amp; Hardscapes</span>
+  </span>
+</a>

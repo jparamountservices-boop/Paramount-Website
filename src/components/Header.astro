@@ -2,6 +2,7 @@
 import { company } from '../data/company';
 import { servicesByGroup } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
+import Logo from './Logo.astro';
 
 const groups = servicesByGroup();
 const groupOrder = ['Concrete', 'Pavers', 'Hardscapes', 'Decks & Masonry'] as const;
@@ -9,14 +10,7 @@ const groupOrder = ['Concrete', 'Pavers', 'Hardscapes', 'Decks & Masonry'] as co
 
 <header class="sticky top-0 z-50 border-b border-[var(--color-steel)] bg-[color-mix(in_srgb,var(--color-ink)_92%,transparent)] backdrop-blur">
   <div class="wrap flex items-center justify-between gap-4 py-3">
-    <a href="/" class="flex items-center gap-2 font-[var(--font-display)]">
-      <span class="text-lg font-extrabold uppercase tracking-tight text-[var(--color-bone)]">
-        Paramount
-      </span>
-      <span class="hidden text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-flame)] sm:inline">
-        Concrete &amp; Hardscapes
-      </span>
-    </a>
+    <Logo />
 
     <!-- Desktop nav -->
     <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
