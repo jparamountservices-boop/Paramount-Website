@@ -1,0 +1,48 @@
+# Netlify deploy configuration for paramountknox.com
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ---------------------------------------------------------------------------
+# 301 redirects: preserve ranking equity from old WordPress/Elementor URLs
+# that changed or were removed in the rebuild. Most slugs were kept identical
+# (/concrete/, /pavers/, /hardscapes/, /retaining-walls/, /service-area/*,
+# /our-work/, /reviews/, /contact/, /services/) so they need no redirect.
+# ---------------------------------------------------------------------------
+
+# Old singular driveway slug -> new plural
+[[redirects]]
+  from = "/concrete/driveway"
+  to = "/concrete/driveways/"
+  status = 301
+[[redirects]]
+  from = "/concrete/driveway/*"
+  to = "/concrete/driveways/"
+  status = 301
+
+# Decks service was removed
+[[redirects]]
+  from = "/decks"
+  to = "/services/"
+  status = 301
+[[redirects]]
+  from = "/decks/*"
+  to = "/services/"
+  status = 301
+
+# Masonry service was removed
+[[redirects]]
+  from = "/masonry"
+  to = "/services/"
+  status = 301
+[[redirects]]
+  from = "/masonry/*"
+  to = "/services/"
+  status = 301
+
+# NOTE: phrenovation.com is already 301-forwarded to paramountknox.com at the
+# domain registrar, so no rule is needed here for it.
