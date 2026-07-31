@@ -7,7 +7,7 @@
  * concrete/decorative-and-stamped, pavers, hardscapes, retaining-walls, decks.
  */
 
-export type NavGroup = 'Concrete' | 'Pavers' | 'Hardscapes';
+export type NavGroup = 'Concrete' | 'Pavers' | 'Hardscapes' | 'Structures';
 
 export interface Faq {
   q: string;
@@ -766,6 +766,361 @@ export const services: Service[] = [
       },
     ],
     related: ['hardscapes', 'retaining-walls', 'pavers/walkways', 'concrete/sidewalks-walkways'],
+  },
+
+  /* ================= STRUCTURES ================= */
+  {
+    path: 'structures',
+    isHub: true,
+    navGroup: 'Structures',
+    navLabel: 'Structures (overview)',
+    title: 'Outdoor Structures Knoxville TN | Pergolas, Patio Covers, Garages & Additions | Paramount',
+    metaDescription:
+      'Custom outdoor structures in Knoxville, TN — pergolas, patio covers, screen rooms, sunrooms, garages and home additions. Built to code, engineered for load, finished to last. Free consultation: (865) 237-9770.',
+    h1: 'Outdoor Structures & Additions in Knoxville, TN',
+    heroSubhead:
+      'Pergolas, patio covers, screen rooms, sunrooms, garages and home additions — designed to match your home, built to code, and engineered to last through East Tennessee weather.',
+    primaryKeyword: 'outdoor structures Knoxville TN',
+    intro: [
+      'Outdoor structures are what tie an entire property together — the pergola over the patio, the cover that turns a bare slab into a three-season room, the garage that finally gets your projects out of the weather. At Paramount Concrete & Hardscapes, we don’t just build to look good; we build so it lasts. Every structure is engineered for load, built to code, and finished to elevate the way you actually use your space.',
+      'Because we’re a concrete and hardscape company first, your structure starts where most builders cut corners — underground. Reinforced footings, real drainage, and a clean tie-in to your existing patio, retaining wall or home exterior are built into every project, so the finished structure doesn’t just look right on day one, it stays that way. We build for homeowners across Knoxville, Farragut, Maryville, Oak Ridge, Lenoir City and the surrounding East Tennessee counties.',
+    ],
+    sections: [
+      {
+        h2: 'Why add an outdoor structure',
+        bullets: [
+          'Adds usable covered or shaded space for relaxing and entertaining',
+          'Protects patios and outdoor features from sun and weather, extending their life',
+          'Increases property value with integrated craftsmanship and materials that match your hardscapes',
+          'Built to code, engineered for load, and finished to elevate your whole outdoor experience',
+        ],
+      },
+      {
+        h2: 'Structures we design and build',
+        body: ['From open-air relaxation to fully enclosed additions, we offer complete start-to-finish construction tailored to your space, goals and budget:'],
+        bullets: [
+          'Pergolas — open-air wood or metal frameworks that add shade and definition',
+          'Patio covers — solid-roof structures for true year-round outdoor living',
+          'Screen rooms — aluminum-framed, screened space with airflow and no bugs',
+          'Sunrooms — fully enclosed, insulated, light-filled living space',
+          'Garages & workshops — concrete, framing and finishing handled in-house',
+          'Home additions — expand your living space without moving',
+          'Outdoor kitchens — counters, grills, sinks and bars built into your patio',
+        ],
+      },
+      {
+        h2: 'How we build: design, engineering and permits',
+        body: [
+          'Every structure starts with a vision and an on-site visit. We evaluate your space, grade, sunlight and drainage, and plan exactly how the structure will tie into your existing patio, retaining wall or home exterior. Then we handle the engineering and paperwork most homeowners don’t want to touch:',
+        ],
+        bullets: [
+          'Design consultation and precise measurements',
+          'Material and style selection — wood, steel, composite or masonry finishes',
+          'Engineering review for spans, loads and wind rating',
+          'Permitting when required by local Knox County code',
+          'A transparent, itemized quote with clear scope and timeline',
+        ],
+      },
+      {
+        h2: 'Our build standards',
+        bullets: [
+          'Base & footings — reinforced concrete footers sized to the structure’s load',
+          'Frame & support — pressure-treated or steel framing anchored to code',
+          'Finish & detail — premium finishes, hidden fasteners and weather protection',
+          'Drainage & integration — proper slope, sealed joints and clean tie-ins to existing patios or walls',
+          'Cleanup & walk-through — we leave the site spotless and review every detail with you',
+        ],
+      },
+      {
+        h2: 'Finishing touches that make a structure yours',
+        body: [
+          'A structure is only as good as the details that bring it to life. These are the upgrades we recommend most to our Knoxville clients — the ones that turn a simple build into a true extension of the home:',
+        ],
+        bullets: [
+          'Lighting & electrical — recessed LED lighting, ceiling fans or heaters, and outlets for TVs, sound and appliances, wired to code',
+          'Custom finishes — stained cedar, composite panels, decorative beams, and stone, brick or stucco columns that tie into your hardscape',
+          'Functional add-ons — built-in seating, storage benches, outdoor kitchens, bar tops and privacy or shade panels',
+          'Drainage & weatherproofing — integrated gutters and downspouts, flashing, sealed joints and grading that keeps runoff away from the foundation',
+        ],
+      },
+    ],
+    costNote:
+      'Because “structures” covers everything from a compact pergola to a full garage or home addition, pricing varies widely with size, materials, engineering and finishes. We give every homeowner a transparent, itemized quote with clear scope and timeline — no guesswork and no pressure.',
+    faqs: [
+      {
+        q: 'Do you build outdoor structures, or just concrete and hardscapes?',
+        a: 'Both. Paramount is a concrete and hardscape company that also designs and builds outdoor structures — pergolas, patio covers, screen rooms, sunrooms, garages and home additions. Because we pour the footings and slabs ourselves, your structure is built on the same engineered base we’re known for.',
+      },
+      {
+        q: 'Do I need a permit for an outdoor structure in Knox County?',
+        a: 'It depends on the structure. Many covered, enclosed or attached structures — and anything carrying a real roof load — require a permit and an engineered design in Knox County and the surrounding areas. We handle the engineering review and pull the permits when local code requires them.',
+      },
+      {
+        q: 'Will the structure match my existing patio and home?',
+        a: 'That’s the advantage of using a hardscape builder. We select materials and finishes — stained wood, composite, steel, or stone and masonry columns — that tie into your existing patio, retaining wall or home exterior so the structure looks original to the property, not bolted on.',
+      },
+      {
+        q: 'Are you licensed and insured?',
+        a: 'Yes. Paramount is licensed and insured and backed by years of local hardscape and construction experience. We’re happy to provide proof of insurance before any work begins.',
+      },
+    ],
+    related: ['structures/pergolas-patio-covers', 'structures/garages-workshops', 'structures/home-additions', 'concrete/patio', 'pavers/patios', 'hardscapes'],
+  },
+  {
+    path: 'structures/pergolas-patio-covers',
+    parent: 'structures',
+    navGroup: 'Structures',
+    navLabel: 'Pergolas & Patio Covers',
+    title: 'Pergolas & Patio Covers Knoxville TN | Custom Builders | Paramount',
+    metaDescription:
+      'Custom pergolas and patio covers in Knoxville, TN — wood, steel and composite structures that add shade and year-round outdoor living. Built to code. Free consultation: (865) 237-9770.',
+    h1: 'Pergolas & Patio Covers in Knoxville, TN',
+    heroSubhead:
+      'Turn a bare patio into a shaded, year-round outdoor room — with a pergola or solid-roof cover engineered for load and built to match your home.',
+    primaryKeyword: 'pergolas Knoxville TN',
+    intro: [
+      'A pergola or patio cover is the fastest way to make your patio usable in more than just perfect weather. A pergola adds shade, structure and a timeless backyard centerpiece without enclosing the space; a solid-roof patio cover creates outdoor living that truly feels like part of your home — dry in the rain, shaded in July, and ready for a fan or heater when the season turns.',
+      'We build both in wood, steel and composite, anchored to reinforced footings and tied cleanly into your existing patio or roofline so they hold up to East Tennessee wind and weather.',
+    ],
+    sections: [
+      {
+        h2: 'Pergolas — shade with style',
+        body: [
+          'Open-air wood or metal frameworks that add definition and comfort to patios, pool decks and gardens. Ideal for homeowners who want a backyard centerpiece and dappled shade without fully covering the space. We can add louvered roofs, shade panels and integrated lighting to turn a pergola into a true evening retreat.',
+        ],
+      },
+      {
+        h2: 'Patio covers — year-round protection',
+        body: [
+          'A solid-roof structure that extends from your home or stands on its own. A patio cover is one of the most popular ways to create outdoor living space in Knoxville — it protects your furniture and hardscape from sun and rain, extends the life of the patio underneath, and, wired for lighting and a fan or heater, becomes a space you use nine months a year.',
+        ],
+      },
+      {
+        h2: 'Built for load and weather',
+        bullets: [
+          'Reinforced concrete footings sized to the structure’s load',
+          'Pressure-treated or steel framing anchored to code',
+          'Engineering review for spans, loads and wind rating',
+          'Flashing and clean tie-ins where a cover meets your home',
+          'Integrated lighting, fans and drainage as options',
+        ],
+      },
+    ],
+    costNote:
+      'Pergolas and patio covers in the Knoxville area vary widely with size, material (wood vs. steel vs. composite), roof style and add-ons like lighting or a louvered roof. We provide an itemized quote after an on-site visit.',
+    faqs: [
+      {
+        q: 'What’s the difference between a pergola and a patio cover?',
+        a: 'A pergola is an open-air framework — rafters or louvers overhead that give partial, dappled shade while keeping the space airy. A patio cover has a solid roof that fully blocks sun and rain, so the space stays dry and usable in any weather. Pergolas are about style and definition; covers are about all-weather protection.',
+      },
+      {
+        q: 'Do I need a permit for a pergola or patio cover in Knoxville?',
+        a: 'Attached covers and larger roofed structures usually require a permit and an engineered design in Knox County; freestanding pergolas may or may not, depending on size and location. We check local code, handle the engineering, and pull permits when they’re required.',
+      },
+      {
+        q: 'Can you attach a cover to my existing patio?',
+        a: 'Usually yes. We assess the existing slab and footings first — a solid-roof cover needs footings sized for its load — then anchor and flash it cleanly to your home, or set it as a freestanding structure over the patio.',
+      },
+    ],
+    related: ['structures', 'concrete/patio', 'pavers/patios', 'hardscapes/fire-pits', 'structures/screen-rooms-sunrooms'],
+  },
+  {
+    path: 'structures/screen-rooms-sunrooms',
+    parent: 'structures',
+    navGroup: 'Structures',
+    navLabel: 'Screen Rooms & Sunrooms',
+    title: 'Screen Rooms & Sunrooms Knoxville TN | Custom Builders | Paramount',
+    metaDescription:
+      'Custom screen rooms and sunrooms in Knoxville, TN — screened porches with airflow and no bugs, or fully enclosed, insulated sunrooms that add livable space. Free consultation: (865) 237-9770.',
+    h1: 'Screen Rooms & Sunrooms in Knoxville, TN',
+    heroSubhead:
+      'Enjoy your backyard without the bugs — or add year-round, climate-ready living space. We build screen rooms and sunrooms on a foundation that lasts.',
+    primaryKeyword: 'sunrooms Knoxville TN',
+    intro: [
+      'Screen rooms and sunrooms are the natural step up from a patio cover — they take a covered space and enclose it, either for airflow-and-no-bugs or for true, climate-controlled living space. Both add comfort and resale value, and both are only as good as the foundation and framing underneath them.',
+    ],
+    sections: [
+      {
+        h2: 'Screen rooms — fresh air, no bugs',
+        body: [
+          'Enclosed structures with aluminum framing and fine mesh screening that keep pests out while letting the breeze in — the perfect in-between for shade, airflow and comfort. A screen room turns a covered patio into a space you’ll actually use on a Tennessee summer evening.',
+        ],
+      },
+      {
+        h2: 'Sunrooms — light-filled living space',
+        body: [
+          'Fully enclosed rooms built with insulated windows and climate-ready framing. A sunroom is a smart investment that adds genuinely livable square footage and resale value — morning coffee in the sun, a home office, a playroom — usable in every season.',
+        ],
+      },
+      {
+        h2: 'Built on a real foundation',
+        bullets: [
+          'Reinforced footings and a proper slab or floor system',
+          'Framing anchored to code with engineering review',
+          'Insulated glass and climate-ready details on sunrooms',
+          'Drainage, flashing and clean tie-ins to the home',
+        ],
+      },
+    ],
+    costNote:
+      'Screen rooms cost less than full sunrooms, which require insulated glass and climate-ready framing. Final pricing depends on size, foundation, glazing and finishes — we provide an itemized quote after an on-site visit.',
+    faqs: [
+      {
+        q: 'What’s the difference between a screen room and a sunroom?',
+        a: 'A screen room is enclosed with mesh screening — it keeps bugs out and lets air flow through, but it isn’t climate-controlled. A sunroom is fully enclosed with insulated glass and climate-ready framing, so it’s usable year-round and counts as livable space. Screen rooms cost less; sunrooms add more resale value.',
+      },
+      {
+        q: 'Does a sunroom add value to my home?',
+        a: 'Generally, yes — a well-built, permitted sunroom adds finished, usable square footage, which buyers and appraisers recognize. We build to code with proper foundations and engineering so the space is a real, documented addition.',
+      },
+    ],
+    related: ['structures', 'structures/pergolas-patio-covers', 'structures/home-additions', 'concrete/patio'],
+  },
+  {
+    path: 'structures/garages-workshops',
+    parent: 'structures',
+    navGroup: 'Structures',
+    navLabel: 'Garages & Workshops',
+    title: 'Garage Builders Knoxville TN | Detached Garages & Workshops | Paramount',
+    metaDescription:
+      'Custom garage and workshop construction in Knoxville, TN — detached and attached garages, hobby shops and outbuildings with concrete, framing and finishing handled in-house. Free consultation: (865) 237-9770.',
+    h1: 'Garages & Workshops in Knoxville, TN',
+    heroSubhead:
+      'From a single-car garage to a detached hobby shop — we handle the concrete, framing and finishing all in-house, so it’s built for strength, convenience and a seamless look.',
+    primaryKeyword: 'garage builder Knoxville TN',
+    intro: [
+      'A garage or workshop is one of the best investments you can make in a property — secure storage, a real workspace, and protection for vehicles and equipment out of the East Tennessee weather. Because we’re a concrete company first, we handle the whole build in-house: the slab and footings, the framing, and the finishing — no juggling three subcontractors and no one pointing fingers when something doesn’t line up.',
+      'We build detached and attached garages, shops and outbuildings across Knoxville and the surrounding counties, sized and reinforced for exactly what you’ll park or store in them.',
+    ],
+    sections: [
+      {
+        h2: 'What we build',
+        bullets: [
+          'Single-, two- and three-car garages — detached or attached',
+          'Detached workshops and hobby shops',
+          'Storage and equipment outbuildings',
+          'Garage slabs and footings sized to the load',
+          'Full finishing — doors, electrical rough-in, siding and trim to match your home',
+        ],
+      },
+      {
+        h2: 'Concrete, framing and finishing — all in-house',
+        body: [
+          'The slab is where most garages fail: too thin, no reinforcement, poor drainage. We pour a garage-grade slab on a compacted base with the thickness and reinforcement to carry vehicles and equipment, then frame and finish on top of it to code. One team, one point of accountability, one seamless result.',
+        ],
+      },
+    ],
+    costNote:
+      'Garage and workshop pricing in the Knoxville area depends heavily on size, whether it’s attached or detached, slab and site prep, and finish level (from a functional shop to a fully-finished, matched-to-the-house garage). We provide a detailed, itemized quote after an on-site visit.',
+    faqs: [
+      {
+        q: 'Do you build detached garages in Knoxville?',
+        a: 'Yes — detached garages and workshops are one of our core structure builds. We handle everything from the footings and garage-grade slab through framing, doors and finishing, all in-house.',
+      },
+      {
+        q: 'Do I need a permit to build a garage in Knox County?',
+        a: 'Almost always, yes. Garages are permanent structures with foundations and often electrical, so they require a building permit and a code-compliant, often engineered, design. We handle the permitting and build to code.',
+      },
+      {
+        q: 'How thick should a garage slab be?',
+        a: 'A garage floor that carries vehicles is typically poured 5–6 inches thick with reinforcement, versus 4 inches for a patio or shed. We size and reinforce the slab for what you’ll actually park or store on it, on a properly compacted base.',
+      },
+    ],
+    related: ['structures', 'concrete/slabs-foundations', 'concrete/driveways', 'structures/home-additions'],
+  },
+  {
+    path: 'structures/home-additions',
+    parent: 'structures',
+    navGroup: 'Structures',
+    navLabel: 'Home Additions',
+    title: 'Home Additions Knoxville TN | Room Additions & Expansions | Paramount',
+    metaDescription:
+      'Home addition contractor in Knoxville, TN — room additions and expansions built on reinforced foundations, framed and finished to match your home. Free consultation: (865) 237-9770.',
+    h1: 'Home Additions in Knoxville, TN',
+    heroSubhead:
+      'Love your home but need more space? A well-built addition lets your home grow with your family — and adds serious value — without the cost and hassle of moving.',
+    primaryKeyword: 'home additions Knoxville TN',
+    intro: [
+      'When you love your neighborhood but you’ve run out of room, a home addition transforms what you already have — an extra bedroom, a bigger kitchen, a primary suite, a bonus room over the garage. Done right, it adds real, appraisable value and blends so cleanly you’d never know it wasn’t original to the house.',
+      'Additions live and die on the foundation. As a concrete company, we start there — reinforced footings and slab tied properly to the existing structure — then frame, finish and detail so the new space matches the old inside and out.',
+    ],
+    sections: [
+      {
+        h2: 'Additions we build',
+        bullets: [
+          'Room additions — bedrooms, bonus rooms, home offices',
+          'Primary-suite and bathroom additions',
+          'Kitchen and living-space expansions',
+          'Garage conversions and over-garage additions',
+        ],
+      },
+      {
+        h2: 'Foundation first, finished to match',
+        body: [
+          'The two things that make an addition look bolted-on are a foundation that settles differently than the house and finishes that don’t match. We handle both — a properly-tied, reinforced foundation and framing to code, then siding, roofline and trim detailing that complements your existing home so the addition reads as original.',
+        ],
+      },
+    ],
+    costNote:
+      'Home additions vary more than any other structure — a simple bump-out is worlds apart from a full primary suite. Foundation, roof tie-in, finishes and mechanicals all drive the number. We provide a clear, itemized scope and quote after an on-site consultation.',
+    faqs: [
+      {
+        q: 'Is a home addition cheaper than moving?',
+        a: 'Very often, yes — especially once you factor in agent commissions, closing costs, moving expenses and today’s interest rates. An addition keeps you in the neighborhood you love and puts your money into your own property as added value.',
+      },
+      {
+        q: 'Do home additions require permits in Knox County?',
+        a: 'Yes. Additions change the footprint and structure of the home, so they require permits and code-compliant, often engineered, plans. We handle the permitting and build to code from the foundation up.',
+      },
+    ],
+    related: ['structures', 'structures/garages-workshops', 'concrete/slabs-foundations', 'structures/screen-rooms-sunrooms'],
+  },
+  {
+    path: 'structures/outdoor-kitchens',
+    parent: 'structures',
+    navGroup: 'Structures',
+    navLabel: 'Outdoor Kitchens',
+    title: 'Outdoor Kitchens Knoxville TN | Custom Built-In Grills & Bars | Paramount',
+    metaDescription:
+      'Custom outdoor kitchens in Knoxville, TN — built-in grills, counters, sinks, bars and masonry that tie into your patio and hardscape. Free consultation: (865) 237-9770.',
+    h1: 'Outdoor Kitchens in Knoxville, TN',
+    heroSubhead:
+      'Counters, grills, sinks and bar tops built right into your patio — a true outdoor kitchen that turns your backyard into the place everyone gathers.',
+    primaryKeyword: 'outdoor kitchen Knoxville TN',
+    intro: [
+      'An outdoor kitchen is the upgrade that gets used every single week — grilling for the family, hosting on weekends, keeping the cook out of the house and in on the party. We build outdoor kitchens as an integrated part of your patio and hardscape: masonry counters, built-in grills, sinks, bar tops and accent walls, all tied into the surrounding stone, brick or pavers so it looks built-in, not bolted-on.',
+    ],
+    sections: [
+      {
+        h2: 'What goes into an outdoor kitchen',
+        bullets: [
+          'Masonry counters and bases in stone, brick or stucco to match your patio',
+          'Built-in grills, side burners and storage',
+          'Sinks, bar tops and serving areas',
+          'Accent walls, seat walls and privacy panels',
+          'Lighting, outlets and gas or water run to code',
+        ],
+      },
+      {
+        h2: 'Built into your patio, not on top of it',
+        body: [
+          'The best outdoor kitchens are planned with the patio, so the slab, drainage, gas, water and electrical are all in place before the counters go up. Whether we’re building your patio too or working with an existing one, we integrate the kitchen so it ties into your hardscape and holds up to the weather.',
+        ],
+      },
+    ],
+    costNote:
+      'Outdoor kitchens range from a compact built-in grill surround to a full masonry kitchen with sink, bar and appliances. Materials, appliances and utility runs (gas, water, electrical) drive the price. We provide an itemized quote after an on-site visit.',
+    faqs: [
+      {
+        q: 'Can you add an outdoor kitchen to my existing patio?',
+        a: 'Usually yes. We assess the existing slab and access for gas, water and electrical first, then build the kitchen to tie into your patio and hardscape. If the patio can’t carry it, we’ll tell you what’s needed up front.',
+      },
+      {
+        q: 'What materials hold up best for an outdoor kitchen in East Tennessee?',
+        a: 'Masonry bases (block faced with stone, brick or stucco), stainless appliances and sealed stone or concrete countertops handle our humidity and freeze-thaw best. We match the materials to your existing hardscape so it looks original to the space.',
+      },
+    ],
+    related: ['structures', 'hardscapes/fire-pits', 'pavers/patios', 'concrete/patio'],
   },
 ];
 
