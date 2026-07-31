@@ -5,7 +5,6 @@ import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Gallery from '../components/Gallery.astro';
-import InstagramFeed from '../components/InstagramFeed.astro';
 import { company } from '../data/company';
 import { getService, services } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
@@ -15,7 +14,7 @@ const path = '/';
 // Concrete is the flagship service — featured prominently.
 const concrete = getService('concrete')!;
 const concreteSubs = services.filter((s) => s.parent === 'concrete');
-const secondary = ['pavers', 'retaining-walls', 'hardscapes']
+const secondary = ['pavers', 'retaining-walls', 'hardscapes', 'structures']
   .map((p) => getService(p))
   .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
@@ -198,8 +197,6 @@ const homeFaqs = [
       </div>
     </div>
   </section>
-
-  <InstagramFeed />
 
   <Faq faqs={homeFaqs} />
 
