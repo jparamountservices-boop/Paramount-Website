@@ -21,11 +21,17 @@ export const company = {
   phone: '(865) 237-9770',
   phoneHref: 'tel:+18652379770',
   email: 'j.paramountservices@gmail.com',
+
+  // Home-based, SERVICE-AREA business: the street address is intentionally
+  // hidden everywhere (site display AND schema) so the owner's home is never
+  // published. City/region still power local SEO via areaServed + geo.
+  // (This matches how a home-based business should be set up in Google, too.)
+  serviceAreaBusiness: true,
   address: {
-    street: '1201 Bob Kirby Rd',
+    street: '', // hidden — home-based service-area business
     city: 'Knoxville',
     state: 'TN',
-    zip: '37932', // PLACEHOLDER — confirm ZIP
+    zip: '', // hidden — home-based service-area business
     country: 'US',
   },
   // Approx. geo for LocalBusiness schema (Knox County). Refine to exact if desired.
@@ -105,20 +111,25 @@ export const socialLinks = [
 /** Array of social URLs for schema `sameAs`. */
 export const sameAs = socialLinks.map((s) => s.url);
 
-/** One-line address string used for map queries and directions links. */
-export const fullAddress = `${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}`;
+/** Public-facing location label — the region we serve, never a street address. */
+export const serviceAreaLabel = `${company.address.city} & East Tennessee`;
 
-/** Google Maps links built from the address — no API key required. */
-const mapQuery = encodeURIComponent(`${company.name}, ${fullAddress}`);
-/** Keyless embeddable map (for an <iframe>). */
+// Map query. For a service-area business we center on the city/region so the
+// map shows our coverage area — never a pin on the owner's home address.
+const mapQuery = encodeURIComponent(
+  company.serviceAreaBusiness
+    ? `${company.address.city}, ${company.address.state}`
+    : [company.name, company.address.street, `${company.address.city}, ${company.address.state}`, company.address.zip]
+        .filter(Boolean)
+        .join(', '),
+);
+/** Keyless embeddable map (for an <iframe>) — no API key required. */
 export const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-/** Opens turn-by-turn directions to the business in Google Maps. */
-export const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
 /**
  * "View us on Google" link. Prefers the real Google Business Profile listing
- * (set company.social.google); falls back to a Maps search for the business.
+ * (set company.social.google); falls back to a Maps search for the business name.
  */
 export const googleListingUrl =
-  company.social.google || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+  company.social.google || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.name + ' ' + company.address.city + ' ' + company.address.state)}`;
 /** "Leave a Google review" link — prefers the direct review link, else the listing. */
 export const googleReviewUrl = company.googleReviewUrl || googleListingUrl;

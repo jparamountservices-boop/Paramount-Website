@@ -1,5 +1,5 @@
 ---
-import { company } from '../data/company';
+import { company, serviceAreaLabel } from '../data/company';
 import { hubServices } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
 import SocialLinks from './SocialLinks.astro';
@@ -40,7 +40,7 @@ const year = new Date().getFullYear();
       <ul class="space-y-2 text-sm text-[var(--color-concrete)]">
         <li><a href={company.phoneHref} class="font-bold text-[var(--color-bone)] transition hover:text-[var(--color-flame)]">{company.phone}</a></li>
         <li><a href={`mailto:${company.email}`} class="transition hover:text-[var(--color-flame)]">{company.email}</a></li>
-        <li>{company.address.street}<br />{company.address.city}, {company.address.state} {company.address.zip}</li>
+        <li>Serving {serviceAreaLabel}</li>
       </ul>
       <div class="mt-4 text-sm text-[var(--color-concrete-dim)]">
         {company.hoursHuman.map((h) => (

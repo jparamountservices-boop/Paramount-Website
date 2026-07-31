@@ -21,12 +21,14 @@ export function localBusinessSchema() {
     image: `${SITE}${company.logo}`,
     logo: `${SITE}${company.logo}`,
     priceRange: company.priceRange,
+    // Home-based service-area business: street/ZIP are omitted when blank so the
+    // owner's home address is never published. Locality/region stay for local SEO.
     address: {
       '@type': 'PostalAddress',
-      streetAddress: company.address.street,
+      ...(company.address.street ? { streetAddress: company.address.street } : {}),
       addressLocality: company.address.city,
       addressRegion: company.address.state,
-      postalCode: company.address.zip,
+      ...(company.address.zip ? { postalCode: company.address.zip } : {}),
       addressCountry: company.address.country,
     },
     geo: {
