@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { company } from '../data/company';
+import { company, googleListingUrl, googleReviewUrl } from '../data/company';
 import { reviews } from '../data/reviews';
 import { breadcrumbSchema } from '../lib/schema';
 
@@ -46,6 +46,10 @@ const reviewSchema = {
     <h1 class="mt-3 text-4xl font-black sm:text-5xl">Reviews</h1>
     <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">★★★★★</p>
     <p class="text-[var(--color-concrete)]">{company.rating.value} out of 5 · {company.rating.count}+ reviews</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href={googleReviewUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary text-sm">Leave us a Google review</a>
+      <a href={googleListingUrl} target="_blank" rel="noopener noreferrer" class="btn btn-ghost text-sm">Read our reviews on Google</a>
+    </div>
   </section>
 
   <section class="wrap columns-1 gap-5 pb-14 md:columns-2 lg:columns-3">

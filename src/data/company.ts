@@ -64,8 +64,17 @@ export const company = {
     facebook: 'https://www.facebook.com/paramountknox/',
     instagram: 'https://www.instagram.com/parmounthomerenovations/',
     tiktok: '', // not used
-    google: '', // PLACEHOLDER — Google Business Profile URL
+    // Your public Google Business Profile / Google Maps listing URL. Powers the
+    // Google icon in the header & footer AND the schema `sameAs` signal that
+    // ties this website to your Google listing (big local-SEO trust signal).
+    google: '', // PLACEHOLDER — paste your Google Business Profile / Maps link
   },
+
+  // Direct "leave a review" link from your Google Business Profile
+  // ("Ask for reviews" / "Get more reviews" → copy link — looks like
+  // https://g.page/r/…/review). Powers the "Leave a Google review" buttons.
+  // If blank, those buttons fall back to your listing URL above.
+  googleReviewUrl: '', // PLACEHOLDER — paste your Google review link
 
   // Instagram handle shown in the "Follow us" section.
   instagramHandle: 'parmounthomerenovations',
@@ -95,3 +104,21 @@ export const socialLinks = [
 
 /** Array of social URLs for schema `sameAs`. */
 export const sameAs = socialLinks.map((s) => s.url);
+
+/** One-line address string used for map queries and directions links. */
+export const fullAddress = `${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}`;
+
+/** Google Maps links built from the address — no API key required. */
+const mapQuery = encodeURIComponent(`${company.name}, ${fullAddress}`);
+/** Keyless embeddable map (for an <iframe>). */
+export const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+/** Opens turn-by-turn directions to the business in Google Maps. */
+export const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
+/**
+ * "View us on Google" link. Prefers the real Google Business Profile listing
+ * (set company.social.google); falls back to a Maps search for the business.
+ */
+export const googleListingUrl =
+  company.social.google || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+/** "Leave a Google review" link — prefers the direct review link, else the listing. */
+export const googleReviewUrl = company.googleReviewUrl || googleListingUrl;

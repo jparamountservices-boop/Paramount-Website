@@ -2,7 +2,7 @@
  * Structured-data (JSON-LD) builders. Everything pulls from company.ts so the
  * NAP, hours and socials stay consistent across the whole site.
  */
-import { company, sameAs } from '../data/company';
+import { company, sameAs, googleListingUrl } from '../data/company';
 
 const SITE = company.url;
 
@@ -34,6 +34,7 @@ export function localBusinessSchema() {
       latitude: company.geo.latitude,
       longitude: company.geo.longitude,
     },
+    hasMap: googleListingUrl,
     areaServed: [
       'Knoxville TN', 'Farragut TN', 'West Knoxville TN', 'Maryville TN',
       'Alcoa TN', 'Oak Ridge TN', 'Clinton TN', 'Sevierville TN',
