@@ -75,7 +75,7 @@ export const company = {
   //  - clarityId: Microsoft Clarity project ID (free heatmaps/session replay)
   // See docs/deployment/analytics-search-console.md for step-by-step setup.
   analytics: {
-    ga4Id: '',
+    ga4Id: 'G-MZX1VJWX26',
     gscVerification: '',
     bingVerification: '',
     clarityId: '',
