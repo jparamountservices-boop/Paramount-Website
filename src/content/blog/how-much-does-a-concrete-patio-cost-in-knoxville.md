@@ -28,7 +28,7 @@ A common 300 sq ft patio runs roughly **$2,400–$4,500 broom** or **$3,600–$6
 
 ## Concrete vs. pavers for a patio
 
-Concrete is the value choice; a [paver patio](/blog/how-much-does-a-paver-patio-cost-in-knoxville/) costs more (~$18–$35/sq ft) but flexes with the ground and is repairable. If you want the stone look without paver pricing, [stamped concrete](/concrete/decorative-and-stamped/) splits the difference.
+Concrete is the value choice; a [paver patio](/blog/how-much-does-a-paver-patio-cost-in-knoxville/) costs more (~$25–$35/sq ft) but flexes with the ground and is repairable. If you want the stone look without paver pricing, [stamped concrete](/concrete/decorative-and-stamped/) splits the difference.
 
 ## Get an itemized quote
 

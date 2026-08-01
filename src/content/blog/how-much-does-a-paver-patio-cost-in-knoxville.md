@@ -14,15 +14,15 @@ number.
 
 ## The short answer
 
-Most paver patios in the Knoxville area run about **$18 to $35 per square foot installed.** A common
-300–400 sq ft patio typically lands between **$6,000 and $14,000**, depending on the paver you
+Most paver patios in the Knoxville area run about **$25 to $35 per square foot installed.** A common
+300–400 sq ft patio typically lands between **$7,500 and $14,000**, depending on the paver you
 choose, the pattern, and any walls, steps or fire features.
 
 By size (field patio, mid-range paver):
 
-- **200 sq ft:** ~$4,000–$7,000
-- **400 sq ft:** ~$8,000–$14,000
-- **600+ sq ft with features:** $15,000 and up
+- **200 sq ft:** ~$5,000–$7,000
+- **400 sq ft:** ~$10,000–$14,000
+- **600+ sq ft with features:** $18,000 and up
 
 ## Where the money goes
 

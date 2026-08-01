@@ -51,7 +51,7 @@ drainage.** If it doesn't, ask. (Ours always do.)
 ## Concrete vs. pavers for a driveway
 
 Concrete is the value option and lasts 30+ years when built right. Paver driveways cost more
-(roughly $20–$40 per square foot) but flex with the ground instead of cracking and can be repaired
+(roughly $45–$55 per square foot) but flex with the ground instead of cracking and can be repaired
 one unit at a time. If you're weighing both, see our [paver driveways](/pavers/driveways/) page.
 
 ## Get an exact number

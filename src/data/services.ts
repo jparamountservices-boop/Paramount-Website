@@ -401,7 +401,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Paver patios in Knoxville generally run about $18–$35 per square foot installed, and paver driveways $20–$40, depending on the paver, pattern and base work. Pavers cost more up front than poured concrete but last longer and are repairable.',
+      'Paver patios in Knoxville generally run about $25–$35 per square foot installed, and paver driveways $45–$55, depending on the paver, pattern and base work. Pavers cost more up front than poured concrete but last longer and are repairable.',
     faqs: [
       {
         q: 'Are pavers worth the extra cost over concrete?',
@@ -453,11 +453,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Most paver patios in Knoxville run about $18–$35 per square foot installed depending on the paver, pattern complexity, walls and site prep.',
+      'Most paver patios in Knoxville run about $25–$35 per square foot installed depending on the paver, pattern complexity, walls and site prep.',
     faqs: [
       {
         q: 'How much does a paver patio cost in Knoxville?',
-        a: 'Typically $18–$35 per square foot installed. A common 300–400 sq ft patio often lands in the $6,000–$14,000 range depending on the paver chosen, pattern, and any walls, steps or fire features.',
+        a: 'Typically $25–$35 per square foot installed. A common 300–400 sq ft patio often lands in the $7,500–$14,000 range depending on the paver chosen, pattern, and any walls, steps or fire features.',
       },
       {
         q: 'How long does a paver patio take to build?',
@@ -502,7 +502,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Paver driveways in Knoxville generally run about $20–$40 per square foot installed depending on the paver, pattern and base depth — more than concrete up front, but far longer-lasting and repairable.',
+      'Paver driveways in Knoxville generally run about $45–$55 per square foot installed depending on the paver, pattern and base depth — more than concrete up front, but far longer-lasting and repairable.',
     faqs: [
       {
         q: 'Are paver driveways worth it over concrete?',
