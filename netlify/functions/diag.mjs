@@ -5,9 +5,12 @@
  *   /.netlify/functions/diag?send=1    → also attempts a real Resend send to the owner
  *                                         and prints the exact Resend status + response.
  */
+const readEnv = (name) =>
+  process.env[name] ?? process.env[name.toLowerCase()] ?? process.env[name.toUpperCase()];
+
 export const handler = async (event) => {
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.AUTORESPONDER_FROM || '(AUTORESPONDER_FROM is unset)';
+  const apiKey = readEnv('RESEND_API_KEY');
+  const from = readEnv('AUTORESPONDER_FROM') || '(AUTORESPONDER_FROM is unset)';
 
   const out = {
     hasApiKey: !!apiKey,

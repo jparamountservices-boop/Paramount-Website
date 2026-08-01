@@ -16,6 +16,10 @@ const PHONE = '(865) 237-9770';
 const REPLY_TO = 'j.paramountservices@gmail.com';
 const SIGNOFF = 'Jay &amp; the Paramount crew'; // change the name if you'd like
 
+// Env var names can end up stored in a different case; read case-insensitively.
+const readEnv = (name) =>
+  process.env[name] ?? process.env[name.toLowerCase()] ?? process.env[name.toUpperCase()];
+
 // -------- service-specific copy ---------------------------------------------
 const CONTENT = {
   concrete: {
@@ -112,8 +116,8 @@ export const handler = async (event) => {
   // Add ?send=1 to actually attempt a Resend send to the owner and see the
   //   exact Resend response (status + message).
   if ((event.httpMethod || '').toUpperCase() === 'GET') {
-    const apiKey = process.env.RESEND_API_KEY;
-    const from = process.env.AUTORESPONDER_FROM || '(AUTORESPONDER_FROM is unset)';
+    const apiKey = readEnv('RESEND_API_KEY');
+    const from = readEnv('AUTORESPONDER_FROM') || '(AUTORESPONDER_FROM is unset)';
     const diag = {
       hasApiKey: !!apiKey,
       apiKeyPrefix: apiKey ? apiKey.slice(0, 4) + '…' : null,
@@ -147,10 +151,10 @@ export const handler = async (event) => {
     const body = JSON.parse(event.body || '{}');
     const data = (body.payload && body.payload.data) || {};
     const to = data.email;
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = readEnv('RESEND_API_KEY');
     if (!apiKey || !to) return { statusCode: 200, body: 'skip' };
 
-    const from = process.env.AUTORESPONDER_FROM ||
+    const from = readEnv('AUTORESPONDER_FROM') ||
       'Paramount Concrete & Hardscapes <onboarding@resend.dev>';
     const { subject, html: htmlBody, text: textBody } = buildEmail({ name: data.name, service: data.service });
 
