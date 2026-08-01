@@ -66,7 +66,7 @@ const groupOrder = ['Concrete', 'Pavers', 'Hardscapes'] as const;
       <a href={company.phoneHref} class="hidden text-sm font-bold text-[var(--color-bone)] sm:block">
         {company.phone}
       </a>
-      <a href="/contact/" class="btn btn-primary text-sm">Free Consultation</a>
+      <a href="/contact/" class="btn btn-primary text-sm">Free Phone Consultation</a>
       <!-- Mobile menu toggle -->
       <button id="menu-toggle" class="lg:hidden grid h-10 w-10 place-items-center rounded border border-[var(--color-steel)]" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -74,23 +74,53 @@ const groupOrder = ['Concrete', 'Pavers', 'Hardscapes'] as const;
     </div>
   </div>
 
-  <!-- Mobile nav panel -->
-  <div id="mobile-nav" class="hidden border-t border-[var(--color-steel)] bg-[var(--color-graphite)] lg:hidden">
-    <nav class="wrap flex flex-col gap-1 py-4" aria-label="Mobile">
-      <p class="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">Services</p>
-      {groupOrder.flatMap((g) => groups[g] ?? []).map((s) => (
-        <a href={`/${s.path}/`} class="py-1.5 text-[var(--color-concrete)]">{s.navLabel}</a>
-      ))}
-      <p class="mt-3 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">Service Areas</p>
-      {serviceAreas.map((a) => (
-        <a href={`/service-area/${a.slug}/`} class="py-1.5 text-[var(--color-concrete)]">{a.city}</a>
-      ))}
-      <div class="mt-3 flex flex-col gap-2 border-t border-[var(--color-steel)] pt-3">
-        <a href="/our-work/" class="py-1.5 text-[var(--color-concrete)]">Our Work</a>
-        <a href="/blog/" class="py-1.5 text-[var(--color-concrete)]">Blog</a>
-        <a href="/reviews/" class="py-1.5 text-[var(--color-concrete)]">Reviews</a>
-        <a href="/about/" class="py-1.5 text-[var(--color-concrete)]">About</a>
-        <a href={company.phoneHref} class="py-1.5 font-bold text-[var(--color-bone)]">Call {company.phone}</a>
+  <!-- Mobile nav panel: absolute overlay, scrollable, with tap-to-expand submenus -->
+  <div
+    id="mobile-nav"
+    class="hidden absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[var(--color-steel)] bg-[var(--color-graphite)] shadow-2xl lg:hidden"
+  >
+    <nav class="wrap flex flex-col py-1 text-base" aria-label="Mobile">
+      <!-- Services (expandable) -->
+      <details class="group border-b border-[var(--color-steel)]">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-3.5 font-semibold text-[var(--color-bone)]">
+          Services
+          <span class="text-lg text-[var(--color-flame)] transition group-open:rotate-45">＋</span>
+        </summary>
+        <div class="pb-3">
+          {groupOrder.map((g) => (
+            <div class="mb-2">
+              <p class="mb-1 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{g}</p>
+              {groups[g]?.map((s) => (
+                <a href={`/${s.path}/`} class="block py-2 pl-3 text-[var(--color-concrete)]">{s.navLabel.replace(' (overview)', '')}</a>
+              ))}
+            </div>
+          ))}
+          <a href="/services/" class="block py-2 pl-3 font-semibold text-[var(--color-flame-300)]">All services →</a>
+        </div>
+      </details>
+
+      <!-- Service Areas (expandable) -->
+      <details class="group border-b border-[var(--color-steel)]">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-3.5 font-semibold text-[var(--color-bone)]">
+          Service Areas
+          <span class="text-lg text-[var(--color-flame)] transition group-open:rotate-45">＋</span>
+        </summary>
+        <div class="pb-3">
+          <a href="/service-area/" class="block py-2 pl-3 font-semibold text-[var(--color-flame-300)]">All Service Areas →</a>
+          {serviceAreas.map((a) => (
+            <a href={`/service-area/${a.slug}/`} class="block py-2 pl-3 text-[var(--color-concrete)]">{a.city}, TN</a>
+          ))}
+        </div>
+      </details>
+
+      <a href="/our-work/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Our Work</a>
+      <a href="/blog/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Blog</a>
+      <a href="/reviews/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Reviews</a>
+      <a href="/about/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">About</a>
+
+      <div class="flex flex-col gap-3 py-4">
+        <a href="/contact/" class="btn btn-primary w-full">Free Phone Consultation</a>
+        <a href={company.phoneHref} class="btn btn-ghost w-full">Call {company.phone}</a>
       </div>
     </nav>
   </div>
