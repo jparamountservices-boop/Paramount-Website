@@ -76,11 +76,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete pricing in the Knoxville area generally runs about $8–$16 per square foot installed depending on thickness, finish (broom vs. stamped/decorative), site access, tear-out and drainage work. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
+      'Concrete flatwork in the Knoxville area generally runs about $10–$12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs roughly $8–$16 per square foot installed. Plain broom-finish is at the low end; stamped and decorative finishes, heavy tear-out, and extensive drainage or grading push it higher. We provide itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs about $10–$12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -133,11 +133,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'A typical Knoxville concrete driveway runs about $6–$12 per square foot for a standard broom finish, or more with decorative finishes, tear-out of an existing slab, or added drainage. We’ll measure and give you an exact, itemized number.',
+      'A typical Knoxville concrete driveway runs about $10–$12 per square foot for a standard broom finish, or more with decorative finishes, tear-out of an existing slab, or added drainage. The final price also depends on size and access, whether the pour has to be pumped, and mix upgrades like higher PSI, fiber and wire mesh. We’ll measure and give you an exact, itemized number.',
     faqs: [
       {
         q: 'How much does a concrete driveway cost in Knoxville?',
-        a: 'Standard broom-finish concrete driveways in the Knoxville area typically run about $6–$12 per square foot installed. A standard 2-car driveway often lands in the $3,500–$8,000 range depending on size, thickness, tear-out and drainage.',
+        a: 'Standard broom-finish concrete driveways in the Knoxville area typically run about $10–$12 per square foot installed. A standard 2-car driveway often lands in the $6,000–$10,000 range depending on size, access, thickness, tear-out, drainage and mix upgrades like fiber or wire mesh.',
       },
       {
         q: 'How long does a concrete driveway last?',
@@ -184,7 +184,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete patios in Knoxville typically run about $8–$15 per square foot for broom finish and $12–$20+ for stamped/decorative. Access, grading and drainage affect the final number.',
+      'Concrete patios in Knoxville typically run about $10–$12 per square foot for a broom or troweled finish and upwards of $18–$20 for stamped/decorative. Size and access, whether the pour has to be pumped, grading, drainage and mix upgrades like fiber or wire mesh affect the final number.',
     faqs: [
       {
         q: 'Is a concrete patio cheaper than pavers?',
@@ -231,7 +231,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Stamped and decorative concrete in Knoxville typically runs about $12–$20 per square foot depending on pattern complexity, number of colors and borders — still well below the installed cost of natural stone or pavers.',
+      'Stamped, stained and decorative concrete in Knoxville typically runs upwards of $18–$20 per square foot depending on pattern complexity, number of colors and borders — still well below the installed cost of natural stone or pavers.',
     faqs: [
       {
         q: 'Does stamped concrete crack?',
@@ -282,7 +282,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete walkways in Knoxville typically run about $8–$15 per square foot depending on width, finish and site prep. Steps and decorative finishes add to the cost.',
+      'Concrete walkways in Knoxville typically run about $10–$12 per square foot for a broom or troweled finish, more for decorative work, depending on width, site access and prep. Steps and stamped/stained finishes add to the cost.',
     faqs: [
       {
         q: 'How wide should a walkway be?',
@@ -319,7 +319,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete slabs in Knoxville generally run about $6–$12 per square foot depending on thickness, reinforcement, footings and site prep. Thicker load-bearing slabs cost more.',
+      'Concrete slabs in Knoxville generally run about $10–$12 per square foot depending on thickness, reinforcement (fiber, wire mesh or rebar), footings, site access and prep. Thicker load-bearing slabs and higher-PSI mixes cost more.',
     faqs: [
       {
         q: 'How thick should a concrete slab be?',
@@ -355,7 +355,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete pool decks in Knoxville typically run about $10–$20 per square foot depending on finish, texture and drainage detailing.',
+      'Concrete pool decks in Knoxville typically run about $10–$12 per square foot for a broom or textured finish and upwards of $18–$20 for stamped/decorative, depending on finish, size, access and drainage detailing.',
     faqs: [
       {
         q: 'Is stamped concrete too slippery for a pool deck?',

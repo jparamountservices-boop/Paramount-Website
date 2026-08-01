@@ -13,7 +13,7 @@ Since we install both, here's the straight comparison for East Tennessee.
 
 ## Cost
 
-- **Concrete driveway:** ~$6–$12 per square foot
+- **Concrete driveway:** ~$10–$12 per square foot (broom finish)
 - **Paver driveway:** ~$45–$55 per square foot
 
 Concrete is clearly the lower up-front cost. Pavers cost more because each unit is set by hand on a deep, engineered base.

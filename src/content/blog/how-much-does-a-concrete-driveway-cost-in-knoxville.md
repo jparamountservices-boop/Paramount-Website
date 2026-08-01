@@ -14,30 +14,31 @@ the factors that actually move them.
 
 ## The short answer
 
-In the Knoxville area, a standard broom-finish concrete driveway runs about **$6 to $12 per square
-foot installed.** A typical two-car driveway (roughly 600–800 sq ft) usually lands between **$3,500
-and $8,000**, depending on thickness, tear-out and site conditions.
+In the Knoxville area, a standard broom-finish concrete driveway runs about **$10 to $12 per square
+foot installed.** A typical two-car driveway (roughly 600–800 sq ft) usually lands between **$6,000
+and $10,000**, depending on thickness, tear-out, access and site conditions.
 
 Here's a rough guide by size:
 
-- **1-car (about 12′ × 24′, ~290 sq ft):** ~$1,900–$3,500
-- **2-car (about 20′ × 30′, ~600 sq ft):** ~$3,500–$7,200
-- **Long or rural drive (1,000+ sq ft):** $8,000 and up
+- **1-car (about 12′ × 24′, ~290 sq ft):** ~$2,900–$3,500
+- **2-car (about 20′ × 30′, ~600 sq ft):** ~$6,000–$7,200
+- **Long or rural drive (1,000+ sq ft):** $10,000 and up
 
 ## What moves the price
 
 Two driveways of the same size can differ by thousands. Here's why:
 
-- **Slab thickness & reinforcement.** A driveway should be at least 4″–5″ thick with rebar or fiber
-  reinforcement. Thicker slabs and more steel cost more — and are worth it for a surface that carries
-  vehicles.
+- **Slab thickness, mix & reinforcement.** A driveway should be at least 4″–5″ thick with rebar, wire
+  mesh or fiber reinforcement, and a higher-PSI mix for a surface that carries vehicles. Thicker slabs,
+  more steel and stronger mixes cost more — and are worth it.
 - **Tear-out of an old driveway.** Demolishing and hauling away an existing slab typically adds about
   **$1–$2 per square foot.**
 - **Site prep, grading & drainage.** Poor drainage is the #1 killer of driveways in our clay soil. If
   your lot needs regrading or a drain line, that adds cost — but skipping it is how driveways fail.
-- **Finish.** A plain broom finish is cheapest. Stamped or decorative finishes run **$12–$20+ per
-  square foot.**
-- **Access & site conditions.** Steep grades, tight access, or lots of hand-work push the number up.
+- **Finish.** A plain broom finish is cheapest. Stamped, stained or decorative finishes run **upwards
+  of $18–$20 per square foot.**
+- **Access & site conditions.** Steep grades, tight access, or a spot that has to be pumped push the
+  number up.
 
 ## Why the cheapest quote is usually the most expensive
 

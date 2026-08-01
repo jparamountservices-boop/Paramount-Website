@@ -23,7 +23,7 @@ behaves under your specific yard.
 
 Stamped concrete is usually the more affordable option:
 
-- **Stamped concrete:** ~$12–$20 per square foot
+- **Stamped concrete:** upwards of ~$18–$20 per square foot
 - **Pavers:** ~$25–$35 per square foot (patios), more for driveways
 
 Pavers cost more because every unit is set by hand on a deep, compacted base — it's far more labor.

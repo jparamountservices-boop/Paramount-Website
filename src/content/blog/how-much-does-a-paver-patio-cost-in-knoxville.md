@@ -40,7 +40,7 @@ The pavers themselves are only part of the cost. Here's the real breakdown:
 
 ## Pavers vs. concrete on cost
 
-Yes, pavers cost more up front than a poured concrete patio (~$8–$15/sq ft). But they flex with our
+Yes, pavers cost more up front than a poured concrete patio (~$10–$12/sq ft broom-finished). But they flex with our
 clay soil instead of cracking, last longer, and are repairable one unit at a time. If you're weighing
 the two, our [stamped concrete vs. pavers guide](/blog/stamped-concrete-vs-pavers-knoxville/) breaks
 down the trade-offs.
