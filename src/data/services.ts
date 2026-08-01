@@ -45,7 +45,7 @@ export const services: Service[] = [
     navLabel: 'Concrete (overview)',
     title: 'Concrete Contractor Knoxville TN | Driveways, Patios & Slabs | Paramount',
     metaDescription:
-      'Trusted concrete contractor in Knoxville, TN. Driveways, patios, stamped & decorative concrete, sidewalks, slabs and pool decks — done right the first time. Free estimates: (865) 237-9770.',
+      'Trusted concrete contractor in Knoxville, TN. Driveways, patios, stamped & decorative concrete, sidewalks, slabs and pool decks — done right the first time. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Services in Knoxville, TN',
     heroSubhead:
       'Driveways, patios, stamped concrete, sidewalks and slabs engineered for East Tennessee soil and weather — poured right the first time.',
@@ -80,7 +80,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs roughly $8–$16 per square foot installed. Plain broom-finish is at the low end; stamped and decorative finishes, heavy tear-out, and extensive drainage or grading push it higher. We provide free, itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs roughly $8–$16 per square foot installed. Plain broom-finish is at the low end; stamped and decorative finishes, heavy tear-out, and extensive drainage or grading push it higher. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -104,7 +104,7 @@ export const services: Service[] = [
     navLabel: 'Concrete Driveways',
     title: 'Concrete Driveways Knoxville TN | Installation & Replacement | Paramount',
     metaDescription:
-      'Concrete driveway installation and replacement in Knoxville, TN. Durable, properly-based driveways that resist cracking and settling. Free estimates: (865) 237-9770.',
+      'Concrete driveway installation and replacement in Knoxville, TN. Durable, properly-based driveways that resist cracking and settling. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Driveways in Knoxville, TN',
     heroSubhead:
       'A new concrete driveway is the biggest first impression your home makes — and one of the easiest to get wrong. We build ours to last.',
@@ -157,7 +157,7 @@ export const services: Service[] = [
     navLabel: 'Concrete Patios',
     title: 'Concrete Patio Contractors Knoxville TN | Custom Patios | Paramount',
     metaDescription:
-      'Custom concrete patio design and installation in Knoxville, TN — broom, stamped and decorative finishes with proper grading and drainage. Free estimates: (865) 237-9770.',
+      'Custom concrete patio design and installation in Knoxville, TN — broom, stamped and decorative finishes with proper grading and drainage. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Patios in Knoxville, TN',
     heroSubhead:
       'The foundation of your outdoor living space. We design and pour patios that drain right, resist cracking and look built-in — not bolted-on.',
@@ -204,7 +204,7 @@ export const services: Service[] = [
     navLabel: 'Decorative & Stamped',
     title: 'Stamped & Decorative Concrete Knoxville TN | Patios & Driveways | Paramount',
     metaDescription:
-      'Premium stamped and decorative concrete in Knoxville, TN — stone, slate, brick and wood-plank patterns with color and borders. Free estimates: (865) 237-9770.',
+      'Premium stamped and decorative concrete in Knoxville, TN — stone, slate, brick and wood-plank patterns with color and borders. Free phone consultation: (865) 237-9770.',
     h1: 'Stamped & Decorative Concrete in Knoxville, TN',
     heroSubhead:
       'The look of natural stone, brick or slate at a fraction of the cost — poured as one seamless, low-maintenance surface.',
@@ -256,7 +256,7 @@ export const services: Service[] = [
     navLabel: 'Sidewalks & Walkways',
     title: 'Concrete Sidewalks & Walkways Knoxville TN | Paramount',
     metaDescription:
-      'Concrete sidewalk and walkway installation in Knoxville, TN — safe, level, properly-drained paths and steps that connect your property. Free estimates: (865) 237-9770.',
+      'Concrete sidewalk and walkway installation in Knoxville, TN — safe, level, properly-drained paths and steps that connect your property. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Sidewalks & Walkways in Knoxville, TN',
     heroSubhead:
       'The paths that tie your property together — poured level, pitched to drain, and built to stay trip-free for decades.',
@@ -298,7 +298,7 @@ export const services: Service[] = [
     navLabel: 'Slabs & Foundations',
     title: 'Concrete Slabs & Foundations Knoxville TN | Sheds, Garages & Pads',
     metaDescription:
-      'Concrete slab and foundation pours in Knoxville, TN — shed, garage, addition and equipment pads built on a proper base and reinforced to last. Free estimates: (865) 237-9770.',
+      'Concrete slab and foundation pours in Knoxville, TN — shed, garage, addition and equipment pads built on a proper base and reinforced to last. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Slabs & Foundations in Knoxville, TN',
     heroSubhead:
       'Flat, level, reinforced slabs for sheds, garages, additions, shops and equipment pads — built to carry the load.',
@@ -335,7 +335,7 @@ export const services: Service[] = [
     navLabel: 'Pool Decks',
     title: 'Concrete Pool Decks Knoxville TN | Stamped & Slip-Resistant | Paramount',
     metaDescription:
-      'Concrete pool deck installation in Knoxville, TN — stamped, decorative and slip-resistant finishes that stay cooler and drain away from the pool. Free estimates: (865) 237-9770.',
+      'Concrete pool deck installation in Knoxville, TN — stamped, decorative and slip-resistant finishes that stay cooler and drain away from the pool. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete Pool Decks in Knoxville, TN',
     heroSubhead:
       'A pool deck has a hard job: look great, drain away from the water, and stay slip-resistant underfoot. We build ours to do all three.',
@@ -373,7 +373,7 @@ export const services: Service[] = [
     navLabel: 'Pavers (overview)',
     title: 'Paver Installation Knoxville TN | Patios, Driveways & Walkways | Paramount',
     metaDescription:
-      'Premium paver installation in Knoxville, TN — Belgard & Techo-Bloc patios, driveways, walkways and pool decks built on a proper base to last 50+ years. Free estimates: (865) 237-9770.',
+      'Premium paver installation in Knoxville, TN — Belgard & Techo-Bloc patios, driveways, walkways and pool decks built on a proper base to last 50+ years. Free phone consultation: (865) 237-9770.',
     h1: 'Paver Installation in Knoxville, TN',
     heroSubhead:
       'Interlocking pavers flex with our clay soil instead of cracking on it — and when installed right, they outlast poured concrete by decades.',
@@ -425,7 +425,7 @@ export const services: Service[] = [
     navLabel: 'Paver Patios',
     title: 'Paver Patios Knoxville TN | Custom Belgard & Techo-Bloc Patios | Paramount',
     metaDescription:
-      'Custom paver patio design and installation in Knoxville, TN. Belgard & Techo-Bloc patios built on a deep compacted base to last a lifetime. Free estimates: (865) 237-9770.',
+      'Custom paver patio design and installation in Knoxville, TN. Belgard & Techo-Bloc patios built on a deep compacted base to last a lifetime. Free phone consultation: (865) 237-9770.',
     h1: 'Paver Patios in Knoxville, TN',
     heroSubhead:
       'A paver patio turns an unused backyard into the best room in the house — and ours are built on a base that won’t sink or shift.',
@@ -474,7 +474,7 @@ export const services: Service[] = [
     navLabel: 'Paver Driveways',
     title: 'Paver Driveways Knoxville TN | Installation | Paramount',
     metaDescription:
-      'Paver driveway design and installation in Knoxville, TN — durable, drainable interlocking driveways that flex with our soil and last 50+ years. Free estimates: (865) 237-9770.',
+      'Paver driveway design and installation in Knoxville, TN — durable, drainable interlocking driveways that flex with our soil and last 50+ years. Free phone consultation: (865) 237-9770.',
     h1: 'Paver Driveways in Knoxville, TN',
     heroSubhead:
       'The most durable driveway you can build — interlocking pavers that flex with the ground, shed water, and repair one unit at a time.',
@@ -522,7 +522,7 @@ export const services: Service[] = [
     navLabel: 'Paver Walkways',
     title: 'Paver Walkways Knoxville TN | Paths & Steps | Paramount',
     metaDescription:
-      'Paver walkway and pathway installation in Knoxville, TN — durable, elegant paths and steps that flex with the ground and never crack. Free estimates: (865) 237-9770.',
+      'Paver walkway and pathway installation in Knoxville, TN — durable, elegant paths and steps that flex with the ground and never crack. Free phone consultation: (865) 237-9770.',
     h1: 'Paver Walkways in Knoxville, TN',
     heroSubhead:
       'Curved, character-filled paths that flex with the ground and tie your whole landscape together.',
@@ -558,7 +558,7 @@ export const services: Service[] = [
     navLabel: 'Paver Pool Decks',
     title: 'Paver Pool Decks Knoxville TN | Cool, Slip-Resistant | Paramount',
     metaDescription:
-      'Paver pool deck installation in Knoxville, TN — cooler underfoot, slip-resistant, repairable pool decks that drain and last. Free estimates: (865) 237-9770.',
+      'Paver pool deck installation in Knoxville, TN — cooler underfoot, slip-resistant, repairable pool decks that drain and last. Free phone consultation: (865) 237-9770.',
     h1: 'Paver Pool Decks in Knoxville, TN',
     heroSubhead:
       'Pavers stay cooler underfoot, grip when wet, and lift out one at a time for repairs — the ideal pool deck surface.',
@@ -597,7 +597,7 @@ export const services: Service[] = [
     navLabel: 'Hardscapes (overview)',
     title: 'Hardscaping Knoxville TN | Retaining Walls, Fire Pits & Walkways | Paramount',
     metaDescription:
-      'Full-service hardscaping in Knoxville, TN — retaining walls, walkways, steps and fire pits designed and built as one outdoor living space. Free estimates: (865) 237-9770.',
+      'Full-service hardscaping in Knoxville, TN — retaining walls, walkways, steps and fire pits designed and built as one outdoor living space. Free phone consultation: (865) 237-9770.',
     h1: 'Hardscaping in Knoxville, TN',
     heroSubhead:
       'Retaining walls, fire pits and walkways — designed together so your whole backyard works as one outdoor living space.',
@@ -642,7 +642,7 @@ export const services: Service[] = [
     navLabel: 'Retaining Walls',
     title: 'Retaining Walls Knoxville TN | Design & Installation | Paramount',
     metaDescription:
-      'Engineered retaining wall design and installation in Knoxville, TN — block, boulder and stone walls with proper drainage that won’t bulge or fail. Free estimates: (865) 237-9770.',
+      'Engineered retaining wall design and installation in Knoxville, TN — block, boulder and stone walls with proper drainage that won’t bulge or fail. Free phone consultation: (865) 237-9770.',
     h1: 'Retaining Walls in Knoxville, TN',
     heroSubhead:
       'Reclaim a sloped yard, stop erosion and create level space — with walls engineered to hold, not just to look good on day one.',
@@ -697,7 +697,7 @@ export const services: Service[] = [
     navLabel: 'Fire Pits',
     title: 'Fire Pits Knoxville TN | Custom Fire Pit Builders | Paramount',
     metaDescription:
-      'Custom fire pit design and installation in Knoxville, TN — wood-burning and gas, block, stone and paver fire features built into your patio. Free estimates: (865) 237-9770.',
+      'Custom fire pit design and installation in Knoxville, TN — wood-burning and gas, block, stone and paver fire features built into your patio. Free phone consultation: (865) 237-9770.',
     h1: 'Fire Pits in Knoxville, TN',
     heroSubhead:
       'The feature that makes a patio a destination three seasons a year. Wood-burning or gas, built to match your hardscape.',
@@ -738,7 +738,7 @@ export const services: Service[] = [
     navLabel: 'Walkways & Steps',
     title: 'Walkways & Stone Steps Knoxville TN | Hardscape Paths | Paramount',
     metaDescription:
-      'Custom walkways and stone steps in Knoxville, TN — paver, natural stone and flagstone paths and stairs that navigate slopes safely and beautifully. Free estimates: (865) 237-9770.',
+      'Custom walkways and stone steps in Knoxville, TN — paver, natural stone and flagstone paths and stairs that navigate slopes safely and beautifully. Free phone consultation: (865) 237-9770.',
     h1: 'Walkways & Stone Steps in Knoxville, TN',
     heroSubhead:
       'On a hilly East Tennessee lot, the right steps and paths make the whole landscape usable — and safe underfoot.',

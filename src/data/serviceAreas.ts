@@ -25,7 +25,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor Knoxville TN | Paramount',
     metaDescription:
-      'Paramount Concrete & Hardscapes serves Knoxville, TN with driveways, patios, pavers, retaining walls and fire pits. Free estimates: (865) 237-9770.',
+      'Paramount Concrete & Hardscapes serves Knoxville, TN with driveways, patios, pavers, retaining walls and fire pits. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Knoxville, TN',
     heroSubhead:
       'Our home base. From Bearden to Halls, we build concrete and hardscapes engineered for Knoxville’s clay soil and freeze-thaw winters.',
@@ -51,7 +51,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor Farragut TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios, retaining walls and outdoor living in Farragut, TN. Premium hardscape design and build. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, patios, retaining walls and outdoor living in Farragut, TN. Premium hardscape design and build. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Farragut, TN',
     heroSubhead:
       'Premium patios, paver driveways and outdoor living for Farragut and West Knox homes — built to the standard the neighborhood expects.',
@@ -77,7 +77,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor West Knoxville TN | Paramount',
     metaDescription:
-      'Driveways, paver patios, retaining walls and outdoor living in West Knoxville, TN. Free estimates: (865) 237-9770.',
+      'Driveways, paver patios, retaining walls and outdoor living in West Knoxville, TN. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in West Knoxville, TN',
     heroSubhead:
       'Patios, driveways and outdoor living across West Knox — Bearden, Cedar Bluff, Hardin Valley and beyond.',
@@ -103,7 +103,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Blount County',
     title: 'Concrete & Hardscape Contractor Maryville TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios, retaining walls and outdoor living in Maryville & Alcoa, TN. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, patios, retaining walls and outdoor living in Maryville & Alcoa, TN. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Maryville, TN',
     heroSubhead:
       'Serving Maryville, Alcoa and Blount County with concrete and hardscapes built for the foothills.',
@@ -128,7 +128,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Anderson County',
     title: 'Concrete & Hardscape Contractor Oak Ridge TN | Paramount',
     metaDescription:
-      'Driveways, patios, pavers and retaining walls in Oak Ridge & Clinton, TN. Free estimates: (865) 237-9770.',
+      'Driveways, patios, pavers and retaining walls in Oak Ridge & Clinton, TN. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Oak Ridge, TN',
     heroSubhead:
       'Concrete and hardscapes for Oak Ridge, Clinton and the Anderson County corridor.',
@@ -153,7 +153,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Sevier County',
     title: 'Concrete & Hardscape Contractor Sevierville TN | Paramount',
     metaDescription:
-      'Concrete, pavers, decks, patios and retaining walls in Sevierville, Seymour & Sevier County, TN — including cabins and rental properties. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, decks, patios and retaining walls in Sevierville, Seymour & Sevier County, TN — including cabins and rental properties. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Sevierville, TN',
     heroSubhead:
       'Concrete, decks and hardscapes for Sevierville, Seymour and Sevier County — homes, cabins and rental properties.',
@@ -178,7 +178,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Loudon County',
     title: 'Concrete & Hardscape Contractor Lenoir City TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Lenoir City & Loudon County, TN — including lakefront properties. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, patios and retaining walls in Lenoir City & Loudon County, TN — including lakefront properties. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Lenoir City, TN',
     heroSubhead:
       'Serving Lenoir City, Loudon and the Tellico & Fort Loudoun lake communities.',
@@ -203,7 +203,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Blount County',
     title: 'Concrete & Hardscape Contractor Alcoa TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Alcoa, TN. Driveways, outdoor living and hardscapes built to last. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, patios and retaining walls in Alcoa, TN. Driveways, outdoor living and hardscapes built to last. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Alcoa, TN',
     heroSubhead:
       'Driveways, patios and outdoor living for Alcoa and the greater Maryville area.',
@@ -228,7 +228,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Anderson County',
     title: 'Concrete & Hardscape Contractor Clinton TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Clinton, TN and Anderson County. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, patios and retaining walls in Clinton, TN and Anderson County. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Clinton, TN',
     heroSubhead:
       'Concrete and hardscapes for Clinton, Oak Ridge and the Anderson County area.',
@@ -253,7 +253,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Sevier County',
     title: 'Concrete & Hardscape Contractor Seymour TN | Paramount',
     metaDescription:
-      'Concrete, pavers, decks, patios and retaining walls in Seymour, TN and Sevier County. Free estimates: (865) 237-9770.',
+      'Concrete, pavers, decks, patios and retaining walls in Seymour, TN and Sevier County. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Seymour, TN',
     heroSubhead:
       'Concrete, decks and hardscapes for Seymour and the Sevierville area.',
@@ -278,7 +278,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor Powell TN | Paramount',
     metaDescription:
-      'Concrete driveways, patios, pavers and retaining walls in Powell, TN. Outdoor living built to last. Free estimates: (865) 237-9770.',
+      'Concrete driveways, patios, pavers and retaining walls in Powell, TN. Outdoor living built to last. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Powell, TN',
     heroSubhead:
       'Driveways, patios and outdoor living for Powell and North Knox County.',
@@ -303,7 +303,7 @@ export const serviceAreas: ServiceArea[] = [
     county: 'Knox County',
     title: 'Concrete & Hardscape Contractor Karns TN | Paramount',
     metaDescription:
-      'Concrete driveways, patios, pavers and retaining walls in Karns, TN and West Knox County. Free estimates: (865) 237-9770.',
+      'Concrete driveways, patios, pavers and retaining walls in Karns, TN and West Knox County. Free phone consultation: (865) 237-9770.',
     h1: 'Concrete & Hardscape Contractor in Karns, TN',
     heroSubhead:
       'Concrete and hardscapes for Karns, Hardin Valley and West Knox County.',

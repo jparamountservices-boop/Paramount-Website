@@ -32,6 +32,6 @@ Concrete is the value choice; a [paver patio](/blog/how-much-does-a-paver-patio-
 
 ## Get an itemized quote
 
-We measure your space, plan the drainage, and give you a free, itemized estimate — so you see exactly what you're paying for.
+We measure your space, plan the drainage, and give you an itemized estimate — so you see exactly what you're paying for.
 
 **[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**

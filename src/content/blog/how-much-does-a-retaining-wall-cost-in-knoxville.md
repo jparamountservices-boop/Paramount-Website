@@ -38,6 +38,6 @@ and rebuilding a collapsed wall costs far more than building it right once.
 
 ## Get an itemized quote
 
-Wall cost depends on your slope, soil and height — we measure and give you a free, itemized estimate.
+Wall cost depends on your slope, soil and height — we measure and give you an itemized estimate.
 
 **[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**
