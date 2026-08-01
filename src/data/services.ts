@@ -282,7 +282,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete walkways in Knoxville typically run about $10–$12 per square foot for a broom or troweled finish, more for decorative work, depending on width, site access and prep. Steps and stamped/stained finishes add to the cost.',
+      'Concrete walkways and steps are priced by the project, not a flat per-square-foot rate — width, length, finish (broom, troweled, stamped or stained), steps and site access all change the number. We give itemized estimates after seeing the path.',
     faqs: [
       {
         q: 'How wide should a walkway be?',
@@ -542,7 +542,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Paver walkways in Knoxville generally run about $20–$40 per square foot installed depending on paver, pattern, curves and steps.',
+      'Paver walkways and steps are priced by the project rather than a flat per-square-foot rate — the paver, pattern, curves, steps and site conditions all affect it. We give itemized estimates after seeing the space.',
     faqs: [
       {
         q: 'Do paver walkways get uneven over time?',
