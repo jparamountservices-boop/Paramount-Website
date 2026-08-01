@@ -22,6 +22,10 @@ const faqs = [
     a: 'Because two projects of the same size can differ by thousands depending on finish, base prep, drainage and access. The range shows the honest low-to-high; a quick call and a few photos let us land on an accurate figure.',
   },
   {
+    q: 'Is there a minimum project size?',
+    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $2,500 for concrete, $3,000 for pavers and $4,000 for retaining walls. The estimator reflects those minimums, and we’ll confirm the exact number on your free phone consultation.',
+  },
+  {
     q: 'Do you charge for an estimate?',
     a: 'No. Every project starts with a free phone consultation — we talk through your ideas, options and ballpark pricing before we ever come out. Photos and rough measurements help us get you a more accurate price up front.',
   },
@@ -124,6 +128,8 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       concrete: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
+        min: 2500,
+        noun: 'concrete',
         items: [
           { label: 'Broom / troweled finish', low: 10, high: 12 },
           { label: 'Stamped / stained decorative', low: 18, high: 20 },
@@ -132,6 +138,8 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       pavers: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
+        min: 3000,
+        noun: 'paver',
         items: [
           { label: 'Paver patio', low: 25, high: 35 },
           { label: 'Paver driveway', low: 45, high: 55 },
@@ -140,6 +148,8 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       wall: {
         dims: ['Height (ft)', 'Length (ft)'],
         mode: 'face',
+        min: 4000,
+        noun: 'retaining wall',
         items: [{ label: 'Segmental / stone retaining wall', low: 48, high: 65 }],
       },
     };
@@ -182,14 +192,22 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
         areaNote.textContent = '';
         return;
       }
-      const low = sqft * item.low;
-      const high = sqft * item.high;
-      result.textContent = money(low) + ' – ' + money(high);
+      const min = cfg.min || 0;
+      const low = Math.max(sqft * item.low, min);
+      const high = Math.max(sqft * item.high, min);
       const unit = cfg.mode === 'face' ? 'face sq ft' : 'sq ft';
-      resultSub.textContent =
-        'Estimated installed price for ~' + sqft.toLocaleString() + ' ' + unit + ' of ' + item.label.toLowerCase() + '.';
+      if (low >= high) {
+        // Computed range falls under the project minimum.
+        result.textContent = 'From ' + money(min);
+        resultSub.textContent =
+          'Most ' + cfg.noun + ' projects start around a ' + money(min) + ' minimum.';
+      } else {
+        result.textContent = money(low) + ' – ' + money(high);
+        resultSub.textContent =
+          'Estimated installed price for ~' + sqft.toLocaleString() + ' ' + unit + ' of ' + item.label.toLowerCase() + '.';
+      }
       areaNote.textContent =
-        '≈ ' + sqft.toLocaleString() + ' ' + unit + ' · $' + item.low + '–$' + item.high + ' per ' + unit;
+        '≈ ' + sqft.toLocaleString() + ' ' + unit + ' · $' + item.low + '–$' + item.high + ' per ' + unit + ' · ' + money(min) + ' project minimum';
     }
 
     document.querySelectorAll('.cat-btn').forEach((btn) => {
