@@ -1,0 +1,21 @@
+<!--
+  Netlify Forms detection stub. Netlify scans static HTML at deploy time for
+  forms marked with data-netlify. This guarantees the "quote" form (used across
+  the site via QuoteForm.astro) is always detected, even though Astro renders
+  the real forms dynamically. This page is hidden and unlinked.
+-->
+<html>
+  <head><meta name="robots" content="noindex" /><title>Form detection</title></head>
+  <body>
+    <form name="quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="quote" />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="city" />
+      <input type="text" name="service" />
+      <textarea name="details"></textarea>
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
