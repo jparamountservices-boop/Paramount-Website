@@ -106,6 +106,34 @@ export function buildEmail({ name, service } = {}) {
 }
 
 export const handler = async (event) => {
+  // ---- Temporary diagnostic (safe to remove later) --------------------------
+  // Open in a browser:  /.netlify/functions/submission-created
+  //   → shows whether the API key + from-address reached the function.
+  // Add ?send=1 to actually attempt a Resend send to the owner and see the
+  //   exact Resend response (status + message).
+  if ((event.httpMethod || '').toUpperCase() === 'GET') {
+    const apiKey = process.env.RESEND_API_KEY;
+    const from = process.env.AUTORESPONDER_FROM || '(AUTORESPONDER_FROM is unset)';
+    const diag = {
+      hasApiKey: !!apiKey,
+      apiKeyPrefix: apiKey ? apiKey.slice(0, 4) + '…' : null,
+      from,
+    };
+    const wantSend = event.queryStringParameters && event.queryStringParameters.send === '1';
+    if (wantSend && apiKey) {
+      const { subject, html: htmlBody, text: textBody } = buildEmail({ name: 'Test', service: 'concrete' });
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from, to: [REPLY_TO], reply_to: REPLY_TO, subject: '[TEST] ' + subject, html: htmlBody, text: textBody }),
+      });
+      diag.resendStatus = res.status;
+      diag.resendResponse = await res.text();
+    }
+    return { statusCode: 200, headers: { 'content-type': 'application/json' }, body: JSON.stringify(diag, null, 2) };
+  }
+  // ---------------------------------------------------------------------------
+
   try {
     const body = JSON.parse(event.body || '{}');
     const data = (body.payload && body.payload.data) || {};
