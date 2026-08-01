@@ -7,6 +7,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Serverless functions (auto-responder: submission-created.mjs runs on form submit)
+[functions]
+  directory = "netlify/functions"
+
 # ---------------------------------------------------------------------------
 # 301 redirects: preserve ranking equity from old WordPress/Elementor URLs
 # that changed or were removed in the rebuild. Most slugs were kept identical
