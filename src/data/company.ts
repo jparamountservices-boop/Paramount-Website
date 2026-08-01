@@ -76,7 +76,7 @@ export const company = {
   // See docs/deployment/analytics-search-console.md for step-by-step setup.
   analytics: {
     ga4Id: 'G-MZX1VJWX26',
-    gscVerification: '',
+    gscVerification: 'mYEyHh_YfW-GWmw47TV0jb-jmU_YF4r3knNAa1-sN50',
     bingVerification: '',
     clarityId: '',
   },
