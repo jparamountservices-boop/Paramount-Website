@@ -39,6 +39,13 @@ export const handler = async (event) => {
     }
   }
 
+  // Reveal the actual env var NAMES the function can see (names only, not values)
+  // so we can spot a typo/trailing-space in the variable name.
+  const allKeys = Object.keys(process.env);
+  const matching = allKeys.filter((k) => /resend|autoresp|from|api|key/i.test(k));
+  const exactApiKey = Object.prototype.hasOwnProperty.call(process.env, 'RESEND_API_KEY');
+  const exactFrom = Object.prototype.hasOwnProperty.call(process.env, 'AUTORESPONDER_FROM');
+
   const lines = [
     'AUTORESPONDER DIAGNOSTIC',
     '========================',
@@ -48,6 +55,16 @@ export const handler = async (event) => {
     'resendStatus:   ' + (out.resendStatus ?? '(add ?send=1 to test a real send)'),
     'resendResponse: ' + (out.resendResponse ?? ''),
     'fetchError:     ' + (out.fetchError ?? ''),
+    '',
+    'ENV DEBUG',
+    '---------',
+    'exact RESEND_API_KEY present:     ' + exactApiKey,
+    'exact AUTORESPONDER_FROM present: ' + exactFrom,
+    'matching env var names: ' + (matching.length ? matching.map((k) => JSON.stringify(k)).join(', ') : '(none)'),
+    'total env vars seen: ' + allKeys.length,
+    'CONTEXT: ' + (process.env.CONTEXT ?? '(none)'),
+    'SITE_NAME: ' + (process.env.SITE_NAME ?? '(none)'),
+    'URL: ' + (process.env.URL ?? '(none)'),
   ];
   return {
     statusCode: 200,
