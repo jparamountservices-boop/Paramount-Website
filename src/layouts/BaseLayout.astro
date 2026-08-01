@@ -48,6 +48,17 @@ const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
+    {ga4Id && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+        <script is:inline define:vars={{ ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      </>
+    )}
     <SEO
       title={title}
       description={description}
@@ -65,18 +76,6 @@ const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
     </main>
     <Footer />
     <StickyCall />
-
-    {ga4Id && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
-        <script is:inline define:vars={{ ga4Id }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', ga4Id);
-        </script>
-      </>
-    )}
 
     {clarityId && (
       <script is:inline define:vars={{ clarityId }}>
