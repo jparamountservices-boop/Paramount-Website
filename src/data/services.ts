@@ -673,7 +673,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Retaining walls in Knoxville typically run about $35–$65+ per face square foot depending on wall type, height, drainage and whether engineering/geogrid is required. Taller walls (generally over 4 ft) may require an engineered design and permit.',
+      'Retaining walls in Knoxville typically start around $48 and run up to $65+ per face square foot depending on wall type, height, drainage and whether engineering/geogrid is required. Taller walls (generally over 4 ft) may require an engineered design and permit.',
     faqs: [
       {
         q: 'Why do retaining walls fail?',
@@ -685,7 +685,7 @@ export const services: Service[] = [
       },
       {
         q: 'How much does a retaining wall cost?',
-        a: 'Most residential retaining walls run about $35–$65+ per face square foot installed. Height, wall system, drainage and soil reinforcement drive the price. We provide itemized estimates.',
+        a: 'Most residential retaining walls start around $48 and run up to $65+ per face square foot installed. Height, wall system, drainage and soil reinforcement drive the price. We provide itemized estimates.',
       },
     ],
     related: ['hardscapes', 'pavers/patios', 'hardscapes/fire-pits', 'concrete'],

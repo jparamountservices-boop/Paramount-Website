@@ -16,11 +16,11 @@ misquoted. Here's how they're actually priced in **2026** and what moves the num
 Retaining walls are priced per **face square foot** (wall height × length, the visible face), not
 by the linear foot. In the Knoxville area, expect roughly:
 
-- **Segmental block wall:** ~$35–$55 per face sq ft
-- **Natural stone / boulder wall:** ~$45–$70+ per face sq ft
+- **Segmental block wall:** ~$48–$60 per face sq ft
+- **Natural stone / boulder wall:** ~$55–$75+ per face sq ft
 - **Taller walls needing geogrid + engineering:** at the higher end and up
 
-A wall 3 ft tall × 30 ft long = 90 face sq ft, so roughly **$3,200–$5,000+** depending on type.
+A wall 3 ft tall × 30 ft long = 90 face sq ft, so roughly **$4,300–$5,900+** depending on type.
 
 ## What drives the price
 
