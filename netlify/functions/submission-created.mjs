@@ -130,7 +130,16 @@ export const handler = async (event) => {
       diag.resendStatus = res.status;
       diag.resendResponse = await res.text();
     }
-    return { statusCode: 200, headers: { 'content-type': 'application/json' }, body: JSON.stringify(diag, null, 2) };
+    const lines = [
+      'AUTORESPONDER DIAGNOSTIC',
+      '========================',
+      'hasApiKey:     ' + diag.hasApiKey,
+      'apiKeyPrefix:  ' + diag.apiKeyPrefix,
+      'from:          ' + diag.from,
+      'resendStatus:  ' + (diag.resendStatus ?? '(add ?send=1 to test a send)'),
+      'resendResponse:' + (diag.resendResponse ?? ''),
+    ];
+    return { statusCode: 200, headers: { 'content-type': 'text/plain; charset=utf-8' }, body: lines.join('\n') };
   }
   // ---------------------------------------------------------------------------
 
