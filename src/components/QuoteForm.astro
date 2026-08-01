@@ -61,12 +61,11 @@ const serviceOptions = services.filter((s) => !s.isHub);
     </select>
   </label>
 
-  {!compact && (
-    <label class="block">
-      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Project details</span>
-      <textarea name="details" rows="4" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" placeholder="Tell us about your project, timeline and budget…"></textarea>
-    </label>
-  )}
+  <label class="block">
+    <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Describe your project</span>
+    <span class="mb-2 block text-xs text-[var(--color-concrete-dim)]">Please describe your project as best as possible in this area — the more detail, the better we can help.</span>
+    <textarea name="details" rows={compact ? 3 : 5} class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]" placeholder="Size or area, location, materials you like, timeline, budget, and anything else that helps us picture it…"></textarea>
+  </label>
 
   <button type="submit" class="btn btn-primary w-full text-base">Request My Free Phone Consultation</button>
   <p class="text-center text-xs text-[var(--color-concrete-dim)]">
