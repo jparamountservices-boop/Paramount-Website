@@ -223,6 +223,31 @@ export const serviceAreas: ServiceArea[] = [
     ],
   },
   {
+    slug: 'louisville',
+    city: 'Louisville',
+    county: 'Blount County',
+    title: 'Concrete & Hardscape Contractor Louisville TN | Paramount',
+    metaDescription:
+      'Concrete, pavers, patios, retaining walls and lakefront outdoor living in Louisville, TN on Fort Loudoun Lake. Free phone consultation: (865) 237-9770.',
+    h1: 'Concrete & Hardscape Contractor in Louisville, TN',
+    heroSubhead:
+      'Driveways, paver patios and lakeside outdoor living for Louisville homes along Fort Loudoun Lake.',
+    primaryKeyword: 'concrete contractor Louisville TN',
+    intro: [
+      'Tucked along Fort Loudoun Lake between Knoxville and Maryville, Louisville is lake country — and lake homes ask more of their hardscapes. We build driveways, paver patios, retaining walls and complete outdoor living spaces for Louisville properties, with special attention to the sloped, waterfront lots that run down toward the shoreline.',
+    ],
+    localAngle: [
+      'Lakefront lots that fall away toward the water make retaining walls, terracing and drainage a common need — often the difference between a usable yard and an eroding slope.',
+      'Louisville homeowners entertaining by the water tend to want paver patios, fire features and outdoor kitchens that hold up to lake living and look the part.',
+    ],
+    faqs: [
+      {
+        q: 'Do you build lakefront patios and retaining walls in Louisville?',
+        a: 'Yes — sloped, waterfront lots are some of our favorite projects. We plan the drainage and terracing first so a lakeside patio or wall stays put and drains properly, then build the outdoor living space on top.',
+      },
+    ],
+  },
+  {
     slug: 'clinton',
     city: 'Clinton',
     county: 'Anderson County',

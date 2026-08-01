@@ -1,0 +1,145 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { company } from '../data/company';
+import { getService, type Service } from '../data/services';
+import {
+  type LocalServicePage,
+  localPagesForTown,
+  localTownsForService,
+} from '../data/localServicePages';
+import { serviceAreas } from '../data/serviceAreas';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '../lib/schema';
+
+interface Props {
+  page: LocalServicePage;
+}
+const { page } = Astro.props;
+
+const path = `/${page.service}/${page.townSlug}/`;
+const hub = getService(page.service);
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  ...(hub ? [{ name: page.serviceLabel, path: `/${hub.path}/` }] : []),
+  { name: `${page.city}`, path },
+];
+
+const related = page.relatedServices
+  .map((p) => getService(p))
+  .filter((s): s is Service => Boolean(s));
+
+// Cross-link to the other service in the same town (concrete ↔ pavers).
+const sameTown = localPagesForTown(page.townSlug).filter((p) => p.service !== page.service);
+
+// The town's all-services hub page, if it exists.
+const areaHub = serviceAreas.find((a) => a.slug === page.areaSlug);
+
+// Other towns offering this same service (nearby internal links).
+const otherTowns = localTownsForService(page.service).filter((t) => t.townSlug !== page.townSlug);
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  serviceSchema({
+    name: `${page.serviceLabel} in ${page.city}, TN`,
+    description: page.metaDescription,
+    path,
+    areaServed: `${page.city}, TN`,
+  }),
+  ...(page.faqs.length ? [faqSchema(page.faqs)] : []),
+];
+---
+
+<BaseLayout title={page.title} description={page.metaDescription} path={path} schemas={schemas}>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- Hero -->
+  <section class="wrap grid gap-10 pb-6 pt-4 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+    <div>
+      <p class="eyebrow">{page.city} · {page.county}</p>
+      <h1 class="mt-3 text-4xl font-black sm:text-5xl">{page.h1}</h1>
+      <p class="mt-5 max-w-xl text-lg text-[var(--color-concrete)]">{page.heroSubhead}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/contact/" class="btn btn-primary">Get a Free Phone Consultation</a>
+        <a href={company.phoneHref} class="btn btn-ghost">Call {company.phone}</a>
+      </div>
+    </div>
+    <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+      <p class="mb-1 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">
+        {page.serviceLabel} in {page.city}
+      </p>
+      <p class="mb-4 text-sm text-[var(--color-concrete-dim)]">Tell us about your project — we’ll get right back to you.</p>
+      <QuoteForm compact />
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- Body copy -->
+  <article class="wrap prose-dark py-14">
+    <div class="mx-auto max-w-3xl">
+      {page.intro.map((p) => <p>{p}</p>)}
+
+      {page.sections.map((sec) => (
+        <>
+          <h2>{sec.h2}</h2>
+          {sec.body?.map((p) => <p>{p}</p>)}
+          {sec.bullets && <ul>{sec.bullets.map((b) => <li>{b}</li>)}</ul>}
+        </>
+      ))}
+
+      <div class="my-8 rounded-lg border-l-4 border-[var(--color-flame)] bg-[var(--color-graphite)] p-5">
+        <p class="m-0 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">What it costs</p>
+        <p class="m-0 mt-2">{page.costNote}</p>
+      </div>
+
+      {(areaHub || sameTown.length > 0) && (
+        <p class="text-sm text-[var(--color-concrete-dim)]">
+          {areaHub && (
+            <>See everything we build in <a href={`/service-area/${areaHub.slug}/`}>{page.city}</a>. </>
+          )}
+          {sameTown.map((p) => (
+            <>Also considering <a href={`/${p.service}/${p.townSlug}/`}>{p.serviceLabel.toLowerCase()} in {p.city}</a>? </>
+          ))}
+        </p>
+      )}
+    </div>
+  </article>
+
+  <!-- Related service pages (internal links) -->
+  {related.length > 0 && (
+    <section class="wrap pb-14">
+      <h2 class="mb-6 text-2xl font-extrabold">{page.serviceLabel} services</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {related.map((r) => (
+          <a href={`/${r.path}/`} class="group rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 transition hover:border-[var(--color-flame)]">
+            <p class="font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{r.navLabel.replace(' (overview)', '')}</p>
+            <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{r.heroSubhead}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {page.faqs.length > 0 && <Faq faqs={page.faqs} heading={`${page.serviceLabel} in ${page.city} — Common Questions`} />}
+
+  <!-- Nearby towns for this service (internal linking cluster) -->
+  {otherTowns.length > 0 && (
+    <section class="wrap pb-14">
+      <h2 class="mb-4 text-2xl font-extrabold">{page.serviceLabel} in nearby towns</h2>
+      <div class="flex flex-wrap gap-3 text-sm">
+        {otherTowns.map((t) => (
+          <a href={`/${page.service}/${t.townSlug}/`} class="rounded-full border border-[var(--color-steel)] px-4 py-2 text-[var(--color-concrete)] transition hover:border-[var(--color-flame)] hover:text-[var(--color-flame)]">
+            {page.serviceLabel} in {t.city}
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <CtaBand heading={`Building in ${page.city}? Let’s talk it through.`} />
+</BaseLayout>

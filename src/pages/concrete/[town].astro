@@ -1,0 +1,14 @@
+---
+import LocalServiceLayout from '../../layouts/LocalServiceLayout.astro';
+import { localServicePages } from '../../data/localServicePages';
+
+export function getStaticPaths() {
+  return localServicePages
+    .filter((p) => p.service === 'concrete')
+    .map((page) => ({ params: { town: page.townSlug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+---
+
+<LocalServiceLayout page={page} />

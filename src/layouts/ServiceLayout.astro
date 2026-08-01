@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import { company } from '../data/company';
 import { getService, type Service } from '../data/services';
+import { localTownsForService, type LocalService } from '../data/localServicePages';
 import { breadcrumbSchema, serviceSchema, faqSchema } from '../lib/schema';
 
 interface Props {
@@ -26,6 +27,13 @@ const crumbs = [
 const related = service.related
   .map((p) => getService(p))
   .filter((s): s is Service => Boolean(s));
+
+// On the Concrete/Pavers hubs, list the towns with dedicated local pages.
+const localTowns =
+  service.path === 'concrete' || service.path === 'pavers'
+    ? localTownsForService(service.path as LocalService)
+    : [];
+const localLabel = service.path === 'pavers' ? 'Pavers' : 'Concrete';
 
 const schemas = [
   breadcrumbSchema(crumbs),
@@ -95,6 +103,20 @@ const schemas = [
           <a href={`/${r.path}/`} class="group rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 transition hover:border-[var(--color-flame)]">
             <p class="font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{r.navLabel.replace(' (overview)', '')}</p>
             <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{r.heroSubhead}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {localTowns.length > 0 && (
+    <section class="wrap pb-14">
+      <h2 class="mb-2 text-2xl font-extrabold">{localLabel} by town</h2>
+      <p class="mb-6 text-[var(--color-concrete-dim)]">Local {localLabel.toLowerCase()} pages for the communities we serve most across East Tennessee.</p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        {localTowns.map((t) => (
+          <a href={`/${service.path}/${t.townSlug}/`} class="rounded-full border border-[var(--color-steel)] px-4 py-2 text-[var(--color-concrete)] transition hover:border-[var(--color-flame)] hover:text-[var(--color-flame)]">
+            {localLabel} in {t.city}
           </a>
         ))}
       </div>
