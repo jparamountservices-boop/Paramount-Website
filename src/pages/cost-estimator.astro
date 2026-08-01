@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import { company } from '../data/company';
+import { breadcrumbSchema, faqSchema } from '../lib/schema';
+
+const path = '/cost-estimator/';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Cost Estimator', path },
+];
+
+const faqs = [
+  {
+    q: 'How accurate is this concrete and paver cost estimator?',
+    a: 'It gives you a realistic ballpark based on the same per-square-foot ranges we quote around Knoxville. Your real number depends on site access, tear-out, grading and drainage, the mix and reinforcement, and finish choices — which is exactly what we nail down on a free phone consultation.',
+  },
+  {
+    q: 'Why is there a price range instead of one number?',
+    a: 'Because two projects of the same size can differ by thousands depending on finish, base prep, drainage and access. The range shows the honest low-to-high; a quick call and a few photos let us land on an accurate figure.',
+  },
+  {
+    q: 'Do you charge for an estimate?',
+    a: 'No. Every project starts with a free phone consultation — we talk through your ideas, options and ballpark pricing before we ever come out. Photos and rough measurements help us get you a more accurate price up front.',
+  },
+];
+
+const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
+---
+
+<BaseLayout
+  title="Concrete & Paver Cost Estimator | Knoxville TN | Paramount"
+  description="Free concrete, paver and retaining wall cost estimator for Knoxville & East TN. Get an instant ballpark price by size and finish, then book a free phone consultation."
+  path={path}
+  schemas={schemas}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="wrap py-10 text-center">
+    <p class="eyebrow">Instant ballpark pricing</p>
+    <h1 class="mt-3 text-4xl font-black sm:text-5xl">Concrete & Paver Cost Estimator</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-[var(--color-concrete)]">
+      Get a realistic price range for your Knoxville-area project in seconds. Pick what you’re building,
+      enter the size, and we’ll show you the same ballpark we’d quote — then let’s talk it through.
+    </p>
+  </section>
+
+  <section class="wrap pb-14">
+    <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <!-- Calculator -->
+      <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 sm:p-8">
+        <fieldset>
+          <legend class="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">1. What are you building?</legend>
+          <div id="cat-buttons" class="grid grid-cols-3 gap-2">
+            <button type="button" data-cat="concrete" class="cat-btn is-active rounded-lg border border-[var(--color-steel)] px-3 py-3 text-sm font-semibold transition">Concrete</button>
+            <button type="button" data-cat="pavers" class="cat-btn rounded-lg border border-[var(--color-steel)] px-3 py-3 text-sm font-semibold transition">Pavers</button>
+            <button type="button" data-cat="wall" class="cat-btn rounded-lg border border-[var(--color-steel)] px-3 py-3 text-sm font-semibold transition">Retaining Wall</button>
+          </div>
+        </fieldset>
+
+        <div class="mt-6">
+          <label for="option" class="mb-2 block text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">2. Finish / type</label>
+          <select id="option" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite-2)] px-4 py-3 text-[var(--color-bone)]"></select>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div>
+            <label id="dim1-label" for="dim1" class="mb-2 block text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Length (ft)</label>
+            <input id="dim1" type="number" min="0" inputmode="decimal" placeholder="e.g. 20" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite-2)] px-4 py-3 text-[var(--color-bone)]" />
+          </div>
+          <div>
+            <label id="dim2-label" for="dim2" class="mb-2 block text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Width (ft)</label>
+            <input id="dim2" type="number" min="0" inputmode="decimal" placeholder="e.g. 30" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite-2)] px-4 py-3 text-[var(--color-bone)]" />
+          </div>
+        </div>
+        <p id="area-note" class="mt-3 text-sm text-[var(--color-concrete-dim)]"></p>
+      </div>
+
+      <!-- Result -->
+      <div class="flex flex-col rounded-2xl border border-[var(--color-flame)] bg-[var(--color-graphite)] p-6 sm:p-8">
+        <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Estimated project range</p>
+        <p id="result" class="mt-3 text-4xl font-black text-[var(--color-bone)] sm:text-5xl">$0</p>
+        <p id="result-sub" class="mt-2 text-sm text-[var(--color-concrete-dim)]">Enter a size to see your ballpark.</p>
+
+        <div class="mt-6 rounded-lg bg-[var(--color-graphite-2)] p-4 text-sm text-[var(--color-concrete)]">
+          These are honest ballpark numbers, not a quote. Access, tear-out, grading, drainage, the mix and
+          finish all move the price. The fastest way to an accurate figure is a quick call and a couple of photos.
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3">
+          <a href="/contact/" class="btn btn-primary w-full">Get My Accurate Price — Free Phone Consultation</a>
+          <a href={company.phoneHref} class="btn btn-ghost w-full">Call {company.phone}</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-[var(--color-concrete-dim)]">
+      Want the detail behind these numbers? Read our honest cost guides on
+      <a href="/blog/how-much-does-a-concrete-driveway-cost-in-knoxville/" class="text-[var(--color-flame-300)] underline">concrete driveways</a>,
+      <a href="/blog/how-much-does-a-paver-patio-cost-in-knoxville/" class="text-[var(--color-flame-300)] underline">paver patios</a> and
+      <a href="/blog/how-much-does-a-retaining-wall-cost-in-knoxville/" class="text-[var(--color-flame-300)] underline">retaining walls</a>.
+    </p>
+  </section>
+
+  <Faq faqs={faqs} heading="Cost Estimator — Common Questions" />
+
+  <CtaBand heading="Ready for a real number? Let’s talk it through." />
+</BaseLayout>
+
+<style>
+  .cat-btn.is-active {
+    border-color: var(--color-flame);
+    background: color-mix(in srgb, var(--color-flame) 15%, transparent);
+    color: var(--color-bone);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    // Pricing mirrors the ranges used across the site (per sq ft unless noted).
+    const OPTIONS = {
+      concrete: {
+        dims: ['Length (ft)', 'Width (ft)'],
+        mode: 'area',
+        items: [
+          { label: 'Broom / troweled finish', low: 10, high: 12 },
+          { label: 'Stamped / stained decorative', low: 18, high: 20 },
+        ],
+      },
+      pavers: {
+        dims: ['Length (ft)', 'Width (ft)'],
+        mode: 'area',
+        items: [
+          { label: 'Paver patio', low: 25, high: 35 },
+          { label: 'Paver driveway', low: 45, high: 55 },
+        ],
+      },
+      wall: {
+        dims: ['Height (ft)', 'Length (ft)'],
+        mode: 'face',
+        items: [{ label: 'Segmental / stone retaining wall', low: 48, high: 65 }],
+      },
+    };
+
+    let cat = 'concrete';
+
+    const optionSel = document.getElementById('option');
+    const dim1 = document.getElementById('dim1');
+    const dim2 = document.getElementById('dim2');
+    const dim1Label = document.getElementById('dim1-label');
+    const dim2Label = document.getElementById('dim2-label');
+    const areaNote = document.getElementById('area-note');
+    const result = document.getElementById('result');
+    const resultSub = document.getElementById('result-sub');
+
+    const money = (n) => '$' + (Math.round(n / 50) * 50).toLocaleString();
+
+    function fillOptions() {
+      const cfg = OPTIONS[cat];
+      optionSel.innerHTML = '';
+      cfg.items.forEach((it, i) => {
+        const o = document.createElement('option');
+        o.value = String(i);
+        o.textContent = it.label;
+        optionSel.appendChild(o);
+      });
+      dim1Label.textContent = cfg.dims[0];
+      dim2Label.textContent = cfg.dims[1];
+    }
+
+    function calc() {
+      const cfg = OPTIONS[cat];
+      const item = cfg.items[Number(optionSel.value) || 0];
+      const a = parseFloat(dim1.value) || 0;
+      const b = parseFloat(dim2.value) || 0;
+      const sqft = a * b;
+      if (!sqft) {
+        result.textContent = '$0';
+        resultSub.textContent = 'Enter a size to see your ballpark.';
+        areaNote.textContent = '';
+        return;
+      }
+      const low = sqft * item.low;
+      const high = sqft * item.high;
+      result.textContent = money(low) + ' – ' + money(high);
+      const unit = cfg.mode === 'face' ? 'face sq ft' : 'sq ft';
+      resultSub.textContent =
+        'Estimated installed price for ~' + sqft.toLocaleString() + ' ' + unit + ' of ' + item.label.toLowerCase() + '.';
+      areaNote.textContent =
+        '≈ ' + sqft.toLocaleString() + ' ' + unit + ' · $' + item.low + '–$' + item.high + ' per ' + unit;
+    }
+
+    document.querySelectorAll('.cat-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        cat = btn.getAttribute('data-cat');
+        fillOptions();
+        calc();
+      });
+    });
+    optionSel.addEventListener('change', calc);
+    dim1.addEventListener('input', calc);
+    dim2.addEventListener('input', calc);
+
+    fillOptions();
+    calc();
+  })();
+</script>

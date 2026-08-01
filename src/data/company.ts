@@ -67,6 +67,20 @@ export const company = {
     google: '', // PLACEHOLDER — Google Business Profile URL
   },
 
+  // Analytics & search-engine verification. Leave blank to render nothing.
+  // Fill these in to start measuring traffic and to verify ownership:
+  //  - ga4Id: Google Analytics 4 "Measurement ID" (looks like G-XXXXXXXXXX)
+  //  - gscVerification: token from Google Search Console "HTML tag" method
+  //  - bingVerification: token from Bing Webmaster Tools "meta tag" method
+  //  - clarityId: Microsoft Clarity project ID (free heatmaps/session replay)
+  // See docs/deployment/analytics-search-console.md for step-by-step setup.
+  analytics: {
+    ga4Id: '',
+    gscVerification: '',
+    bingVerification: '',
+    clarityId: '',
+  },
+
   // Instagram handle shown in the "Follow us" section.
   instagramHandle: 'parmounthomerenovations',
   // OPTIONAL live-feed embed. Paste the HTML snippet from a no-code widget

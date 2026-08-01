@@ -61,4 +61,6 @@ Every driveway is different, and honest pricing means measuring your actual site
 itemized estimates so you can see exactly what you're paying for — no vague ranges, no surprise
 change orders.
 
+Want a quick ballpark before you call? Try our **[cost estimator](/cost-estimator/)**.
+
 **[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**

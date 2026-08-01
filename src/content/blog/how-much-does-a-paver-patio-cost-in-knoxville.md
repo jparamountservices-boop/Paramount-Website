@@ -50,4 +50,6 @@ down the trade-offs.
 The only way to know your real number is to measure your yard and talk through what you want. We give
 itemized estimates — base prep, pavers, features and all — so nothing is hidden.
 
+Want a quick ballpark first? Try our **[cost estimator](/cost-estimator/)**.
+
 **[Book a free phone consultation →](/contact/)** or call **(865) 237-9770.**
