@@ -13,6 +13,9 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
+      // Exclude noindex campaign pages (e.g. the /scan/ yard-sign landing page)
+      // so the sitemap only lists pages we actually want indexed.
+      filter: (page) => !page.includes('/scan/'),
     }),
   ],
   vite: {

@@ -10,8 +10,15 @@ import { company } from '../data/company';
 
 interface Props {
   compact?: boolean;
+  /**
+   * Optional lead-source tag (e.g. a campaign name). When set, it's submitted
+   * as a hidden `source` field so you can see where the lead came from in the
+   * Netlify Forms dashboard. Also mirrored into `public/__forms.html` so
+   * Netlify detects the field at deploy time.
+   */
+  source?: string;
 }
-const { compact = false } = Astro.props;
+const { compact = false, source } = Astro.props;
 
 const serviceOptions = services.filter((s) => !s.isHub);
 ---
@@ -25,6 +32,7 @@ const serviceOptions = services.filter((s) => !s.isHub);
   class="grid gap-4"
 >
   <input type="hidden" name="form-name" value="quote" />
+  {source && <input type="hidden" name="source" value={source} />}
   <!-- Honeypot: bots fill this, humans don't. -->
   <p class="hidden" aria-hidden="true"><label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
