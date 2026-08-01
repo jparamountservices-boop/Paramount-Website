@@ -67,7 +67,7 @@ export const serviceAreas: ServiceArea[] = [
     faqs: [
       {
         q: 'Do you work within Farragut HOA and permit requirements?',
-        a: 'Yes. We’re used to working within Farragut’s HOA guidelines and town permitting, and we build to code — including engineered designs for taller retaining walls.',
+        a: 'Yes. We’re used to working within Farragut’s HOA guidelines and town permitting, and we build to code. Taller retaining walls that need an engineered design are no problem — if you don’t already have an engineer, we can connect you with a good one.',
       },
     ],
   },

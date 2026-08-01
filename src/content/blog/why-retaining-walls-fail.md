@@ -58,7 +58,7 @@ Every retaining wall we build starts underground:
 - A drain line to relieve water pressure
 - Geogrid soil reinforcement on taller walls
 - Proper batter and compaction lift by lift
-- Engineered design and permits when the height calls for it
+- An engineered design when the height calls for it (we can connect you with a good engineer) — plus permits
 
 The finish — block, natural stone or boulders — is the easy part. The reason our walls are still
 standing straight in ten years is everything behind them.

@@ -681,7 +681,7 @@ export const services: Service[] = [
       },
       {
         q: 'Do I need a permit for a retaining wall in Knox County?',
-        a: 'Walls over a certain height (commonly 4 feet, measured from the bottom of the footing) typically require an engineered design and a permit. We handle the design requirements and pull permits when needed.',
+        a: 'Walls over a certain height (commonly 4 feet, measured from the bottom of the footing) typically require an engineered design and a permit. If you don’t already have an engineer, we can connect you with a good one — then we build to that design and handle the permitting.',
       },
       {
         q: 'How much does a retaining wall cost?',

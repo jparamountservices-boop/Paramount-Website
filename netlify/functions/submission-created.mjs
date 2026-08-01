@@ -44,7 +44,7 @@ const CONTENT = {
     heading: 'A few things worth knowing about retaining walls',
     points: [
       `<strong>Drainage is the whole game.</strong> Gravel backfill and a drain line behind the wall are what keep water pressure from slowly pushing it over.`,
-      `<strong>Height matters.</strong> Walls over about 4 feet usually need engineering and a permit — we handle all of that for you.`,
+      `<strong>Height matters.</strong> Taller walls (usually over about 4 feet) start with engineering. If you don't already have an engineer, we've got a good one we can connect you with.`,
       `<strong>It's not just function.</strong> Block, natural stone, boulders, seat walls — we'll match the look to your space.`,
     ],
   },
