@@ -62,20 +62,25 @@ const groups = filterGroups;
   <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4" id="gallery-grid">
     {hasPhotos
       ? tiles.map((t) => (
-          <figure class="gallery-item group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]" data-category={t.group}>
-            <img
-              src={t.thumb}
-              alt={t.alt}
-              loading="lazy"
-              decoding="async"
-              class="gallery-photo absolute inset-0 h-full w-full cursor-zoom-in object-cover transition duration-300 group-hover:scale-105"
-              data-full={t.full}
-              data-caption={t.label}
-            />
-            <figcaption class="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4">
+          <figure class="gallery-item group overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]" data-category={t.group}>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={t.thumb}
+                alt={t.alt}
+                loading="lazy"
+                decoding="async"
+                class="gallery-photo h-full w-full cursor-zoom-in object-cover transition duration-300 group-hover:scale-105"
+                data-full={t.full}
+                data-caption={t.label}
+              />
+              <span class="pointer-events-none absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </div>
+            <figcaption class="p-3">
               <a href={t.href} class="block">
                 <span class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{t.group}</span>
-                <span class="block font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{t.label}</span>
+                <span class="block font-bold leading-tight text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{t.label}</span>
               </a>
             </figcaption>
           </figure>

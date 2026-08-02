@@ -1,0 +1,70 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { FeaturedProject } from '../data/featuredProjects';
+
+interface Props {
+  project: FeaturedProject;
+}
+const { project } = Astro.props;
+
+// Find this project's photos by matching the filename.
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/projects/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true }
+);
+const metas: ImageMetadata[] = [];
+for (const [path, mod] of Object.entries(modules)) {
+  if (path.toLowerCase().includes(project.photoMatch.toLowerCase())) metas.push(mod.default);
+}
+const photos = await Promise.all(
+  metas.map((meta) => getImage({ src: meta, width: 1000, format: 'webp', quality: 80 }))
+);
+const hasPhotos = photos.length > 0;
+---
+
+<section class="wrap pb-14">
+  <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 sm:p-8">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="rounded-full bg-[var(--color-flame)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Featured Project</span>
+      <span class="text-sm font-semibold text-[var(--color-concrete-dim)]">{project.location}</span>
+    </div>
+
+    <div class="mt-5 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="text-2xl font-black sm:text-3xl">{project.title}</h2>
+        <div class="prose-dark mt-4">
+          {project.intro.map((p) => <p>{p}</p>)}
+        </div>
+
+        <dl class="mt-6 grid gap-3 sm:grid-cols-2">
+          {project.specs.map((s) => (
+            <div class="rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite-2)] p-3">
+              <dt class="text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{s.label}</dt>
+              <dd class="mt-1 text-sm text-[var(--color-bone)]">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <a href={project.href} class="btn btn-primary mt-6 inline-flex">See this service →</a>
+      </div>
+
+      {hasPhotos && (
+        <div class="grid grid-cols-2 gap-3">
+          {photos.map((img, idx) => (
+            <img
+              src={img.src}
+              alt={`${project.title} in ${project.location} by Paramount Concrete & Hardscapes`}
+              loading="lazy"
+              decoding="async"
+              class:list={[
+                'w-full rounded-xl border border-[var(--color-steel)] object-cover',
+                idx === 0 ? 'col-span-2 aspect-[4/3]' : 'aspect-square',
+              ]}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

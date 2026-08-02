@@ -364,6 +364,73 @@ export const services: Service[] = [
     ],
     related: ['concrete/decorative-and-stamped', 'concrete', 'pavers/pool-decks'],
   },
+  {
+    path: 'concrete/repair',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Concrete Repair',
+    title: 'Concrete Repair Knoxville TN | Driveway & Slab Repair | Paramount',
+    metaDescription:
+      'Concrete repair in Knoxville, TN — we replace cracked, sunken and heaved sections on a proper base so they don’t fail again. Honest advice on repair vs. replace. Free phone consultation: (865) 237-9770.',
+    h1: 'Concrete Repair in Knoxville, TN',
+    heroSubhead:
+      'Cracked, sunken or heaved concrete? We fix the cause — not just the surface — so the repair actually lasts.',
+    primaryKeyword: 'concrete repair Knoxville TN',
+    intro: [
+      'Most concrete around Knoxville doesn’t fail because of bad concrete — it fails because of what’s underneath: an uncompacted base, no drainage, or a slab poured too thin on our shifting clay. So when we repair concrete, we don’t just smear patch over the crack and hand it back. In most cases the right fix is to remove the failed section and re-pour it on a properly compacted, well-drained base — so it doesn’t crack, sink or heave again a couple of winters later.',
+      'We’ll give you a straight answer on whether your concrete is worth repairing or whether replacement is the smarter money. Sometimes a single settled section is an easy fix; sometimes a driveway is cracked in a dozen places and patching is just throwing good money after bad. Either way, you’ll hear it honestly.',
+    ],
+    sections: [
+      {
+        h2: 'Concrete problems we fix',
+        bullets: [
+          'Cracked driveways, patios, sidewalks and steps',
+          'Sunken or settled slabs and trip hazards',
+          'Heaved or lifted sections from freeze-thaw and roots',
+          'Spalling, flaking and pitted surfaces',
+          'Sections damaged by drainage or a failed base',
+        ],
+      },
+      {
+        h2: 'Repair vs. replace — the honest answer',
+        body: [
+          'Patching and resurfacing can hide a problem for a season, but they don’t fix why the concrete failed — so the crack or settling usually comes right back. That’s why, for most failures, we replace the affected section: we saw-cut it clean, remove it, fix the base and drainage that caused the problem, then re-pour and match the finish to the surrounding slab.',
+          'When a crack is minor and stable, we’ll tell you it’s fine to leave alone or seal — we’re not going to sell you a teardown you don’t need. Our goal is the fix that actually holds, at the price that makes sense for your situation.',
+        ],
+      },
+      {
+        h2: 'How we replace a failed section',
+        bullets: [
+          'Saw-cut clean, straight lines so the repair reads as intentional',
+          'Remove the broken concrete and get to the real cause',
+          'Re-compact the base and correct grading/drainage',
+          'Reinforce and re-pour at the proper thickness',
+          'Match the finish (broom, troweled or stamped) to the existing surface',
+        ],
+      },
+    ],
+    costNote:
+      'Concrete repair is priced by the project, not a flat per-square-foot rate — it depends on how much has to come out, why it failed, site access, and how much base and drainage work is needed. We’ll assess it and give you an itemized number, plus an honest repair-vs-replace recommendation.',
+    faqs: [
+      {
+        q: 'Can’t you just patch the crack?',
+        a: 'We can, but we’ll be honest about whether it will last. A surface patch doesn’t fix what caused the crack — an unstable base, poor drainage or a thin slab — so it usually reappears. For most failures, replacing the affected section on a proper base is the fix that actually holds.',
+      },
+      {
+        q: 'Why did my concrete crack or sink in the first place?',
+        a: 'In East Tennessee it’s almost always the base and water: a slab poured on uncompacted clay with nowhere for water to drain will crack, settle and heave with our freeze-thaw winters. Fixing the cause is the whole point of doing the repair right.',
+      },
+      {
+        q: 'Is it cheaper to repair or replace?',
+        a: 'It depends. One settled section is usually a straightforward, affordable repair. But if a driveway is cracked in many places, repeated patches cost more over time than replacing it once, done right. We’ll walk you through the math for your specific slab.',
+      },
+      {
+        q: 'Will the new concrete match the old?',
+        a: 'We match finish and jointing as closely as possible so a replaced section blends in. New concrete does start out lighter and cures to match over time — a normal part of any repair. For a seamless look, resurfacing or a decorative overlay on the whole area is an option we can discuss.',
+      },
+    ],
+    related: ['concrete', 'concrete/driveways', 'concrete/patio', 'concrete/slabs-foundations'],
+  },
 
   /* ================= PAVERS ================= */
   {
