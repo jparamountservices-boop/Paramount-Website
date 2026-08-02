@@ -17,8 +17,10 @@ interface Props {
    * Netlify detects the field at deploy time.
    */
   source?: string;
+  /** navLabel of a service to pre-select in the dropdown (e.g. on landing pages). */
+  defaultService?: string;
 }
-const { compact = false, source } = Astro.props;
+const { compact = false, source, defaultService } = Astro.props;
 
 const serviceOptions = services.filter((s) => !s.isHub);
 ---
@@ -63,7 +65,7 @@ const serviceOptions = services.filter((s) => !s.isHub);
     <select name="service" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]">
       <option value="">Select a service…</option>
       {serviceOptions.map((s) => (
-        <option value={s.navLabel}>{s.navLabel.replace(' (overview)', '')}</option>
+        <option value={s.navLabel} selected={defaultService === s.navLabel}>{s.navLabel.replace(' (overview)', '')}</option>
       ))}
       <option value="Other">Something else</option>
     </select>

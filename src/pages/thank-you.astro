@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { company } from '../data/company';
+
+const { conversionId, formLabel } = company.googleAds;
+const formSendTo = conversionId && formLabel ? `${conversionId}/${formLabel}` : '';
 ---
 
 <BaseLayout
@@ -24,4 +27,15 @@ import { company } from '../data/company';
       </div>
     </div>
   </section>
+
+  {formSendTo && (
+    <script is:inline define:vars={{ formSendTo }}>
+      // Google Ads: consultation-form submission conversion (fires once on this page).
+      window.addEventListener('load', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { send_to: formSendTo });
+        }
+      });
+    </script>
+  )}
 </BaseLayout>

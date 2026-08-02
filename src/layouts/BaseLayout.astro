@@ -4,10 +4,11 @@ import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyCall from '../components/StickyCall.astro';
+import ConversionTag from '../components/ConversionTag.astro';
 import { company } from '../data/company';
 import { localBusinessSchema } from '../lib/schema';
 
-const { ga4Id, gscVerification, bingVerification, clarityId } = company.analytics;
+const { gscVerification, bingVerification, clarityId } = company.analytics;
 
 interface Props {
   title: string;
@@ -48,17 +49,7 @@ const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
-    {ga4Id && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
-        <script is:inline define:vars={{ ga4Id }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', ga4Id);
-        </script>
-      </>
-    )}
+    <ConversionTag />
     <SEO
       title={title}
       description={description}

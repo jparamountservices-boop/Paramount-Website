@@ -13,9 +13,10 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      // Exclude noindex campaign pages (e.g. the /scan/ yard-sign landing page)
-      // so the sitemap only lists pages we actually want indexed.
-      filter: (page) => !page.includes('/scan/'),
+      // Keep noindex pages (PPC landing pages, /scan/ yard-sign page, thank-you)
+      // out of the sitemap so it only lists pages we want indexed.
+      filter: (page) =>
+        !page.includes('/lp/') && !page.includes('/scan/') && !page.includes('/thank-you/'),
     }),
   ],
   vite: {

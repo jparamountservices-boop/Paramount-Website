@@ -81,6 +81,18 @@ export const company = {
     clarityId: '',
   },
 
+  // Google Ads conversion tracking. Everything stays INERT until these are set.
+  //  - conversionId: account-wide ID starting with "AW-" (e.g. AW-123456789)
+  //  - formLabel:    conversion label for the consultation-form submit action
+  //  - callLabel:    conversion label for the phone-call-click action
+  // Find them in Google Ads → Goals → Conversions → (action) → Tag setup.
+  // The full send_to is `${conversionId}/${label}`.
+  googleAds: {
+    conversionId: '',
+    formLabel: '',
+    callLabel: '',
+  },
+
   // Instagram handle shown in the "Follow us" section.
   instagramHandle: 'parmounthomerenovations',
   // OPTIONAL live-feed embed. Paste the HTML snippet from a no-code widget

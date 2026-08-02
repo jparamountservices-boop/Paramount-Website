@@ -1,0 +1,50 @@
+---
+/**
+ * Loads the Google tag (gtag.js) ONCE and configures both Google Analytics 4
+ * and Google Ads, then wires a non-blocking phone-call conversion on every
+ * tel: link (current and future) via event delegation.
+ *
+ * Everything is inert until the matching IDs are set in company.ts:
+ *   analytics.ga4Id        → GA4
+ *   googleAds.conversionId → Google Ads (AW-…)
+ *   googleAds.callLabel    → phone-call conversion label
+ *
+ * Placed in <head> so it loads on every page (site + landing pages).
+ */
+import { company } from '../data/company';
+
+const { ga4Id } = company.analytics;
+const { conversionId, callLabel } = company.googleAds;
+const loadId = ga4Id || conversionId; // gtag.js can be loaded with either id
+const callSendTo = conversionId && callLabel ? `${conversionId}/${callLabel}` : '';
+---
+
+{loadId && (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${loadId}`}></script>
+    <script is:inline define:vars={{ ga4Id, conversionId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      if (ga4Id) gtag('config', ga4Id);
+      if (conversionId) gtag('config', conversionId);
+    </script>
+  </>
+)}
+
+{callSendTo && (
+  <script is:inline define:vars={{ callSendTo }}>
+    // Fire a Google Ads call conversion on any tel: click — without blocking the call.
+    document.addEventListener(
+      'click',
+      function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+        if (!a) return;
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { send_to: callSendTo });
+        }
+      },
+      true
+    );
+  </script>
+)}
