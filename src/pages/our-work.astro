@@ -4,6 +4,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Gallery from '../components/Gallery.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
+import FeaturedProject from '../components/FeaturedProject.astro';
+import { featuredProjects } from '../data/featuredProjects';
 import { breadcrumbSchema } from '../lib/schema';
 
 const path = '/our-work/';
@@ -30,7 +32,10 @@ const crumbs = [
     </p>
   </section>
 
+  {featuredProjects[0] && <FeaturedProject project={featuredProjects[0]} />}
+
   <section class="wrap pb-16">
+    <h2 class="mb-6 text-2xl font-extrabold">More of our work</h2>
     <Gallery />
   </section>
 
