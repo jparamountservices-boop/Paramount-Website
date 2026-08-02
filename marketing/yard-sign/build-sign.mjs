@@ -16,9 +16,10 @@ const FOREST = '#4a6a2e';
 const logoB64 = fs.readFileSync('public/images/logo.png').toString('base64');
 const logoHref = `data:image/png;base64,${logoB64}`;
 
-// QR: strip outer <svg> wrapper, keep inner paths, re-nest with positioning.
-const qrRaw = fs.readFileSync('marketing/yard-sign/yard-sign-qr.svg', 'utf8');
-const qrInner = qrRaw.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+// QR embedded as a raster <image> (a high-res PNG) — the most portable way to
+// place it. Nested <svg> QR codes render inconsistently across PDF viewers and
+// printers; a flat image renders identically everywhere (same as the logo).
+const qrHref = `data:image/png;base64,${fs.readFileSync('marketing/yard-sign/yard-sign-qr.png').toString('base64')}`;
 
 // ---- Canvas: 24in x 18in @ 100 units/inch ----
 const W = 2400, H = 1800;
@@ -76,7 +77,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" wid
     <!-- White QR card -->
     <g transform="translate(120 270)">
       <rect x="0" y="0" width="640" height="640" rx="28" fill="${WHITE}"/>
-      <svg x="40" y="40" width="560" height="560" viewBox="0 0 57 57" shape-rendering="crispEdges">${qrInner}</svg>
+      <image href="${qrHref}" x="40" y="40" width="560" height="560" preserveAspectRatio="xMidYMid meet"/>
     </g>
 
     <!-- Offer callout -->
