@@ -24,6 +24,7 @@ export const projectCategories: ProjectCategory[] = [
   { folder: 'pool-decks', label: 'Pool Deck', group: 'Concrete', href: '/concrete/pool-decks/' },
   { folder: 'pavers', label: 'Paver Patio', group: 'Pavers', href: '/pavers/patios/' },
   { folder: 'paver-driveways', label: 'Paver Driveway', group: 'Pavers', href: '/pavers/driveways/' },
+  { folder: 'paver-walkways', label: 'Paver Walkway', group: 'Pavers', href: '/pavers/walkways/' },
   { folder: 'retaining-walls', label: 'Retaining Wall', group: 'Hardscapes', href: '/retaining-walls/' },
   { folder: 'walkways', label: 'Walkway & Steps', group: 'Hardscapes', href: '/hardscapes/walkways/' },
   { folder: 'fire-pits', label: 'Fire Pit', group: 'Hardscapes', href: '/hardscapes/fire-pits/' },
