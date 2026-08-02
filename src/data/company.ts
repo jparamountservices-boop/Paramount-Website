@@ -88,7 +88,7 @@ export const company = {
   // Find them in Google Ads → Goals → Conversions → (action) → Tag setup.
   // The full send_to is `${conversionId}/${label}`.
   googleAds: {
-    conversionId: '',
+    conversionId: 'AW-801552793',
     formLabel: '',
     callLabel: '',
   },
