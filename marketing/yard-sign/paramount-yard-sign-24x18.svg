@@ -17,21 +17,20 @@
   <text x="150" y="1000" fill="#e8792b" font-size="200" font-weight="900" letter-spacing="-4">THIS.</text>
 
   <!-- Subhead -->
-  <text x="158" y="1130" fill="#4b463f" font-size="66" font-weight="700">Like what you see? Your</text>
-  <text x="158" y="1210" fill="#4b463f" font-size="66" font-weight="700">neighbors get a deal.</text>
+  <text x="158" y="1130" fill="#4b463f" font-size="66" font-weight="700">Like what you see?</text>
+  <text x="158" y="1210" fill="#4b463f" font-size="66" font-weight="700">Let's build yours next.</text>
 
   <!-- Offer strip -->
   <g transform="translate(150 1300)">
-    <rect x="0" y="0" width="1000" height="150" rx="14" fill="#1b1712"/>
-    <text x="50" y="98" fill="#ffffff" font-size="86" font-weight="900" letter-spacing="-2">$500 OFF</text>
-    <text x="560" y="66" fill="#e8792b" font-size="46" font-weight="800">+ FREE</text>
-    <text x="560" y="120" fill="#e8792b" font-size="46" font-weight="800">DESIGN VISIT</text>
+    <rect x="0" y="0" width="1040" height="150" rx="14" fill="#1b1712"/>
+    <text x="40" y="70" fill="#ffffff" font-size="60" font-weight="900" letter-spacing="-1">FREE PHONE CONSULT</text>
+    <text x="40" y="123" fill="#e8792b" font-size="44" font-weight="800">+ $250 off your project</text>
   </g>
 
   <!-- Footer contact -->
   <text x="150" y="1600" fill="#1b1712" font-size="72" font-weight="900" letter-spacing="-1">(865) 237-9770</text>
   <text x="150" y="1680" fill="#4b463f" font-size="46" font-weight="700" letter-spacing="1">paramountknox.com</text>
-  <text x="150" y="1738" fill="#d1691f" font-size="38" font-weight="800" letter-spacing="3">CONCRETE · PAVERS · HARDSCAPES</text>
+  <text x="150" y="1738" fill="#d1691f" font-size="32" font-weight="800" letter-spacing="2">CONCRETE · PAVERS · RETAINING WALLS · OUTDOOR LIVING</text>
 
   <!-- ================= RIGHT PANEL (SCAN) ================= -->
   <g transform="translate(1360 150)">
@@ -53,20 +52,17 @@
     </g>
 
     <!-- Offer callout -->
-    <text x="440" y="1010" text-anchor="middle" fill="#ffffff" font-size="52" font-weight="900" letter-spacing="4">NEIGHBOR DISCOUNT</text>
+    <text x="440" y="1000" text-anchor="middle" fill="#ffffff" font-size="50" font-weight="900" letter-spacing="4">SEE OUR RECENT WORK</text>
 
-    <g transform="translate(120 1060)">
-      <rect x="0" y="0" width="640" height="150" rx="18" fill="#ffffff"/>
-      <text x="320" y="70" text-anchor="middle" fill="#1b1712" font-size="66" font-weight="900">$500 OFF</text>
-      <text x="320" y="122" text-anchor="middle" fill="#d1691f" font-size="40" font-weight="800">+ FREE ON-SITE DESIGN</text>
+    <g transform="translate(120 1050)">
+      <rect x="0" y="0" width="640" height="160" rx="18" fill="#ffffff"/>
+      <text x="320" y="66" text-anchor="middle" fill="#1b1712" font-size="52" font-weight="900">FREE PHONE CONSULT</text>
+      <text x="320" y="124" text-anchor="middle" fill="#d1691f" font-size="42" font-weight="800">+ $250 off your project</text>
     </g>
 
-    <text x="440" y="1300" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700" opacity="0.95">Recent projects + your offer,</text>
-    <text x="440" y="1352" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700" opacity="0.95">one quick scan away.</text>
+    <text x="440" y="1300" text-anchor="middle" fill="#ffffff" font-size="37" font-weight="800" letter-spacing="1">Concrete · Pavers</text>
+    <text x="440" y="1350" text-anchor="middle" fill="#ffffff" font-size="37" font-weight="800" letter-spacing="1">Retaining Walls · Outdoor Living</text>
 
-    <g transform="translate(300 1400)">
-      <rect x="0" y="0" width="280" height="64" rx="32" fill="#1b1712"/>
-      <text x="140" y="43" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="800" letter-spacing="4" font-family="monospace">NEIGHBOR500</text>
-    </g>
+    <text x="440" y="1440" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="700" opacity="0.9">No pressure — just a conversation.</text>
   </g>
 </svg>

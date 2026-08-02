@@ -1,19 +1,20 @@
 ---
 /**
- * QR LANDING PAGE — the page the yard-sign QR code points to.
+ * NEIGHBORHOOD LANDING PAGE — where the yard-sign QR code points.
  *
- * Concept: someone driving/walking by sees a Paramount yard sign in a
- * neighbor's fresh driveway/patio/wall, scans the code, and lands here. The
- * page greets them as a neighbor, hands them a real reason to act now (the
- * "Neighbor Discount"), proves the work with a photo gallery, and captures the
- * lead. Mobile-first, because ~everyone scanning is on a phone.
+ * Concept: a reusable "We Built This" sign goes in every finished customer's
+ * yard. Neighbors and drive-by traffic scan it and land here — a neighborhood
+ * showcase of recent work with one low-friction ask: book a free phone
+ * consultation for concrete, pavers, retaining walls or outdoor living.
+ * Mobile-first, because ~everyone scanning is on a phone.
  *
- * noindex: this is a campaign page tied to a printed offer — we don't want it
- * competing with the SEO pages or getting indexed as a thin "coupon" page.
+ * noindex: campaign page tied to printed signage — kept out of the index and
+ * sitemap so it doesn't compete with the SEO pages.
  *
  * ── EDIT THE OFFER HERE ──────────────────────────────────────────────────
- * Change the numbers, code, or expiry below and the whole page + coupon
- * updates. Keep it honest — only promise what you'll actually honor.
+ * `sweetener` is the small incentive. Set it to '' to promote ONLY the free
+ * phone consultation with no discount. Keep it honest — only promise what
+ * you'll actually honor.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TrustBar from '../components/TrustBar.astro';
@@ -22,30 +23,28 @@ import QuoteForm from '../components/QuoteForm.astro';
 import { company } from '../data/company';
 
 const offer = {
-  amount: '$500',                       // headline discount
-  minProject: '$5,000',                 // minimum project the discount applies to
-  bonus: 'a FREE on-site design visit', // extra sweetener
-  code: 'NEIGHBOR500',                  // the code they mention / enter
-  validNote: 'Valid for 30 days from today — mention it when we talk.',
+  sweetener: '$250 off your project', // small incentive; set to '' for consult-only
+  validNote: 'Just mention this page when we talk.',
 };
 
-const source = 'Yard Sign QR — Neighbor Offer';
+const source = 'Yard Sign QR — Neighborhood Page';
 const path = '/scan/';
 
-const perks = [
-  { t: `${offer.amount} off`, d: `Straight off any project of ${offer.minProject} or more — driveway, patio, pavers, wall or fire feature.` },
-  { t: 'Free on-site design', d: 'We come measure, talk drainage and materials, and put a real number in writing — no charge, no pressure.' },
-  { t: 'Neighbor priority', d: 'Scanned-in neighbors get first pick of our schedule while our crew is already working in the area.' },
+const categories = [
+  { t: 'Concrete', d: 'Driveways, patios, and stamped & decorative work built to last.', href: '/concrete/' },
+  { t: 'Pavers', d: 'Patios, driveways and walkways that lock in for decades.', href: '/pavers/' },
+  { t: 'Retaining Walls', d: 'Block & stone walls engineered for our clay soil and slopes.', href: '/retaining-walls/' },
+  { t: 'Outdoor Living', d: 'Fire pits, seat walls and outdoor spaces built to gather around.', href: '/hardscapes/' },
 ];
 ---
 
 <BaseLayout
-  title={`Neighbor Discount — ${offer.amount} Off | Paramount Concrete & Hardscapes`}
-  description={`You scanned a Paramount job in the neighborhood — here's ${offer.amount} off your concrete or hardscape project, plus a free on-site design. Knoxville & East TN.`}
+  title="See Our Neighborhood Work | Free Phone Consultation | Paramount Concrete & Hardscapes"
+  description="You spotted our work in the neighborhood. See recent concrete, paver, retaining wall and outdoor-living projects across Knoxville & East TN — and book a free phone consultation."
   path={path}
   noindex={true}
 >
-  <!-- HERO: greet them as a neighbor -->
+  <!-- HERO: neighborhood greeting -->
   <section class="relative overflow-hidden border-b border-[var(--color-steel)]">
     <div class="absolute inset-0">
       <img src="/images/hero-home.jpg" alt="" aria-hidden="true" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
@@ -53,32 +52,26 @@ const perks = [
     </div>
 
     <div class="wrap relative py-14 sm:py-20">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-flame)]">You scanned the sign 👋</p>
-      <h1 class="mt-4 max-w-3xl text-4xl font-black leading-[1.02] text-white sm:text-6xl">
-        You just walked past<br /><span class="text-[var(--color-flame)]">our work.</span>
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-flame)]">From your neighborhood 👋</p>
+      <h1 class="mt-4 max-w-3xl text-4xl font-black leading-[1.05] text-white sm:text-6xl">
+        See what we've built<br /><span class="text-[var(--color-flame)]">right around you.</span>
       </h1>
       <p class="mt-5 max-w-xl text-lg text-white/90">
-        That fresh driveway, patio or wall nearby? We built it. And since you're a neighbor,
-        we set something aside for you.
+        That fresh driveway, patio or wall nearby? That's our work. If you've been
+        thinking about your own place, let's talk — a free phone consultation, no
+        drive-out and no pressure.
       </p>
 
-      <!-- The coupon — designed to be screenshot-friendly -->
-      <div class="mt-8 max-w-md">
-        <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-[var(--color-flame)] bg-[var(--color-graphite)] p-6 shadow-2xl">
-          <div class="absolute -left-3 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-black/85"></div>
-          <div class="absolute -right-3 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-black/85"></div>
-          <p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-forest)]">Neighbor Discount</p>
-          <p class="mt-2 text-5xl font-black text-[var(--color-bone)]">{offer.amount} <span class="text-2xl align-middle">off</span></p>
-          <p class="mt-1 text-[var(--color-concrete)]">plus {offer.bonus}</p>
-          <div class="mt-4 flex items-center gap-3">
-            <span class="rounded-lg bg-[var(--color-bone)] px-3 py-1.5 font-mono text-sm font-bold tracking-widest text-white">{offer.code}</span>
-            <span class="text-xs text-[var(--color-concrete-dim)]">{offer.validNote}</span>
-          </div>
-        </div>
+      <!-- Offer chip -->
+      <div class="mt-8 inline-flex flex-wrap items-center gap-3 rounded-2xl border-2 border-[var(--color-flame)] bg-black/40 px-5 py-4 backdrop-blur">
+        <span class="text-lg font-black text-white">FREE phone consultation</span>
+        {offer.sweetener && (
+          <span class="rounded-lg bg-[var(--color-flame)] px-3 py-1.5 text-sm font-black uppercase tracking-wide text-white">+ {offer.sweetener}</span>
+        )}
       </div>
 
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#claim" class="btn btn-primary text-base">Claim my {offer.amount} off</a>
+        <a href="#book" class="btn btn-primary text-base">Book my free consultation</a>
         <a href={company.phoneHref} class="btn border-2 border-white/70 text-base text-white hover:bg-white hover:text-[var(--color-bone)]">Call {company.phone}</a>
       </div>
       <p class="mt-5 text-sm text-white/80">★★★★★ {company.rating.value}/5 · Licensed &amp; insured · {company.trust.projectsCompleted} projects built in East TN</p>
@@ -87,33 +80,35 @@ const perks = [
 
   <TrustBar />
 
-  <!-- WHAT YOU GET -->
+  <!-- WHAT WE BUILD — the four service lines -->
   <section class="wrap py-14">
-    <p class="eyebrow">Here's the deal</p>
-    <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">What your neighbor code unlocks</h2>
-    <div class="mt-8 grid gap-5 md:grid-cols-3">
-      {perks.map((p) => (
-        <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
-          <h3 class="text-xl font-black text-[var(--color-flame)]">{p.t}</h3>
-          <p class="mt-2 text-[var(--color-concrete)]">{p.d}</p>
-        </div>
+    <p class="eyebrow">What we build</p>
+    <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">One crew for the whole outdoor space</h2>
+    <p class="mt-4 max-w-2xl text-[var(--color-concrete)]">
+      Whatever you're picturing out back or out front, we build it — and we build the base
+      underneath it to last through East Tennessee's clay and freeze-thaw winters.
+    </p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {categories.map((c) => (
+        <a href={c.href} class="group flex items-start justify-between gap-4 rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-flame)]">
+          <div>
+            <h3 class="text-xl font-black group-hover:text-[var(--color-flame)]">{c.t}</h3>
+            <p class="mt-2 text-[var(--color-concrete)]">{c.d}</p>
+          </div>
+          <span class="mt-1 text-2xl font-black text-[var(--color-flame)]">→</span>
+        </a>
       ))}
     </div>
-    <p class="mt-6 max-w-2xl text-sm text-[var(--color-concrete-dim)]">
-      Fine print: {offer.amount} off applies to new projects of {offer.minProject}+ booked with Paramount
-      Concrete &amp; Hardscapes. {offer.validNote} One offer per household. Can't be combined with other
-      promotions. Just mention code <strong class="text-[var(--color-bone)]">{offer.code}</strong> when we talk.
-    </p>
   </section>
 
   <!-- PROOF: recent projects -->
   <section class="bg-[var(--color-graphite)] py-14">
     <div class="wrap">
       <p class="eyebrow">Recent work nearby</p>
-      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">See what we build</h2>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Straight from the neighborhood</h2>
       <p class="mt-4 max-w-2xl text-[var(--color-concrete)]">
-        Driveways, patios, stamped concrete, pavers, retaining walls and fire pits — built across
-        Knoxville, Farragut, Maryville and the rest of East Tennessee.
+        Real projects we've built across Knoxville, Farragut, Maryville and the rest of East
+        Tennessee. Yours could be next.
       </p>
       <div class="mt-8">
         <Gallery limit={6} showFilters={false} />
@@ -124,29 +119,31 @@ const perks = [
     </div>
   </section>
 
-  <!-- CLAIM: the lead form -->
-  <section id="claim" class="wrap py-16">
+  <!-- BOOK: the free consultation -->
+  <section id="book" class="wrap py-16">
     <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
       <div>
-        <p class="eyebrow">Claim it</p>
-        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Lock in your {offer.amount} off</h2>
+        <p class="eyebrow">Let's talk</p>
+        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Book your free phone consultation</h2>
         <p class="mt-4 text-lg text-[var(--color-concrete)]">
-          Tell us what you're thinking about and we'll call to talk it through — no drive-out, no
-          pressure. Your neighbor code <strong class="text-[var(--color-bone)]">{offer.code}</strong> is
-          already attached to this request.
+          Tell us what you're thinking about — concrete, pavers, a wall or an outdoor living
+          space — and we'll call to talk it through. No drive-out, no pressure, no obligation.
+          {offer.sweetener && <> Booked from this page? Ask about your <strong class="text-[var(--color-bone)]">{offer.sweetener}</strong>.</>}
         </p>
         <ul class="mt-6 space-y-3 text-[var(--color-concrete)]">
-          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rotate-45 bg-[var(--color-flame)]"></span> Free phone consultation first — we talk before anyone drives out.</li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rotate-45 bg-[var(--color-flame)]"></span> A real conversation first — we talk before anyone drives out.</li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rotate-45 bg-[var(--color-flame)]"></span> Text photos to {company.phone} for a faster, more accurate price.</li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rotate-45 bg-[var(--color-flame)]"></span> Licensed, insured, and backed by our {company.trust.warrantyYears}-year workmanship warranty.</li>
         </ul>
       </div>
 
       <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 shadow-xl">
-        <div class="mb-4 flex items-center justify-between rounded-lg bg-[var(--color-graphite-2)] px-3 py-2">
-          <span class="text-sm font-bold text-[var(--color-bone)]">Neighbor Discount applied</span>
-          <span class="rounded bg-[var(--color-flame)] px-2 py-0.5 font-mono text-xs font-bold text-white">{offer.code}</span>
-        </div>
+        {offer.sweetener && (
+          <div class="mb-4 flex items-center justify-between rounded-lg bg-[var(--color-graphite-2)] px-3 py-2">
+            <span class="text-sm font-bold text-[var(--color-bone)]">Free consult + {offer.sweetener}</span>
+            <span class="rounded bg-[var(--color-flame)] px-2 py-0.5 text-xs font-bold uppercase text-white">Neighbor</span>
+          </div>
+        )}
         <QuoteForm source={source} />
       </div>
     </div>

@@ -1,21 +1,22 @@
-# Paramount Yard Sign — "We Built This" (Neighbor Offer)
+# Paramount Yard Sign — "We Built This" (Neighborhood)
 
-Print-ready yard sign that matches paramountknox.com and carries a QR code to a
-dedicated landing page with a "Neighbor Discount" offer for drive-by / walk-by
-prospects.
+Print-ready, **reusable** yard sign that matches paramountknox.com and carries a
+QR code to a neighborhood landing page. Drop one in every finished customer's
+front yard.
 
 ## The concept
 
 Yard signs sit in the yard of a **finished job**, where neighbors are already
 looking at fresh Paramount work. The sign leans into that: **"WE BUILT THIS."**
-→ scan the code → land on a page that greets them as a neighbor and hands them a
-real reason to call now.
+→ scan the code → land on a neighborhood showcase and book a free phone
+consultation.
 
-- **Sign** → the QR code
+- **Sign** → the QR code (generic — works in any customer's yard)
 - **QR code** → `https://paramountknox.com/scan/` (the landing page)
-- **Landing page** (`src/pages/scan.astro`) → neighbor greeting + offer coupon +
-  recent-project gallery + lead form (tagged "Yard Sign QR — Neighbor Offer" in
-  Netlify Forms, so you can measure scans → leads)
+- **Landing page** (`src/pages/scan.astro`) → neighborhood greeting + the four
+  service lines + recent-project gallery + a free-phone-consultation form
+  (tagged "Yard Sign QR — Neighborhood Page" in Netlify Forms, so you can
+  measure scans → leads)
 
 ## Files here
 
@@ -36,13 +37,15 @@ change `W`/`H` in `build-sign.mjs`.
 The offer text lives in **two** places — keep them in sync:
 
 1. **Landing page** — `src/pages/scan.astro`, the `offer` object at the top
-   (`amount`, `minProject`, `bonus`, `code`, `validNote`).
-2. **The sign** — `build-sign.mjs` (the `$500 OFF` / `NEIGHBOR500` strings), then
-   regenerate (see below).
+   (`sweetener`, `validNote`). Set `sweetener: ''` to promote ONLY the free
+   phone consultation with no discount.
+2. **The sign** — `build-sign.mjs` (the `FREE PHONE CONSULT` / `+ $250 off your
+   project` strings), then regenerate (see below).
 
-Default offer: **$500 off** any project of $5,000+, **plus a free on-site design
-visit**, code **NEIGHBOR500**. These are marketing numbers — change them to
-whatever you'll actually honor.
+Default offer: a **free phone consultation** for any project — concrete, pavers,
+retaining walls or outdoor living — plus a small **$250 off** sweetener. These
+are marketing choices; change them to whatever you'll actually honor, or drop
+the discount and lead with the free consult alone.
 
 ## Regenerating the sign
 
