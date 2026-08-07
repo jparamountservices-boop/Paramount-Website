@@ -30,12 +30,13 @@ const formSendTo = conversionId && formLabel ? `${conversionId}/${formLabel}` : 
 
   {formSendTo && (
     <script is:inline define:vars={{ formSendTo }}>
-      // Google Ads: consultation-form submission conversion (fires once on this page).
-      window.addEventListener('load', function () {
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', { send_to: formSendTo });
-        }
-      });
+      // Google Ads: consultation-form submission conversion.
+      // Fires immediately on page load (this page is only reached after a
+      // successful form submit). Self-contained so it never depends on script
+      // order or the window 'load' event.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('event', 'conversion', { send_to: formSendTo });
     </script>
   )}
 </BaseLayout>
