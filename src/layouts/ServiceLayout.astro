@@ -91,6 +91,14 @@ const schemas = [
           <p class="m-0 mt-2">{service.costNote}</p>
         </div>
       )}
+
+      {service.relatedPost && (
+        <p class="my-6">
+          <a href={service.relatedPost.path} class="font-semibold text-[var(--color-flame-300)] underline">
+            {service.relatedPost.label} →
+          </a>
+        </p>
+      )}
     </div>
   </article>
 

@@ -117,7 +117,7 @@ export function faqSchema(faqs: { q: string; a: string }[]) {
   };
 }
 
-/** Article schema for blog posts. */
+/** BlogPosting schema for blog posts. */
 export function articleSchema(opts: {
   title: string;
   description: string;
@@ -126,16 +126,22 @@ export function articleSchema(opts: {
   dateModified?: string;
   image?: string;
 }) {
+  const url = `${SITE}${opts.path}`;
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: opts.title,
     description: opts.description,
-    url: `${SITE}${opts.path}`,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
-    image: opts.image ? `${SITE}${opts.image}` : `${SITE}${company.logo}`,
-    author: { '@type': 'Organization', name: company.name },
-    publisher: { '@id': `${SITE}/#business` },
+    image: opts.image ? `${SITE}${opts.image}` : `${SITE}/images/og-default.jpg`,
+    author: { '@type': 'Organization', name: company.name, url: SITE },
+    publisher: {
+      '@type': 'Organization',
+      name: company.name,
+      logo: { '@type': 'ImageObject', url: `${SITE}${company.logo}` },
+    },
   };
 }

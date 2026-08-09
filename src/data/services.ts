@@ -34,6 +34,8 @@ export interface Service {
   costNote?: string;
   faqs: Faq[];
   related: string[];
+  /** Optional link to a related blog post (renders a callout on the page). */
+  relatedPost?: { label: string; path: string };
 }
 
 export const services: Service[] = [
@@ -487,6 +489,10 @@ export const services: Service[] = [
       },
     ],
     related: ['concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/repair'],
+    relatedPost: {
+      label: 'Read: what goes into building a court in East Tennessee',
+      path: '/blog/concrete-basketball-courts-knoxville-tn/',
+    },
   },
   {
     path: 'concrete/pickleball-courts',

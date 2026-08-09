@@ -18,6 +18,18 @@ const blog = defineCollection({
     /** Service paths to cross-link, e.g. ["concrete/driveways"]. */
     related: z.array(z.string()).optional(),
     draft: z.boolean().optional(),
+    // Optional hero image (public path) + alt, used for the post hero + OG image.
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    author: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    slug: z.string().optional(),
+    // Optional SEO overrides — when set, used for <title>/meta instead of the
+    // (longer, headline-style) post title/description.
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
+    // Optional FAQ pairs → FAQPage schema (kept verbatim with the body FAQ).
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 });
 
