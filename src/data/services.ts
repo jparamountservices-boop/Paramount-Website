@@ -431,6 +431,245 @@ export const services: Service[] = [
     ],
     related: ['concrete', 'concrete/driveways', 'concrete/patio', 'concrete/slabs-foundations'],
   },
+  {
+    path: 'concrete/basketball-courts',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Basketball Courts',
+    title: 'Concrete Basketball Courts Knoxville TN | Backyard Courts | Paramount',
+    metaDescription:
+      'Custom concrete basketball court slabs in Knoxville, TN — flat, level and crack-resistant, built for a backyard half-court or full court. Free phone consultation: (865) 237-9770.',
+    h1: 'Concrete Basketball Courts in Knoxville, TN',
+    heroSubhead:
+      'A backyard basketball court lives or dies on the slab underneath — flat, properly based and built not to crack. That’s the part we obsess over.',
+    primaryKeyword: 'concrete basketball court Knoxville TN',
+    intro: [
+      'A backyard basketball court is one of the best upgrades an active family can make — but it’s only as good as the concrete under it. A court slab has to be dead-flat so the ball bounces true, thick and reinforced enough to take years of play, and built on a base that won’t heave or crack on our East Tennessee clay. We pour basketball court slabs to exactly that standard across Knoxville and East Tennessee.',
+      'Whether you want a compact half-court beside the driveway or a full-size court, we handle the concrete start to finish: excavation, a deep compacted base, drainage, reinforcement and a smooth troweled finish that’s ready for an acrylic court coating and lines.',
+    ],
+    sections: [
+      {
+        h2: 'What goes into a basketball court slab',
+        bullets: [
+          'Excavation and a deep, compacted crushed-stone base',
+          'Correct slab thickness (typically 4″+) with rebar or wire reinforcement',
+          'A dead-flat, smooth troweled finish for a true bounce',
+          'A slight, even slope so it drains without affecting play',
+          'Control joints placed to minimize and hide cracking',
+          'Left smooth and ready for acrylic court coating, lines and a hoop',
+        ],
+      },
+      {
+        h2: 'Half-court or full-court — sized to your yard',
+        body: [
+          'A backyard half-court commonly runs around 30′ × 30′ (or a compact 20′ × 25′), while a full court is considerably larger. We’ll help you size the slab to your yard and budget, then build it so you can add a coated surface, striping and a hoop when you’re ready.',
+        ],
+      },
+    ],
+    costNote:
+      'A basketball court is priced mainly by the size and thickness of the slab — reinforced, troweled concrete runs about $10–$12 per square foot, so even a 30′ × 30′ half-court is a sizable pour. The acrylic court coating, lines and hoop are separate (usually added by a court-surfacing specialist). We give an itemized number for the concrete after measuring your yard.',
+    faqs: [
+      {
+        q: 'How thick should a backyard basketball court be?',
+        a: 'We typically pour court slabs at least 4 inches thick with reinforcement. The compacted base underneath matters just as much as the thickness — it’s what keeps the surface flat and crack-free for years.',
+      },
+      {
+        q: 'What size is a backyard basketball court?',
+        a: 'A half-court is often around 30′ × 30′ (a compact version can be ~20′ × 25′); a regulation-style full court is much larger. We’ll size the slab to fit your yard and how you want to play.',
+      },
+      {
+        q: 'Do you paint the lines and coat the surface?',
+        a: 'We build the concrete — a flat, smooth slab ready for a coating. The acrylic sport surface, lines and hoop are usually installed by a court-coating specialist. We leave you a slab that’s perfect for it.',
+      },
+      {
+        q: 'Can you build a court on a sloped yard?',
+        a: 'Yes — sloped lots just need grading and sometimes a retaining wall to carve out level space. We plan that first so the finished court sits flat and drains properly.',
+      },
+    ],
+    related: ['concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/repair'],
+  },
+  {
+    path: 'concrete/pickleball-courts',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Pickleball Courts',
+    title: 'Concrete Pickleball Courts Knoxville TN | Backyard Courts | Paramount',
+    metaDescription:
+      'Concrete pickleball court slabs in Knoxville, TN — flat, true and crack-resistant, sized for a regulation backyard court. Free phone consultation: (865) 237-9770.',
+    h1: 'Concrete Pickleball Courts in Knoxville, TN',
+    heroSubhead:
+      'Pickleball is the fastest-growing backyard build in East Tennessee — and it all rides on a slab that’s flat, true and built to last.',
+    primaryKeyword: 'concrete pickleball court Knoxville TN',
+    intro: [
+      'Pickleball has taken off across Knoxville, and more homeowners are putting a court right in the backyard. The foundation of a great court is exactly that — the foundation. A pickleball slab has to be dead-flat for a consistent bounce, precisely sloped so it drains, and built on a base that won’t crack or heave. We pour pickleball court slabs to that standard across East Tennessee.',
+      'A regulation pickleball playing area is 20′ × 44′, and most home courts add buffer space around it — so the finished slab is usually larger. We handle the concrete side start to finish and leave you a smooth, true slab ready for an acrylic surface, net posts and lines.',
+    ],
+    sections: [
+      {
+        h2: 'What makes a pickleball slab play right',
+        bullets: [
+          'A precise, dead-flat finish for a consistent bounce',
+          'A slight, even slope (about 1%) so it drains without affecting play',
+          'A deep compacted base and reinforcement so it stays true',
+          'Control joints placed to protect the playing surface',
+          'A smooth troweled finish ready for acrylic coating, net posts and lines',
+        ],
+      },
+      {
+        h2: 'Court sizing',
+        body: [
+          'The playing area is 20′ × 44′, but for comfortable play most backyard courts finish out larger — commonly around 30′ × 60′ overall with buffer space. We’ll size the slab to your yard and how you want to use it, including multi-sport striping if you’d like.',
+        ],
+      },
+    ],
+    costNote:
+      'The slab for a pickleball court is priced by its size and thickness — reinforced, troweled concrete runs about $10–$12 per square foot, and a full court with buffer is a large pour. The acrylic surface, net posts and lines are separate (added by a court-surfacing specialist). We measure your space and give an itemized number for the concrete.',
+    faqs: [
+      {
+        q: 'What size slab do I need for a pickleball court?',
+        a: 'The playing area is 20′ × 44′. For comfortable play, most homeowners finish out around 30′ × 60′ overall to allow buffer space. We’ll help you fit it to your yard.',
+      },
+      {
+        q: 'Does a pickleball court need to slope?',
+        a: 'Yes — a slight, even slope of about 1% lets water run off, and it’s gentle enough that it doesn’t affect play. Flat-but-not-draining is a mistake we never make.',
+      },
+      {
+        q: 'Do you install the surface and net?',
+        a: 'We build the concrete slab — flat, true and ready. The acrylic coating, net posts and lines are usually installed by a court-surfacing specialist. We leave you the ideal base for it.',
+      },
+      {
+        q: 'How thick is a pickleball court slab?',
+        a: 'Typically at least 4 inches with reinforcement, on a properly compacted base. The base prep is what keeps the surface flat and true over the years.',
+      },
+    ],
+    related: ['concrete', 'concrete/slabs-foundations', 'concrete/basketball-courts', 'concrete/repair'],
+  },
+  {
+    path: 'concrete/garage-foundations',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Garage Foundations',
+    title: 'Garage Foundations & Slabs Knoxville TN | Concrete | Paramount',
+    metaDescription:
+      'Concrete garage foundations and slabs in Knoxville, TN — thickened-edge slabs and footings engineered to carry the load and resist cracking. Free phone consultation: (865) 237-9770.',
+    h1: 'Garage Foundations & Slabs in Knoxville, TN',
+    heroSubhead:
+      'A garage is only as solid as the slab under it. We pour garage foundations built to carry the load and hold up on East Tennessee ground.',
+    primaryKeyword: 'garage foundation Knoxville TN',
+    intro: [
+      'Whether you’re building a detached garage, a workshop or an addition, it starts with the foundation — and a garage slab does far more than a patio. It carries the walls, the roof load and vehicles, so it needs proper footings or a thickened edge, the right thickness, reinforcement, and a base that won’t settle. We pour garage foundations and slabs across Knoxville and East Tennessee to that standard.',
+      'We build monolithic (thickened-edge) slabs and slab-with-footing foundations, sized to your structure and local code — handling excavation, base compaction, forming, reinforcement, vapor barrier where needed, anchor bolts, and a clean troweled finish.',
+    ],
+    sections: [
+      {
+        h2: 'Garage foundation types we pour',
+        bullets: [
+          'Monolithic (thickened-edge) slab foundations',
+          'Slab-on-grade with perimeter footings',
+          'Rebar and/or fiber reinforcement sized to the load',
+          'Vapor barrier under heated or finished spaces',
+          'Anchor bolts set for the wall framing',
+          'Proper slope to the door for drainage',
+        ],
+      },
+      {
+        h2: 'Built to carry the load',
+        body: [
+          'A garage slab has to handle wall and roof loads plus vehicles without cracking or settling. We size the thickness, footings and reinforcement to your structure and set it on a properly compacted base — the difference between a floor that lasts and one that cracks in a couple of winters.',
+        ],
+      },
+      {
+        h2: 'Permits and engineering',
+        body: [
+          'Garage foundations generally require a permit and must meet local code, and larger structures may need an engineered design. We build to the approved plan; if a stamped foundation design is required, we can connect you with a good engineer — we don’t do the engineering in-house, but we pour to spec.',
+        ],
+      },
+    ],
+    costNote:
+      'Garage slabs and foundations are priced by the project — size, thickness, footings, reinforcement, site access and excavation all factor in. As a rough guide the flatwork runs about $10–$12 per square foot, with footings and thickened edges adding to that. We measure the site and give you an itemized number.',
+    faqs: [
+      {
+        q: 'How thick should a garage slab be?',
+        a: 'A typical garage slab is 4 inches, thickened to 6″+ at the edges and under load-bearing walls, with reinforcement. Heavy vehicles or a lift call for more. The compacted base under it is just as important as the thickness.',
+      },
+      {
+        q: 'Do I need footings for a garage?',
+        a: 'It depends on the structure and code. Many detached garages use a monolithic thickened-edge slab; larger or taller buildings use perimeter footings. We’ll build the type your plan and inspector call for.',
+      },
+      {
+        q: 'Do you pull the permit and do the engineering?',
+        a: 'Garage foundations typically need a permit and must meet code. We build to the approved plan; if a stamped engineered design is required, we can connect you with an engineer rather than doing the engineering ourselves.',
+      },
+      {
+        q: 'Can you pour a slab for a detached garage or shop?',
+        a: 'Yes — detached garages, shops and outbuildings are common work for us. We size the base, thickness and reinforcement to how you’ll use the building.',
+      },
+    ],
+    related: ['concrete', 'concrete/slabs-foundations', 'concrete/pole-barn-foundations', 'concrete/driveways'],
+  },
+  {
+    path: 'concrete/pole-barn-foundations',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    navLabel: 'Pole Barn Foundations',
+    title: 'Pole Barn Foundations & Slabs Knoxville TN | Concrete | Paramount',
+    metaDescription:
+      'Concrete pole barn foundations and slabs in Knoxville, TN — post footings, piers and flat interior slabs for post-frame buildings. Free phone consultation: (865) 237-9770.',
+    h1: 'Pole Barn Foundations & Slabs in Knoxville, TN',
+    heroSubhead:
+      'Post-frame buildings need the concrete done right — from the post footings to a flat, durable interior slab. That’s our lane.',
+    primaryKeyword: 'pole barn foundation Knoxville TN',
+    intro: [
+      'Pole barns and post-frame buildings are a popular, cost-effective way to add a garage, shop, barn or storage building — and the concrete is a big part of getting them right. From the post footings and piers that carry the frame to the interior slab you’ll actually use, the foundation work has to be flat, properly based and built for the load. We pour pole barn foundations and slabs across Knoxville and East Tennessee.',
+      'We handle the concrete side of post-frame construction: drilled or dug post footings and piers, perimeter work, a compacted base, reinforcement, vapor barrier where needed, and a smooth, level interior slab ready for equipment, vehicles or a finished floor.',
+    ],
+    sections: [
+      {
+        h2: 'Concrete work for post-frame buildings',
+        bullets: [
+          'Post footings and concrete piers to carry the columns',
+          'A flat, level interior slab for equipment and vehicles',
+          'Thickened edges and reinforcement where the load calls for it',
+          'Vapor barrier under heated or finished floors',
+          'Proper slope and drainage for a shop or garage floor',
+          'Control joints to manage cracking on big pours',
+        ],
+      },
+      {
+        h2: 'Slab now or slab later',
+        body: [
+          'Some owners pour the interior slab with the build; others frame first and pour the floor after. We can work either way and coordinate with your builder so the concrete and the structure line up cleanly.',
+        ],
+      },
+      {
+        h2: 'Sized to your building and load',
+        body: [
+          'A floor you’ll park a tractor, RV or lift on is not the same pour as a storage-only slab. We size the thickness, base and reinforcement to how you’ll actually use the building so it doesn’t crack or settle under weight.',
+        ],
+      },
+    ],
+    costNote:
+      'Pole barn foundations and slabs are priced by the project — the number of post footings, the slab size and thickness, reinforcement, site access and grading all factor in. As a rough guide the interior flatwork runs about $10–$12 per square foot, with footings and piers added separately. We measure the site and give you an itemized number.',
+    faqs: [
+      {
+        q: 'How thick should a pole barn slab be?',
+        a: 'A typical pole barn floor is 4 inches with reinforcement. If you’ll park heavy equipment, run a lift or drive tractors on it, we go thicker. The base prep matters as much as the thickness.',
+      },
+      {
+        q: 'Do you pour the post footings too?',
+        a: 'Yes — we handle the drilled or dug post footings and concrete piers that carry the frame, along with the interior slab. It’s all part of getting a post-frame building on solid ground.',
+      },
+      {
+        q: 'Can you pour the slab after the building is up?',
+        a: 'Absolutely — that’s a common approach. We coordinate with your builder and pour a flat, level floor once the frame is standing.',
+      },
+      {
+        q: 'Do pole barn foundations need a permit?',
+        a: 'Usually yes, and they must meet local code; larger post-frame buildings may need an engineered design. We build to the approved plan and can connect you with an engineer if a stamped design is required.',
+      },
+    ],
+    related: ['concrete', 'concrete/slabs-foundations', 'concrete/garage-foundations', 'concrete/driveways'],
+  },
 
   /* ================= PAVERS ================= */
   {
