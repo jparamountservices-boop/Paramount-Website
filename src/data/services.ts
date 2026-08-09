@@ -942,6 +942,68 @@ export const services: Service[] = [
     related: ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/walkways', 'pavers/patios'],
   },
   {
+    path: 'outdoor-living',
+    navGroup: 'Hardscapes',
+    navLabel: 'Outdoor Living',
+    title: 'Outdoor Living Knoxville TN | Patios, Fire Features & Backyard Design | Paramount',
+    metaDescription:
+      'Complete outdoor living spaces in Knoxville & East TN — patios, fire features, seating walls, walkways and pavers designed together as one backyard you actually live in. Free phone consultation: (865) 237-9770.',
+    h1: 'Outdoor Living in Knoxville, TN',
+    heroSubhead:
+      'We design and build the whole backyard as one connected space — patio, fire, seating and more — not a pile of disconnected projects.',
+    primaryKeyword: 'outdoor living Knoxville TN',
+    intro: [
+      'Outdoor living is what happens when your backyard stops being a yard and becomes another room of the house — a place to cook, gather, unwind and actually live. In East Tennessee our long springs and falls mean an outdoor space earns its keep most of the year, and the homes that use theirs the most are the ones where every piece was designed to work together.',
+      'That’s the difference between an outdoor living space and a pile of separate projects. A patio here, a fire pit there and a wall somewhere else rarely add up. We plan the whole space — how you’ll move through it, where people gather, how it drains and how it flows — then build it so each element ties into the next.',
+    ],
+    sections: [
+      {
+        h2: 'What an outdoor living space brings together',
+        bullets: [
+          'Patios in poured concrete, pavers or natural stone',
+          'Fire pits and fire features as the gathering point',
+          'Seat walls and built-in seating',
+          'Walkways and steps that connect the whole yard',
+          'Retaining walls to carve level, usable space out of a slope',
+          'Lighting, drainage and grading so it looks right and lasts',
+        ],
+      },
+      {
+        h2: 'Designed together, not piece by piece',
+        body: [
+          'We start with a master plan for the whole space, then build it so the patio, fire feature, seating and paths read as one designed outdoor room. Not ready to do it all at once? We build in phases as budget allows — each stage fitting the master plan instead of boxing you in later.',
+        ],
+      },
+      {
+        h2: 'Outdoor living & entertainment packages',
+        body: [
+          'We’re building signature outdoor living packages — proven combinations of the pieces that work best together. Think a patio with an integrated fire feature and seat walls, an entertainer’s setup with a grilling area and lighting, or a low-maintenance paver retreat sized for the whole family. Ask us what packages we’re offering and we’ll tailor one to your yard, your budget and how you like to spend time outside.',
+        ],
+      },
+    ],
+    costNote:
+      'Outdoor living projects are priced by the scope of the plan — each piece (patio, fire feature, seat walls, walkways, retaining walls) has its own range, and how they combine drives the total. We design the space, then give you an itemized proposal so you can see every part and phase it if you’d like. The individual service pages linked below give per-element pricing.',
+    faqs: [
+      {
+        q: 'Can you design my whole backyard at once?',
+        a: 'Yes — that’s our favorite way to work. We create a master plan for the entire space so the patio, fire feature, seating, walls and paths all flow together, then build it as one project or in phases.',
+      },
+      {
+        q: 'Can we build it in phases to spread the cost?',
+        a: 'Absolutely. We design the full plan up front and build in stages as your budget allows, so each phase fits the master plan and nothing has to be torn out or redone later.',
+      },
+      {
+        q: 'What’s included in an outdoor living project?',
+        a: 'Whatever the space calls for — commonly a patio, a fire feature, seat walls or seating, walkways and steps, and often a retaining wall to create level space, all tied together with lighting, drainage and grading.',
+      },
+      {
+        q: 'Do you handle the drainage and grading too?',
+        a: 'Yes, and on our sloped, clay lots it’s the part that makes or breaks the project. We plan grading and drainage first so the finished space stays level, dry and usable for years.',
+      },
+    ],
+    related: ['hardscapes', 'hardscapes/fire-pits', 'pavers/patios', 'concrete/patio', 'hardscapes/walkways', 'retaining-walls'],
+  },
+  {
     path: 'retaining-walls',
     parent: 'hardscapes',
     navGroup: 'Hardscapes',
