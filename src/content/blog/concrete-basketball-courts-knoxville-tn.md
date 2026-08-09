@@ -7,7 +7,7 @@ author: "Paramount Concrete Hardscapes"
 category: "How-to"
 tags: ["basketball court", "concrete", "Knoxville", "backyard", "sport court"]
 image: "/images/blog/concrete-basketball-court-knoxville-hero.jpg"
-imageAlt: "Concrete basketball court with painted lines poured beside a driveway at a Knoxville, TN home"
+imageAlt: "Illustration of a backyard concrete basketball court with painted key, three-point line, and hoop"
 primaryKeyword: "concrete basketball court Knoxville"
 metaTitle: "Concrete Basketball Courts Knoxville TN | Paramount"
 metaDescription: "Backyard and driveway basketball courts built in Knoxville and East TN. Sizing, base prep, drainage, finishes, and real cost ranges from a licensed builder."
@@ -66,11 +66,6 @@ We build these for homeowners, but the people who use them are almost always kid
 
 **It gets the neighborhood kids to your house.** Ask any parent who has one — this is the part they didn't expect and the part they value most. You know where your kids are. You know who they're with. You hear the ball bouncing while you're cooking dinner.
 
-<figure class="blog-figure">
-  <img src="/images/blog/basketball-court-kids-playing.jpg" alt="Kids playing on a new concrete basketball court in East Tennessee" width="1200" height="800" loading="lazy" decoding="async" />
-  <figcaption>Kids playing on a new concrete basketball court in East Tennessee</figcaption>
-</figure>
-
 **It replaces screen time with something you didn't have to nag about.** Nobody has ever had to be talked into going outside to shoot.
 
 And it isn't only basketball. We regularly stripe courts for **pickleball** alongside the basketball lines, which is far and away the fastest-growing request we get from East Tennessee homeowners whose kids are grown.
@@ -97,11 +92,6 @@ For reference, a high school court is 50' x 84' and an NBA court is 50' x 94'. M
 
 A lot of our Knoxville customers don't build a separate court at all. They **[widen the driveway](/concrete/driveways/)** — adding a 30' x 30' or 30' x 40' pad off to one side, tied into the existing drive with a control joint and a matching finish. You get the court, extra parking for the boat or the truck, and a turnaround, all in one pour. On sloped West Knoxville and Farragut lots this is often the cheapest place to put a court because the grade is already established.
 
-<figure class="blog-figure">
-  <img src="/images/blog/basketball-court-driveway-extension.jpg" alt="Basketball court poured as a driveway extension at a Farragut TN home" width="1200" height="800" loading="lazy" decoding="async" />
-  <figcaption>A court poured as a driveway extension at a Farragut, TN home</figcaption>
-</figure>
-
 ---
 
 ## What East Tennessee Ground Does to a Court (and How We Handle It)
@@ -112,19 +102,9 @@ This is the part that separates a court that plays flat in ten years from one th
 
 **So the base is where the money goes.** We excavate, undercut soft spots, and build a compacted crushed stone base — compacted in lifts, not dumped and raked. That base is doing two jobs: giving the slab a uniform bearing surface, and giving water somewhere to go.
 
-<figure class="blog-figure">
-  <img src="/images/blog/basketball-court-base-prep.jpg" alt="Compacted crushed stone base prepared for a concrete basketball court in East Tennessee" width="1200" height="800" loading="lazy" decoding="async" />
-  <figcaption>Compacted crushed-stone base, built up in lifts before the pour</figcaption>
-</figure>
-
 **Drainage is designed before the pour, not after.** A court is a big impervious surface. Water that used to soak into your yard now has to go somewhere, and if that somewhere is your foundation or your neighbor's yard, you've traded one problem for a worse one. We slope courts at about 1% — roughly an inch every 8 to 10 feet, in one direction — which sheds water without affecting play. Where the site needs it, we'll tie in French drains, channel drains, or a swale to carry it away.
 
 **Thickness and reinforcement.** We pour courts at 4 inches as our standard — heavier than a typical walkway — with rebar or mesh set on chairs, not laid on the ground and pulled up by hand mid-pour. On properties where the court doubles as a parking pad or a turnaround for heavier vehicles, we'll step up to 5 inches. That's a design conversation, and it does change the price.
-
-<figure class="blog-figure">
-  <img src="/images/blog/basketball-court-pour.jpg" alt="Paramount crew finishing a concrete basketball court slab in Knox County" width="1200" height="800" loading="lazy" decoding="async" />
-  <figcaption>Finishing the slab — flat and true is what makes practice transfer to game day</figcaption>
-</figure>
 
 ### About Control Joints — Let's Be Straight With You
 
@@ -157,11 +137,6 @@ Some of these are difficult or impossible to add later. Decide now:
 - **A second goal.** Even on a half court, opposing goals let you run full-court drills lengthwise.
 - **Fencing or a rebound net.** On a sloped lot or near a road, a 10-foot net behind the goal saves a lot of walking.
 - **Seating and shade.** A small [paver patio](/pavers/) or seat wall at the sideline gives parents somewhere to sit. We build a lot of courts as part of a [larger outdoor living plan](/outdoor-living/) — court, patio, fire feature, and grill station on one job.
-
-<figure class="blog-figure">
-  <img src="/images/blog/basketball-court-goal-lights.jpg" alt="Backyard basketball court with in-ground goal and LED lighting near Maryville TN" width="1200" height="800" loading="lazy" decoding="async" />
-  <figcaption>An in-ground adjustable goal and pole-mounted LED lighting extend a court to year-round use</figcaption>
-</figure>
 
 ---
 
