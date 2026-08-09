@@ -126,6 +126,51 @@
 }
 .prose-dark strong { color: var(--color-bone); }
 
+/* Blog inline figures (image + caption) */
+.blog-figure {
+  margin: 2rem 0;
+}
+.blog-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-steel);
+  display: block;
+}
+.blog-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--color-concrete-dim);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Markdown tables — scroll horizontally on narrow screens instead of
+   overflowing the page. `display:block` on the table lets it scroll. */
+.prose-dark table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.95rem;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-dark thead { background: var(--color-graphite); }
+.prose-dark th,
+.prose-dark td {
+  border: 1px solid var(--color-steel);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.prose-dark th { color: var(--color-bone); font-weight: 700; }
+@media (min-width: 640px) {
+  .prose-dark td { white-space: normal; }
+}
+
 /* Fade-up on scroll */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }

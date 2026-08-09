@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { getService } from '../../data/services';
-import { breadcrumbSchema, articleSchema } from '../../lib/schema';
+import { breadcrumbSchema, articleSchema, faqSchema } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -38,14 +38,17 @@ const schemas = [
     path,
     datePublished: post.data.pubDate.toISOString(),
     dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    image: post.data.image,
   }),
+  ...(post.data.faqs?.length ? [faqSchema(post.data.faqs)] : []),
 ];
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Paramount Concrete & Hardscapes`}
-  description={post.data.description}
+  title={post.data.metaTitle ?? `${post.data.title} | Paramount Concrete & Hardscapes`}
+  description={post.data.metaDescription ?? post.data.description}
   path={path}
+  image={post.data.image}
   type="article"
   schemas={schemas}
 >
@@ -60,6 +63,18 @@ const schemas = [
         Published {fmt(post.data.pubDate)}{post.data.updatedDate && ` · Updated ${fmt(post.data.updatedDate)}`} · Paramount Concrete &amp; Hardscapes
       </p>
     </div>
+
+    {post.data.image && (
+      <img
+        src={post.data.image}
+        alt={post.data.imageAlt ?? post.data.title}
+        width="1200"
+        height="630"
+        class="mx-auto mt-8 aspect-[1200/630] w-full max-w-4xl rounded-2xl border border-[var(--color-steel)] object-cover"
+        loading="eager"
+        decoding="async"
+      />
+    )}
 
     <div class="prose-dark mx-auto mt-8 max-w-3xl">
       <Content />
