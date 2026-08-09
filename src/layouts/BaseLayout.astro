@@ -33,7 +33,10 @@ const {
   business = true,
 } = Astro.props;
 
-const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
+// aggregateRating only on the homepage (Reviews page carries its own review schema).
+const allSchemas = business
+  ? [localBusinessSchema({ includeRating: path === '/' }), ...schemas]
+  : schemas;
 ---
 
 <!doctype html>

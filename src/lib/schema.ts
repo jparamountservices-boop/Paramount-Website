@@ -6,9 +6,26 @@ import { company, sameAs } from '../data/company';
 
 const SITE = company.url;
 
-/** The core LocalBusiness / GeneralContractor node, reused via @id. */
-export function localBusinessSchema() {
-  return {
+/** Cities we serve, formatted for schema `areaServed` (schema.org City nodes). */
+const AREA_CITIES = [
+  'Knoxville', 'Farragut', 'West Knoxville', 'Maryville', 'Oak Ridge',
+  'Sevierville', 'Lenoir City', 'Alcoa', 'Louisville', 'Clinton',
+  'Seymour', 'Powell', 'Karns',
+];
+const areaServedCities = AREA_CITIES.map((c) => ({ '@type': 'City', name: `${c}, TN` }));
+const areaServed = [
+  ...areaServedCities,
+  { '@type': 'AdministrativeArea', name: 'Knox County, TN' },
+  { '@type': 'AdministrativeArea', name: 'Blount County, TN' },
+];
+
+/**
+ * The core LocalBusiness / GeneralContractor node, reused via @id.
+ * `includeRating` scopes aggregateRating to pages where reviews are shown
+ * (per Google's guidance) — default off; the homepage passes it on.
+ */
+export function localBusinessSchema(opts: { includeRating?: boolean } = {}) {
+  const node: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'GeneralContractor',
     '@id': `${SITE}/#business`,
@@ -18,8 +35,9 @@ export function localBusinessSchema() {
     url: SITE,
     telephone: company.phone,
     email: company.email,
-    image: `${SITE}${company.logo}`,
+    image: `${SITE}/images/og-default.jpg`,
     logo: `${SITE}${company.logo}`,
+    foundingDate: String(company.yearFounded),
     priceRange: company.priceRange,
     address: {
       '@type': 'PostalAddress',
@@ -34,11 +52,7 @@ export function localBusinessSchema() {
       latitude: company.geo.latitude,
       longitude: company.geo.longitude,
     },
-    areaServed: [
-      'Knoxville TN', 'Farragut TN', 'West Knoxville TN', 'Maryville TN',
-      'Alcoa TN', 'Oak Ridge TN', 'Clinton TN', 'Sevierville TN',
-      'Seymour TN', 'Lenoir City TN', 'Knox County', 'Blount County',
-    ].map((name) => ({ '@type': 'Place', name })),
+    areaServed,
     openingHoursSpecification: company.hours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: h.days,
@@ -46,12 +60,15 @@ export function localBusinessSchema() {
       closes: h.closes,
     })),
     sameAs,
-    aggregateRating: {
+  };
+  if (opts.includeRating) {
+    node.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: company.rating.value,
       reviewCount: company.rating.count,
-    },
-  };
+    };
+  }
+  return node;
 }
 
 /** BreadcrumbList from an ordered array of {name, path}. */
@@ -82,7 +99,7 @@ export function serviceSchema(opts: {
     description: opts.description,
     serviceType: opts.name,
     url: `${SITE}${opts.path}`,
-    areaServed: { '@type': 'Place', name: opts.areaServed ?? 'Knoxville, TN' },
+    areaServed: opts.areaServed ? { '@type': 'City', name: opts.areaServed } : areaServedCities,
     provider: { '@id': `${SITE}/#business` },
   };
 }
