@@ -101,6 +101,12 @@ export const company = {
   // See docs/deployment/instagram-feed.md.
   instagramWidget: '',
 
+  // OPTIONAL live Google-reviews embed. Paste the HTML/script snippet from a
+  // free Google-reviews widget (Featurable, Elfsight, Trustindex, EmbedSocial)
+  // — set it to show only 4–5★ reviews and it auto-updates as people post on
+  // Google. When set, it renders on /reviews/ in place of the manual carousel.
+  reviewsWidget: '',
+
   // Trust signals shown in the trust bar / hero.
   trust: {
     licensed: true,

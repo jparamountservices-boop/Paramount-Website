@@ -12,57 +12,121 @@ const crumbs = [
   { name: 'Reviews', path },
 ];
 
-// Review + AggregateRating schema (attached to the business).
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'GeneralContractor',
-  '@id': `${company.url}/#business`,
-  name: company.name,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: company.rating.value,
-    reviewCount: company.rating.count,
-  },
-  review: reviews.map((r) => ({
-    '@type': 'Review',
-    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
-    author: { '@type': 'Person', name: r.author },
-    reviewBody: r.text,
-  })),
-};
+const hasReviews = reviews.length > 0;
+const avg = hasReviews ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length : 0;
+const avgStr = avg.toFixed(1);
+
+// Review + AggregateRating schema is emitted ONLY from the real reviews in the
+// data file, and its values are derived from them — so it can never overstate.
+const schemas: Record<string, unknown>[] = [breadcrumbSchema(crumbs)];
+if (hasReviews) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'GeneralContractor',
+    '@id': `${company.url}/#business`,
+    name: company.name,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: avgStr,
+      reviewCount: reviews.length,
+    },
+    review: reviews.map((r) => ({
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+      author: { '@type': 'Person', name: r.author },
+      reviewBody: r.text,
+    })),
+  });
+}
+
+const reviewLink = company.social.google || company.social.facebook;
 ---
 
 <BaseLayout
   title="Reviews | Paramount Concrete & Hardscapes | Knoxville TN"
-  description="Read reviews for Paramount Concrete & Hardscapes — a 5-star-rated concrete and hardscape contractor serving Knoxville and East Tennessee."
+  description="Reviews for Paramount Concrete & Hardscapes — a concrete and hardscape contractor serving Knoxville and East Tennessee."
   path={path}
   business={false}
-  schemas={[breadcrumbSchema(crumbs), reviewSchema]}
+  schemas={schemas}
 >
   <Breadcrumbs items={crumbs} />
 
   <section class="wrap py-10 text-center">
     <p class="eyebrow">What homeowners say</p>
     <h1 class="mt-3 text-4xl font-black sm:text-5xl">Reviews</h1>
-    <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">★★★★★</p>
-    <p class="text-[var(--color-concrete)]">{company.rating.value} out of 5 · {company.rating.count}+ reviews</p>
+    {company.reviewsWidget ? (
+      <p class="mx-auto mt-4 max-w-xl text-[var(--color-concrete)]">
+        Straight from Google — real reviews from homeowners across East Tennessee.
+      </p>
+    ) : hasReviews ? (
+      <>
+        <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">{'★'.repeat(Math.round(avg))}</p>
+        <p class="text-[var(--color-concrete)]">{avgStr} out of 5 · {reviews.length} review{reviews.length === 1 ? '' : 's'}</p>
+      </>
+    ) : (
+      <p class="mx-auto mt-4 max-w-xl text-[var(--color-concrete)]">
+        We’re a locally owned crew that’s been building across East Tennessee since {company.yearFounded}.
+        Worked with us? We’d be grateful for your honest feedback.
+      </p>
+    )}
   </section>
 
-  <section class="wrap columns-1 gap-5 pb-14 md:columns-2 lg:columns-3">
-    {
-      reviews.map((r) => (
-        <figure class="mb-5 break-inside-avoid rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
-          <div class="text-[var(--color-flame)]">{'★'.repeat(r.rating)}</div>
-          <blockquote class="mt-3 text-[var(--color-concrete)]">{r.text}</blockquote>
-          <figcaption class="mt-4 text-sm">
-            <span class="font-bold text-[var(--color-bone)]">{r.author}</span>
-            {r.location && <span class="text-[var(--color-concrete-dim)]"> · {r.location}</span>}
-            {r.service && <div class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{r.service}</div>}
-          </figcaption>
-        </figure>
-      ))
-    }
-  </section>
+  {company.reviewsWidget ? (
+    <section class="wrap pb-14"><div set:html={company.reviewsWidget} /></section>
+  ) : hasReviews ? (
+    <section class="wrap pb-14">
+      <div id="review-track" class="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {reviews.map((r) => (
+          <figure class="w-[85%] shrink-0 snap-center rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 sm:w-[46%] lg:w-[31%]">
+            <div class="text-[var(--color-flame)]">{'★'.repeat(r.rating)}</div>
+            <blockquote class="mt-3 text-[var(--color-concrete)]">{r.text}</blockquote>
+            <figcaption class="mt-4 text-sm">
+              <span class="font-bold text-[var(--color-bone)]">{r.author}</span>
+              {r.location && <span class="text-[var(--color-concrete-dim)]"> · {r.location}</span>}
+              {r.service && <div class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{r.service}</div>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="mt-4 flex justify-center gap-3">
+        <button type="button" data-dir="-1" class="review-nav grid h-10 w-10 place-items-center rounded-full border border-[var(--color-steel)] text-[var(--color-bone)] transition hover:border-[var(--color-flame)]" aria-label="Previous reviews">‹</button>
+        <button type="button" data-dir="1" class="review-nav grid h-10 w-10 place-items-center rounded-full border border-[var(--color-steel)] text-[var(--color-bone)] transition hover:border-[var(--color-flame)]" aria-label="More reviews">›</button>
+      </div>
+      {reviewLink && (
+        <p class="mt-6 text-center text-sm text-[var(--color-concrete-dim)]">
+          <a href={reviewLink} target="_blank" rel="noopener noreferrer" class="font-semibold text-[var(--color-flame-300)] underline">Read more or leave a review →</a>
+        </p>
+      )}
+    </section>
+  ) : (
+    <section class="wrap pb-16">
+      <div class="mx-auto max-w-xl rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-8 text-center">
+        <p class="text-lg font-bold text-[var(--color-bone)]">Recently worked with Paramount?</p>
+        <p class="mt-2 text-[var(--color-concrete)]">Your honest review helps other East Tennessee homeowners — and it means a lot to our crew.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          {reviewLink && (
+            <a href={reviewLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Leave a review</a>
+          )}
+          <a href={company.phoneHref} class="btn btn-ghost">Call {company.phone}</a>
+        </div>
+      </div>
+    </section>
+  )}
 
-  <CtaBand heading="Ready to be our next 5-star review?" />
+  <CtaBand heading="Ready to be our next great review?" />
 </BaseLayout>
+
+{hasReviews && (
+  <script is:inline>
+    (function () {
+      var track = document.getElementById('review-track');
+      if (!track) return;
+      document.querySelectorAll('.review-nav').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var dir = Number(btn.getAttribute('data-dir')) || 1;
+          track.scrollBy({ left: dir * Math.min(track.clientWidth * 0.9, 420), behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+)}
