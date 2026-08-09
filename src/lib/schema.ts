@@ -33,7 +33,7 @@ export function localBusinessSchema(opts: { includeRating?: boolean } = {}) {
     alternateName: company.legalName,
     description: company.description,
     url: SITE,
-    telephone: company.phone,
+    telephone: company.phoneHref.replace('tel:', ''),
     email: company.email,
     image: `${SITE}/images/og-default.jpg`,
     logo: `${SITE}${company.logo}`,
