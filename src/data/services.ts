@@ -7,7 +7,7 @@
  * concrete/decorative-and-stamped, pavers, hardscapes, retaining-walls, decks.
  */
 
-export type NavGroup = 'Concrete' | 'Pavers' | 'Hardscapes';
+export type NavGroup = 'Outdoor Living' | 'Concrete' | 'Pavers' | 'Hardscapes';
 
 export interface Faq {
   q: string;
@@ -949,20 +949,32 @@ export const services: Service[] = [
   },
   {
     path: 'outdoor-living',
-    navGroup: 'Hardscapes',
-    navLabel: 'Outdoor Living',
-    title: 'Outdoor Living Knoxville TN | Patios, Fire Features & Backyard Design | Paramount',
+    isHub: true,
+    navGroup: 'Outdoor Living',
+    navLabel: 'Outdoor Living (overview)',
+    title: 'Outdoor Living Builder Knoxville TN | Covered Patios, Kitchens & Backyard Builds | Paramount',
     metaDescription:
-      'Complete outdoor living spaces in Knoxville & East TN — patios, fire features, seating walls, walkways and pavers designed together as one backyard you actually live in. Free phone consultation: (865) 237-9770.',
+      'Outdoor living builder in Knoxville & East TN — covered patios and pergolas, outdoor kitchens, backyard sport courts and full backyard transformations, designed and built as one project on concrete and hardscape work made for our clay soil. Free consultation: (865) 237-9770.',
     h1: 'Outdoor Living in Knoxville, TN',
     heroSubhead:
-      'We design and build the whole backyard as one connected space — patio, fire, seating and more — not a pile of disconnected projects.',
+      'Covered patios, outdoor kitchens, sport courts and full backyard transformations — designed and built as one connected space, not a pile of disconnected projects.',
     primaryKeyword: 'outdoor living Knoxville TN',
     intro: [
       'Outdoor living is what happens when your backyard stops being a yard and becomes another room of the house — a place to cook, gather, unwind and actually live. In East Tennessee our long springs and falls mean an outdoor space earns its keep most of the year, and the homes that use theirs the most are the ones where every piece was designed to work together.',
-      'That’s the difference between an outdoor living space and a pile of separate projects. A patio here, a fire pit there and a wall somewhere else rarely add up. We plan the whole space — how you’ll move through it, where people gather, how it drains and how it flows — then build it so each element ties into the next.',
+      'That’s the difference between an outdoor living space and a pile of separate projects. A patio here, a cover there and a kitchen somewhere else rarely add up. We plan the whole space — how you’ll move through it, where people gather, how it drains and how it flows — then build it so each element ties into the next, on concrete and hardscape work engineered to last here.',
     ],
     sections: [
+      {
+        h2: 'Three ways to build your backyard',
+        body: [
+          'Not every project is a full transformation, and it shouldn’t have to be. We build at three levels, and the right one depends on how you use the space and where you want to land on budget:',
+        ],
+        bullets: [
+          'Concrete & flatwork ($8k–$15k) — driveways, slabs, sidewalks, a standalone patio or a repair. The foundation everything else is built on.',
+          'Patio + cover package ($15k–$25k) — a concrete or paver patio paired with a manufactured or pergola-style cover. The value option: engineered, faster to install, defined sizes, shade and rain protection without a full custom build.',
+          'Full custom build ($25k–$60k+) — site-built structures, outdoor kitchens, sport courts, walls, drainage and lighting, designed and built as one project. Unlimited spans, materials matched to your home, and an integrated kitchen or fire feature — no size constraints.',
+        ],
+      },
       {
         h2: 'What an outdoor living space brings together',
         bullets: [
@@ -1007,7 +1019,273 @@ export const services: Service[] = [
         a: 'Yes, and on our sloped, clay lots it’s the part that makes or breaks the project. We plan grading and drainage first so the finished space stays level, dry and usable for years.',
       },
     ],
-    related: ['hardscapes', 'hardscapes/fire-pits', 'pavers/patios', 'concrete/patio', 'hardscapes/walkways', 'retaining-walls'],
+    related: ['outdoor-living/backyard-builds', 'outdoor-living/patio-covers', 'outdoor-living/outdoor-kitchens', 'outdoor-living/sport-courts', 'hardscapes/fire-pits', 'retaining-walls'],
+  },
+  {
+    path: 'outdoor-living/patio-covers',
+    parent: 'outdoor-living',
+    navGroup: 'Outdoor Living',
+    navLabel: 'Patio Covers & Pergolas',
+    title: 'Covered Patios & Pergolas Knoxville TN | Kit & Custom | Paramount',
+    metaDescription:
+      'Covered patio builder in Knoxville & East TN. Manufactured kit covers and site-built custom structures — engineered for snow load and wind, with slab, footings, electrical rough-in and lighting. Free consultation: (865) 237-9770.',
+    h1: 'Covered Patios & Pergolas in Knoxville, TN',
+    heroSubhead:
+      'A patio you can use in the rain and the July sun — from engineered kit covers to fully custom, site-built structures matched to your home.',
+    primaryKeyword: 'patio cover Knoxville TN',
+    intro: [
+      'A patio is only as useful as the days you can actually sit on it. In East Tennessee that means shade in the summer, cover in the afternoon rain, and a roof you can hang a fan and lights from. A cover is what turns a slab you use a few evenings a year into the most-used room of the house.',
+      'There are two honest ways to get there — a manufactured kit cover or a site-built custom structure — and the right one comes down to your budget, your roofline and how far you want to push the design. We build both, and we’ll tell you straight which one fits your project.',
+    ],
+    sections: [
+      {
+        h2: 'Kit cover vs. custom — the honest comparison',
+        body: [
+          'Neither is “better.” They solve the same problem at different price points and levels of flexibility.',
+        ],
+        bullets: [
+          'Kit / manufactured cover — engineered aluminum or pergola-style systems in defined sizes. Faster to install, strong value, insulated roof options, and clean lines. Best when your patio is a standard rectangle and you want shade, rain protection and lighting without a full custom build. This is the heart of our $15k–$25k patio-plus-cover package.',
+          'Custom, site-built structure — framed and finished on site with unlimited spans and footprints, materials matched to your house, and full integration of an outdoor kitchen, fireplace, ceiling, fans and lighting. Best when the roofline has to tie into the home, the span is wide, or the cover is one piece of a larger build. Starts around $25k and scales with size and finish.',
+        ],
+      },
+      {
+        h2: 'What’s included in a covered patio project',
+        bullets: [
+          'The slab or paver base — poured or laid, sloped for drainage, sized to the structure',
+          'Footings and posts engineered for the load, not just set in the ground',
+          'The cover structure itself — kit system or site-built frame and roof',
+          'Electrical rough-in for a ceiling fan, recessed or string lighting, and outlets',
+          'Provisions to tie into the house for an attached cover, or a freestanding footprint',
+          'Flashing and attachment detailing so water goes where it should — never into your wall',
+        ],
+      },
+      {
+        h2: 'Built for East Tennessee weather',
+        body: [
+          'A cover is a structure, and structures here have to handle real snow load and the wind that comes with our storms. We size the posts, beams and footings to the span and the load — and where a cover attaches to the house, the flashing and ledger detailing is what keeps the connection dry for the life of the roof. Attached or freestanding, we plan that before anyone digs.',
+        ],
+      },
+    ],
+    costNote:
+      'A patio-plus-cover package typically runs $15,000–$25,000 for a concrete or paver patio with an engineered kit cover, lighting and a fan. Fully custom, site-built covered structures start around $25,000 and scale with span, roofline, materials and any integrated kitchen or fireplace. We price the slab, the structure and the electrical separately on your proposal so you can see exactly what drives the number.',
+    faqs: [
+      {
+        q: 'What’s the difference between a kit cover and a custom structure?',
+        a: 'A kit cover is an engineered, manufactured system in defined sizes — faster and a strong value for a standard patio. A custom structure is framed and built on site with unlimited spans, materials matched to your home, and full integration of kitchens, fireplaces and lighting. We build both and will tell you which fits your project and budget.',
+      },
+      {
+        q: 'Can the cover attach to my house?',
+        a: 'Yes — covers can be attached to the home or freestanding. Attached covers need careful flashing and ledger detailing so water never gets into the wall; freestanding structures avoid the connection entirely and can go anywhere the footprint allows. We plan which approach before we build.',
+      },
+      {
+        q: 'Will it hold up to snow and wind?',
+        a: 'We size the posts, beams and footings to the span and the snow and wind loads we actually get in East Tennessee — not to a generic minimum. That engineering is exactly why a cover costs more than a bare patio, and why it lasts.',
+      },
+      {
+        q: 'Do I need a permit for a covered patio?',
+        a: 'A roofed structure usually does require a building permit, and HOA approval and setbacks apply. We handle the details as part of the design and let you know what your specific lot and jurisdiction require.',
+      },
+      {
+        q: 'Can you add a kitchen or fireplace under the cover?',
+        a: 'Yes — and that’s where custom shines. We can rough in gas, water, electrical and drainage during the build so an outdoor kitchen, fireplace or heaters integrate cleanly instead of being bolted on later.',
+      },
+    ],
+    related: ['outdoor-living', 'outdoor-living/outdoor-kitchens', 'outdoor-living/backyard-builds', 'concrete/patio', 'pavers/patios', 'hardscapes/fire-pits'],
+  },
+  {
+    path: 'outdoor-living/outdoor-kitchens',
+    parent: 'outdoor-living',
+    navGroup: 'Outdoor Living',
+    navLabel: 'Outdoor Kitchens',
+    title: 'Outdoor Kitchens Knoxville TN | Grill Islands to Full Builds | Paramount',
+    metaDescription:
+      'Outdoor kitchen builder in Knoxville & East TN — grill stations, full masonry kitchens with counters, storage, sinks and refrigeration. Gas, water, electrical and freeze-thaw-ready finishes. Free consultation: (865) 237-9770.',
+    h1: 'Outdoor Kitchens in Knoxville, TN',
+    heroSubhead:
+      'From a clean grill island to a full masonry kitchen with bar seating and refrigeration — built to cook on, entertain around, and survive an East Tennessee winter.',
+    primaryKeyword: 'outdoor kitchen Knoxville TN',
+    intro: [
+      'An outdoor kitchen is the piece that keeps the cook in the party instead of stuck inside at the stove. Done right it’s not a grill on a cart — it’s counter space, storage, a place to prep and serve, and often a sink and refrigeration, all built to live outdoors year-round.',
+      'The range is wide, and that’s the point: you can start with a solid grill station and grow, or build the whole thing at once. What matters most here isn’t the appliances — it’s the structure under them and the utilities run to them, because that’s what fails first when it’s done cheap.',
+    ],
+    sections: [
+      {
+        h2: 'Three tiers, real differences',
+        bullets: [
+          'Grill station — a built-in grill in a masonry or framed surround with counter space on either side. The clean, right-sized starting point for most patios.',
+          'Mid kitchen — grill plus a run of counter, storage doors and drawers, and a sink with a water and drain line. The setup that actually replaces trips back into the house.',
+          'Full kitchen — appliances (grill, side burner, sometimes a pizza oven or griddle), bar seating, refrigeration, and finished counters and facing. The centerpiece of a full backyard build.',
+        ],
+      },
+      {
+        h2: 'Masonry vs. framed — what’s underneath',
+        body: [
+          'The two ways to build the body of an outdoor kitchen are full masonry (block and stone or brick) or a framed structure clad in stone veneer or stucco. Masonry is the heaviest, longest-lived option and takes stone facing beautifully. A framed structure is lighter and faster and, built correctly with the right substrate and weatherproofing, holds up just as well. Either way, the countertop — granite, porcelain or concrete — has to be rated for freeze-thaw, because a counter that traps water spalls in a couple of winters.',
+        ],
+      },
+      {
+        h2: 'Utilities: the part you can’t add later cheaply',
+        bullets: [
+          'Gas — a dedicated natural-gas or propane line sized to the grill and any burners',
+          'Water & drainage — a supply line for the sink and a proper drain, freeze-protected',
+          'Electrical — outlets, lighting, and circuits for refrigeration and any powered appliances',
+          'Structure — footings and a slab that carry the weight of masonry and stone without settling',
+        ],
+      },
+    ],
+    costNote:
+      'A built-in grill station generally starts in the mid-four figures to around $10,000. A mid kitchen with counters, storage and a sink typically runs $12,000–$25,000. A full outdoor kitchen with appliances, refrigeration, bar seating and finished stone runs $25,000 and up, depending on appliances and materials. Utilities (gas, water, electrical) and the slab are quoted as their own line items — they’re most of what separates a cheap build from one that lasts.',
+    faqs: [
+      {
+        q: 'How much does an outdoor kitchen cost in Knoxville?',
+        a: 'A built-in grill station starts in the mid-four figures to about $10,000; a mid kitchen with counters, storage and a sink runs roughly $12,000–$25,000; and a full kitchen with appliances, refrigeration and bar seating runs $25,000 and up. Appliances and countertop material move the number the most.',
+      },
+      {
+        q: 'Masonry or framed — which should I build?',
+        a: 'Masonry is the heaviest, longest-lived option and takes stone facing beautifully. A framed structure clad in stone veneer is lighter, faster and, built correctly, just as durable. We’ll recommend based on your design, your budget and how the kitchen ties into the rest of the space.',
+      },
+      {
+        q: 'Will an outdoor kitchen survive our winters?',
+        a: 'Yes, when it’s built for it. The countertop has to be freeze-thaw rated so it doesn’t trap water and spall, water lines have to be freeze-protected or drainable, and appliances should be rated for outdoor use. Those details are exactly where a cheap build fails.',
+      },
+      {
+        q: 'Can you run gas, water and electric to it?',
+        a: 'Yes — we coordinate the gas line, water supply and drain, and the electrical circuits as part of the build. Roughing these in during construction is far cheaper than trying to add them to a finished kitchen later.',
+      },
+      {
+        q: 'Can the kitchen go under a covered patio?',
+        a: 'That’s the ideal setup — a cover keeps the cook and the appliances out of the weather and lets us integrate lighting and fans overhead. We often build the kitchen and the cover together as one project.',
+      },
+    ],
+    related: ['outdoor-living', 'outdoor-living/patio-covers', 'outdoor-living/backyard-builds', 'hardscapes/fire-pits', 'pavers/patios', 'concrete/patio'],
+  },
+  {
+    path: 'outdoor-living/sport-courts',
+    parent: 'outdoor-living',
+    navGroup: 'Outdoor Living',
+    navLabel: 'Backyard Sport Courts',
+    title: 'Backyard Sport Courts Knoxville TN | Basketball & Multi-Sport | Paramount',
+    metaDescription:
+      'Backyard sport court builder in Knoxville & East TN — basketball and multi-sport courts built as part of a full outdoor living space with patio, cover and grilling area. Base, drainage and finishes done right. Free consultation: (865) 237-9770.',
+    h1: 'Backyard Sport Courts in Knoxville, TN',
+    heroSubhead:
+      'The signature family build — a basketball or multi-sport court designed together with the patio, cover and grilling area as one space the whole family lives in.',
+    primaryKeyword: 'backyard sport court Knoxville TN',
+    intro: [
+      'A sport court is the build that gets the neighborhood’s kids to your house and keeps them there. But the courts that get used every day aren’t just a slab with a hoop — they’re part of a space, with somewhere for parents to sit, shade and lights so the game doesn’t stop at dark, and a grill going while it happens.',
+      'That’s how we build them: the court, the patio, the cover and the grilling area planned as one outdoor room, so the whole family has a reason to be out there at the same time. It’s our signature build, and it reads that way when it’s done.',
+    ],
+    sections: [
+      {
+        h2: 'More than a slab and a hoop',
+        body: [
+          'The court surface itself is a concrete build done right — excavation, a compacted stone base, drainage designed before the pour, the correct thickness and reinforcement, and control joints laid out to align with the striping. What turns it into an outdoor living space is everything we plan around it.',
+        ],
+        bullets: [
+          'The court — basketball, pickleball lines, or a multi-sport layout, striped or acrylic-coated',
+          'A patio and seating area so parents and guests have somewhere to be',
+          'A cover or pergola for shade over the seating — and lights over the court for night games',
+          'A grilling or kitchen area so it’s a gathering space, not just a practice pad',
+          'Retaining walls and drainage where the lot slopes — usually most of East Tennessee',
+        ],
+      },
+      {
+        h2: 'Designed for how the family actually uses it',
+        body: [
+          'Court orientation, run-out space, where the seating goes, where the goal and lights sit — these are design decisions, and they’re the difference between a court that gets used daily and one that gets used twice. We work them out on site as part of the plan, then build the whole thing on one contract with one crew.',
+        ],
+      },
+    ],
+    costNote:
+      'A sport court as part of a full outdoor living build is a custom project — the court surface, the surrounding patio, a cover, lighting and a grilling area each carry their own range, and how they combine drives the total. Most full-court-plus-space builds land in the $25,000–$60,000+ range. If you just want the court surface itself, our concrete basketball court page has honest per-size pricing.',
+    faqs: [
+      {
+        q: 'Do I have to build the whole outdoor space, or just the court?',
+        a: 'Either. If you just want the court surface, our concrete basketball court page covers that with honest per-size pricing. This page is about the bigger build — court plus patio, cover, lighting and a grilling area designed as one family space.',
+      },
+      {
+        q: 'Can you build on a sloped lot?',
+        a: 'Yes — that’s most of East Tennessee. It usually means cut-and-fill, sometimes a retaining wall on the high side, and a drainage plan. We build the walls and drainage in-house, so it’s one crew and one contract.',
+      },
+      {
+        q: 'Can the court do more than basketball?',
+        a: 'Yes. We stripe pickleball lines alongside basketball on most courts, and can lay out a multi-sport surface. One slab, multiple line colors, far more use.',
+      },
+      {
+        q: 'Can you add lights so we can play at night?',
+        a: 'Yes — we run conduit under the slab during the build and coordinate pole-mounted LED lighting with a licensed electrician. It turns a court from a six-month asset into a year-round one.',
+      },
+    ],
+    relatedPost: { label: 'Read: what goes into building a court in East Tennessee', path: '/blog/concrete-basketball-courts-knoxville-tn/' },
+    related: ['outdoor-living', 'concrete/basketball-courts', 'outdoor-living/patio-covers', 'outdoor-living/backyard-builds', 'retaining-walls', 'concrete/driveways'],
+  },
+  {
+    path: 'outdoor-living/backyard-builds',
+    parent: 'outdoor-living',
+    navGroup: 'Outdoor Living',
+    navLabel: 'Full Backyard Builds',
+    title: 'Full Backyard Builds Knoxville TN | Complete Outdoor Transformations | Paramount',
+    metaDescription:
+      'Complete backyard transformations in Knoxville & East TN — design, grading and drainage, hardscape, covered structures, outdoor kitchens and lighting, built as one project. Free design consultation: (865) 237-9770.',
+    h1: 'Full Backyard Builds in Knoxville, TN',
+    heroSubhead:
+      'The whole backyard, designed and built as one project — grading and drainage, hardscape, structures, kitchen and lighting — so every piece works together from day one.',
+    primaryKeyword: 'backyard renovation Knoxville TN',
+    intro: [
+      'A full backyard build is what happens when you stop adding one project at a time and design the whole space at once. Instead of a patio this year, a wall next year and a cover someday, we plan the finished backyard up front — how it drains, how you move through it, where you gather — then build it in one coordinated project.',
+      'This is our flagship work, and it’s where doing everything in-house pays off. Grading, drainage, concrete, pavers, walls, covered structures, an outdoor kitchen and lighting are all one crew and one plan — no coordinating three contractors who each blame the other when something doesn’t line up.',
+    ],
+    sections: [
+      {
+        h2: 'What a full build includes',
+        bullets: [
+          'Design — a master plan for the whole space before anything is built',
+          'Grading & drainage — the unglamorous foundation that keeps a sloped, clay lot dry and level',
+          'Hardscape — patios and walkways in concrete, pavers or natural stone',
+          'Structures — covered patios, pergolas and pavilions',
+          'Outdoor kitchen — from a grill station to a full cooking and bar setup',
+          'Retaining walls — to carve level, usable space out of a slope',
+          'Lighting & finish — so the space works after dark and reads as one designed room',
+        ],
+      },
+      {
+        h2: 'The design-first process',
+        body: [
+          'Large builds don’t start with a truck showing up. They start with a paid design step: an on-site evaluation of grade, drainage and access, then a plan and a written proposal you can actually build from. That fee is credited toward your project. It’s how a $40k+ transformation gets built once, correctly, instead of improvised in the field.',
+        ],
+      },
+      {
+        h2: 'Built in phases, if you want',
+        body: [
+          'A full plan doesn’t mean a full invoice all at once. We design the entire space up front, then build in phases as budget allows — each stage fitting the master plan so nothing has to be torn out and redone later. The plan is the thing that protects your money; the phasing just decides the pace.',
+        ],
+      },
+    ],
+    costNote:
+      'Full backyard builds are custom by definition. Most land in the $25,000–$60,000+ range, and larger transformations with a covered structure, outdoor kitchen and extensive hardscape run higher. Every build starts with a paid on-site design consultation — credited toward the project — and a written, itemized proposal so you can see every element and phase it if you’d like.',
+    faqs: [
+      {
+        q: 'What does a full backyard build cost?',
+        a: 'Most full transformations land in the $25,000–$60,000+ range, and larger builds with a covered structure, outdoor kitchen and extensive hardscape run higher. Because every yard and plan is different, we start with a paid on-site design consultation and give you a written, itemized proposal.',
+      },
+      {
+        q: 'Do I have to build it all at once?',
+        a: 'No. We design the whole space up front, then build in phases as your budget allows. Each phase fits the master plan, so nothing gets torn out and redone later. The full design is what protects your investment — phasing just sets the pace.',
+      },
+      {
+        q: 'Why is there a design fee?',
+        a: 'A real plan for a large build takes an on-site evaluation of grade, drainage and access plus design time — that’s work. The consultation fee covers it and is credited in full toward your project. It’s what lets us build a big project once, correctly, instead of guessing in the field.',
+      },
+      {
+        q: 'Do you handle grading and drainage too?',
+        a: 'Yes — and on our sloped, clay lots it’s the part that makes or breaks everything above it. We plan grading and drainage first so the finished space stays level, dry and usable for decades.',
+      },
+      {
+        q: 'Is it really one crew for everything?',
+        a: 'Yes. Concrete, pavers, walls, structures, the kitchen and lighting are all handled in-house on one contract. That’s the whole advantage of a full build — no finger-pointing between separate contractors when pieces don’t line up.',
+      },
+    ],
+    related: ['outdoor-living', 'outdoor-living/patio-covers', 'outdoor-living/outdoor-kitchens', 'outdoor-living/sport-courts', 'retaining-walls', 'pavers/patios'],
   },
   {
     path: 'retaining-walls',
