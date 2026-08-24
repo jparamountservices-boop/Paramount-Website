@@ -197,7 +197,7 @@ export const services: Service[] = [
         a: 'Yes — with stamped patterns, integral color and borders we can complement your home’s brick, stone or existing patio so the new space looks original to the house.',
       },
     ],
-    related: ['concrete', 'concrete/decorative-and-stamped', 'pavers/patios', 'hardscapes/fire-pits'],
+    related: ['outdoor-living/patio-covers', 'concrete', 'concrete/decorative-and-stamped', 'pavers/patios', 'hardscapes/fire-pits'],
   },
   {
     path: 'concrete/decorative-and-stamped',
@@ -488,7 +488,7 @@ export const services: Service[] = [
         a: 'Yes — sloped lots just need grading and sometimes a retaining wall to carve out level space. We plan that first so the finished court sits flat and drains properly.',
       },
     ],
-    related: ['concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/repair'],
+    related: ['outdoor-living/sport-courts', 'concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/repair'],
     relatedPost: {
       label: 'Read: what goes into building a court in East Tennessee',
       path: '/blog/concrete-basketball-courts-knoxville-tn/',
@@ -776,7 +776,7 @@ export const services: Service[] = [
         a: 'Most residential paver patios take about 3–7 working days depending on size, access and features. The base work is what takes the time — and it’s what makes the patio last.',
       },
     ],
-    related: ['pavers', 'concrete/patio', 'hardscapes/fire-pits', 'retaining-walls'],
+    related: ['outdoor-living/backyard-builds', 'pavers', 'concrete/patio', 'hardscapes/fire-pits', 'retaining-walls'],
   },
 
   {
