@@ -22,7 +22,16 @@ interface Props {
 }
 const { compact = false, source, defaultService } = Astro.props;
 
-const serviceOptions = services.filter((s) => !s.isHub);
+// Grouped service options — Outdoor Living first (repositioning). Option
+// values stay equal to each service's navLabel so `defaultService` pre-select
+// (used on PPC landing pages) keeps working.
+const optionGroupOrder = ['Outdoor Living', 'Pavers', 'Concrete', 'Hardscapes'] as const;
+const serviceGroups = optionGroupOrder.map((g) => ({
+  label: g,
+  options: services.filter((s) => s.navGroup === g && !s.isHub).map((s) => s.navLabel),
+}));
+
+const budgetOptions = ['Under $15,000', '$15,000 – $25,000', '$25,000 – $50,000', '$50,000+', 'Not sure yet'];
 ---
 
 <form
@@ -60,16 +69,32 @@ const serviceOptions = services.filter((s) => !s.isHub);
     </label>
   </div>
 
-  <label class="block">
-    <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">What can we build for you?</span>
-    <select name="service" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]">
-      <option value="">Select a service…</option>
-      {serviceOptions.map((s) => (
-        <option value={s.navLabel} selected={defaultService === s.navLabel}>{s.navLabel.replace(' (overview)', '')}</option>
-      ))}
-      <option value="Other">Something else</option>
-    </select>
-  </label>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">What can we build for you?</span>
+      <select name="service" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]">
+        <option value="">Select a service…</option>
+        {serviceGroups.map((g) => (
+          <optgroup label={g.label}>
+            {g.options.map((label) => (
+              <option value={label} selected={defaultService === label}>{label}</option>
+            ))}
+          </optgroup>
+        ))}
+        <option value="Other">Something else</option>
+      </select>
+    </label>
+
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Estimated budget</span>
+      <select required name="budget" class="w-full rounded-lg border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]">
+        <option value="" disabled selected>Select a range…</option>
+        {budgetOptions.map((b) => (
+          <option value={b}>{b}</option>
+        ))}
+      </select>
+    </label>
+  </div>
 
   <label class="block">
     <span class="mb-1 block text-sm font-semibold text-[var(--color-bone)]">Describe your project</span>

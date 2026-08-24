@@ -19,6 +19,7 @@ const year = new Date().getFullYear();
     <div>
       <p class="mb-3 text-sm font-bold uppercase tracking-wider text-[var(--color-bone)]">Services</p>
       <ul class="space-y-2 text-sm text-[var(--color-concrete)]">
+        <li><a href="/outdoor-living/" class="transition hover:text-[var(--color-flame)]">Outdoor Living</a></li>
         {hubServices.map((s) => (
           <li><a href={`/${s.path}/`} class="transition hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</a></li>
         ))}
@@ -54,7 +55,7 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-[var(--color-steel)]">
     <div class="wrap flex flex-col items-center justify-between gap-2 py-5 text-xs text-[var(--color-concrete-dim)] sm:flex-row">
-      <p>© {year} {company.legalName}. Licensed &amp; insured. All rights reserved.</p>
+      <p>© {year} {company.name}. Licensed &amp; insured. All rights reserved.</p>
       <p>Concrete &amp; hardscape contractor serving Knoxville &amp; East Tennessee.</p>
     </div>
   </div>

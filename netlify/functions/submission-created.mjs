@@ -72,6 +72,16 @@ const CONTENT = {
       `<strong>Grading matters.</strong> On our hills, drainage and grading quietly make or break the finished look.`,
     ],
   },
+  outdoorLiving: {
+    subject: 'Thanks for reaching out about your outdoor living project!',
+    lead: `This is the work we love most — taking a backyard and turning it into a place your family actually lives. Covered patios, outdoor kitchens, sport courts, full transformations… the trick is designing the whole space to work together, then building it on concrete and hardscape that holds up in East Tennessee.`,
+    heading: 'A few things worth knowing about outdoor living builds',
+    points: [
+      `<strong>Design first.</strong> Bigger builds start with a paid on-site design step — grade, drainage, access and layout — and that fee is credited in full toward your project.`,
+      `<strong>One crew, one plan.</strong> Hardscape, structures, kitchen and lighting are all handled in-house, so nothing falls through the cracks between contractors.`,
+      `<strong>Phase it if you want.</strong> We plan the whole space up front, then build in stages as budget allows — nothing torn out and redone later.`,
+    ],
+  },
   generic: {
     subject: 'Thanks for reaching out!',
     lead: `Thanks for getting in touch — we're genuinely glad you did. Whatever you've got in mind out there, we'll help you figure out the smartest way to build it so it actually lasts.`,
@@ -89,6 +99,12 @@ const CONTENT = {
 function pickContent(serviceRaw) {
   const s = (serviceRaw || '').toLowerCase();
   if (s.includes('paver')) return CONTENT.pavers;
+  if (
+    s.includes('outdoor living') || s.includes('backyard') || s.includes('cover') ||
+    s.includes('pergola') || s.includes('kitchen') || s.includes('sport court') ||
+    s.includes('sport-court')
+  )
+    return CONTENT.outdoorLiving;
   if (s.includes('retaining')) return CONTENT.walls;
   if (s.includes('fire')) return CONTENT.firepit;
   if (
