@@ -5,40 +5,48 @@ import { serviceAreas } from '../data/serviceAreas';
 import Logo from './Logo.astro';
 
 const groups = servicesByGroup();
-const groupOrder = ['Concrete', 'Pavers', 'Hardscapes'] as const;
+const stripOverview = (label: string) => label.replace(' (overview)', '');
+
+// Top-level category menus, Outdoor Living first (repositioning).
+const groupOrder = ['Outdoor Living', 'Concrete', 'Pavers', 'Hardscapes'] as const;
+const menus = groupOrder.map((g) => {
+  const items = (groups[g] ?? []).map((s) => ({ label: stripOverview(s.navLabel), href: `/${s.path}/` }));
+  // Outdoor Living also surfaces Fire Pits (which lives in the Hardscapes group).
+  if (g === 'Outdoor Living') {
+    items.push({ label: 'Fire Pits & Fire Features', href: '/hardscapes/fire-pits/' });
+  }
+  return { label: g, items };
+});
 ---
 
 <header class="sticky top-0 z-50 border-b border-[var(--color-steel)] bg-[color-mix(in_srgb,var(--color-ink)_92%,transparent)] backdrop-blur">
   <div class="wrap flex items-center justify-between gap-4 py-3">
     <Logo />
 
-    <!-- Desktop nav -->
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
-      <div class="group relative">
-        <button class="py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">
-          Services ▾
-        </button>
-        <div class="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-          <div class="grid w-[36rem] grid-cols-2 gap-x-6 gap-y-1 rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 shadow-2xl">
-            {
-              groupOrder.map((g) => (
-                <div>
-                  <p class="mb-1 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{g}</p>
-                  <ul class="mb-3 space-y-1">
-                    {groups[g]?.map((s) => (
-                      <li>
-                        <a href={`/${s.path}/`} class="block rounded px-2 py-1 text-sm text-[var(--color-concrete)] transition hover:bg-[var(--color-graphite-2)] hover:text-[var(--color-bone)]">
-                          {s.navLabel}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))
-            }
+    <!-- Desktop nav (xl+; smaller widths use the accordion below) -->
+    <nav class="hidden items-center gap-5 xl:flex" aria-label="Primary">
+      {
+        menus.map((m) => (
+          <div class="group relative">
+            <button class="py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">
+              {m.label} ▾
+            </button>
+            <div class="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <div class="w-64 rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-3 shadow-2xl">
+                <ul class="space-y-1">
+                  {m.items.map((it) => (
+                    <li>
+                      <a href={it.href} class="block rounded px-2 py-1.5 text-sm text-[var(--color-concrete)] transition hover:bg-[var(--color-graphite-2)] hover:text-[var(--color-bone)]">
+                        {it.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ))
+      }
 
       <div class="group relative">
         <button class="py-2 text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">
@@ -68,7 +76,7 @@ const groupOrder = ['Concrete', 'Pavers', 'Hardscapes'] as const;
       </a>
       <a href="/contact/" class="btn btn-primary text-sm">Free Phone Consultation</a>
       <!-- Mobile menu toggle -->
-      <button id="menu-toggle" class="lg:hidden grid h-10 w-10 place-items-center rounded border border-[var(--color-steel)]" aria-label="Open menu" aria-expanded="false">
+      <button id="menu-toggle" class="xl:hidden grid h-10 w-10 place-items-center rounded border border-[var(--color-steel)]" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
@@ -77,27 +85,24 @@ const groupOrder = ['Concrete', 'Pavers', 'Hardscapes'] as const;
   <!-- Mobile nav panel: absolute overlay, scrollable, with tap-to-expand submenus -->
   <div
     id="mobile-nav"
-    class="hidden absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[var(--color-steel)] bg-[var(--color-graphite)] shadow-2xl lg:hidden"
+    class="hidden absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-[var(--color-steel)] bg-[var(--color-graphite)] shadow-2xl xl:hidden"
   >
     <nav class="wrap flex flex-col py-1 text-base" aria-label="Mobile">
-      <!-- Services (expandable) -->
-      <details class="group border-b border-[var(--color-steel)]">
-        <summary class="flex cursor-pointer list-none items-center justify-between py-3.5 font-semibold text-[var(--color-bone)]">
-          Services
-          <span class="text-lg text-[var(--color-flame)] transition group-open:rotate-45">＋</span>
-        </summary>
-        <div class="pb-3">
-          {groupOrder.map((g) => (
-            <div class="mb-2">
-              <p class="mb-1 text-xs font-bold uppercase tracking-wider text-[var(--color-flame)]">{g}</p>
-              {groups[g]?.map((s) => (
-                <a href={`/${s.path}/`} class="block py-2 pl-3 text-[var(--color-concrete)]">{s.navLabel.replace(' (overview)', '')}</a>
+      {
+        menus.map((m) => (
+          <details class="group border-b border-[var(--color-steel)]">
+            <summary class="flex cursor-pointer list-none items-center justify-between py-3.5 font-semibold text-[var(--color-bone)]">
+              {m.label}
+              <span class="text-lg text-[var(--color-flame)] transition group-open:rotate-45">＋</span>
+            </summary>
+            <div class="pb-3">
+              {m.items.map((it) => (
+                <a href={it.href} class="block py-2 pl-3 text-[var(--color-concrete)]">{it.label}</a>
               ))}
             </div>
-          ))}
-          <a href="/services/" class="block py-2 pl-3 font-semibold text-[var(--color-flame-300)]">All services →</a>
-        </div>
-      </details>
+          </details>
+        ))
+      }
 
       <!-- Service Areas (expandable) -->
       <details class="group border-b border-[var(--color-steel)]">
