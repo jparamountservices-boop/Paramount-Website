@@ -7,23 +7,52 @@ import QuoteForm from '../components/QuoteForm.astro';
 import Gallery from '../components/Gallery.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
 import { company } from '../data/company';
-import { getService, services } from '../data/services';
 import { serviceAreas } from '../data/serviceAreas';
 
 const path = '/';
 
-// Concrete is the flagship service — featured prominently.
-const concrete = getService('concrete')!;
-const concreteSubs = services.filter((s) => s.parent === 'concrete');
-const secondary = ['pavers', 'retaining-walls', 'hardscapes']
-  .map((p) => getService(p))
-  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+// Three-tier "ways to build your backyard" model, ascending by price so the
+// eye lands on the full custom build last. Photo slot optional (add later).
+const tiers = [
+  {
+    name: 'Concrete & Flatwork',
+    range: '$8k–$15k',
+    href: '/concrete/',
+    desc: 'Driveways, slabs, sidewalks, standalone patios and repairs — the durable foundation everything else is built on.',
+    examples: ['Driveways & parking pads', 'Patios & slabs', 'Sidewalks & repair'],
+    cta: 'Explore concrete',
+  },
+  {
+    name: 'Patio + Cover Package',
+    range: '$15k–$25k',
+    href: '/outdoor-living/patio-covers/',
+    desc: 'A concrete or paver patio paired with an engineered cover — shade, rain protection and lighting, at real value.',
+    examples: ['Kit & pergola covers', 'Ceiling fan & lighting', 'Faster, engineered install'],
+    cta: 'Explore patio covers',
+  },
+  {
+    name: 'Full Custom Build',
+    range: '$25k–$60k+',
+    href: '/outdoor-living/backyard-builds/',
+    desc: 'Site-built structures, outdoor kitchens, sport courts, walls and lighting — designed and built as one project.',
+    examples: ['Outdoor kitchens', 'Backyard sport courts', 'Complete transformations'],
+    cta: 'Explore full builds',
+  },
+];
 
-const steps = [
-  { n: '01', t: 'Free phone consultation', d: 'We start with a conversation, not a sales visit. Tell us about your project — your space, your ideas, timeline and budget — and we’ll talk through options and ballpark pricing before anyone drives out.' },
-  { n: '02', t: 'Photos & measurements', d: 'Send a few photos and rough measurements of the area and we can give you a realistic price range up front. The more we can see, the more accurate that number — so there are no surprises later.' },
-  { n: '03', t: 'On-site design & written quote', d: 'When it’s a good fit, we come out to take exact measurements and finalize the design, materials and drainage — then put your price in writing.' },
-  { n: '04', t: 'Build it to last', d: 'Our crew handles the prep, structure and finish with the details that make it last in East Tennessee — backed by our workmanship warranty.' },
+// Two tracks: phone-first for standard flatwork, design-first for larger
+// outdoor-living / custom builds (paid consultation credited to the project).
+const flatworkSteps = [
+  { n: '01', t: 'Free phone consultation', d: 'Tell us about your project — your space, your ideas, timeline and budget — and we’ll talk through options and ballpark pricing before anyone drives out.' },
+  { n: '02', t: 'Photos & measurements', d: 'Send a few photos and rough measurements of the area and we can give you a realistic price range up front.' },
+  { n: '03', t: 'On-site measure & written quote', d: 'When it’s a good fit, we take exact measurements, finalize materials and drainage, and put your price in writing.' },
+  { n: '04', t: 'Build it to last', d: 'Our crew handles the prep, structure and finish with the details that make it last here — backed by our workmanship warranty.' },
+];
+const designSteps = [
+  { n: '01', t: 'Free phone consultation', d: 'We start with a conversation about your space, your ideas, timeline and a realistic budget range — no charge, no sales visit.' },
+  { n: '02', t: 'Paid on-site design consultation', d: 'We walk the lot, shoot grades, and check drainage and access. The consultation fee is credited in full toward your project.' },
+  { n: '03', t: 'Design & written proposal', d: 'You get a plan for the whole space and an itemized proposal you can build from — and phase however you’d like.' },
+  { n: '04', t: 'Build as one project', d: 'One crew builds the whole space — hardscape, structures, kitchen and lighting — coordinated from first cut to final joint.' },
 ];
 
 const whyUs = [
@@ -50,8 +79,8 @@ const homeFaqs = [
   <section class="relative overflow-hidden border-b border-[var(--color-steel)]">
     <div class="absolute inset-0">
       <img
-        src="/images/hero-home.jpg"
-        alt="New Knoxville home with a wide, freshly-poured concrete driveway by Paramount Concrete & Hardscapes"
+        src="/images/hero-backyard.jpg"
+        alt="Backyard outdoor living space with a stamped-concrete pool deck built by Paramount Concrete & Hardscapes in West Knoxville, TN"
         class="h-full w-full object-cover"
         loading="eager"
         fetchpriority="high"
@@ -62,12 +91,12 @@ const homeFaqs = [
       <div>
         <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/80">Knoxville · East Tennessee · Since 2018</p>
         <h1 class="mt-4 text-4xl font-black leading-[1.02] text-white sm:text-6xl">
-          Concrete &amp; hardscapes,<br />
-          <span class="text-[var(--color-flame)]">done right the first time.</span>
+          Backyards built for the way<br />
+          <span class="text-[var(--color-flame)]">your family actually lives.</span>
         </h1>
         <p class="mt-6 max-w-xl text-lg text-white/90">
-          Driveways, patios, pavers, retaining walls and fire pits — engineered for
-          East Tennessee’s clay soil and freeze-thaw winters, and built to last for decades.
+          Patios, covers, outdoor kitchens and sport courts — built on concrete and
+          hardscape work engineered for East Tennessee’s clay soil and freeze-thaw winters.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="/contact/" class="btn btn-primary text-base">Get a Free Phone Consultation</a>
@@ -88,44 +117,30 @@ const homeFaqs = [
 
   <TrustBar />
 
-  <!-- SERVICES — concrete-first -->
+  <!-- WHAT WE BUILD — three-tier model (ascending by price) -->
   <section class="wrap py-16">
     <div class="max-w-2xl">
       <p class="eyebrow">What we build</p>
-      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Concrete is what we do best</h2>
-      <p class="mt-4 text-[var(--color-concrete)]">Concrete is our craft and our #1 service — driveways, patios and stamped work built to last. And because most projects don’t stop at the slab, we handle the pavers, walls and hardscapes around it too.</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Three ways to build your backyard</h2>
+      <p class="mt-4 text-[var(--color-concrete)]">From high-volume concrete flatwork to a full custom backyard, we build at three levels. Start wherever fits your project and your budget — and step up when you’re ready.</p>
     </div>
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-2">
-      <!-- Featured: Concrete -->
-      <a href="/concrete/" class="group flex flex-col justify-between rounded-2xl border-2 border-[var(--color-flame)] bg-[var(--color-graphite)] p-8 transition hover:-translate-y-1">
-        <div>
-          <span class="inline-block rounded-full bg-[var(--color-flame)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Our #1 service</span>
-          <h3 class="mt-4 text-2xl font-black sm:text-3xl group-hover:text-[var(--color-flame)]">Concrete in Knoxville, TN</h3>
-          <p class="mt-3 text-[var(--color-concrete)]">{concrete.heroSubhead}</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            {concreteSubs.map((s) => (
-              <span class="rounded-full border border-[var(--color-steel)] bg-[var(--color-ink)] px-3 py-1 text-sm text-[var(--color-concrete)]">{s.navLabel}</span>
-            ))}
-          </div>
-        </div>
-        <span class="mt-6 font-bold text-[var(--color-flame)]">Explore all concrete services →</span>
-      </a>
-
-      <!-- Secondary: pavers, retaining walls, hardscapes -->
-      <div class="grid gap-4">
-        {
-          secondary.map((s) => (
-            <a href={`/${s.path}/`} class="group flex items-start justify-between gap-4 rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
-              <div>
-                <p class="text-lg font-extrabold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel.replace(' (overview)', '')}</p>
-                <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
-              </div>
-              <span class="text-xl text-[var(--color-flame)]">→</span>
-            </a>
-          ))
-        }
-      </div>
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {
+        tiers.map((t) => (
+          <a href={t.href} class="group flex flex-col rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-7 transition hover:-translate-y-1 hover:border-[var(--color-flame)]">
+            <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">{t.range}</p>
+            <h3 class="mt-2 text-2xl font-black group-hover:text-[var(--color-flame)]">{t.name}</h3>
+            <p class="mt-3 text-[var(--color-concrete)]">{t.desc}</p>
+            <ul class="mt-4 space-y-1.5 text-sm text-[var(--color-concrete-dim)]">
+              {t.examples.map((e) => (
+                <li class="flex gap-2"><span class="text-[var(--color-flame)]">•</span>{e}</li>
+              ))}
+            </ul>
+            <span class="mt-6 font-bold text-[var(--color-flame)]">{t.cta} →</span>
+          </a>
+        ))
+      }
     </div>
   </section>
 
@@ -149,22 +164,47 @@ const homeFaqs = [
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- PROCESS — two tracks -->
   <section class="wrap py-16">
     <div class="max-w-2xl">
       <p class="eyebrow">How it works</p>
-      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Simple process. Serious craftsmanship.</h2>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Two ways to work, depending on the build</h2>
+      <p class="mt-4 text-[var(--color-concrete)]">Straightforward concrete flatwork starts on the phone. Larger outdoor-living and custom builds start with a paid design step — because getting grade, drainage and layout right on paper first is what makes a big project come out right.</p>
     </div>
-    <div class="mt-10 grid gap-6 md:grid-cols-4">
-      {
-        steps.map((s) => (
-          <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
-            <p class="text-3xl font-black text-[var(--color-flame)]">{s.n}</p>
-            <p class="mt-3 font-extrabold text-[var(--color-bone)]">{s.t}</p>
-            <p class="mt-2 text-sm text-[var(--color-concrete-dim)]">{s.d}</p>
-          </div>
-        ))
-      }
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <!-- Track A: phone-first -->
+      <div class="rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-7">
+        <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Concrete & flatwork · phone-first</p>
+        <ol class="mt-5 space-y-5">
+          {flatworkSteps.map((s) => (
+            <li class="flex gap-4">
+              <span class="text-2xl font-black text-[var(--color-flame)]">{s.n}</span>
+              <div>
+                <p class="font-extrabold text-[var(--color-bone)]">{s.t}</p>
+                <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.d}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <!-- Track B: design-first -->
+      <div class="rounded-2xl border-2 border-[var(--color-flame)] bg-[var(--color-graphite)] p-7">
+        <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Outdoor living & custom builds · design-first</p>
+        <ol class="mt-5 space-y-5">
+          {designSteps.map((s) => (
+            <li class="flex gap-4">
+              <span class="text-2xl font-black text-[var(--color-flame)]">{s.n}</span>
+              <div>
+                <p class="font-extrabold text-[var(--color-bone)]">{s.t}</p>
+                <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.d}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-5 rounded-lg bg-[var(--color-graphite-2)] px-3 py-2 text-center text-xs font-semibold text-[var(--color-bone)]">The design consultation fee is credited in full toward your project.</p>
+      </div>
     </div>
   </section>
 
