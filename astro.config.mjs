@@ -16,7 +16,8 @@ export default defineConfig({
       // Keep noindex pages (PPC landing pages, /scan/ yard-sign page, thank-you)
       // out of the sitemap so it only lists pages we want indexed.
       filter: (page) =>
-        !page.includes('/lp/') && !page.includes('/scan/') && !page.includes('/thank-you/'),
+        !page.includes('/lp/') && !page.includes('/scan/') && !page.includes('/thank-you/') &&
+        !page.includes('/concrete/repair/'),
     }),
   ],
   vite: {

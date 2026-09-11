@@ -10,7 +10,9 @@ const stripOverview = (label: string) => label.replace(' (overview)', '');
 // Top-level category menus, Outdoor Living first (repositioning).
 const groupOrder = ['Outdoor Living', 'Concrete', 'Pavers', 'Hardscapes'] as const;
 const menus = groupOrder.map((g) => {
-  const items = (groups[g] ?? []).map((s) => ({ label: stripOverview(s.navLabel), href: `/${s.path}/` }));
+  const items = (groups[g] ?? [])
+    .filter((s) => !s.hideFromMenus)
+    .map((s) => ({ label: stripOverview(s.navLabel), href: `/${s.path}/` }));
   // Outdoor Living also surfaces Fire Pits (which lives in the Hardscapes group).
   if (g === 'Outdoor Living') {
     items.push({ label: 'Fire Pits & Fire Features', href: '/hardscapes/fire-pits/' });
@@ -65,6 +67,7 @@ const menus = groupOrder.map((g) => {
       </div>
 
       <a href="/our-work/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Our Work</a>
+      <a href="/reviews/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Reviews</a>
       <a href="/cost-estimator/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Cost Estimator</a>
       <a href="/blog/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">Blog</a>
       <a href="/about/" class="text-sm font-semibold text-[var(--color-concrete)] transition hover:text-[var(--color-bone)]">About</a>
@@ -119,6 +122,7 @@ const menus = groupOrder.map((g) => {
       </details>
 
       <a href="/our-work/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Our Work</a>
+      <a href="/reviews/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Reviews</a>
       <a href="/cost-estimator/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Cost Estimator</a>
       <a href="/blog/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">Blog</a>
       <a href="/about/" class="border-b border-[var(--color-steel)] py-3.5 font-semibold text-[var(--color-bone)]">About</a>

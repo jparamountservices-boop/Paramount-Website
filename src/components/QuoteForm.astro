@@ -28,7 +28,7 @@ const { compact = false, source, defaultService } = Astro.props;
 const optionGroupOrder = ['Outdoor Living', 'Pavers', 'Concrete', 'Hardscapes'] as const;
 const serviceGroups = optionGroupOrder.map((g) => ({
   label: g,
-  options: services.filter((s) => s.navGroup === g && !s.isHub).map((s) => s.navLabel),
+  options: services.filter((s) => s.navGroup === g && !s.isHub && !s.hideFromMenus).map((s) => s.navLabel),
 }));
 
 const budgetOptions = ['$5,000 – $15,000', '$15,000 – $25,000', '$25,000 – $50,000', '$50,000+'];

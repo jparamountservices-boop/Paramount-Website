@@ -34,6 +34,10 @@ export interface Service {
   costNote?: string;
   faqs: Faq[];
   related: string[];
+  /** Hide from nav dropdowns and the lead-form service list (page still builds). */
+  hideFromMenus?: boolean;
+  /** Emit a noindex robots tag on the page. */
+  noindex?: boolean;
   /** Optional link to a related blog post (renders a callout on the page). */
   relatedPost?: { label: string; path: string };
 }
@@ -371,6 +375,8 @@ export const services: Service[] = [
     parent: 'concrete',
     navGroup: 'Concrete',
     navLabel: 'Concrete Repair',
+    hideFromMenus: true,
+    noindex: true,
     title: 'Concrete Repair Knoxville TN | Driveway & Slab Repair | Paramount',
     metaDescription:
       'Concrete repair in Knoxville, TN — we replace cracked, sunken and heaved sections on a proper base so they don’t fail again. Honest advice on repair vs. replace. Free phone consultation: (865) 237-9770.',
@@ -488,7 +494,7 @@ export const services: Service[] = [
         a: 'Yes — sloped lots just need grading and sometimes a retaining wall to carve out level space. We plan that first so the finished court sits flat and drains properly.',
       },
     ],
-    related: ['outdoor-living/sport-courts', 'concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/repair'],
+    related: ['outdoor-living/sport-courts', 'concrete', 'concrete/slabs-foundations', 'concrete/pickleball-courts', 'concrete/driveways'],
     relatedPost: {
       label: 'Read: what goes into building a court in East Tennessee',
       path: '/blog/concrete-basketball-courts-knoxville-tn/',
@@ -548,7 +554,7 @@ export const services: Service[] = [
         a: 'Typically at least 4 inches with reinforcement, on a properly compacted base. The base prep is what keeps the surface flat and true over the years.',
       },
     ],
-    related: ['concrete', 'concrete/slabs-foundations', 'concrete/basketball-courts', 'concrete/repair'],
+    related: ['concrete', 'concrete/slabs-foundations', 'concrete/basketball-courts', 'concrete/driveways'],
   },
   {
     path: 'concrete/garage-foundations',
