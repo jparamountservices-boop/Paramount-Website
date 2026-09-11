@@ -15,7 +15,7 @@ about a "bad" brand. It's about matching the right line to your project and budg
 ## What they have in common
 
 - **Color-fast, high-strength concrete pavers** engineered to hold up to freeze-thaw — important in East Tennessee.
-- **Manufacturer warranties** on the pavers (in addition to our workmanship warranty on the install).
+- **Manufacturer warranties** on the pavers themselves.
 - Full systems — matching **pavers, wall block, coping and steps** so a whole project ties together.
 
 ## Belgard

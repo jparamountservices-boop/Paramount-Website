@@ -112,7 +112,6 @@ export const company = {
     licensed: true,
     insured: true,
     freeEstimates: true,
-    warrantyYears: 5, // PLACEHOLDER — confirm workmanship warranty
     projectsCompleted: '500+', // PLACEHOLDER
   },
 } as const;

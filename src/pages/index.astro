@@ -16,10 +16,10 @@ const path = '/';
 const tiers = [
   {
     name: 'Concrete & Flatwork',
-    range: '$8k–$15k',
+    range: '$5k–$15k',
     href: '/concrete/',
-    desc: 'Driveways, slabs, sidewalks, standalone patios and repairs — the durable foundation everything else is built on.',
-    examples: ['Driveways & parking pads', 'Patios & slabs', 'Sidewalks & repair'],
+    desc: 'Driveways, slabs, sidewalks and standalone patios — the durable foundation everything else is built on.',
+    examples: ['Driveways & parking pads', 'Patios & slabs', 'Sidewalks'],
     cta: 'Explore concrete',
   },
   {
@@ -43,20 +43,20 @@ const tiers = [
 // Two tracks: phone-first for standard flatwork, design-first for larger
 // outdoor-living / custom builds (paid consultation credited to the project).
 const flatworkSteps = [
-  { n: '01', t: 'Free phone consultation', d: 'Tell us about your project — your space, your ideas, timeline and budget — and we’ll talk through options and ballpark pricing before anyone drives out.' },
-  { n: '02', t: 'Photos & measurements', d: 'Send a few photos and rough measurements of the area and we can give you a realistic price range up front.' },
-  { n: '03', t: 'On-site measure & written quote', d: 'When it’s a good fit, we take exact measurements, finalize materials and drainage, and put your price in writing.' },
-  { n: '04', t: 'Build it to last', d: 'Our crew handles the prep, structure and finish with the details that make it last here — backed by our workmanship warranty.' },
+  { n: '01', t: 'Free phone consultation', d: 'Tell us about your space, your ideas, your timeline and your budget. We’ll talk through what’s possible and give you real ballpark numbers — before anyone drives out. No sales visit to sit through.' },
+  { n: '02', t: 'Photos & measurements', d: 'Send a few photos and rough measurements and we’ll tighten that range up considerably. The more we can see, the closer we get before you’ve spent a dollar.' },
+  { n: '03', t: 'On-site measure & written quote', d: 'When it’s a good fit, we take exact measurements, confirm drainage and materials, and put your price in writing. Itemized, no moving targets.' },
+  { n: '04', t: 'Built to last here', d: 'Compacted base, real drainage, proper reinforcement. Our crew handles the whole thing, start to finish.' },
 ];
 const designSteps = [
-  { n: '01', t: 'Free phone consultation', d: 'We start with a conversation about your space, your ideas, timeline and a realistic budget range — no charge, no sales visit.' },
-  { n: '02', t: 'Paid on-site design consultation', d: 'We walk the lot, shoot grades, and check drainage and access. The consultation fee is credited in full toward your project.' },
-  { n: '03', t: 'Design & written proposal', d: 'You get a plan for the whole space and an itemized proposal you can build from — and phase however you’d like.' },
-  { n: '04', t: 'Build as one project', d: 'One crew builds the whole space — hardscape, structures, kitchen and lighting — coordinated from first cut to final joint.' },
+  { n: '01', t: 'Free phone consultation', d: 'We start with a real conversation — what you want the space to do, what’s possible on your lot, and an honest budget range. Send photos and rough dimensions ahead of the call and we’ll get you a ballpark that’s actually useful. You’ll know whether we’re a fit before you spend anything.' },
+  { n: '02', t: '$200 on-site design consultation', d: 'This is where the project gets solved. We walk the lot, shoot grades, check drainage and access, and go over design options and elevations with you in person. Credited in full toward your project.' },
+  { n: '03', t: 'Design & written proposal', d: 'You get a plan for the whole space and an itemized proposal you can build from — or phase over time, in the right order, so nothing has to be torn out later.' },
+  { n: '04', t: 'Built as one project', d: 'One crew builds the whole space — hardscape, structures, kitchen, lighting — coordinated from first cut to final joint. No finger-pointing between trades.' },
 ];
 
 const whyUs = [
-  { t: 'Base prep obsessed', d: 'We build from the ground up — compacted base, real drainage, proper reinforcement — because that’s what makes concrete and hardscapes last here.' },
+  { t: 'Planning is the whole job', d: 'Grades, drainage, base depth and layout get solved before we break ground. It’s why our projects install cleanly, finish on schedule, and hold up through East Tennessee freeze-thaw.' },
   { t: 'One team, start to finish', d: 'From the first estimate to the final joint, you work with our crew — not a rotating cast of subs.' },
   { t: 'Built for East TN', d: 'Clay soil, freeze-thaw winters, hilly lots — we build for the conditions that break lesser work.' },
   { t: 'Honest pricing', d: 'Itemized estimates and straight answers on cost. No games, no surprise change orders.' },
@@ -64,7 +64,7 @@ const whyUs = [
 
 const homeFaqs = [
   { q: 'What areas do you serve?', a: 'We serve Knoxville and all of Knox County, plus Farragut, Maryville, Alcoa, Oak Ridge, Clinton, Sevierville, Seymour, Lenoir City and the surrounding East Tennessee communities.' },
-  { q: 'Are you licensed and insured?', a: 'Yes — Paramount is fully licensed and insured, and we back our work with a workmanship warranty. We’ll gladly provide proof of insurance before we start.' },
+  { q: 'Are you licensed and insured?', a: 'Yes — Paramount is fully licensed and insured. We’ll gladly provide proof of insurance before we start.' },
   { q: 'How does the free consultation work?', a: 'Every project starts with a free phone consultation — we talk through what you want, your space and your budget before anyone drives out. Send a few photos and rough measurements and we can give you a realistic price range up front. When it’s a good fit, we schedule an on-site visit to take exact measurements and put your price in writing.' },
   { q: 'How soon can you start my project?', a: 'It depends on the season and our schedule, but we’ll give you a realistic timeline up front. Reach out early — spring and fall book up fast.' },
 ];
@@ -89,7 +89,7 @@ const homeFaqs = [
     </div>
     <div class="wrap relative grid gap-12 py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:py-28">
       <div>
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/80">Knoxville · East Tennessee · Since 2018</p>
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/80">Design &amp; Build · Knoxville · East Tennessee · Since 2018</p>
         <h1 class="mt-4 text-4xl font-black leading-[1.02] text-white sm:text-6xl">
           Backyards built for the way<br />
           <span class="text-[var(--color-flame)]">your family actually lives.</span>
@@ -116,6 +116,12 @@ const homeFaqs = [
   </section>
 
   <TrustBar />
+
+  <div class="border-b border-[var(--color-steel)] bg-[var(--color-graphite-2)]">
+    <p class="wrap py-3 text-center text-sm font-semibold text-[var(--color-concrete)]">
+      Most of our projects start at <span class="text-[var(--color-flame)]">$5,000</span>. We build a smaller number of projects each year and plan every one of them properly.
+    </p>
+  </div>
 
   <!-- WHAT WE BUILD — three-tier model (ascending by price) -->
   <section class="wrap py-16">
@@ -168,8 +174,8 @@ const homeFaqs = [
   <section class="wrap py-16">
     <div class="max-w-2xl">
       <p class="eyebrow">How it works</p>
-      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Two ways to work, depending on the build</h2>
-      <p class="mt-4 text-[var(--color-concrete)]">Straightforward concrete flatwork starts on the phone. Larger outdoor-living and custom builds start with a paid design step — because getting grade, drainage and layout right on paper first is what makes a big project come out right.</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Planned right, then built right.</h2>
+      <p class="mt-4 text-[var(--color-concrete)]">Every project we build gets solved on paper first — grades, drainage, base depth, layout, elevations. That’s not extra process, it’s the reason our builds go in without surprises and still look right ten years later. Straightforward flatwork can be planned over the phone. Larger outdoor living and custom builds get a paid on-site design consultation, because those decisions are worth more than a guess from the driveway.</p>
     </div>
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
@@ -203,8 +209,21 @@ const homeFaqs = [
             </li>
           ))}
         </ol>
-        <p class="mt-5 rounded-lg bg-[var(--color-graphite-2)] px-3 py-2 text-center text-xs font-semibold text-[var(--color-bone)]">The design consultation fee is credited in full toward your project.</p>
+        <p class="mt-5 rounded-lg bg-[var(--color-graphite-2)] px-3 py-2 text-center text-xs font-semibold text-[var(--color-bone)]">The $200 design consultation is credited in full toward your project.</p>
       </div>
+    </div>
+
+    <!-- What to have ready -->
+    <div class="mt-10 rounded-2xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-7 sm:p-8">
+      <h3 class="text-xl font-extrabold text-[var(--color-bone)]">Make your free call worth more</h3>
+      <p class="mt-2 text-[var(--color-concrete)]">The more you can send ahead, the closer we can get on price before you commit to anything.</p>
+      <ul class="mt-4 grid gap-2 sm:grid-cols-2">
+        <li class="flex gap-2 text-[var(--color-concrete)]"><span class="text-[var(--color-flame)]">•</span><span><strong class="text-[var(--color-bone)]">3–4 photos</strong> of the area from different angles, including where water currently runs</span></li>
+        <li class="flex gap-2 text-[var(--color-concrete)]"><span class="text-[var(--color-flame)]">•</span><span><strong class="text-[var(--color-bone)]">Rough dimensions</strong> — tape measure, or just pace it off and tell us roughly how big you want it</span></li>
+        <li class="flex gap-2 text-[var(--color-concrete)]"><span class="text-[var(--color-flame)]">•</span><span><strong class="text-[var(--color-bone)]">What’s there now</strong> — existing slab, grass, slope, retaining wall, anything we’d have to work around or remove</span></li>
+        <li class="flex gap-2 text-[var(--color-concrete)]"><span class="text-[var(--color-flame)]">•</span><span><strong class="text-[var(--color-bone)]">A budget range</strong> you’re comfortable with, even a wide one</span></li>
+      </ul>
+      <p class="mt-5 text-sm font-semibold text-[var(--color-bone)]">Text them to <a href={company.phoneHref} class="text-[var(--color-flame-300)] underline">{company.phone}</a> before your call.</p>
     </div>
   </section>
 

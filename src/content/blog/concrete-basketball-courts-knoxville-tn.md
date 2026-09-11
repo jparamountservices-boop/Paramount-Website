@@ -171,7 +171,7 @@ That said, here's what **the concrete floor itself** runs on a typical flat, acc
 We don't do free estimates, and we'll tell you why up front: an honest court quote takes an hour on site looking at grade, drainage, access, and soil. That's real work, and doing it for free means either rushing it or padding everybody else's price to cover it. So our process is:
 
 1. **Phone consultation first.** We talk through your space, your timeline, and a realistic budget range. If it's not a fit, we'll tell you on that call and neither of us has wasted an afternoon.
-2. **$150 consultation deposit.** This books the on-site visit and is credited in full toward your project.
+2. **$200 consultation deposit.** This books the on-site visit and is credited in full toward your project.
 3. **On-site design consultation.** We walk the lot, shoot grades, look at drainage and access, talk through sizing, finishes, goal placement, and lighting, and you get a detailed written proposal.
 
 We've been building concrete and outdoor living projects across East Tennessee since 2018, and we're licensed in Tennessee. We don't cut corners, we pour them.
