@@ -98,7 +98,7 @@ export const services: Service[] = [
       },
       {
         q: 'Are you licensed and insured?',
-        a: 'Yes. Paramount is fully licensed and insured, and we stand behind our workmanship. We’re happy to provide proof of insurance before any work begins.',
+        a: 'Yes. Paramount is fully licensed and insured, and we stand behind our work. We’re happy to provide proof of insurance before any work begins.',
       },
     ],
     related: ['concrete/driveways', 'concrete/patio', 'concrete/decorative-and-stamped', 'pavers', 'retaining-walls'],
@@ -714,7 +714,7 @@ export const services: Service[] = [
       {
         h2: 'We install premium paver systems',
         body: [
-          'We work with the manufacturers that back their products with real warranties — Belgard, Techo-Bloc and Regal among them — so you get proven, color-fast pavers, not the cheapest unit on the rack. That means a manufacturer warranty on the pavers and our workmanship warranty on the install.',
+          'We work with the manufacturers that back their products with real warranties — Belgard, Techo-Bloc and Regal among them — so you get proven, color-fast pavers, not the cheapest unit on the rack. That means a real manufacturer warranty on the pavers themselves.',
         ],
       },
     ],
