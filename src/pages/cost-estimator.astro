@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Is there a minimum project size?',
-    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $2,500 for concrete, $3,000 for pavers and $4,000 for retaining walls. The estimator reflects those minimums, and we’ll confirm the exact number on your free phone consultation.',
+    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $5,000 for concrete, pavers and retaining walls. The estimator reflects that minimum, and we’ll confirm the exact number on your free phone consultation.',
   },
   {
     q: 'Do you charge for an estimate?',
@@ -128,7 +128,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       concrete: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 2500,
+        min: 5000,
         noun: 'concrete',
         items: [
           { label: 'Broom / troweled finish', low: 10, high: 12 },
@@ -138,7 +138,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       pavers: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 3000,
+        min: 5000,
         noun: 'paver',
         items: [
           { label: 'Paver patio', low: 25, high: 35 },
@@ -148,7 +148,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       wall: {
         dims: ['Height (ft)', 'Length (ft)'],
         mode: 'face',
-        min: 4000,
+        min: 5000,
         noun: 'retaining wall',
         items: [{ label: 'Segmental / stone retaining wall', low: 48, high: 65 }],
       },
