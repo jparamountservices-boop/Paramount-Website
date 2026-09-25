@@ -82,11 +82,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete flatwork in the Knoxville area generally runs about $10–$12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
+      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $3,500 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs about $10–$12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $3,500 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -139,11 +139,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'A typical Knoxville concrete driveway runs about $10–$12 per square foot for a standard broom finish, or more with decorative finishes, tear-out of an existing slab, or added drainage. The final price also depends on size and access, whether the pour has to be pumped, and mix upgrades like higher PSI, fiber and wire mesh. We’ll measure and give you an exact, itemized number.',
+      'A typical Knoxville concrete driveway runs about $12 per square foot for a standard broom finish, or more with decorative finishes, tear-out of an existing slab, or added drainage. The final price also depends on size and access, whether the pour has to be pumped, and mix upgrades like higher PSI, fiber and wire mesh. We’ll measure and give you an exact, itemized number.',
     faqs: [
       {
         q: 'How much does a concrete driveway cost in Knoxville?',
-        a: 'Standard broom-finish concrete driveways in the Knoxville area typically run about $10–$12 per square foot installed. A standard 2-car driveway often lands in the $6,000–$10,000 range depending on size, access, thickness, tear-out, drainage and mix upgrades like fiber or wire mesh.',
+        a: 'Standard broom-finish concrete driveways in the Knoxville area typically run about $12 per square foot installed. A standard 2-car driveway often lands in the $6,000–$10,000 range depending on size, access, thickness, tear-out, drainage and mix upgrades like fiber or wire mesh.',
       },
       {
         q: 'How long does a concrete driveway last?',
@@ -190,7 +190,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete patios in Knoxville typically run about $10–$12 per square foot for a broom or troweled finish and upwards of $18–$20 for stamped/decorative. Size and access, whether the pour has to be pumped, grading, drainage and mix upgrades like fiber or wire mesh affect the final number.',
+      'Concrete patios in Knoxville typically run about $12 per square foot for a broom or troweled finish and upwards of $18–$20 for stamped/decorative. Size and access, whether the pour has to be pumped, grading, drainage and mix upgrades like fiber or wire mesh affect the final number.',
     faqs: [
       {
         q: 'Is a concrete patio cheaper than pavers?',
@@ -325,7 +325,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete slabs in Knoxville generally run about $10–$12 per square foot depending on thickness, reinforcement (fiber, wire mesh or rebar), footings, site access and prep. Thicker load-bearing slabs and higher-PSI mixes cost more.',
+      'Concrete slabs in Knoxville generally run about $12 per square foot depending on thickness, reinforcement (fiber, wire mesh or rebar), footings, site access and prep. Thicker load-bearing slabs and higher-PSI mixes cost more.',
     faqs: [
       {
         q: 'How thick should a concrete slab be?',
@@ -361,7 +361,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete pool decks in Knoxville typically run about $10–$12 per square foot for a broom or textured finish and upwards of $18–$20 for stamped/decorative, depending on finish, size, access and drainage detailing.',
+      'Concrete pool decks in Knoxville typically run about $12 per square foot for a broom or textured finish and upwards of $18–$20 for stamped/decorative, depending on finish, size, access and drainage detailing.',
     faqs: [
       {
         q: 'Is stamped concrete too slippery for a pool deck?',
@@ -475,7 +475,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'A basketball court is priced mainly by the size and thickness of the slab — reinforced, troweled concrete runs about $10–$12 per square foot, so even a 30′ × 30′ half-court is a sizable pour. The acrylic court coating, lines and hoop are separate (usually added by a court-surfacing specialist). We give an itemized number for the concrete after measuring your yard.',
+      'A basketball court is priced mainly by the size and thickness of the slab — reinforced, troweled concrete runs about $12 per square foot, so even a 30′ × 30′ half-court is a sizable pour. The acrylic court coating, lines and hoop are separate (usually added by a court-surfacing specialist). We give an itemized number for the concrete after measuring your yard.',
     faqs: [
       {
         q: 'How thick should a backyard basketball court be?',
@@ -535,7 +535,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'The slab for a pickleball court is priced by its size and thickness — reinforced, troweled concrete runs about $10–$12 per square foot, and a full court with buffer is a large pour. The acrylic surface, net posts and lines are separate (added by a court-surfacing specialist). We measure your space and give an itemized number for the concrete.',
+      'The slab for a pickleball court is priced by its size and thickness — reinforced, troweled concrete runs about $12 per square foot, and a full court with buffer is a large pour. The acrylic surface, net posts and lines are separate (added by a court-surfacing specialist). We measure your space and give an itemized number for the concrete.',
     faqs: [
       {
         q: 'What size slab do I need for a pickleball court?',
@@ -598,7 +598,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Garage slabs and foundations are priced by the project — size, thickness, footings, reinforcement, site access and excavation all factor in. As a rough guide the flatwork runs about $10–$12 per square foot, with footings and thickened edges adding to that. We measure the site and give you an itemized number.',
+      'Garage slabs and foundations are priced by the project — size, thickness, footings, reinforcement, site access and excavation all factor in. As a rough guide the flatwork runs about $12 per square foot, with footings and thickened edges adding to that. We measure the site and give you an itemized number.',
     faqs: [
       {
         q: 'How thick should a garage slab be?',
@@ -661,7 +661,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Pole barn foundations and slabs are priced by the project — the number of post footings, the slab size and thickness, reinforcement, site access and grading all factor in. As a rough guide the interior flatwork runs about $10–$12 per square foot, with footings and piers added separately. We measure the site and give you an itemized number.',
+      'Pole barn foundations and slabs are priced by the project — the number of post footings, the slab size and thickness, reinforcement, site access and grading all factor in. As a rough guide the interior flatwork runs about $12 per square foot, with footings and piers added separately. We measure the site and give you an itemized number.',
     faqs: [
       {
         q: 'How thick should a pole barn slab be?',
