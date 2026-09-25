@@ -15,7 +15,7 @@ const crumbs = [
 const faqs = [
   {
     q: 'How accurate is this concrete and paver cost estimator?',
-    a: 'It gives you a realistic ballpark based on the same per-square-foot ranges we quote around Knoxville. Your real number depends on site access, tear-out, grading and drainage, the mix and reinforcement, and finish choices — which is exactly what we nail down on a free phone consultation.',
+    a: 'It gives you a realistic ballpark based on the same pricing we quote around Knoxville. Your real number depends on site access, tear-out, grading and drainage, the mix and reinforcement, and finish choices — which is exactly what we nail down on a free phone consultation.',
   },
   {
     q: 'Why is there a price range instead of one number?',
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Is there a minimum project size?',
-    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $5,000 for concrete, pavers and retaining walls. The estimator reflects that minimum, and we’ll confirm the exact number on your free phone consultation.',
+    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $3,500 for concrete, and $5,000 for pavers and retaining walls. The estimator reflects those minimums, and we’ll confirm the exact number on your free phone consultation.',
   },
   {
     q: 'Do you charge for an estimate?',
@@ -126,15 +126,17 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
 
 <script is:inline>
   (function () {
-    // Pricing mirrors the ranges used across the site (per sq ft unless noted).
+    // Pricing mirrors the ranges used across the site. Concrete (broom/troweled)
+    // uses a base + per-sq-ft model with a project minimum; the constants are
+    // internal and must NOT be surfaced to visitors.
     const OPTIONS = {
       concrete: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 5000,
+        min: 3500,
         noun: 'concrete',
         items: [
-          { label: 'Broom / troweled finish', low: 10, high: 12 },
+          { label: 'Broom / troweled finish', formula: { base: 1800, perSqft: 8.5, sqftFloor: 12, min: 3500 } },
           { label: 'Stamped / stained decorative', low: 18, high: 20 },
         ],
       },
@@ -196,9 +198,22 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
         return;
       }
       const min = cfg.min || 0;
+      const unit = cfg.mode === 'face' ? 'face sq ft' : 'sq ft';
+
+      // Concrete (broom/troweled) — base + per-sq-ft model, shown as price → +10%.
+      if (item.formula) {
+        const f = item.formula;
+        const raw = Math.max(f.min, f.base + f.perSqft * sqft, f.sqftFloor * sqft);
+        result.textContent = money(raw) + ' – ' + money(raw * 1.1);
+        resultSub.textContent =
+          'Estimated installed price for ~' + sqft.toLocaleString() + ' ' + unit + ' of ' + item.label.toLowerCase() + '.';
+        areaNote.textContent =
+          '≈ ' + sqft.toLocaleString() + ' ' + unit + ' · ' + money(f.min) + ' project minimum';
+        return;
+      }
+
       const low = Math.max(sqft * item.low, min);
       const high = Math.max(sqft * item.high, min);
-      const unit = cfg.mode === 'face' ? 'face sq ft' : 'sq ft';
       if (low >= high) {
         // Computed range falls under the project minimum.
         result.textContent = 'From ' + money(min);

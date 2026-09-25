@@ -34,7 +34,7 @@ export interface LocalServicePage {
 }
 
 const CONCRETE_COST =
-  'Concrete flatwork in this area runs about $10–$12 per square foot for a broom or troweled finish and upwards of $18–$20 for stamped or stained decorative work. Size and access, whether the pour has to be pumped, the mix (PSI and fiber) and upgrades like wire mesh all affect the final number. We give itemized estimates.';
+  'Concrete flatwork in this area runs about $12 per square foot for a broom or troweled finish and upwards of $18–$20 for stamped or stained decorative work. Size and access, whether the pour has to be pumped, the mix (PSI and fiber) and upgrades like wire mesh all affect the final number. We give itemized estimates.';
 
 const PAVER_COST =
   'Paver patios generally run about $25–$35 per square foot installed and paver driveways $45–$55, depending on the paver, pattern and base work. Walkways and steps are priced by the project rather than a flat per-foot rate. We give itemized estimates after seeing the space.';
@@ -90,7 +90,7 @@ export const localServicePages: LocalServicePage[] = [
     faqs: [
       {
         q: 'How much does a concrete driveway cost in Knoxville?',
-        a: 'A standard broom-finish concrete driveway in Knoxville runs about $10–$12 per square foot, and a typical two-car driveway often lands between $6,000 and $10,000 depending on size, access, tear-out, drainage and mix upgrades. We measure your site and give you an itemized number.',
+        a: 'A standard broom-finish concrete driveway in Knoxville runs about $12 per square foot, and a typical two-car driveway often lands between $6,000 and $10,000 depending on size, access, tear-out, drainage and mix upgrades. We measure your site and give you an itemized number.',
       },
       {
         q: 'Do you replace old, cracked concrete in older Knoxville neighborhoods?',
