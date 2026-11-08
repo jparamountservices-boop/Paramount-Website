@@ -23,10 +23,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'knoxville',
     city: 'Knoxville',
     county: 'Knox County',
-    title: 'Concrete & Hardscape Contractor Knoxville TN | Paramount',
+    title: 'Outdoor Living & Concrete in Knoxville, TN | Paramount',
     metaDescription:
-      'Paramount Concrete & Hardscapes serves Knoxville, TN with driveways, patios, pavers, retaining walls and fire pits. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Knoxville, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Knoxville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Knoxville, TN',
     heroSubhead:
       'Our home base. From Bearden to Halls, we build concrete and hardscapes engineered for Knoxville’s clay soil and freeze-thaw winters.',
     primaryKeyword: 'concrete contractor Knoxville TN',
@@ -49,10 +49,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'farragut',
     city: 'Farragut',
     county: 'Knox County',
-    title: 'Concrete & Hardscape Contractor Farragut TN | Paramount',
+    title: 'Outdoor Living & Concrete in Farragut, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios, retaining walls and outdoor living in Farragut, TN. Premium hardscape design and build. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Farragut, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Farragut, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Farragut, TN',
     heroSubhead:
       'Premium patios, paver driveways and outdoor living for Farragut and West Knox homes — built to the standard the neighborhood expects.',
     primaryKeyword: 'concrete contractor Farragut TN',
@@ -75,10 +75,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'west-knoxville',
     city: 'West Knoxville',
     county: 'Knox County',
-    title: 'Concrete & Hardscape Contractor West Knoxville TN | Paramount',
+    title: 'Outdoor Living & Concrete in West Knoxville, TN | Paramount',
     metaDescription:
-      'Driveways, paver patios, retaining walls and outdoor living in West Knoxville, TN. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in West Knoxville, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in West Knoxville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in West Knoxville, TN',
     heroSubhead:
       'Patios, driveways and outdoor living across West Knox — Bearden, Cedar Bluff, Hardin Valley and beyond.',
     primaryKeyword: 'concrete contractor West Knoxville TN',
@@ -101,10 +101,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'maryville',
     city: 'Maryville',
     county: 'Blount County',
-    title: 'Concrete & Hardscape Contractor Maryville TN | Paramount',
+    title: 'Outdoor Living & Concrete in Maryville, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios, retaining walls and outdoor living in Maryville & Alcoa, TN. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Maryville, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Maryville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Maryville, TN',
     heroSubhead:
       'Serving Maryville, Alcoa and Blount County with concrete and hardscapes built for the foothills.',
     primaryKeyword: 'concrete contractor Maryville TN',
@@ -126,10 +126,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'oak-ridge',
     city: 'Oak Ridge',
     county: 'Anderson County',
-    title: 'Concrete & Hardscape Contractor Oak Ridge TN | Paramount',
+    title: 'Outdoor Living & Concrete in Oak Ridge, TN | Paramount',
     metaDescription:
-      'Driveways, patios, pavers and retaining walls in Oak Ridge & Clinton, TN. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Oak Ridge, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Oak Ridge, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Oak Ridge, TN',
     heroSubhead:
       'Concrete and hardscapes for Oak Ridge, Clinton and the Anderson County corridor.',
     primaryKeyword: 'concrete contractor Oak Ridge TN',
@@ -151,10 +151,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'sevierville',
     city: 'Sevierville',
     county: 'Sevier County',
-    title: 'Concrete & Hardscape Contractor Sevierville TN | Paramount',
+    title: 'Outdoor Living & Concrete in Sevierville, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, decks, patios and retaining walls in Sevierville, Seymour & Sevier County, TN — including cabins and rental properties. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Sevierville, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Sevierville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Sevierville, TN',
     heroSubhead:
       'Concrete, decks and hardscapes for Sevierville, Seymour and Sevier County — homes, cabins and rental properties.',
     primaryKeyword: 'concrete contractor Sevierville TN',
@@ -176,10 +176,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'lenoir-city',
     city: 'Lenoir City',
     county: 'Loudon County',
-    title: 'Concrete & Hardscape Contractor Lenoir City TN | Paramount',
+    title: 'Outdoor Living & Concrete in Lenoir City, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Lenoir City & Loudon County, TN — including lakefront properties. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Lenoir City, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Lenoir City, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Lenoir City, TN',
     heroSubhead:
       'Serving Lenoir City, Loudon and the Tellico & Fort Loudoun lake communities.',
     primaryKeyword: 'concrete contractor Lenoir City TN',
@@ -201,10 +201,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'alcoa',
     city: 'Alcoa',
     county: 'Blount County',
-    title: 'Concrete & Hardscape Contractor Alcoa TN | Paramount',
+    title: 'Outdoor Living & Concrete in Alcoa, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Alcoa, TN. Driveways, outdoor living and hardscapes built to last. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Alcoa, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Alcoa, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Alcoa, TN',
     heroSubhead:
       'Driveways, patios and outdoor living for Alcoa and the greater Maryville area.',
     primaryKeyword: 'concrete contractor Alcoa TN',
@@ -226,10 +226,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'louisville',
     city: 'Louisville',
     county: 'Blount County',
-    title: 'Concrete & Hardscape Contractor Louisville TN | Paramount',
+    title: 'Outdoor Living & Concrete in Louisville, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios, retaining walls and lakefront outdoor living in Louisville, TN on Fort Loudoun Lake. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Louisville, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Louisville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Louisville, TN',
     heroSubhead:
       'Driveways, paver patios and lakeside outdoor living for Louisville homes along Fort Loudoun Lake.',
     primaryKeyword: 'concrete contractor Louisville TN',
@@ -251,10 +251,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'clinton',
     city: 'Clinton',
     county: 'Anderson County',
-    title: 'Concrete & Hardscape Contractor Clinton TN | Paramount',
+    title: 'Outdoor Living & Concrete in Clinton, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, patios and retaining walls in Clinton, TN and Anderson County. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Clinton, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Clinton, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Clinton, TN',
     heroSubhead:
       'Concrete and hardscapes for Clinton, Oak Ridge and the Anderson County area.',
     primaryKeyword: 'concrete contractor Clinton TN',
@@ -276,10 +276,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'seymour',
     city: 'Seymour',
     county: 'Sevier County',
-    title: 'Concrete & Hardscape Contractor Seymour TN | Paramount',
+    title: 'Outdoor Living & Concrete in Seymour, TN | Paramount',
     metaDescription:
-      'Concrete, pavers, decks, patios and retaining walls in Seymour, TN and Sevier County. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Seymour, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Seymour, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Seymour, TN',
     heroSubhead:
       'Concrete, decks and hardscapes for Seymour and the Sevierville area.',
     primaryKeyword: 'concrete contractor Seymour TN',
@@ -301,10 +301,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'powell',
     city: 'Powell',
     county: 'Knox County',
-    title: 'Concrete & Hardscape Contractor Powell TN | Paramount',
+    title: 'Outdoor Living & Concrete in Powell, TN | Paramount',
     metaDescription:
-      'Concrete driveways, patios, pavers and retaining walls in Powell, TN. Outdoor living built to last. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Powell, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Powell, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Powell, TN',
     heroSubhead:
       'Driveways, patios and outdoor living for Powell and North Knox County.',
     primaryKeyword: 'concrete contractor Powell TN',
@@ -326,10 +326,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'karns',
     city: 'Karns',
     county: 'Knox County',
-    title: 'Concrete & Hardscape Contractor Karns TN | Paramount',
+    title: 'Outdoor Living & Concrete in Karns, TN | Paramount',
     metaDescription:
-      'Concrete driveways, patios, pavers and retaining walls in Karns, TN and West Knox County. Free phone consultation: (865) 237-9770.',
-    h1: 'Concrete & Hardscape Contractor in Karns, TN',
+      'Covered patios, pergolas, outdoor kitchens and backyard builds in Karns, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Karns, TN',
     heroSubhead:
       'Concrete and hardscapes for Karns, Hardin Valley and West Knox County.',
     primaryKeyword: 'concrete contractor Karns TN',

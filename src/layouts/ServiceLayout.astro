@@ -5,6 +5,7 @@ import TrustBar from '../components/TrustBar.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import ReviewStrip from '../components/ReviewStrip.astro';
 import { company } from '../data/company';
 import { getService, type Service } from '../data/services';
 import { localTownsForService, type LocalService } from '../data/localServicePages';
@@ -34,6 +35,15 @@ const localTowns =
     ? localTownsForService(service.path as LocalService)
     : [];
 const localLabel = service.path === 'pavers' ? 'Pavers' : 'Concrete';
+
+// Match real reviews to this page by keywords in the service path.
+const tagRules: [RegExp, string][] = [
+  [/outdoor-living/, 'outdoor-living'], [/patio-covers/, 'pergola'], [/fire-pit/, 'fire-pit'],
+  [/pool-deck/, 'pool-deck'], [/driveway/, 'driveway'], [/stamped/, 'stamped'],
+  [/walkway|sidewalk/, 'walkway'], [/retaining/, 'retaining-wall'], [/^pavers/, 'pavers'],
+  [/patio/, 'patio'], [/^hardscapes$/, 'fire-pit'],
+];
+const reviewTags = tagRules.filter(([re]) => re.test(service.path)).map(([, t]) => t);
 
 const schemas = [
   breadcrumbSchema(crumbs),
@@ -131,6 +141,8 @@ const schemas = [
       </div>
     </section>
   )}
+
+  <ReviewStrip tags={reviewTags} featured={reviewTags.length === 0} />
 
   {service.faqs.length > 0 && <Faq faqs={service.faqs} />}
 

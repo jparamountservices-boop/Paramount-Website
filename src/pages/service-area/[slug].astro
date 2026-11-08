@@ -5,6 +5,7 @@ import TrustBar from '../../components/TrustBar.astro';
 import Faq from '../../components/Faq.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import ReviewStrip from '../../components/ReviewStrip.astro';
 import { serviceAreas } from '../../data/serviceAreas';
 import { hubServices, services } from '../../data/services';
 import { localPagesForTown } from '../../data/localServicePages';
@@ -27,8 +28,10 @@ const crumbs = [
   { name: area.city, path },
 ];
 
+// Outdoor living leads (bigger projects), concrete & hardscape follow.
+const outdoorLiving = services.filter((s) => s.navGroup === 'Outdoor Living' && !s.isHub && !s.hideFromMenus);
 const featured = [
-  ...hubServices,
+  ...hubServices.filter((s) => s.navGroup !== 'Outdoor Living'),
   ...services.filter((s) => ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/walkways'].includes(s.path)),
 ];
 
@@ -38,7 +41,7 @@ const localPages = localPagesForTown(area.slug);
 const schemas = [
   breadcrumbSchema(crumbs),
   serviceSchema({
-    name: `Concrete & Hardscape Contractor in ${area.city}, TN`,
+    name: `Outdoor Living & Concrete Contractor in ${area.city}, TN`,
     description: area.metaDescription,
     path,
     areaServed: `${area.city}, TN`,
@@ -90,9 +93,24 @@ const schemas = [
     </section>
   )}
 
-  <!-- Services offered locally (internal links to service pages) -->
+  <!-- Outdoor living first -->
+  <section class="wrap pb-10">
+    <h2 class="mb-2 text-2xl font-extrabold">Outdoor living in {area.city}, TN</h2>
+    <p class="mb-6 max-w-3xl text-[var(--color-concrete)]">Most of our {area.city} projects today are complete backyard spaces: a patio with a cover over it, a kitchen or grill station, a fire feature, sometimes a court. We plan the whole space first, then build it as one project with one crew.</p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {outdoorLiving.map((s) => (
+        <a href={`/${s.path}/`} class="group rounded-xl border border-[var(--color-flame)]/40 bg-[var(--color-graphite)] p-6 transition hover:border-[var(--color-flame)]">
+          <p class="text-lg font-bold text-[var(--color-bone)] group-hover:text-[var(--color-flame)]">{s.navLabel} in {area.city}</p>
+          <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">{s.heroSubhead}</p>
+        </a>
+      ))}
+    </div>
+    <p class="mt-4 text-sm"><a href="/outdoor-living/" class="font-semibold text-[var(--color-flame-300)] underline">See all outdoor living work →</a></p>
+  </section>
+
+  <!-- Concrete & hardscapes (internal links to service pages) -->
   <section class="wrap pb-14">
-    <h2 class="mb-6 text-2xl font-extrabold">Our services in {area.city}, TN</h2>
+    <h2 class="mb-6 text-2xl font-extrabold">Concrete, pavers &amp; hardscapes in {area.city}, TN</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {featured.map((s) => (
         <a href={`/${s.path}/`} class="group rounded-lg border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5 transition hover:border-[var(--color-flame)]">
@@ -102,6 +120,8 @@ const schemas = [
       ))}
     </div>
   </section>
+
+  <ReviewStrip featured limit={3} heading={`What homeowners near ${area.city} say`} />
 
   {area.faqs.length > 0 && <Faq faqs={area.faqs} heading={`${area.city} — Common Questions`} />}
 

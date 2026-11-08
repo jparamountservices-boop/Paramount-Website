@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { company } from '../data/company';
-import { reviews } from '../data/reviews';
+import { reviews, googleRating } from '../data/reviews';
 import { breadcrumbSchema } from '../lib/schema';
 
 const path = '/reviews/';
@@ -44,9 +44,8 @@ const reviewLink = company.social.google || company.social.facebook;
 
 <BaseLayout
   title="Reviews | Paramount Concrete & Hardscapes | Knoxville TN"
-  description="Reviews for Paramount Concrete & Hardscapes — a concrete and hardscape contractor serving Knoxville and East Tennessee."
+  description="Read real Google reviews from Knoxville homeowners: patios, pavers, pergolas, pool decks and driveways. Rated 4.9 stars across 37 reviews."
   path={path}
-  business={false}
   schemas={schemas}
 >
   <Breadcrumbs items={crumbs} />
@@ -60,8 +59,9 @@ const reviewLink = company.social.google || company.social.facebook;
       </p>
     ) : hasReviews ? (
       <>
-        <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">{'★'.repeat(Math.round(avg))}</p>
-        <p class="text-[var(--color-concrete)]">{avgStr} out of 5 · {reviews.length} review{reviews.length === 1 ? '' : 's'}</p>
+        <p class="mt-4 text-3xl font-black text-[var(--color-flame)]">★★★★★</p>
+        <p class="text-[var(--color-concrete)]">{googleRating.value} out of 5 on Google · {googleRating.count} reviews</p>
+        <p class="mx-auto mt-2 max-w-xl text-sm text-[var(--color-concrete-dim)]">A selection of real reviews from our Google Business Profile, from homeowners across Knoxville and East Tennessee.</p>
       </>
     ) : (
       <p class="mx-auto mt-4 max-w-xl text-[var(--color-concrete)]">
@@ -94,7 +94,7 @@ const reviewLink = company.social.google || company.social.facebook;
       </div>
       {reviewLink && (
         <p class="mt-6 text-center text-sm text-[var(--color-concrete-dim)]">
-          <a href={reviewLink} target="_blank" rel="noopener noreferrer" class="font-semibold text-[var(--color-flame-300)] underline">Read more or leave a review →</a>
+          <a href={reviewLink} target="_blank" rel="noopener noreferrer" class="font-semibold text-[var(--color-flame-300)] underline">Read all {googleRating.count} reviews on Google →</a>
         </p>
       )}
     </section>
