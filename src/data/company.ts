@@ -25,13 +25,13 @@ export const company = {
     street: '1201 Bob Kirby Rd',
     city: 'Knoxville',
     state: 'TN',
-    zip: '37932', // PLACEHOLDER — confirm ZIP
+    zip: '37931', // matches Google Business Profile
     country: 'US',
   },
   // Approx. geo for LocalBusiness schema (Knox County). Refine to exact if desired.
   geo: {
-    latitude: 35.9606,
-    longitude: -84.1217,
+    latitude: 35.937228,
+    longitude: -84.1180275,
   },
 
   url: 'https://paramountknox.com',
@@ -57,14 +57,14 @@ export const company = {
 
   priceRange: '$$',
   // Aggregate rating for schema — update to real GBP/Facebook numbers.
-  rating: { value: '5.0', count: 27 }, // PLACEHOLDER — confirm review count
+  rating: { value: '4.9', count: 37 }, // Google Business Profile, Nov 2026
 
   // Social profiles → used for UI links AND schema `sameAs` (entity/trust signal).
   social: {
     facebook: 'https://www.facebook.com/paramountknox/',
     instagram: 'https://www.instagram.com/parmounthomerenovations/',
     tiktok: '', // not used
-    google: '', // PLACEHOLDER — Google Business Profile URL
+    google: 'https://www.google.com/maps?cid=17529004164000047395',
   },
 
   // Analytics & search-engine verification. Leave blank to render nothing.

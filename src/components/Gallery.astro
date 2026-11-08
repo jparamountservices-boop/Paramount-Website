@@ -34,7 +34,9 @@ for (const [path, mod] of Object.entries(modules)) {
   if (!cat) continue;
   const meta = mod.default;
   const caption = captionFromFilename(filename) || cat.label;
-  const alt = `${caption} by Paramount Concrete & Hardscapes, Knoxville TN`;
+  const num = Number((filename.match(/(\d+)\.[^.]+$/) || [])[1] || 1);
+  const where = /knoxville|farragut|maryville|lenoir|oak ridge|alcoa|clinton|powell|karns|seymour|sevierville|louisville|hardin/i.test(caption) ? '' : ' in Knoxville, TN';
+  const alt = `${caption}${where} built by Paramount Concrete & Hardscapes${num > 1 ? ` (photo ${num})` : ''}`;
   const thumb = await getImage({ src: meta, width: 800, format: 'webp', quality: 78 });
   const full = await getImage({ src: meta, width: 1600, format: 'webp', quality: 82 });
   tiles.push({ thumb: thumb.src, full: full.src, alt, label: caption, group: cat.group, href: cat.href, w: 4, h: 3 });

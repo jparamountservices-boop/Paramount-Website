@@ -1,0 +1,63 @@
+---
+/**
+ * A row of real Google reviews. Pass `tags` to show reviews that match the
+ * page's service (see src/data/reviews.ts), or `featured` for the homepage.
+ */
+import { company } from '../data/company';
+import { reviews, reviewsFor, googleRating, type Review } from '../data/reviews';
+
+interface Props {
+  tags?: string[];
+  featured?: boolean;
+  limit?: number;
+  heading?: string;
+  eyebrow?: string;
+}
+
+const {
+  tags = [],
+  featured = false,
+  limit = 3,
+  heading = 'What Knoxville homeowners say',
+  eyebrow = 'Google reviews',
+} = Astro.props;
+
+const list: Review[] = featured
+  ? reviews.filter((r) => r.featured).slice(0, limit)
+  : reviewsFor(tags, limit);
+
+const clip = (t: string, max = 320) => (t.length > max ? t.slice(0, t.lastIndexOf(' ', max)) + '…' : t);
+---
+
+{list.length > 0 && (
+  <section class="wrap py-16">
+    <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">{heading}</h2>
+        <p class="mt-3 text-[var(--color-concrete)]">
+          <span class="font-bold text-[var(--color-flame)]">★★★★★</span>
+          {' '}{googleRating.value} out of 5 · {googleRating.count} reviews on Google
+        </p>
+      </div>
+      <a href="/reviews/" class="btn btn-ghost">Read more reviews →</a>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {list.map((r) => (
+        <figure class="flex flex-col rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-6">
+          <div class="text-[var(--color-flame)]" aria-label={`${r.rating} out of 5 stars`}>{'★'.repeat(r.rating)}</div>
+          <blockquote class="mt-3 flex-1 text-[var(--color-concrete)]">“{clip(r.text)}”</blockquote>
+          <figcaption class="mt-4 text-sm">
+            <span class="font-bold text-[var(--color-bone)]">{r.author}</span>
+            {r.service && <div class="text-xs font-semibold uppercase tracking-wider text-[var(--color-flame)]">{r.service}</div>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    {company.social.google && (
+      <p class="mt-6 text-sm text-[var(--color-concrete-dim)]">
+        <a href={company.social.google} target="_blank" rel="noopener noreferrer" class="font-semibold text-[var(--color-flame-300)] underline">See all {googleRating.count} reviews on Google</a>
+      </p>
+    )}
+  </section>
+)}

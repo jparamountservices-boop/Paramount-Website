@@ -10,6 +10,7 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { company } from '../data/company';
+import { catByFolder, captionFromFilename } from '../data/projectCategories';
 
 const ig = company.social.instagram;
 const handle = company.instagramHandle;
@@ -20,13 +21,16 @@ const modules = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/projects/**/*.{jpg,jpeg,png,webp,avif}',
   { eager: true }
 );
-const byFolder: Record<string, ImageMetadata[]> = {};
+const byFolder: Record<string, { meta: ImageMetadata; alt: string }[]> = {};
 for (const [path, mod] of Object.entries(modules)) {
-  const folder = path.split('/').slice(-2)[0];
-  (byFolder[folder] ??= []).push(mod.default);
+  const [folder, file] = path.split('/').slice(-2);
+  const cat = catByFolder(folder);
+  const caption = captionFromFilename(file) || cat?.label || 'Outdoor project';
+  const num = Number((file.match(/(\d+)\.[^.]+$/) || [])[1] || 1);
+  (byFolder[folder] ??= []).push({ meta: mod.default, alt: `${caption}${num > 1 ? ` (photo ${num})` : ''} by Paramount, Knoxville TN` });
 }
 const folders = Object.keys(byFolder);
-const picked: ImageMetadata[] = [];
+const picked: { meta: ImageMetadata; alt: string }[] = [];
 let i = 0;
 while (picked.length < 6 && folders.some((f) => byFolder[f].length)) {
   const f = folders[i % folders.length];
@@ -35,7 +39,7 @@ while (picked.length < 6 && folders.some((f) => byFolder[f].length)) {
   i++;
 }
 const featured = await Promise.all(
-  picked.map((meta) => getImage({ src: meta, width: 600, height: 600, fit: 'cover', format: 'webp', quality: 78 }))
+  picked.map(async (p) => ({ ...(await getImage({ src: p.meta, width: 600, height: 600, fit: 'cover', format: 'webp', quality: 78 })), alt: p.alt }))
 );
 ---
 
@@ -71,7 +75,7 @@ const featured = await Promise.all(
           >
             <img
               src={img.src}
-              alt="Recent concrete & hardscape project by Paramount, Knoxville TN"
+              alt={img.alt}
               loading="lazy"
               decoding="async"
               class="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
