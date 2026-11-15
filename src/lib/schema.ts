@@ -58,11 +58,10 @@ export function localBusinessSchema() {
       bestRating: '5',
       worstRating: '1',
     },
-    // Verified profiles. (Instagram handle is the corrected spelling per the SEO
-    // brief; the visible footer link is intentionally left as-is for now.)
+    // Verified profiles (Instagram handle confirmed working on the live site).
     sameAs: [
       'https://www.facebook.com/paramountknox/',
-      'https://www.instagram.com/paramounthomerenovations/',
+      'https://www.instagram.com/parmounthomerenovations/',
       'https://www.google.com/maps?cid=17529004164000047395',
     ],
     // Merged from the prior business node, per the brief.
