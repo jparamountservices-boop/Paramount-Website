@@ -18,6 +18,13 @@
 # /our-work/, /reviews/, /contact/, /services/) so they need no redirect.
 # ---------------------------------------------------------------------------
 
+# Canonical sitemap lives at /sitemap-index.xml (Astro generates it); send the
+# conventional /sitemap.xml there so nothing 404s.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+
 # Old singular driveway slug -> new plural
 [[redirects]]
   from = "/concrete/driveway"

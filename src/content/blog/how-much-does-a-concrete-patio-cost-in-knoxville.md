@@ -13,7 +13,7 @@ Here's what one costs in **2026**, and what moves the number.
 
 ## The short answer
 
-- **Broom-finish or troweled concrete patio:** ~$12 per square foot installed, with a $3,500 project minimum
+- **Broom-finish or troweled concrete patio:** ~$12 per square foot installed, with a $4,000 project minimum
 - **Stamped / stained decorative concrete patio:** upwards of ~$18–$20 per square foot installed
 
 A common 300 sq ft patio runs roughly **$4,350–$4,800 broom** or **$5,400–$6,000+ stamped.**

@@ -41,6 +41,7 @@ const PAVER_COST =
 
 const CONCRETE_RELATED = [
   'concrete/driveways',
+  'concrete/driveway-extensions',
   'concrete/patio',
   'concrete/decorative-and-stamped',
   'concrete/sidewalks-walkways',
@@ -56,9 +57,9 @@ export const localServicePages: LocalServicePage[] = [
     city: 'Knoxville',
     county: 'Knox County',
     areaSlug: 'knoxville',
-    title: 'Concrete Contractor Knoxville TN | Driveways, Patios & Slabs | Paramount',
+    title: 'Knoxville Concrete Contractor | Driveways, Patios & Slabs | Paramount',
     metaDescription:
-      'Concrete driveways, patios, stamped concrete and slabs in Knoxville, TN — built for our clay soil and freeze-thaw winters. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios, stamped work, and slabs in Knoxville, TN, built for clay soil and freeze-thaw winters. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Knoxville, TN',
     heroSubhead:
       'Driveways, patios, stamped concrete and slabs across Knox County — poured on a base built for our red clay.',

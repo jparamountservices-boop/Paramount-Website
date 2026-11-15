@@ -19,6 +19,7 @@ export interface ProjectCategory {
 
 export const projectCategories: ProjectCategory[] = [
   { folder: 'driveways', label: 'Concrete Driveway', group: 'Concrete', href: '/concrete/driveways/' },
+  { folder: 'driveway-extensions', label: 'Driveway Extension', group: 'Concrete', href: '/concrete/driveway-extensions/' },
   { folder: 'concrete-patios', label: 'Concrete Patio', group: 'Concrete', href: '/concrete/patio/' },
   { folder: 'stamped-concrete', label: 'Stamped Concrete', group: 'Concrete', href: '/concrete/decorative-and-stamped/' },
   { folder: 'pool-decks', label: 'Pool Deck', group: 'Concrete', href: '/concrete/pool-decks/' },
