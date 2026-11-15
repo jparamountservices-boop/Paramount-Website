@@ -85,11 +85,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $4,000 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
+      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $4,000 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -213,7 +213,7 @@ export const services: Service[] = [
         ],
       },
     ],
-    costNote: 'Projects start at $4,000.',
+    costNote: 'Projects start at $5,000.',
     faqs: [],
     related: ['concrete/driveways', 'concrete', 'pavers/driveways', 'outdoor-living/sport-courts'],
   },
