@@ -16,20 +16,13 @@ const hasReviews = reviews.length > 0;
 const avg = hasReviews ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length : 0;
 const avgStr = avg.toFixed(1);
 
-// Review + AggregateRating schema is emitted ONLY from the real reviews in the
-// data file, and its values are derived from them — so it can never overstate.
+// Reviews attach to the sitewide business node by @id — we do NOT emit a second
+// GeneralContractor here (the business node + aggregateRating come from BaseLayout).
 const schemas: Record<string, unknown>[] = [breadcrumbSchema(crumbs)];
 if (hasReviews) {
   schemas.push({
     '@context': 'https://schema.org',
-    '@type': 'GeneralContractor',
     '@id': `${company.url}/#business`,
-    name: company.name,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: avgStr,
-      reviewCount: reviews.length,
-    },
     review: reviews.map((r) => ({
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },

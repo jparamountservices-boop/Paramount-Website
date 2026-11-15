@@ -2,7 +2,7 @@
  * Structured-data (JSON-LD) builders. Everything pulls from company.ts so the
  * NAP, hours and socials stay consistent across the whole site.
  */
-import { company, sameAs } from '../data/company';
+import { company } from '../data/company';
 
 const SITE = company.url;
 
@@ -20,24 +20,23 @@ const areaServed = [
 ];
 
 /**
- * The core LocalBusiness / GeneralContractor node, reused via @id.
- * `includeRating` scopes aggregateRating to pages where reviews are shown
- * (per Google's guidance) — default off; the homepage passes it on.
+ * The core business node, reused sitewide and referenced by @id everywhere.
+ * This is the ONLY node that should carry @id "…/#business". Reviews on
+ * /reviews/ attach to this same @id instead of emitting a second business node.
  */
-export function localBusinessSchema(opts: { includeRating?: boolean } = {}) {
-  const node: Record<string, unknown> = {
+export function localBusinessSchema() {
+  return {
     '@context': 'https://schema.org',
-    '@type': 'GeneralContractor',
+    '@type': ['GeneralContractor', 'HomeAndConstructionBusiness', 'LocalBusiness'],
     '@id': `${SITE}/#business`,
     name: company.name,
-    alternateName: company.legalName,
-    description: company.description,
+    description:
+      'Paramount Concrete & Hardscapes designs and builds new concrete, pavers, retaining walls, patio covers, and outdoor kitchens for homeowners across Knoxville and East Tennessee.',
     url: SITE,
     telephone: company.phoneHref.replace('tel:', ''),
     email: company.email,
     image: `${SITE}/images/og-default.jpg`,
     logo: `${SITE}${company.logo}`,
-    foundingDate: String(company.yearFounded),
     priceRange: company.priceRange,
     address: {
       '@type': 'PostalAddress',
@@ -52,23 +51,28 @@ export function localBusinessSchema(opts: { includeRating?: boolean } = {}) {
       latitude: company.geo.latitude,
       longitude: company.geo.longitude,
     },
-    areaServed,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: company.rating.value,
+      reviewCount: String(company.rating.count),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    // Verified profiles (Instagram handle confirmed working on the live site).
+    sameAs: [
+      'https://www.facebook.com/paramountknox/',
+      'https://www.instagram.com/parmounthomerenovations/',
+      'https://www.google.com/maps?cid=17529004164000047395',
+    ],
+    // Merged from the prior business node, per the brief.
     openingHoursSpecification: company.hours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: h.days,
       opens: h.opens,
       closes: h.closes,
     })),
-    sameAs,
+    areaServed,
   };
-  if (opts.includeRating) {
-    node.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: company.rating.value,
-      reviewCount: company.rating.count,
-    };
-  }
-  return node;
 }
 
 /** BreadcrumbList from an ordered array of {name, path}. */
@@ -91,15 +95,22 @@ export function serviceSchema(opts: {
   description: string;
   path: string;
   areaServed?: string;
+  serviceType?: string;
+  areaServedList?: string[];
 }) {
+  const area = opts.areaServedList
+    ? opts.areaServedList.map((c) => ({ '@type': 'City', name: `${c}, TN` }))
+    : opts.areaServed
+      ? { '@type': 'City', name: opts.areaServed }
+      : areaServedCities;
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: opts.name,
     description: opts.description,
-    serviceType: opts.name,
+    serviceType: opts.serviceType ?? opts.name,
     url: `${SITE}${opts.path}`,
-    areaServed: opts.areaServed ? { '@type': 'City', name: opts.areaServed } : areaServedCities,
+    areaServed: area,
     provider: { '@id': `${SITE}/#business` },
   };
 }

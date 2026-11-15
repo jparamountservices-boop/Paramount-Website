@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Is there a minimum project size?',
-    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $3,500 for concrete, and $5,000 for pavers and retaining walls. The estimator reflects those minimums, and we’ll confirm the exact number on your free phone consultation.',
+    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $5,000 for concrete, pavers and retaining walls. The estimator reflects that minimum, and we’ll confirm the exact number on your free phone consultation.',
   },
   {
     q: 'Do you charge for an estimate?',
@@ -50,7 +50,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       enter the size, and we’ll show you the same ballpark we’d quote — then let’s talk it through.
     </p>
     <p class="mx-auto mt-4 inline-block rounded-full border border-[var(--color-steel)] bg-[var(--color-graphite-2)] px-4 py-2 text-sm font-semibold text-[var(--color-bone)]">
-      Most of our projects start around <span class="text-[var(--color-flame)]">$5,000</span> and go up from there.
+      Projects start at <span class="text-[var(--color-flame)]">$5,000</span>.
     </p>
   </section>
 
@@ -133,10 +133,10 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       concrete: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 3500,
+        min: 5000,
         noun: 'concrete',
         items: [
-          { label: 'Broom / troweled finish', formula: { base: 1800, perSqft: 8.5, sqftFloor: 12, min: 3500 } },
+          { label: 'Broom / troweled finish', formula: { base: 1800, perSqft: 8.5, sqftFloor: 12, min: 5000 } },
           { label: 'Stamped / stained decorative', low: 18, high: 20 },
         ],
       },

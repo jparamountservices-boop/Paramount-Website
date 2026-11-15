@@ -47,7 +47,13 @@ const reviewTags = tagRules.filter(([re]) => re.test(service.path)).map(([, t]) 
 
 const schemas = [
   breadcrumbSchema(crumbs),
-  serviceSchema({ name: service.h1, description: service.metaDescription, path }),
+  serviceSchema({
+    name: service.h1,
+    description: service.metaDescription,
+    path,
+    serviceType: service.schemaServiceType,
+    areaServedList: service.schemaAreaServed,
+  }),
   ...(service.faqs.length ? [faqSchema(service.faqs)] : []),
 ];
 ---

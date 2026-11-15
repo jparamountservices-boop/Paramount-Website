@@ -40,6 +40,9 @@ export interface Service {
   noindex?: boolean;
   /** Optional link to a related blog post (renders a callout on the page). */
   relatedPost?: { label: string; path: string };
+  /** Optional JSON-LD overrides (e.g. a more specific serviceType / areaServed). */
+  schemaServiceType?: string;
+  schemaAreaServed?: string[];
 }
 
 export const services: Service[] = [
@@ -82,11 +85,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $3,500 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
+      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $3,500 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -108,9 +111,9 @@ export const services: Service[] = [
     parent: 'concrete',
     navGroup: 'Concrete',
     navLabel: 'Concrete Driveways',
-    title: 'Concrete Driveways Knoxville TN | Installation & Replacement | Paramount',
+    title: 'Concrete Driveway Installation in Knoxville, TN | Paramount',
     metaDescription:
-      'Concrete driveway installation and replacement in Knoxville, TN. Durable, properly-based driveways that resist cracking and settling. Call (865) 237-9770.',
+      'New concrete driveways, replacements, and extensions in Knoxville, TN. Proper base, drainage, and reinforcement for East Tennessee clay. Call (865) 237-9770.',
     h1: 'Concrete Driveways in Knoxville, TN',
     heroSubhead:
       'A new concrete driveway is the biggest first impression your home makes — and one of the easiest to get wrong. We build ours to last.',
@@ -154,7 +157,65 @@ export const services: Service[] = [
         a: 'Plan on about 7 days before light foot traffic and 28–30 days before parking vehicles. Concrete continues to gain strength for a full month after the pour.',
       },
     ],
-    related: ['concrete', 'concrete/decorative-and-stamped', 'pavers/driveways', 'concrete/sidewalks-walkways'],
+    related: ['concrete/driveway-extensions', 'concrete', 'concrete/decorative-and-stamped', 'pavers/driveways', 'concrete/sidewalks-walkways'],
+  },
+  {
+    path: 'concrete/driveway-extensions',
+    parent: 'concrete',
+    navGroup: 'Concrete',
+    hideFromMenus: true,
+    navLabel: 'Driveway Extensions',
+    title: 'Concrete Driveway Extensions in Knoxville, TN | Paramount',
+    metaDescription:
+      'Widen a driveway or add a parking pad in Knoxville, Farragut, and West Knoxville. New concrete extensions, graded and poured to match. Call (865) 237-9770.',
+    h1: 'Concrete Driveway Extensions in Knoxville, TN',
+    heroSubhead:
+      'New concrete driveway extensions, parking pads and turnarounds in Knoxville and East Tennessee — graded and poured to match your existing drive.',
+    primaryKeyword: 'concrete driveway extension Knoxville',
+    schemaServiceType: 'Concrete Driveway Extension',
+    schemaAreaServed: ['Knoxville', 'Farragut', 'West Knoxville', 'Hardin Valley', 'Maryville'],
+    intro: [],
+    sections: [
+      {
+        h2: 'Need more room in the driveway?',
+        body: [
+          'If you’re tired of parking in the grass or playing car shuffle every morning, a driveway extension is usually the fix. We widen existing driveways, add parking pads for a boat, trailer, or extra car, and tie new concrete into what you’ve already got so it looks like it was always there.',
+        ],
+      },
+      {
+        h2: 'What we build',
+        bullets: [
+          'Driveway widening on one or both sides',
+          'Parking pads for RVs, boats, trailers, and extra vehicles',
+          'Turnarounds and side pads',
+          'Walkway connections from the driveway to the house or backyard',
+        ],
+      },
+      {
+        h2: 'Done right for East Tennessee ground',
+        body: [
+          'Knoxville clay holds water and moves with the seasons. That’s why every extension gets a compacted gravel base, rebar or wire, proper thickness for the weight it’ll carry, and grading that sends water away from your house and your existing slab. Where new meets old, we doweled-in or isolate the joint so the two pieces move together without cracking.',
+        ],
+      },
+      {
+        h2: 'How it works',
+        bullets: [
+          'Give us a call at (865) 237-9770.',
+          'Text us a few photos of your driveway and where you want the extension.',
+          'We’ll give you a ballpark price, usually same day.',
+          'If it looks like a fit, we set up a site visit to measure and finalize.',
+        ],
+      },
+      {
+        h2: 'Areas we serve',
+        body: [
+          'Knoxville, Farragut, West Knoxville, Hardin Valley, Karns, Powell, Maryville, Lenoir City, Oak Ridge, and about 45 miles around.',
+        ],
+      },
+    ],
+    costNote: 'Projects start at $5,000.',
+    faqs: [],
+    related: ['concrete/driveways', 'concrete', 'pavers/driveways', 'outdoor-living/sport-courts'],
   },
   {
     path: 'concrete/patio',

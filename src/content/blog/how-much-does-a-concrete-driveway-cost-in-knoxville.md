@@ -15,14 +15,14 @@ the factors that actually move them.
 ## The short answer
 
 In the Knoxville area, a standard broom-finish concrete driveway runs about **$12 per square
-foot installed, with a $3,500 project minimum** — smaller drives cost a little more per foot, because
+foot installed, with a $5,000 project minimum** — smaller drives cost a little more per foot, because
 mobilizing a crew, equipment and materials has a fixed baseline cost. A typical two-car driveway
 (roughly 600–800 sq ft) usually lands between **$7,000 and $10,000**, depending on thickness,
 tear-out, access and site conditions.
 
 Here's a rough guide by size:
 
-- **1-car (about 12′ × 24′, ~290 sq ft):** ~$4,250–$4,700
+- **1-car (about 12′ × 24′, ~290 sq ft):** ~$5,000–$5,500
 - **2-car (about 20′ × 30′, ~600 sq ft):** ~$7,200–$7,900
 - **Long or rural drive (1,000+ sq ft):** $12,000 and up
 
