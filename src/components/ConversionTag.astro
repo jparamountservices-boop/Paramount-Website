@@ -12,6 +12,10 @@
  * Placed in <head> so it loads on every page (site + landing pages).
  */
 import { company } from '../data/company';
+import MetaPixel from './MetaPixel.astro';
+
+interface Props { lead?: boolean }
+const { lead = false } = Astro.props;
 
 const { ga4Id } = company.analytics;
 const { conversionId, callLabel } = company.googleAds;
@@ -48,3 +52,5 @@ const callSendTo = conversionId && callLabel ? `${conversionId}/${callLabel}` : 
     );
   </script>
 )}
+
+<MetaPixel lead={lead} />

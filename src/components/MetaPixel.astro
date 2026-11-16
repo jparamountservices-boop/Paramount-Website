@@ -1,0 +1,23 @@
+---
+/**
+ * Meta (Facebook) Pixel. Inert until company.metaPixelId is set.
+ * Fires PageView on every page. Pass lead={true} on thank-you pages to also
+ * fire a Lead event (counts a completed form as a lead in Facebook Ads).
+ */
+import { company } from '../data/company';
+interface Props { lead?: boolean }
+const { lead = false } = Astro.props;
+const pixelId = company.metaPixelId;
+---
+{pixelId && (
+  <script is:inline define:vars={{ pixelId, lead }}>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', pixelId);
+    fbq('track', 'PageView');
+    if (lead) fbq('track', 'Lead');
+  </script>
+)}

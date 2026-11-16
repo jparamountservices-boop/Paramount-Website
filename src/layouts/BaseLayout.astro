@@ -20,6 +20,8 @@ interface Props {
   schemas?: Record<string, unknown>[];
   /** Include the global LocalBusiness node (default true). */
   business?: boolean;
+  /** Fire the Meta Pixel Lead event (thank-you pages only). */
+  lead?: boolean;
 }
 
 const {
@@ -31,6 +33,7 @@ const {
   noindex,
   schemas = [],
   business = true,
+  lead = false,
 } = Astro.props;
 
 // No aggregateRating until we have real, visible reviews (see src/data/reviews.ts).
@@ -43,7 +46,7 @@ const allSchemas = business ? [localBusinessSchema(), ...schemas] : schemas;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) — loaded once, high in <head>, on every page -->
-    <ConversionTag />
+    <ConversionTag lead={lead} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" type="application/rss+xml" title="Paramount Concrete & Hardscapes Blog" href="/rss.xml" />
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
