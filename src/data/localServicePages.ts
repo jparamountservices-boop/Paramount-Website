@@ -12,7 +12,7 @@
  * hub for tight topical clustering.
  */
 
-export type LocalService = 'concrete' | 'pavers';
+export type LocalService = 'concrete' | 'pavers' | 'outdoor-living';
 
 export interface LocalServicePage {
   service: LocalService;
@@ -47,6 +47,15 @@ const CONCRETE_RELATED = [
   'concrete/sidewalks-walkways',
 ];
 const PAVER_RELATED = ['pavers/patios', 'pavers/driveways', 'pavers/walkways'];
+
+const OUTDOOR_LIVING_RELATED = [
+  'outdoor-living/patio-covers',
+  'outdoor-living/outdoor-kitchens',
+  'outdoor-living/backyard-builds',
+  'retaining-walls',
+];
+const OUTDOOR_LIVING_COST =
+  'Outdoor living is custom work, priced by the plan — the patio, the cover, a kitchen or grill station, walls and lighting each carry their own range, and how they combine sets the total. Projects start at $4,000, and you get an itemized proposal after a phone consultation. Call or text (865) 237-9770 with a few photos for a ballpark.';
 
 export const localServicePages: LocalServicePage[] = [
   /* ============================ KNOXVILLE ============================ */
@@ -109,7 +118,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'knoxville',
     title: 'Paver Patios & Driveways Knoxville TN | Belgard & Techo-Bloc | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Knoxville, TN — Belgard & Techo-Bloc installed on a deep base that flexes with our clay soil. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Knoxville, TN — Belgard & Techo-Bloc on a deep base that flexes with our clay. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Knoxville, TN',
     heroSubhead:
       'Premium paver patios, driveways and walkways across Knox County — built on a base that won’t sink or heave.',
@@ -156,7 +165,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'west-knoxville',
     title: 'Concrete Contractor West Knoxville TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and stamped concrete in West Knoxville, TN — Hardin Valley, Cedar Bluff, Bluegrass and Northshore. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and stamped concrete in West Knoxville, TN — Hardin Valley, Cedar Bluff, Bluegrass and Northshore. Call (865) 237-9770.',
     h1: 'Concrete Contractor in West Knoxville, TN',
     heroSubhead:
       'Driveways, patios and decorative concrete for Hardin Valley, Cedar Bluff, Bluegrass and Northshore homes.',
@@ -201,7 +210,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'west-knoxville',
     title: 'Paver Patios & Driveways West Knoxville TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in West Knoxville, TN — Hardin Valley, Cedar Bluff and Northshore. Belgard & Techo-Bloc built to last. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in West Knoxville, TN — Hardin Valley, Cedar Bluff and Northshore. Belgard & Techo-Bloc. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in West Knoxville, TN',
     heroSubhead:
       'Custom paver outdoor living for Hardin Valley, Cedar Bluff, Gettysvue and Northshore.',
@@ -248,7 +257,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'farragut',
     title: 'Concrete Contractor Farragut TN | Driveways & Decorative Concrete | Paramount',
     metaDescription:
-      'Concrete driveways, patios and stamped concrete in Farragut, TN — built to the standard the neighborhood and HOA expect. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and stamped concrete in Farragut, TN — built to the standard the neighborhood and HOA expect. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Farragut, TN',
     heroSubhead:
       'Driveways, patios and decorative concrete finished to the standard Farragut homes expect.',
@@ -293,7 +302,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'farragut',
     title: 'Paver Patios & Driveways Farragut TN | Premium Outdoor Living | Paramount',
     metaDescription:
-      'Premium paver patios, driveways and outdoor living in Farragut, TN — Belgard & Techo-Bloc built to a lasting standard. Free phone consultation: (865) 237-9770.',
+      'Premium paver patios, driveways and outdoor living in Farragut, TN — Belgard & Techo-Bloc built to a lasting standard. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Farragut, TN',
     heroSubhead:
       'Premium paver driveways, patios and outdoor living for Fox Den, Village Green and Concord.',
@@ -340,7 +349,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'maryville',
     title: 'Concrete Contractor Maryville TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and stamped concrete in Maryville, TN and Blount County. Built for foothills terrain. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and stamped concrete in Maryville, TN and Blount County. Built for foothills terrain. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Maryville, TN',
     heroSubhead:
       'Driveways, patios and decorative concrete for Maryville and the Blount County foothills.',
@@ -385,7 +394,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'maryville',
     title: 'Paver Patios & Driveways Maryville TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Maryville, TN — Belgard & Techo-Bloc built for foothills lots that move. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Maryville, TN — Belgard & Techo-Bloc built for foothills lots that move. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Maryville, TN',
     heroSubhead:
       'Paver patios, driveways and walkways for Maryville and the Blount County foothills.',
@@ -432,7 +441,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'alcoa',
     title: 'Concrete Contractor Alcoa TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and slabs in Alcoa, TN — near Springbrook, the Alcoa Highway corridor and McGhee Tyson. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and slabs in Alcoa, TN — near Springbrook, the Alcoa Highway corridor and McGhee Tyson. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Alcoa, TN',
     heroSubhead:
       'Driveways, patios and slabs for Alcoa and the greater Maryville area.',
@@ -477,7 +486,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'alcoa',
     title: 'Paver Patios & Driveways Alcoa TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Alcoa, TN — Belgard & Techo-Bloc installed on a base built to last. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Alcoa, TN — Belgard & Techo-Bloc installed on a base built to last. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Alcoa, TN',
     heroSubhead:
       'Paver patios, driveways and outdoor living for Alcoa and the greater Maryville area.',
@@ -524,7 +533,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'louisville',
     title: 'Concrete Contractor Louisville TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and decorative concrete in Louisville, TN on Fort Loudoun Lake. Built for sloped, waterfront lots. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and decorative concrete in Louisville, TN on Fort Loudoun Lake. Built for sloped, waterfront lots. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Louisville, TN',
     heroSubhead:
       'Driveways, patios and decorative concrete for Louisville’s lakeside lots on Fort Loudoun Lake.',
@@ -569,7 +578,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'louisville',
     title: 'Paver Patios & Lakeside Outdoor Living Louisville TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and lakeside outdoor living in Louisville, TN on Fort Loudoun Lake. Built for sloped waterfront lots. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and lakeside outdoor living in Louisville, TN on Fort Loudoun Lake. Built for sloped waterfront lots. Call (865) 237-9770.',
     h1: 'Paver Patios & Outdoor Living in Louisville, TN',
     heroSubhead:
       'Lakeside paver patios, driveways and outdoor rooms for Louisville homes on Fort Loudoun Lake.',
@@ -616,7 +625,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'oak-ridge',
     title: 'Concrete Contractor Oak Ridge TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and replacement concrete in Oak Ridge, TN — built for the city’s ridge lots and older homes. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and replacement concrete in Oak Ridge, TN — built for the city’s ridge lots and older homes. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Oak Ridge, TN',
     heroSubhead:
       'Driveways, patios and replacement concrete for Oak Ridge’s ridge-and-valley lots.',
@@ -661,7 +670,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'oak-ridge',
     title: 'Paver Patios & Driveways Oak Ridge TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Oak Ridge, TN — Belgard & Techo-Bloc built to flex with ridge-lot ground movement. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Oak Ridge, TN — Belgard & Techo-Bloc built to flex with ridge-lot ground movement. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Oak Ridge, TN',
     heroSubhead:
       'Paver patios, driveways and walkways for Oak Ridge homes on ridge-and-valley terrain.',
@@ -708,7 +717,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'clinton',
     title: 'Concrete Contractor Clinton TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and slabs in Clinton, TN and Anderson County — including riverside and rural lots. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and slabs in Clinton, TN and Anderson County — including riverside and rural lots. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Clinton, TN',
     heroSubhead:
       'Driveways, patios and slabs for Clinton and the Anderson County area.',
@@ -753,7 +762,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'clinton',
     title: 'Paver Patios & Driveways Clinton TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Clinton, TN and Anderson County — Belgard & Techo-Bloc built to last. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Clinton, TN and Anderson County — Belgard & Techo-Bloc built to last. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Clinton, TN',
     heroSubhead:
       'Paver patios, driveways and walkways for Clinton and the Anderson County area.',
@@ -800,7 +809,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'powell',
     title: 'Concrete Contractor Powell TN | Driveways & Patios | Paramount',
     metaDescription:
-      'Concrete driveways, patios and stamped concrete in Powell, TN — along the Emory Road corridor and North Knox. Free phone consultation: (865) 237-9770.',
+      'Concrete driveways, patios and stamped concrete in Powell, TN — along the Emory Road corridor and North Knox. Call (865) 237-9770.',
     h1: 'Concrete Contractor in Powell, TN',
     heroSubhead:
       'Driveways, patios and decorative concrete for Powell, Halls and North Knox County.',
@@ -845,7 +854,7 @@ export const localServicePages: LocalServicePage[] = [
     areaSlug: 'powell',
     title: 'Paver Patios & Driveways Powell TN | Paramount',
     metaDescription:
-      'Paver patios, driveways and walkways in Powell, TN and North Knox — Belgard & Techo-Bloc built on a lasting base. Free phone consultation: (865) 237-9770.',
+      'Paver patios, driveways and walkways in Powell, TN and North Knox — Belgard & Techo-Bloc built on a lasting base. Call (865) 237-9770.',
     h1: 'Paver Patios & Driveways in Powell, TN',
     heroSubhead:
       'Paver patios, driveways and walkways for Powell, Halls and North Knox County.',
@@ -880,6 +889,211 @@ export const localServicePages: LocalServicePage[] = [
       },
     ],
     relatedServices: PAVER_RELATED,
+  },
+
+  /* ===================== PAVERS — LENOIR CITY ===================== */
+  {
+    service: 'pavers',
+    serviceLabel: 'Pavers',
+    townSlug: 'lenoir-city',
+    city: 'Lenoir City',
+    county: 'Loudon County',
+    areaSlug: 'lenoir-city',
+    title: 'Paver Patios & Driveways in Lenoir City, TN | Paramount',
+    metaDescription:
+      'Paver patios, walkways and driveways in Lenoir City, TN and Loudon County. Projects start at $4,000. Call or text (865) 237-9770.',
+    h1: 'Paver Patios & Walkways in Lenoir City, TN',
+    heroSubhead:
+      'Paver patios, walkways and driveways built for lake lots and hillside yards around Lenoir City and Tellico.',
+    primaryKeyword: 'paver patio Lenoir City TN',
+    intro: [
+      'Lenoir City sits right on Fort Loudoun and Tellico Lake, and lake life is hard on a plain concrete patio — sun, moisture and a lot of traffic between the house and the water. Pavers take all of it and give you a surface with real character. We build paver patios, walkways, driveways and pool decks across Lenoir City and Loudon County.',
+      'A paver patio flexes with the ground instead of cracking, and any single paver can be lifted and reset years later — which matters on lake and hillside lots that settle. On our deep compacted base with locked joints and edge restraint, a Lenoir City paver patio stays tight and flat for decades.',
+    ],
+    sections: [
+      {
+        h2: 'Paver projects around Lenoir City',
+        bullets: [
+          'Paver patios and lakeside sitting areas',
+          'Walkways and steps down to the dock or yard',
+          'Paver driveways and parking courts',
+          'Pool decks and coping',
+          'Fire pits, seat walls and borders',
+        ],
+      },
+      {
+        h2: 'Built for Loudon County lots',
+        body: [
+          'Between Tellico Village, the lakefront and the newer subdivisions off Highway 321, Lenoir City lots run from flat to steeply sloped. We handle the grading, drainage and base work first — the part that decides whether a patio stays level — then lay the pavers to a pattern and border that fits the house.',
+        ],
+      },
+    ],
+    costNote:
+      'Paver patios generally run about $25–$35 per square foot installed and paver driveways $45–$55, with walkways and steps priced by the project. Projects start at $4,000. Call or text (865) 237-9770 a few photos and we’ll give you a ballpark over the phone.',
+    faqs: [
+      {
+        q: 'Do you need to come out first?',
+        a: 'No — start by calling or texting (865) 237-9770 a few photos of the space and rough measurements. We’ll give you a ballpark over the phone, and only set up a site visit if the project’s a fit.',
+      },
+      {
+        q: 'How much does a paver patio cost in Lenoir City?',
+        a: 'Most paver patios run about $25–$35 per square foot installed depending on the paver, pattern and base work; projects start at $4,000. We give an itemized number after seeing photos or the space.',
+      },
+    ],
+    relatedServices: PAVER_RELATED,
+  },
+
+  /* ================= OUTDOOR LIVING — MARYVILLE ================= */
+  {
+    service: 'outdoor-living',
+    serviceLabel: 'Outdoor Living',
+    townSlug: 'maryville',
+    city: 'Maryville',
+    county: 'Blount County',
+    areaSlug: 'maryville',
+    title: 'Outdoor Living in Maryville, TN | Patios, Covers & Kitchens | Paramount',
+    metaDescription:
+      'Paver patios, covered patios, outdoor kitchens and retaining walls in Maryville and Blount County. Projects start at $4,000. Call (865) 237-9770.',
+    h1: 'Outdoor Living in Maryville, TN',
+    heroSubhead:
+      'Covered patios, outdoor kitchens, paver patios and the retaining walls that make a hilly Blount County lot usable.',
+    primaryKeyword: 'outdoor living Maryville TN',
+    intro: [
+      'Maryville and the rest of Blount County are hilly — which is exactly why outdoor living here is as much about walls and grading as the patio on top. Before we build the space you’ll actually use, we carve a level, well-drained one out of the slope. We design and build complete outdoor living spaces across Maryville, Alcoa and Blount County.',
+      'A full project ties the pieces together: a paver or concrete patio, a cover over it, a kitchen or grill station, a fire feature, and the retaining walls and drainage that hold it all in place. We plan the whole space first, then build it as one project with one crew.',
+    ],
+    sections: [
+      {
+        h2: 'Walls first, then the patio',
+        body: [
+          'On a Maryville slope, the retaining wall under a patio isn’t an add-on — it’s what makes the patio possible. We build the wall, backfill and drainage to hold the grade, then build the living space on top so nothing settles or slides. Doing both in-house means one crew and one plan instead of coordinating two trades.',
+        ],
+      },
+      {
+        h2: 'What we build in Maryville',
+        bullets: [
+          'Covered patios and pergolas',
+          'Outdoor kitchens and grill stations',
+          'Paver and concrete patios',
+          'Retaining walls and seat walls',
+          'Fire features and lighting',
+        ],
+      },
+    ],
+    costNote: OUTDOOR_LIVING_COST,
+    faqs: [
+      {
+        q: 'Can you build on a steep Maryville lot?',
+        a: 'Yes — most of our Blount County projects involve some cut-and-fill and a retaining wall to create level, usable space. We handle the walls, drainage and grading in-house as part of the build.',
+      },
+      {
+        q: 'Do you need to come out first?',
+        a: 'Not to get started. Call or text (865) 237-9770 a few photos and rough measurements and we’ll give you a ballpark over the phone; a site visit comes later, only if it’s a fit.',
+      },
+    ],
+    relatedServices: OUTDOOR_LIVING_RELATED,
+  },
+
+  /* ================= OUTDOOR LIVING — FARRAGUT ================= */
+  {
+    service: 'outdoor-living',
+    serviceLabel: 'Outdoor Living',
+    townSlug: 'farragut',
+    city: 'Farragut',
+    county: 'Knox County',
+    areaSlug: 'farragut',
+    title: 'Outdoor Living in Farragut, TN | Patios, Covers & Kitchens | Paramount',
+    metaDescription:
+      'Covered patios, outdoor kitchens and full backyard builds in Farragut, TN. Projects start at $4,000. Call or text (865) 237-9770.',
+    h1: 'Outdoor Living in Farragut, TN',
+    heroSubhead:
+      'Covered patios, outdoor kitchens and designed backyard rooms for Farragut and West Knox.',
+    primaryKeyword: 'outdoor living Farragut TN',
+    intro: [
+      'Farragut homeowners tend to want the whole backyard to work together — a covered patio you can use in the rain, a real outdoor kitchen, a fire feature, and lighting that keeps it usable after dark. That’s our favorite kind of project, and we design and build it as one space, not a pile of separate add-ons.',
+      'In neighborhoods like Fox Den, Village Green and Concord, the finish details are the point: material matching, clean rooflines on covers, integrated kitchens, and hardscape that reads as designed. We plan the full space first, then build it with one crew.',
+    ],
+    sections: [
+      {
+        h2: 'A designed backyard, built as one project',
+        body: [
+          'The difference between a patio with some stuff on it and a true outdoor living space is the plan. We lay out how you’ll move through the space, where people gather, how it drains and how it lights up — then build the patio, cover, kitchen and walls to work together.',
+        ],
+      },
+      {
+        h2: 'What we build in Farragut',
+        bullets: [
+          'Covered patios, pergolas and pavilions',
+          'Outdoor kitchens and bar areas',
+          'Paver patios, courtyards and seat walls',
+          'Fire features and lighting',
+          'Full backyard transformations',
+        ],
+      },
+    ],
+    costNote: OUTDOOR_LIVING_COST,
+    faqs: [
+      {
+        q: 'Do you build the whole space or just the patio?',
+        a: 'Either — but Farragut projects are usually the full space: patio, cover, kitchen, fire feature and lighting, designed and built together. We can also phase it over time against one master plan.',
+      },
+      {
+        q: 'Do you need to come out first?',
+        a: 'No. Call or text (865) 237-9770 a few photos and we’ll give you a ballpark over the phone. We set up an on-site visit only if the project’s a fit.',
+      },
+    ],
+    relatedServices: OUTDOOR_LIVING_RELATED,
+  },
+
+  /* ============== OUTDOOR LIVING — WEST KNOXVILLE ============== */
+  {
+    service: 'outdoor-living',
+    serviceLabel: 'Outdoor Living',
+    townSlug: 'west-knoxville',
+    city: 'West Knoxville',
+    county: 'Knox County',
+    areaSlug: 'west-knoxville',
+    title: 'Outdoor Living in West Knoxville, TN | Paramount',
+    metaDescription:
+      'Covered patios, outdoor kitchens and backyard builds in West Knoxville, TN. Projects start at $4,000. Call or text (865) 237-9770.',
+    h1: 'Outdoor Living in West Knoxville, TN',
+    heroSubhead:
+      'Covered patios, kitchens and backyard builds for West Knox and Hardin Valley.',
+    primaryKeyword: 'outdoor living West Knoxville TN',
+    intro: [
+      'West Knoxville and Hardin Valley are full of newer subdivisions on graded, often-sloped lots — great bones for outdoor living once the grading and drainage are handled right. We build complete outdoor living spaces across West Knox, from Bearden and Rocky Hill out to Hardin Valley and Karns.',
+      'Most of our West Knox projects are full spaces: a paver or concrete patio, a cover, a kitchen or grill station, and the retaining walls that make a sloped backyard usable. We design the whole thing first and build it as one project.',
+    ],
+    sections: [
+      {
+        h2: 'Built for West Knox lots',
+        body: [
+          'Newer West Knoxville and Hardin Valley lots are often graded flat up top with a drop-off behind — which means a retaining wall and real drainage before the patio ever goes in. We build the walls and grading in-house, so the finished space stays level and dry.',
+        ],
+      },
+      {
+        h2: 'What we build in West Knoxville',
+        bullets: [
+          'Covered patios and pergolas',
+          'Outdoor kitchens and grill stations',
+          'Paver and concrete patios',
+          'Retaining walls and seat walls',
+          'Fire features, lighting and full backyard builds',
+        ],
+      },
+    ],
+    costNote: OUTDOOR_LIVING_COST,
+    faqs: [
+      {
+        q: 'Do you serve Hardin Valley and Karns?',
+        a: 'Yes — Hardin Valley, Karns and the rest of West Knox are core territory for us, and many of our full outdoor living builds are out that way.',
+      },
+      {
+        q: 'Do you need to come out first?',
+        a: 'Not to start. Text or call (865) 237-9770 a few photos and rough measurements for a ballpark over the phone; a site visit only follows if it’s a fit.',
+      },
+    ],
+    relatedServices: OUTDOOR_LIVING_RELATED,
   },
 ];
 

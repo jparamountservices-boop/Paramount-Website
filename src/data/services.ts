@@ -17,6 +17,8 @@ export interface Section {
   h2: string;
   body?: string[];
   bullets?: string[];
+  /** Optional internal link rendered after the section body. */
+  link?: { label: string; href: string };
 }
 export interface Service {
   path: string;
@@ -43,6 +45,16 @@ export interface Service {
   /** Optional JSON-LD overrides (e.g. a more specific serviceType / areaServed). */
   schemaServiceType?: string;
   schemaAreaServed?: string[];
+  /** Optional project-photo folder under src/assets/projects/ to show on the page. */
+  photoFolder?: string;
+  /** Optional cost table (e.g. by project size) rendered in the body. */
+  costTable?: {
+    heading: string;
+    columns: [string, string];
+    rows: [string, string][];
+    note?: string;
+    sourceLink?: { label: string; href: string };
+  };
 }
 
 export const services: Service[] = [
@@ -54,7 +66,7 @@ export const services: Service[] = [
     navLabel: 'Concrete (overview)',
     title: 'Concrete Contractor Knoxville TN | Driveways, Patios & Slabs | Paramount',
     metaDescription:
-      'Concrete contractor in Knoxville, TN: driveways, patios, stamped concrete, sidewalks, slabs and pool decks, built right the first time. Call (865) 237-9770.',
+      'Concrete contractor in Knoxville, TN — driveways, patios, stamped concrete, sidewalks and slabs, done right. Call (865) 237-9770.',
     h1: 'Concrete Services in Knoxville, TN',
     heroSubhead:
       'Driveways, patios, stamped concrete, sidewalks and slabs engineered for East Tennessee soil and weather — poured right the first time.',
@@ -85,11 +97,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
+      'Concrete flatwork in the Knoxville area generally runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $4,000 project minimum. The final number depends on the size and accessibility of the job, whether the concrete has to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We give itemized, no-pressure estimates so you can see exactly what you’re paying for.',
     faqs: [
       {
         q: 'How much does concrete cost in Knoxville, TN?',
-        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $5,000 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
+        a: 'Most residential concrete flatwork in the Knoxville area runs about $12 per square foot for a broom or troweled finish, and upwards of $18–$20 for stained or stamped decorative work, with a $4,000 project minimum. The price depends on the size and access of the job, whether it needs to be pumped, the mix (PSI and fiber), and upgrades like wire mesh. We provide itemized estimates.',
       },
       {
         q: 'How long before I can drive or walk on new concrete?',
@@ -109,11 +121,12 @@ export const services: Service[] = [
   {
     path: 'concrete/driveways',
     parent: 'concrete',
+    photoFolder: 'driveways',
     navGroup: 'Concrete',
     navLabel: 'Concrete Driveways',
     title: 'Concrete Driveway Installation in Knoxville, TN | Paramount',
     metaDescription:
-      'New concrete driveways, replacements, and extensions in Knoxville, TN. Proper base, drainage, and reinforcement for East Tennessee clay. Call (865) 237-9770.',
+      'New concrete driveways, replacements and extensions in Knoxville, TN — proper base, drainage and reinforcement for our clay. Call (865) 237-9770.',
     h1: 'Concrete Driveways in Knoxville, TN',
     heroSubhead:
       'A new concrete driveway is the biggest first impression your home makes — and one of the easiest to get wrong. We build ours to last.',
@@ -135,12 +148,30 @@ export const services: Service[] = [
         ],
       },
       {
-        h2: 'New install, replacement or widening',
+        h2: 'New installs and replacements',
         body: [
-          'Whether you’re replacing a cracked, heaved driveway, adding a parking pad, or widening for a second vehicle, we handle demolition and haul-off of the old slab and rebuild the base correctly — not just pour over the problem.',
+          'Whether it’s a first-time pour or tearing out a cracked, heaved slab, we handle demolition and haul-off of the old driveway and rebuild the base correctly — not just pour over the problem.',
         ],
       },
+      {
+        h2: 'Extensions and widening',
+        body: [
+          'Already have a driveway and just need more of it? We widen existing drives, add parking pads for a boat, trailer or extra vehicle, and tie new concrete into the old so it reads as one slab — matched finish, doweled or isolated joints, and grading that keeps water moving away from the house.',
+        ],
+        link: { label: 'See concrete driveway extensions', href: '/concrete/driveway-extensions/' },
+      },
     ],
+    costTable: {
+      heading: 'What a concrete driveway costs in Knoxville (2026)',
+      columns: ['Driveway size', 'Typical installed cost'],
+      rows: [
+        ['1-car (~290 sq ft)', '$4,250–$4,700'],
+        ['2-car (~600 sq ft)', '$7,200–$7,900'],
+        ['Long / rural (1,000+ sq ft)', '$12,000 and up'],
+      ],
+      note: 'Projects start at $4,000. Final price depends on size, access, tear-out, thickness and drainage.',
+      sourceLink: { label: 'Read our full Knoxville driveway cost breakdown', href: '/blog/how-much-does-a-concrete-driveway-cost-in-knoxville/' },
+    },
     costNote:
       'A typical Knoxville concrete driveway runs about $12 per square foot for a standard broom finish, or more with decorative finishes, tear-out of an existing slab, or added drainage. The final price also depends on size and access, whether the pour has to be pumped, and mix upgrades like higher PSI, fiber and wire mesh. We’ll measure and give you an exact, itemized number.',
     faqs: [
@@ -156,6 +187,14 @@ export const services: Service[] = [
         q: 'How long before I can park on a new driveway?',
         a: 'Plan on about 7 days before light foot traffic and 28–30 days before parking vehicles. Concrete continues to gain strength for a full month after the pour.',
       },
+      {
+        q: 'How thick do you pour a driveway?',
+        a: 'Our standard residential driveway is 4 inches over a compacted stone base, stepped up to 5 inches (and thicker at the apron and any heavy-load areas) where it carries bigger vehicles. Thickness, reinforcement and base prep are what keep it from cracking.',
+      },
+      {
+        q: 'Do you need to come out first?',
+        a: 'Not to get started. Call or text (865) 237-9770 a few photos of your driveway and where you want it, and we’ll give you a ballpark over the phone. We only schedule a site visit if the project is a fit and we need exact measurements.',
+      },
     ],
     related: ['concrete/driveway-extensions', 'concrete', 'concrete/decorative-and-stamped', 'pavers/driveways', 'concrete/sidewalks-walkways'],
   },
@@ -163,7 +202,7 @@ export const services: Service[] = [
     path: 'concrete/driveway-extensions',
     parent: 'concrete',
     navGroup: 'Concrete',
-    hideFromMenus: true,
+    photoFolder: 'driveway-extensions',
     navLabel: 'Driveway Extensions',
     title: 'Concrete Driveway Extensions in Knoxville, TN | Paramount',
     metaDescription:
@@ -213,18 +252,19 @@ export const services: Service[] = [
         ],
       },
     ],
-    costNote: 'Projects start at $5,000.',
+    costNote: 'Projects start at $4,000.',
     faqs: [],
     related: ['concrete/driveways', 'concrete', 'pavers/driveways', 'outdoor-living/sport-courts'],
   },
   {
     path: 'concrete/patio',
     parent: 'concrete',
+    photoFolder: 'concrete-patios',
     navGroup: 'Concrete',
     navLabel: 'Concrete Patios',
     title: 'Concrete Patio Contractors Knoxville TN | Custom Patios | Paramount',
     metaDescription:
-      'Custom concrete patio design and installation in Knoxville, TN — broom, stamped and decorative finishes with proper grading and drainage. Call (865) 237-9770.',
+      'Concrete patio design and installation in Knoxville, TN — broom, stamped and decorative finishes with proper drainage. Call (865) 237-9770.',
     h1: 'Concrete Patios in Knoxville, TN',
     heroSubhead:
       'The foundation of your outdoor living space. We design and pour patios that drain right, resist cracking and look built-in — not bolted-on.',
@@ -267,6 +307,7 @@ export const services: Service[] = [
   {
     path: 'concrete/decorative-and-stamped',
     parent: 'concrete',
+    photoFolder: 'stamped-concrete',
     navGroup: 'Concrete',
     navLabel: 'Decorative & Stamped',
     title: 'Stamped & Decorative Concrete Knoxville TN | Patios & Driveways | Paramount',
@@ -323,7 +364,7 @@ export const services: Service[] = [
     navLabel: 'Sidewalks & Walkways',
     title: 'Concrete Sidewalks & Walkways Knoxville TN | Paramount',
     metaDescription:
-      'Concrete sidewalk and walkway installation in Knoxville, TN — safe, level, properly-drained paths and steps that connect your property. Call (865) 237-9770.',
+      'Concrete sidewalk and walkway installation in Knoxville, TN — safe, level, properly-drained paths and steps. Call (865) 237-9770.',
     h1: 'Concrete Sidewalks & Walkways in Knoxville, TN',
     heroSubhead:
       'The paths that tie your property together — poured level, pitched to drain, and built to stay trip-free for decades.',
@@ -365,7 +406,7 @@ export const services: Service[] = [
     navLabel: 'Slabs & Foundations',
     title: 'Concrete Slabs & Foundations Knoxville TN | Sheds, Garages & Pads',
     metaDescription:
-      'Concrete slab and foundation pours in Knoxville, TN — shed, garage, addition and equipment pads built on a proper base and reinforced to last. Call (865) 237-9770.',
+      'Concrete slab and foundation pours in Knoxville, TN — shed, garage, addition and equipment pads on a proper, reinforced base. Call (865) 237-9770.',
     h1: 'Concrete Slabs & Foundations in Knoxville, TN',
     heroSubhead:
       'Flat, level, reinforced slabs for sheds, garages, additions, shops and equipment pads — built to carry the load.',
@@ -402,7 +443,7 @@ export const services: Service[] = [
     navLabel: 'Pool Decks',
     title: 'Concrete Pool Decks Knoxville TN | Stamped & Slip-Resistant | Paramount',
     metaDescription:
-      'Concrete pool deck installation in Knoxville, TN — stamped, decorative and slip-resistant finishes that stay cooler and drain away from the pool. Call (865) 237-9770.',
+      'Concrete pool deck installation in Knoxville, TN — stamped, decorative and slip-resistant finishes that drain away from the pool. Call (865) 237-9770.',
     h1: 'Concrete Pool Decks in Knoxville, TN',
     heroSubhead:
       'A pool deck has a hard job: look great, drain away from the water, and stay slip-resistant underfoot. We build ours to do all three.',
@@ -440,7 +481,7 @@ export const services: Service[] = [
     noindex: true,
     title: 'Concrete Repair Knoxville TN | Driveway & Slab Repair | Paramount',
     metaDescription:
-      'Concrete repair in Knoxville, TN — we replace cracked, sunken and heaved sections on a proper base so they don’t fail again. Honest advice on repair vs. replace. Call (865) 237-9770.',
+      'Concrete section replacement in Knoxville, TN — we rebuild cracked, sunken and heaved sections on a proper base so they last. Call (865) 237-9770.',
     h1: 'Concrete Repair in Knoxville, TN',
     heroSubhead:
       'Cracked, sunken or heaved concrete? We fix the cause — not just the surface — so the repair actually lasts.',
@@ -507,7 +548,7 @@ export const services: Service[] = [
     navLabel: 'Basketball Courts',
     title: 'Concrete Basketball Courts Knoxville TN | Backyard Courts | Paramount',
     metaDescription:
-      'Custom concrete basketball court slabs in Knoxville, TN — flat, level and crack-resistant, built for a backyard half-court or full court. Call (865) 237-9770.',
+      'Concrete basketball court slabs in Knoxville, TN — flat, level and crack-resistant, for a backyard half or full court. Call (865) 237-9770.',
     h1: 'Concrete Basketball Courts in Knoxville, TN',
     heroSubhead:
       'A backyard basketball court lives or dies on the slab underneath — flat, properly based and built not to crack. That’s the part we obsess over.',
@@ -624,7 +665,7 @@ export const services: Service[] = [
     navLabel: 'Garage Foundations',
     title: 'Garage Foundations & Slabs Knoxville TN | Concrete | Paramount',
     metaDescription:
-      'Concrete garage foundations and slabs in Knoxville, TN — thickened-edge slabs and footings engineered to carry the load and resist cracking. Call (865) 237-9770.',
+      'Concrete garage foundations and slabs in Knoxville, TN — thickened-edge slabs and footings engineered to resist cracking. Call (865) 237-9770.',
     h1: 'Garage Foundations & Slabs in Knoxville, TN',
     heroSubhead:
       'A garage is only as solid as the slab under it. We pour garage foundations built to carry the load and hold up on East Tennessee ground.',
@@ -752,7 +793,7 @@ export const services: Service[] = [
     navLabel: 'Pavers (overview)',
     title: 'Paver Installation Knoxville TN | Patios, Driveways & Walkways | Paramount',
     metaDescription:
-      'Paver installation in Knoxville, TN: Belgard & Techo-Bloc patios, driveways, walkways and pool decks on a proper base built to last. Call (865) 237-9770.',
+      'Paver installation in Knoxville, TN — Belgard & Techo-Bloc patios, driveways, walkways and pool decks built to last. Call (865) 237-9770.',
     h1: 'Paver Installation in Knoxville, TN',
     heroSubhead:
       'Interlocking pavers flex with our clay soil instead of cracking on it — and when installed right, they outlast poured concrete by decades.',
@@ -800,11 +841,12 @@ export const services: Service[] = [
   {
     path: 'pavers/patios',
     parent: 'pavers',
+    photoFolder: 'pavers',
     navGroup: 'Pavers',
     navLabel: 'Paver Patios',
     title: 'Paver Patios Knoxville TN | Custom Belgard & Techo-Bloc Patios | Paramount',
     metaDescription:
-      'Custom paver patio design and installation in Knoxville, TN. Belgard & Techo-Bloc patios built on a deep compacted base to last a lifetime. Call (865) 237-9770.',
+      'Paver patio design and installation in Knoxville, TN — Belgard & Techo-Bloc patios built on a deep compacted base. Call (865) 237-9770.',
     h1: 'Paver Patios in Knoxville, TN',
     heroSubhead:
       'A paver patio turns an unused backyard into the best room in the house — and ours are built on a base that won’t sink or shift.',
@@ -853,7 +895,7 @@ export const services: Service[] = [
     navLabel: 'Paver Driveways',
     title: 'Paver Driveways Knoxville TN | Installation | Paramount',
     metaDescription:
-      'Paver driveway design and installation in Knoxville, TN — durable, drainable interlocking driveways that flex with our soil and last 50+ years. Call (865) 237-9770.',
+      'Paver driveway installation in Knoxville, TN — drainable interlocking driveways that flex with our soil and last 50+ years. Call (865) 237-9770.',
     h1: 'Paver Driveways in Knoxville, TN',
     heroSubhead:
       'The most durable driveway you can build — interlocking pavers that flex with the ground, shed water, and repair one unit at a time.',
@@ -976,7 +1018,7 @@ export const services: Service[] = [
     navLabel: 'Hardscapes (overview)',
     title: 'Hardscaping Knoxville TN | Retaining Walls, Fire Pits & Walkways | Paramount',
     metaDescription:
-      'Full-service hardscaping in Knoxville, TN — retaining walls, walkways, steps and fire pits designed and built as one outdoor living space. Call (865) 237-9770.',
+      'Hardscaping in Knoxville, TN — retaining walls, walkways, steps and fire pits built as one outdoor living space. Call (865) 237-9770.',
     h1: 'Hardscaping in Knoxville, TN',
     heroSubhead:
       'Retaining walls, fire pits and walkways — designed together so your whole backyard works as one outdoor living space.',
@@ -1134,7 +1176,7 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'A patio-plus-cover package typically runs $15,000–$25,000 for a concrete or paver patio with an engineered kit cover, lighting and a fan. Fully custom, site-built covered structures start around $25,000 and scale with span, roofline, materials and any integrated kitchen or fireplace. We price the slab, the structure and the electrical separately on your proposal so you can see exactly what drives the number.',
+      'A patio-plus-cover package — a concrete or paver patio with an engineered kit cover, lighting and a fan — typically runs [JAY TO FILL]. Fully custom, site-built covered structures start around [JAY TO FILL] and scale with span, roofline, materials and any integrated kitchen or fireplace. We price the slab, the structure and the electrical separately on your proposal so you can see exactly what drives the number.',
     faqs: [
       {
         q: 'What’s the difference between a kit cover and a custom structure?',
@@ -1201,11 +1243,11 @@ export const services: Service[] = [
       },
     ],
     costNote:
-      'A built-in grill station generally starts in the mid-four figures to around $10,000. A mid kitchen with counters, storage and a sink typically runs $12,000–$25,000. A full outdoor kitchen with appliances, refrigeration, bar seating and finished stone runs $25,000 and up, depending on appliances and materials. Utilities (gas, water, electrical) and the slab are quoted as their own line items — they’re most of what separates a cheap build from one that lasts.',
+      'A built-in grill station, a mid kitchen with counters, storage and a sink, and a full outdoor kitchen with appliances, refrigeration, bar seating and finished stone each sit at a different price point — [JAY TO FILL]. Utilities (gas, water, electrical) and the slab are quoted as their own line items — they’re most of what separates a cheap build from one that lasts.',
     faqs: [
       {
         q: 'How much does an outdoor kitchen cost in Knoxville?',
-        a: 'A built-in grill station starts in the mid-four figures to about $10,000; a mid kitchen with counters, storage and a sink runs roughly $12,000–$25,000; and a full kitchen with appliances, refrigeration and bar seating runs $25,000 and up. Appliances and countertop material move the number the most.',
+        a: 'It depends on the tier — a grill station, a mid kitchen with counters, storage and a sink, or a full kitchen with appliances, refrigeration and bar seating. Pricing is [JAY TO FILL]; appliances and countertop material move the number the most. Send a few photos and we’ll give you a ballpark over the phone.',
       },
       {
         q: 'Masonry or framed — which should I build?',
@@ -1293,7 +1335,7 @@ export const services: Service[] = [
     navLabel: 'Full Backyard Builds',
     title: 'Full Backyard Builds Knoxville TN | Complete Outdoor Transformations | Paramount',
     metaDescription:
-      'Full backyard builds in Knoxville & East TN: design, grading, hardscape, covered structures, outdoor kitchens and lighting as one project. Call (865) 237-9770.',
+      'Full backyard builds in Knoxville & East TN — design, grading, hardscape, covers, outdoor kitchens and lighting as one project. Call (865) 237-9770.',
     h1: 'Full Backyard Builds in Knoxville, TN',
     heroSubhead:
       'The whole backyard, designed and built as one project — grading and drainage, hardscape, structures, kitchen and lighting — so every piece works together from day one.',
@@ -1361,7 +1403,7 @@ export const services: Service[] = [
     navLabel: 'Retaining Walls',
     title: 'Retaining Walls Knoxville TN | Design & Installation | Paramount',
     metaDescription:
-      'Engineered retaining wall design and installation in Knoxville, TN — block, boulder and stone walls with proper drainage that won’t bulge or fail. Call (865) 237-9770.',
+      'Retaining wall design and installation in Knoxville, TN — block, boulder and stone walls with drainage that won’t bulge or fail. Call (865) 237-9770.',
     h1: 'Retaining Walls in Knoxville, TN',
     heroSubhead:
       'Reclaim a sloped yard, stop erosion and create level space — with walls engineered to hold, not just to look good on day one.',
@@ -1416,7 +1458,7 @@ export const services: Service[] = [
     navLabel: 'Fire Pits',
     title: 'Fire Pits Knoxville TN | Custom Fire Pit Builders | Paramount',
     metaDescription:
-      'Custom fire pit design and installation in Knoxville, TN — wood-burning and gas, block, stone and paver fire features built into your patio. Call (865) 237-9770.',
+      'Fire pit design and installation in Knoxville, TN — wood-burning and gas, block, stone and paver fire features. Call (865) 237-9770.',
     h1: 'Fire Pits in Knoxville, TN',
     heroSubhead:
       'The feature that makes a patio a destination three seasons a year. Wood-burning or gas, built to match your hardscape.',
@@ -1457,7 +1499,7 @@ export const services: Service[] = [
     navLabel: 'Walkways & Steps',
     title: 'Walkways & Stone Steps Knoxville TN | Hardscape Paths | Paramount',
     metaDescription:
-      'Custom walkways and stone steps in Knoxville, TN — paver, natural stone and flagstone paths and stairs that navigate slopes safely and beautifully. Call (865) 237-9770.',
+      'Walkways and stone steps in Knoxville, TN — paver, natural stone and flagstone paths and stairs that handle slopes safely. Call (865) 237-9770.',
     h1: 'Walkways & Stone Steps in Knoxville, TN',
     heroSubhead:
       'On a hilly East Tennessee lot, the right steps and paths make the whole landscape usable — and safe underfoot.',

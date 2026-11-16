@@ -1,6 +1,6 @@
 ---
 title: "How Long Does Concrete Take to Cure? (Knoxville Walk & Drive Timeline)"
-description: "When can you walk on, park on and seal new concrete in Knoxville? A clear curing timeline for driveways, patios and slabs — plus why curing time matters in East TN."
+description: "When can you walk on and park on new concrete in Knoxville? A clear curing timeline for driveways, patios and slabs, and why it matters in East TN."
 pubDate: 2026-03-18
 category: "How-to"
 primaryKeyword: "how long does concrete take to cure"

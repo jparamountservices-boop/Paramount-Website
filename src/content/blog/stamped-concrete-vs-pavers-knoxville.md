@@ -1,6 +1,6 @@
 ---
 title: "Stamped Concrete vs. Pavers: Which Is Better in East Tennessee?"
-description: "Stamped concrete vs. pavers for a Knoxville patio or driveway — an honest comparison of cost, durability, repairs and looks, from a contractor who installs both."
+description: "Stamped concrete vs. pavers for a Knoxville patio or driveway — an honest comparison of cost, durability and looks from a contractor who installs both."
 pubDate: 2026-01-21
 category: "Comparisons"
 primaryKeyword: "stamped concrete vs pavers"

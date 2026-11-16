@@ -6,6 +6,8 @@ import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import ReviewStrip from '../components/ReviewStrip.astro';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { company } from '../data/company';
 import { getService, type Service } from '../data/services';
 import {
@@ -14,6 +16,7 @@ import {
   localTownsForService,
 } from '../data/localServicePages';
 import { serviceAreas } from '../data/serviceAreas';
+import { captionFromFilename } from '../data/projectCategories';
 import { breadcrumbSchema, serviceSchema, faqSchema } from '../lib/schema';
 
 interface Props {
@@ -42,6 +45,24 @@ const areaHub = serviceAreas.find((a) => a.slug === page.areaSlug);
 
 // Other towns offering this same service (nearby internal links).
 const otherTowns = localTownsForService(page.service).filter((t) => t.townSlug !== page.townSlug);
+
+// Town-specific project photos (project files whose name starts with the town
+// slug, e.g. maryville-concrete-patio-01.jpg). Empty when we have none yet.
+const projectModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/projects/**/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+let townPhotos: { src: string; alt: string }[] = [];
+for (const [p, mod] of Object.entries(projectModules)) {
+  const file = p.split('/').pop()!;
+  if (!file.startsWith(`${page.townSlug}-`)) continue;
+  const img = await getImage({ src: mod.default, width: 900, format: 'webp', quality: 78 });
+  townPhotos.push({ src: img.src, alt: `${captionFromFilename(file)} — Paramount, ${page.city} TN` });
+}
+townPhotos.sort((a, b) => (a.src < b.src ? -1 : 1));
+// TODO(photos): towns without matching project files (e.g. Farragut outdoor
+// living) show no gallery — drop files named <town-slug>-*.jpg into
+// src/assets/projects/<category>/ and they appear here automatically.
 
 const schemas = [
   breadcrumbSchema(crumbs),
@@ -110,6 +131,19 @@ const schemas = [
       )}
     </div>
   </article>
+
+  {townPhotos.length > 0 && (
+    <section class="wrap pb-14">
+      <h2 class="mb-6 text-2xl font-extrabold">Recent work near {page.city}</h2>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        {townPhotos.map((ph) => (
+          <figure class="overflow-hidden rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite-2)]">
+            <img src={ph.src} alt={ph.alt} loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- Related service pages (internal links) -->
   {related.length > 0 && (

@@ -1,6 +1,6 @@
 ---
 title: "Why Retaining Walls Fail (And How to Build One That Won't)"
-description: "Leaning, bulging, or collapsing retaining walls almost always fail for the same few reasons. Here's what causes retaining wall failure in East Tennessee — and how to prevent it."
+description: "Leaning, bulging or collapsing walls fail for the same few reasons. What causes retaining wall failure in East Tennessee — and how to prevent it."
 pubDate: 2026-02-11
 category: "Problems"
 primaryKeyword: "why retaining walls fail"

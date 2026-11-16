@@ -10,7 +10,7 @@ image: "/images/blog/concrete-basketball-court-knoxville-hero.jpg"
 imageAlt: "Illustration of a backyard concrete basketball court with painted key, three-point line, and hoop"
 primaryKeyword: "concrete basketball court Knoxville"
 metaTitle: "Concrete Basketball Courts Knoxville TN | Paramount"
-metaDescription: "Backyard and driveway basketball courts built in Knoxville and East TN. Sizing, base prep, drainage, finishes, and real cost ranges from a licensed builder."
+metaDescription: "Backyard and driveway basketball courts in Knoxville and East TN — sizing, base prep, drainage, finishes and real cost ranges from a licensed builder."
 related: ["concrete/basketball-courts", "concrete/driveways", "outdoor-living", "retaining-walls", "pavers/patios"]
 faqs:
   - q: "How long does it take to build a backyard basketball court?"
