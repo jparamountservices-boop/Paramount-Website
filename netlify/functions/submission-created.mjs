@@ -96,6 +96,27 @@ const CONTENT = {
   },
 };
 
+
+// -------- Retaining-wall design offer (form "wall-design", /retaining-wall-design/) ----
+// Sent instead of the service copy above when the lead comes from the Facebook
+// wall-design landing page. Update the price/date here if the offer changes.
+const WALL_DESIGN = {
+  subject: 'Your retaining wall design: here’s what happens next',
+  lead: `Thanks for filling out the questionnaire. You've locked in our half-off Design &amp; Build Plan: <strong>$200 instead of $400</strong>, and 100% of it comes off your wall when you build with us. We read every answer you sent, so when we call we can skip the basics and get right to your yard.`,
+  how: `<strong style="color:#e8792b;">What happens next:</strong><br/>
+    <strong>1. We call you</strong> within 1 business day to go over your answers.<br/>
+    <strong>2. Site visit &amp; design.</strong> We measure, check your soil and drainage, and build a 3D design of your wall.<br/>
+    <strong>3. Your fixed price.</strong> One clear number for the build, with the $200 credited back.<br/>
+    <strong>4. We build.</strong> Designs booked by December 15 get the first build slots after Christmas.`,
+  heading: 'What makes our walls different',
+  points: [
+    `<strong>We plan the water first.</strong> Clean gravel backfill, a drain pipe with a real outlet, and a plan for where the water goes after the wall. Water pressure is what pushes walls over.`,
+    `<strong>We build from the bottom up.</strong> A dug-out, compacted stone base so the first course never settles, and geogrid tied back into the hill on taller walls.`,
+    `<strong>We check the problems before day one.</strong> Utilities, HOA rules, property lines, tree roots, and whether your wall height needs an engineer (usually over about 4 ft). If it does, we work with a good one.`,
+    `<strong>One team, start to finish.</strong> The same people who design your wall build it. No handing your project off to a sub.`,
+  ],
+};
+
 function pickContent(serviceRaw) {
   const s = (serviceRaw || '').toLowerCase();
   if (s.includes('paver')) return CONTENT.pavers;
@@ -119,9 +140,9 @@ function pickContent(serviceRaw) {
 }
 
 /** Build the email for a submission. Exported so we can preview it. */
-export function buildEmail({ name, service } = {}) {
+export function buildEmail({ name, service, formName } = {}) {
   const first = (name || '').trim().split(' ')[0] || 'there';
-  const c = pickContent(service);
+  const c = formName === 'wall-design' ? WALL_DESIGN : pickContent(service);
   return { subject: c.subject, html: html(first, c), text: text(first, c) };
 }
 
@@ -129,13 +150,14 @@ export const handler = async (event) => {
   try {
     const body = JSON.parse(event.body || '{}');
     const data = (body.payload && body.payload.data) || {};
+    const formName = (body.payload && body.payload.form_name) || data['form-name'] || '';
     const to = data.email;
     const apiKey = readEnv('RESEND_API_KEY');
     if (!apiKey || !to) return { statusCode: 200, body: 'skip' };
 
     const from = readEnv('AUTORESPONDER_FROM') ||
       'Paramount Concrete & Hardscapes <onboarding@resend.dev>';
-    const { subject, html: htmlBody, text: textBody } = buildEmail({ name: data.name, service: data.service });
+    const { subject, html: htmlBody, text: textBody } = buildEmail({ name: data.name, service: data.service, formName });
 
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -167,9 +189,9 @@ function html(name, c) {
 
           <table cellpadding="0" cellspacing="0" style="margin:6px 0 18px;width:100%;">
             <tr><td style="background:#16130f;color:#ffffff;padding:16px 18px;border-radius:8px;font-size:15px;line-height:1.6;">
-              <strong style="color:#e8792b;">Here's how we do things:</strong> we'll give you a call first
+              ${c.how || `<strong style="color:#e8792b;">Here's how we do things:</strong> we'll give you a call first
               to talk through your project — your ideas, your space, your budget — before anyone ever pulls
-              up to your driveway. No surprise visits, no pressure, no hard sell.
+              up to your driveway. No surprise visits, no pressure, no hard sell.`}
             </td></tr>
           </table>
 
@@ -214,12 +236,12 @@ function html(name, c) {
 }
 
 function text(name, c) {
-  const points = c.points.map((p, i) => `${i + 1}. ${p.replace(/<[^>]+>/g, '')}`).join('\n');
+  const points = c.points.map((p, i) => `${i + 1}. ${p.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&')}`).join('\n');
   return `Hey ${name},
 
-${c.lead}
+${c.lead.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&')}
 
-HERE'S HOW WE DO THINGS: we'll give you a call first to talk through your project — your ideas, your space, your budget — before anyone ever pulls up to your driveway. No surprise visits, no pressure.
+${c.how ? c.how.replace(/<br\/?>/g, '\n').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+\n/g, '\n').trim() : "HERE'S HOW WE DO THINGS: we'll give you a call first to talk through your project — your ideas, your space, your budget — before anyone ever pulls up to your driveway. No surprise visits, no pressure."}
 
 Want to speed things up? Text a few photos and rough measurements of your space to ${PHONE}.
 

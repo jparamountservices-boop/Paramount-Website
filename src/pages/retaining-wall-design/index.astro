@@ -1,0 +1,441 @@
+---
+/**
+ * Facebook/Meta ad landing page — Retaining Wall Design & Build offer.
+ * Offer: $200 design plan (normally $400) through Dec 15, 2026, credited 100%
+ * toward the build. Builds start after Christmas.
+ *
+ * Standalone page (noindex) with a multi-step questionnaire wired to the
+ * Netlify form "wall-design". On submit:
+ *   1. Netlify emails Jay the submission (Forms → Notifications)
+ *   2. netlify/functions/submission-created.mjs emails the lead the
+ *      wall-design follow-up (see WALL_DESIGN copy there)
+ *   3. The visitor lands on /retaining-wall-design/thanks/
+ *
+ * To change the offer price/date, edit OFFER below (and the email copy).
+ */
+import '../../styles/global.css';
+import SEO from '../../components/SEO.astro';
+import ConversionTag from '../../components/ConversionTag.astro';
+import Logo from '../../components/Logo.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Faq from '../../components/Faq.astro';
+import { company } from '../../data/company';
+import { reviews } from '../../data/reviews';
+
+const OFFER = {
+  price: '$200',
+  regular: '$400',
+  ends: 'December 15',
+  endsISO: '2026-12-16T00:00:00-05:00',
+};
+
+const path = '/retaining-wall-design/';
+const review = reviews.find((r) => (r.tags || []).includes('retaining-wall')) || reviews[0];
+
+const included = [
+  { t: 'Phone consultation', d: 'We talk through the slope, the problem you’re trying to solve, and your budget before anyone drives out.' },
+  { t: 'On-site measure & soil check', d: 'Exact lengths and heights, how water moves across your yard, access for equipment.' },
+  { t: '3D design of your wall', d: 'See the wall, steps, and any patio or planting beds on your actual yard before we dig.' },
+  { t: 'Drainage & engineering plan', d: 'Backfill, drain pipe, outlets, and whether your wall height needs an engineer (usually over ~4 ft).' },
+  { t: 'Problem check before day one', d: 'Utilities, HOA rules, property lines, tree roots, and runoff onto neighbors, all checked up front.' },
+  { t: 'One fixed price', d: 'A single, clear number for the build. No change-order surprises halfway through.' },
+];
+
+const faqs = [
+  {
+    q: 'Why pay for a design instead of getting a free quote?',
+    a: 'A free quote is a guess. A wall holds back tons of soil and water, and most wall failures come from drainage and planning mistakes nobody checked. The design plan measures, checks, and draws the wall before we price it, so the number you get is the real number. And if you build with us, the full fee comes off your project.',
+  },
+  {
+    q: 'Is the $200 really credited back?',
+    a: 'Yes. 100% of the design fee is credited toward your wall when you build with Paramount.',
+  },
+  {
+    q: 'What does a retaining wall cost?',
+    a: 'It depends on length, height, material, and access, but most of our walls are priced by the square foot of wall face (length × height). Small garden and seat walls can start under $10K; larger structural walls with drainage and steps run more. The design plan gives you one fixed number for your exact wall.',
+  },
+  {
+    q: 'Can you really build in winter?',
+    a: 'Yes. Segmental block and stone walls are one of the best winter projects. There’s no concrete curing to worry about for most of the work, and our crew has more open days than in spring. Designs booked by December 15 get the first build slots after Christmas.',
+  },
+  {
+    q: 'Do I need an engineer?',
+    a: 'Walls over about 4 feet, or walls holding back a driveway, house, or steep slope, usually need one. We’ll tell you during the design, and if you don’t have an engineer we work with a good one.',
+  },
+  {
+    q: 'What areas do you serve?',
+    a: 'Knoxville and about 45 miles around: Farragut, Maryville, Alcoa, Lenoir City, Oak Ridge, Powell, Seymour, Sevierville and more.',
+  },
+];
+
+const step = 'w-full rounded-lg border border-[var(--color-steel)] bg-white px-3 py-2.5 text-[var(--color-bone)] outline-none focus:border-[var(--color-flame)]';
+const lbl = 'mb-1 block text-sm font-semibold text-[var(--color-bone)]';
+const chip = 'flex cursor-pointer items-center gap-2 rounded-lg border border-[var(--color-steel)] bg-white px-3 py-2.5 text-sm text-[var(--color-bone)] has-[:checked]:border-[var(--color-flame)] has-[:checked]:bg-[var(--color-graphite-2)]';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <ConversionTag />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <SEO
+      title="Retaining Wall Design & Build | Half-Off Design Plan | Paramount"
+      description="Design your retaining wall this winter, build after Christmas. 3D design, drainage plan and fixed price, $200 (normally $400) through December 15, credited toward your build."
+      path={path}
+      noindex={true}
+    />
+  </head>
+  <body>
+    <!-- Offer bar -->
+    <div class="bg-[var(--color-bone)] px-4 py-2 text-center text-sm font-semibold text-white">
+      Half-off design plans: <span class="text-[var(--color-flame)]">{OFFER.price}</span>
+      <span class="line-through opacity-60">{OFFER.regular}</span> · Ends {OFFER.ends}
+      <span id="countdown" class="ml-1 opacity-80"></span>
+    </div>
+
+    <!-- Minimal header: logo, back-link to main site, call -->
+    <header class="sticky top-0 z-50 border-b border-[var(--color-steel)] bg-[color-mix(in_srgb,var(--color-ink)_92%,transparent)] backdrop-blur">
+      <div class="wrap flex items-center justify-between gap-3 py-3">
+        <Logo imgClass="h-10 sm:h-14" />
+        <div class="flex items-center gap-3">
+          <a href="/" class="text-sm font-semibold text-[var(--color-flame-300)] underline underline-offset-4"><span class="sm:hidden">Website</span><span class="hidden sm:inline">Visit our website →</span></a>
+          <a href={company.phoneHref} class="btn btn-primary text-sm">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.24 1l-2.2 2.3Z"/></svg>
+            <span class="hidden sm:inline">Call {company.phone}</span><span class="sm:hidden">Call</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero + questionnaire -->
+    <section class="border-b border-[var(--color-steel)] bg-[var(--color-graphite)]">
+      <div class="wrap grid gap-8 py-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div>
+          <p class="eyebrow">Retaining Walls · Knoxville & East Tennessee</p>
+          <h1 class="mt-3 text-3xl font-black sm:text-4xl lg:text-5xl">See your wall before we build it.</h1>
+          <p class="mt-5 max-w-xl text-lg text-[var(--color-concrete)]">
+            Most retaining walls fail because of things nobody checked: drainage, soil, height. We design yours first,
+            with a 3D drawing, a drainage plan and one fixed price, then our own crew builds it.
+          </p>
+
+          <div class="mt-6 max-w-xl rounded-2xl border-2 border-[var(--color-flame)] bg-white p-5">
+            <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Through {OFFER.ends} only</p>
+            <p class="mt-1 text-2xl font-black text-[var(--color-bone)]">
+              Design & Build Plan: {OFFER.price} <span class="text-lg font-semibold text-[var(--color-concrete-dim)] line-through">{OFFER.regular}</span>
+            </p>
+            <ul class="mt-3 space-y-1.5 text-[var(--color-concrete)]">
+              <li>✔ 100% credited toward your wall when you build with us</li>
+              <li>✔ Builds start right after Christmas</li>
+              <li>✔ Limited design spots each week</li>
+            </ul>
+          </div>
+
+          <p class="mt-5 text-sm text-[var(--color-concrete-dim)]">
+            Licensed &amp; insured · Locally owned since {company.yearFounded} · {company.rating.value}★ from {company.rating.count} Google reviews
+          </p>
+        </div>
+
+        <!-- Questionnaire -->
+        <div id="questionnaire" class="scroll-mt-24 rounded-2xl border border-[var(--color-steel)] bg-white p-5 shadow-2xl sm:p-6">
+          <p class="text-sm font-bold uppercase tracking-wider text-[var(--color-flame)]">Wall Design Questionnaire</p>
+          <p class="mt-1 text-sm text-[var(--color-concrete-dim)]">About 2 minutes. We read every answer before we call you.</p>
+
+          <div class="mt-4 h-2 overflow-hidden rounded-full bg-[var(--color-steel)]" aria-hidden="true">
+            <div id="progress" class="h-full w-1/4 rounded-full bg-[var(--color-flame)] transition-all"></div>
+          </div>
+          <p id="step-label" class="mt-2 text-xs font-semibold text-[var(--color-concrete-dim)]">Step 1 of 4: Your wall</p>
+
+          <form
+            id="wall-form"
+            name="wall-design"
+            method="POST"
+            action="/retaining-wall-design/thanks/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
+            class="mt-4"
+          >
+            <input type="hidden" name="form-name" value="wall-design" />
+            <input type="hidden" name="service" value="Retaining Wall Design & Build" />
+            <input type="hidden" name="source" id="source-field" value="Facebook – Wall Design Offer" />
+            <p class="hidden" aria-hidden="true"><label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+
+            <!-- STEP 1: the wall -->
+            <fieldset data-step="1" class="grid gap-5">
+              <div>
+                <span class={lbl}>What do you need the wall to do?</span>
+                <div class="grid gap-2 sm:grid-cols-2">
+                  {['Hold back a slope / stop erosion', 'Create flat, usable yard', 'Replace a leaning or failing wall', 'Support a driveway or parking area', 'Seat wall / garden beds', 'Not sure yet'].map((o, i) => (
+                    <label class={chip}><input type="radio" name="wall_purpose" value={o} required={i === 0} class="accent-[var(--color-flame)]" />{o}</label>
+                  ))}
+                </div>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class={lbl}>About how long?</span>
+                  <select required name="wall_length" class={step}>
+                    <option value="" disabled selected>Select…</option>
+                    <option>Under 30 ft</option><option>30 – 60 ft</option><option>60 – 100 ft</option><option>Over 100 ft</option><option>Not sure</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class={lbl}>Tallest point?</span>
+                  <select required name="wall_height" class={step}>
+                    <option value="" disabled selected>Select…</option>
+                    <option>Under 2 ft</option><option>2 – 4 ft</option><option>4 – 6 ft</option><option>Over 6 ft</option><option>Not sure</option>
+                  </select>
+                </label>
+              </div>
+              <label class="block">
+                <span class={lbl}>Material you like</span>
+                <select name="wall_material" class={step}>
+                  <option value="">No preference / help me choose</option>
+                  <option>Segmental block (Belgard, Techo-Bloc, etc.)</option><option>Natural stone</option><option>Boulders</option><option>Poured concrete</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <!-- STEP 2: the site -->
+            <fieldset data-step="2" class="grid gap-5">
+              <div>
+                <span class={lbl}>Any water problems? <span class="font-normal text-[var(--color-concrete-dim)]">(check all that apply)</span></span>
+                <div class="grid gap-2 sm:grid-cols-2">
+                  {['Water pools in the yard', 'Soil washing away', 'Water runs toward the house', 'Wet basement / crawlspace', 'No water issues'].map((o) => (
+                    <label class={chip}><input type="checkbox" name="water_issues" value={o} class="accent-[var(--color-flame)]" />{o}</label>
+                  ))}
+                </div>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class={lbl}>Equipment access to the wall area</span>
+                  <select required name="access" class={step}>
+                    <option value="" disabled selected>Select…</option>
+                    <option>Wide open (8 ft+ gate or no fence)</option><option>Tight (narrow gate, between houses)</option><option>Not sure</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class={lbl}>HOA?</span>
+                  <select required name="hoa" class={step}>
+                    <option value="" disabled selected>Select…</option>
+                    <option>Yes</option><option>No</option><option>Not sure</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <span class={lbl}>Anything else you want with it?</span>
+                <div class="grid gap-2 sm:grid-cols-2">
+                  {['Steps', 'Patio / flat area on top', 'Drainage / French drain', 'Lighting', 'Fence on top', 'Planting beds'].map((o) => (
+                    <label class={chip}><input type="checkbox" name="add_ons" value={o} class="accent-[var(--color-flame)]" />{o}</label>
+                  ))}
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- STEP 3: budget & timing -->
+            <fieldset data-step="3" class="grid gap-5">
+              <label class="block">
+                <span class={lbl}>Budget you’re comfortable with</span>
+                <select required name="budget" class={step}>
+                  <option value="" disabled selected>Select a range…</option>
+                  <option>$8,000 – $15,000</option><option>$15,000 – $30,000</option><option>$30,000 – $60,000</option><option>$60,000+</option><option>Not sure, need guidance</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class={lbl}>When do you want it built?</span>
+                <select required name="timeline" class={step}>
+                  <option value="" disabled selected>Select…</option>
+                  <option>As soon as possible after Christmas</option><option>January – February</option><option>March – April</option><option>Later in 2027</option><option>Just researching</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class={lbl}>Who will make the decision?</span>
+                <select required name="decision_makers" class={step}>
+                  <option value="" disabled selected>Select…</option>
+                  <option>Just me</option><option>Me and my spouse/partner</option><option>Me and others (family, HOA, etc.)</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class={lbl}>Tell us about the project</span>
+                <textarea name="details" rows="3" class={step} placeholder="What’s going on with the slope, what you’d like it to look like, anything we should know…"></textarea>
+              </label>
+            </fieldset>
+
+            <!-- STEP 4: contact -->
+            <fieldset data-step="4" class="grid gap-4">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block"><span class={lbl}>Name</span><input required name="name" type="text" autocomplete="name" class={step} /></label>
+                <label class="block"><span class={lbl}>Phone</span><input required name="phone" type="tel" autocomplete="tel" class={step} /></label>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block"><span class={lbl}>Email</span><input required name="email" type="email" autocomplete="email" class={step} /></label>
+                <label class="block">
+                  <span class={lbl}>Best time to call</span>
+                  <select name="best_time" class={step}>
+                    <option>Anytime</option><option>Morning</option><option>Afternoon</option><option>Evening</option>
+                  </select>
+                </label>
+              </div>
+              <label class="block"><span class={lbl}>Property address</span><input required name="address" type="text" autocomplete="street-address" placeholder="Street, city" class={step} /></label>
+              <label class="block">
+                <span class={lbl}>Photo of the area <span class="font-normal text-[var(--color-concrete-dim)]">(optional)</span></span>
+                <input name="photo" type="file" accept="image/*" class="block w-full text-sm text-[var(--color-concrete)] file:mr-3 file:rounded-lg file:border-0 file:bg-[var(--color-graphite-2)] file:px-3 file:py-2 file:font-semibold" />
+                <span class="mt-1 block text-xs text-[var(--color-concrete-dim)]">More photos? Text them to {company.phone}.</span>
+              </label>
+              <label class="flex items-start gap-2 rounded-lg bg-[var(--color-graphite-2)] p-3 text-sm text-[var(--color-bone)]">
+                <input required type="checkbox" name="design_fee_ok" value="Yes" class="mt-1 accent-[var(--color-flame)]" />
+                <span>I understand the design plan is <strong>{OFFER.price}</strong> (normally {OFFER.regular}) and is credited 100% toward my wall if I build with Paramount.</span>
+              </label>
+            </fieldset>
+
+            <div class="mt-6 flex gap-3">
+              <button type="button" id="back-btn" class="btn btn-ghost" hidden>Back</button>
+              <button type="button" id="next-btn" class="btn btn-primary flex-1">Next</button>
+              <button type="submit" id="submit-btn" class="btn btn-primary flex-1">Claim My Half-Off Design</button>
+            </div>
+            <p class="mt-3 text-center text-xs text-[var(--color-concrete-dim)]">
+              We’ll call within 1 business day. Rather talk now? <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <TrustBar />
+
+    <!-- What's included -->
+    <section class="wrap py-14">
+      <p class="eyebrow text-center">What you get for {OFFER.price}</p>
+      <h2 class="mt-2 text-center text-2xl font-black sm:text-3xl">Planned right, then built right.</h2>
+      <div class="mx-auto mt-8 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {included.map((i, n) => (
+          <div class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5">
+            <div class="grid h-8 w-8 place-items-center rounded-full bg-[var(--color-flame)] text-sm font-black text-white">{n + 1}</div>
+            <h3 class="mt-3 text-lg font-extrabold">{i.t}</h3>
+            <p class="mt-1 text-[var(--color-concrete)]">{i.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why walls fail -->
+    <section class="border-y border-[var(--color-steel)] bg-[var(--color-graphite-2)]">
+      <div class="wrap prose-dark max-w-3xl py-14">
+        <h2 class="mt-0">Why we design walls before we build them</h2>
+        <p>A retaining wall is holding back tons of dirt, and after a hard East Tennessee rain, tons of water. When a wall leans, bulges or blows out, it’s almost never the block. It’s what’s behind and under it.</p>
+        <ul>
+          <li><strong>Drainage.</strong> Clean gravel backfill and a drain pipe with a real outlet so water doesn’t build pressure behind the wall.</li>
+          <li><strong>Base.</strong> A dug-out, compacted stone base so the first course never settles.</li>
+          <li><strong>Reinforcement.</strong> Geogrid tied back into the hill on taller walls, and engineering when the height calls for it.</li>
+          <li><strong>The whole yard.</strong> Where the water goes after the wall, how you get up and down, and what goes on top.</li>
+        </ul>
+        <p>That’s what the design plan works out, on paper and in 3D, before your yard is torn up. One team designs it and the same team builds it.</p>
+      </div>
+    </section>
+
+    {review && (
+      <section class="wrap max-w-3xl py-12 text-center">
+        <div class="text-[var(--color-flame)]">{'★'.repeat(review.rating)}</div>
+        <blockquote class="mt-4 text-xl font-medium text-[var(--color-bone)]">“{review.text}”</blockquote>
+        <p class="mt-4 text-sm text-[var(--color-concrete-dim)]">{review.author}</p>
+      </section>
+    )}
+
+    <Faq faqs={faqs} heading="Questions about the design plan" />
+
+    <!-- Final CTA -->
+    <section class="border-t border-[var(--color-steel)] bg-[var(--color-flame)]">
+      <div class="wrap flex flex-col items-center justify-between gap-4 py-8 text-center sm:flex-row sm:text-left">
+        <p class="text-lg font-extrabold text-white">Half-off wall design ends {OFFER.ends}. Builds start after Christmas.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#questionnaire" class="btn bg-white text-[var(--color-ink)]" style="color:#1b1712">Start My Design</a>
+          <a href={company.phoneHref} class="btn btn-ghost border-white text-white">Call {company.phone}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with back-link to the main site -->
+    <footer class="border-t border-[var(--color-steel)] bg-[var(--color-graphite)]">
+      <div class="wrap py-8 text-center text-sm text-[var(--color-concrete-dim)]">
+        <p class="font-bold text-[var(--color-bone)]">{company.name}</p>
+        <p class="mt-1">
+          <a href={company.phoneHref} class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>
+          &nbsp;·&nbsp; {company.address.city}, {company.address.state}
+        </p>
+        <p class="mt-3">
+          <a href="/" class="font-semibold text-[var(--color-flame-300)] underline">Visit paramountknox.com</a>
+          &nbsp;·&nbsp; <a href="/our-work/" class="underline">Our work</a>
+          &nbsp;·&nbsp; <a href="/reviews/" class="underline">Reviews</a>
+        </p>
+        <p class="mt-2">Licensed &amp; insured · Serving Knoxville &amp; East Tennessee</p>
+      </div>
+    </footer>
+
+    <!-- Sticky mobile bar -->
+    <div class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-[var(--color-steel)] bg-[var(--color-graphite)] lg:hidden">
+      <a href={company.phoneHref} class="flex items-center justify-center gap-2 py-3 text-sm font-bold text-[var(--color-bone)]">Call Now</a>
+      <a href="#questionnaire" class="flex items-center justify-center bg-[var(--color-flame)] py-3 text-sm font-bold text-white">Start My Design</a>
+    </div>
+    <div class="h-14 lg:hidden" aria-hidden="true"></div>
+
+    <script is:inline define:vars={{ endsISO: OFFER.endsISO }}>
+      // Countdown in the offer bar
+      (function () {
+        var el = document.getElementById('countdown');
+        if (!el) return;
+        var days = Math.ceil((new Date(endsISO) - new Date()) / 86400000);
+        if (days > 1) el.textContent = '(' + days + ' days left)';
+        else if (days === 1) el.textContent = '(last day!)';
+      })();
+
+      // Tag the lead with the ad's UTM campaign if present
+      (function () {
+        var p = new URLSearchParams(location.search);
+        var src = p.get('utm_campaign') || p.get('utm_source');
+        var f = document.getElementById('source-field');
+        if (src && f) f.value = f.value + ' (' + src + ')';
+      })();
+
+      // Multi-step questionnaire (without JS, all steps simply show at once)
+      (function () {
+        var form = document.getElementById('wall-form');
+        var steps = Array.prototype.slice.call(form.querySelectorAll('fieldset[data-step]'));
+        var names = ['Your wall', 'Your yard', 'Budget & timing', 'Your contact info'];
+        var back = document.getElementById('back-btn');
+        var next = document.getElementById('next-btn');
+        var submit = document.getElementById('submit-btn');
+        var bar = document.getElementById('progress');
+        var label = document.getElementById('step-label');
+        var current = 0;
+
+        function show(i) {
+          steps.forEach(function (s, n) { s.hidden = n !== i; });
+          back.hidden = i === 0;
+          next.hidden = i === steps.length - 1;
+          submit.hidden = i !== steps.length - 1;
+          bar.style.width = ((i + 1) / steps.length) * 100 + '%';
+          label.textContent = 'Step ' + (i + 1) + ' of ' + steps.length + ': ' + names[i];
+          current = i;
+        }
+        function valid(i) {
+          var fields = steps[i].querySelectorAll('input, select, textarea');
+          for (var k = 0; k < fields.length; k++) {
+            if (!fields[k].checkValidity()) { fields[k].reportValidity(); return false; }
+          }
+          return true;
+        }
+        next.addEventListener('click', function () {
+          if (!valid(current)) return;
+          show(current + 1);
+          document.getElementById('questionnaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        back.addEventListener('click', function () { show(current - 1); });
+        show(0);
+      })();
+    </script>
+  </body>
+</html>

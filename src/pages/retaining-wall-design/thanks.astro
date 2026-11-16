@@ -1,0 +1,63 @@
+---
+/** Thank-you page for the retaining-wall design questionnaire (noindex). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { company } from '../../data/company';
+
+const { conversionId, formLabel } = company.googleAds;
+const formSendTo = conversionId && formLabel ? `${conversionId}/${formLabel}` : '';
+
+const steps = [
+  { t: 'We call you', d: 'Within 1 business day we’ll call to go over your answers and make sure we’re a good fit.' },
+  { t: 'Site visit & design', d: 'We measure, check drainage and soil, and put together your 3D design and drainage plan.' },
+  { t: 'Your fixed price', d: 'One clear number for the build. Your design fee comes off it when you build with us.' },
+  { t: 'Build after Christmas', d: 'Designs booked by December 15 get the first build slots of the new year.' },
+];
+---
+
+<BaseLayout
+  title="You’re In: Retaining Wall Design | Paramount Concrete & Hardscapes"
+  description="Thanks for requesting your retaining wall design plan. We’ll be in touch within 1 business day."
+  path="/retaining-wall-design/thanks/"
+  noindex={true}
+>
+  <section class="wrap py-16">
+    <div class="mx-auto max-w-2xl text-center">
+      <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[var(--color-flame)]">
+        <svg viewBox="0 0 24 24" class="h-8 w-8 text-white" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+      </div>
+      <h1 class="mt-6 text-4xl font-black">You’re in. Your half-off design is locked.</h1>
+      <p class="mt-4 text-lg text-[var(--color-concrete)]">
+        We’ve got your answers and just sent you an email with what happens next. Here’s the short version:
+      </p>
+    </div>
+
+    <ol class="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
+      {steps.map((s, i) => (
+        <li class="rounded-xl border border-[var(--color-steel)] bg-[var(--color-graphite)] p-5">
+          <div class="grid h-8 w-8 place-items-center rounded-full bg-[var(--color-flame)] text-sm font-black text-white">{i + 1}</div>
+          <h2 class="mt-3 text-lg font-extrabold">{s.t}</h2>
+          <p class="mt-1 text-[var(--color-concrete)]">{s.d}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mx-auto mt-10 max-w-2xl rounded-xl bg-[var(--color-graphite-2)] p-5 text-center">
+      <p class="font-semibold text-[var(--color-bone)]">📷 Want to speed things up?</p>
+      <p class="mt-1 text-[var(--color-concrete)]">Text a few photos of the slope or wall area to
+        <a href="sms:+18652379770" class="font-semibold text-[var(--color-flame-300)]">{company.phone}</a>.</p>
+    </div>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/our-work/" class="btn btn-primary">See our recent work</a>
+      <a href="/" class="btn btn-ghost">Visit our website</a>
+    </div>
+  </section>
+
+  {formSendTo && (
+    <script is:inline define:vars={{ formSendTo }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('event', 'conversion', { send_to: formSendTo });
+    </script>
+  )}
+</BaseLayout>
