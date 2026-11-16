@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Is there a minimum project size?',
-    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — roughly $5,000 for concrete, pavers and retaining walls. The estimator reflects that minimum, and we’ll confirm the exact number on your free phone consultation.',
+    a: 'Yes. Mobilizing a crew, equipment and materials has a baseline cost, so small jobs have a project minimum — projects start at $4,000. The estimator reflects that minimum, and we’ll confirm the exact number on your free phone consultation.',
   },
   {
     q: 'Do you charge for an estimate?',
@@ -36,7 +36,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
 
 <BaseLayout
   title="Concrete & Paver Cost Estimator | Knoxville TN | Paramount"
-  description="Free concrete, paver and retaining wall cost estimator for Knoxville & East TN. Get an instant ballpark price by size and finish, then book a free phone consultation."
+  description="Free concrete, paver and retaining wall cost estimator for Knoxville & East TN. Get an instant ballpark by size and finish. Call (865) 237-9770."
   path={path}
   schemas={schemas}
 >
@@ -50,7 +50,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       enter the size, and we’ll show you the same ballpark we’d quote — then let’s talk it through.
     </p>
     <p class="mx-auto mt-4 inline-block rounded-full border border-[var(--color-steel)] bg-[var(--color-graphite-2)] px-4 py-2 text-sm font-semibold text-[var(--color-bone)]">
-      Projects start at <span class="text-[var(--color-flame)]">$5,000</span>.
+      Projects start at <span class="text-[var(--color-flame)]">$4,000</span>.
     </p>
   </section>
 
@@ -133,17 +133,17 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       concrete: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 5000,
+        min: 4000,
         noun: 'concrete',
         items: [
-          { label: 'Broom / troweled finish', formula: { base: 1800, perSqft: 8.5, sqftFloor: 12, min: 5000 } },
+          { label: 'Broom / troweled finish', formula: { base: 1800, perSqft: 8.5, sqftFloor: 12, min: 4000 } },
           { label: 'Stamped / stained decorative', low: 18, high: 20 },
         ],
       },
       pavers: {
         dims: ['Length (ft)', 'Width (ft)'],
         mode: 'area',
-        min: 5000,
+        min: 4000,
         noun: 'paver',
         items: [
           { label: 'Paver patio', low: 25, high: 35 },
@@ -153,7 +153,7 @@ const schemas = [breadcrumbSchema(crumbs), faqSchema(faqs)];
       wall: {
         dims: ['Height (ft)', 'Length (ft)'],
         mode: 'face',
-        min: 5000,
+        min: 4000,
         noun: 'retaining wall',
         items: [{ label: 'Segmental / stone retaining wall', low: 48, high: 65 }],
       },

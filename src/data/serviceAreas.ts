@@ -23,10 +23,10 @@ export const serviceAreas: ServiceArea[] = [
     slug: 'knoxville',
     city: 'Knoxville',
     county: 'Knox County',
-    title: 'Outdoor Living & Concrete in Knoxville, TN | Paramount',
+    title: 'Concrete & Outdoor Living in Knoxville, TN | Service Area | Paramount',
     metaDescription:
       'Covered patios, pergolas, outdoor kitchens and backyard builds in Knoxville, TN, plus concrete driveways, patios and pavers. Call (865) 237-9770.',
-    h1: 'Outdoor Living & Concrete Contractor in Knoxville, TN',
+    h1: 'Serving Knoxville, TN: Driveways, Patios & Outdoor Living',
     heroSubhead:
       'Our home base. From Bearden to Halls, we build concrete and hardscapes engineered for Knoxville’s clay soil and freeze-thaw winters.',
     primaryKeyword: 'concrete contractor Knoxville TN',
@@ -94,6 +94,36 @@ export const serviceAreas: ServiceArea[] = [
       {
         q: 'Can you upgrade a builder-grade backyard?',
         a: 'Absolutely — that’s one of our most common projects in West Knox. We turn a bare builder-grade patio and yard into a designed outdoor living space with paving, walls, fire features and more.',
+      },
+    ],
+  },
+  {
+    slug: 'hardin-valley',
+    city: 'Hardin Valley',
+    county: 'Knox County',
+    title: 'Outdoor Living & Concrete in Hardin Valley, TN | Paramount',
+    metaDescription:
+      'Concrete driveways, patios, pavers and outdoor living in Hardin Valley, TN. Projects start at $4,000. Call (865) 237-9770.',
+    h1: 'Outdoor Living & Concrete Contractor in Hardin Valley, TN',
+    heroSubhead:
+      'New-construction patios, driveways, retaining walls and full backyard builds across Hardin Valley and the Pellissippi corridor.',
+    primaryKeyword: 'concrete contractor Hardin Valley TN',
+    intro: [
+      'Hardin Valley is one of the fastest-growing corners of Knox County, which means a lot of newer homes on graded lots with builder-grade basics — the perfect starting point for an upgraded driveway, a real patio, or a full outdoor living space. We work throughout Hardin Valley, from the subdivisions off Hardin Valley Road to the Pellissippi corridor.',
+      'Because so many of these lots were cut and filled during construction, the grading and drainage underneath matter as much as the finish on top. We build the base right first, then the driveway, patio, walls or outdoor kitchen on top of it.',
+    ],
+    localAngle: [
+      'New-construction Hardin Valley homes often come with a small builder patio and a sloped, graded backyard — ideal for a retaining wall and a proper outdoor living space.',
+      'Fast-draining, cut-and-fill lots make compaction and drainage the make-or-break details on driveways and patios here.',
+    ],
+    faqs: [
+      {
+        q: 'Do you need to come out first?',
+        a: 'No — call or text (865) 237-9770 a few photos of your space and we’ll give you a ballpark over the phone. We only schedule a site visit once a project looks like a fit.',
+      },
+      {
+        q: 'Do you work on new-construction Hardin Valley homes?',
+        a: 'Constantly. Upgrading a builder-grade patio and backyard into a real outdoor living space is one of our most common Hardin Valley projects.',
       },
     ],
   },

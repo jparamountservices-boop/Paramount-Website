@@ -32,7 +32,7 @@ const crumbs = [
 const outdoorLiving = services.filter((s) => s.navGroup === 'Outdoor Living' && !s.isHub && !s.hideFromMenus);
 const featured = [
   ...hubServices.filter((s) => s.navGroup !== 'Outdoor Living'),
-  ...services.filter((s) => ['retaining-walls', 'hardscapes/fire-pits', 'hardscapes/walkways'].includes(s.path)),
+  ...services.filter((s) => ['concrete/driveways', 'concrete/driveway-extensions', 'pavers/patios', 'retaining-walls', 'hardscapes/fire-pits', 'hardscapes/walkways'].includes(s.path)),
 ];
 
 // Dedicated local landing pages for this town (concrete / pavers), if any.

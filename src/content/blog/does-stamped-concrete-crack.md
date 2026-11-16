@@ -1,6 +1,6 @@
 ---
 title: "Does Stamped Concrete Crack? (An Honest Answer)"
-description: "Yes, stamped concrete can crack — but here's why it happens, how bad it really is, and what a good contractor does to control it in East Tennessee's clay soil."
+description: "Yes, stamped concrete can crack — here's why it happens, how bad it really is, and what a good contractor does to control it in East TN."
 pubDate: 2026-01-28
 category: "Problems"
 primaryKeyword: "does stamped concrete crack"

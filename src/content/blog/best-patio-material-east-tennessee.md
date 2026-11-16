@@ -1,6 +1,6 @@
 ---
 title: "Best Patio Material for East Tennessee Weather"
-description: "Concrete, stamped concrete or pavers? Here's the honest breakdown of the best patio material for East Tennessee's clay soil, freeze-thaw winters and humid summers."
+description: "Concrete, stamped concrete or pavers? An honest breakdown of the best patio material for East Tennessee's clay soil and freeze-thaw winters."
 pubDate: 2026-03-04
 category: "Best-of"
 primaryKeyword: "best patio material East Tennessee"
