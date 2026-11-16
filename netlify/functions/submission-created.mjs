@@ -102,9 +102,9 @@ const CONTENT = {
 // wall-design landing page. Update the price/date here if the offer changes.
 const WALL_DESIGN = {
   subject: 'Your retaining wall design: here’s what happens next',
-  lead: `Thanks for filling out the questionnaire. You've locked in our half-off Design &amp; Build Plan: <strong>$200 instead of $400</strong>, and 100% of it comes off your wall when you build with us. We read every answer you sent, so when we call we can skip the basics and get right to your yard.`,
+  lead: `Thanks for reaching out. You've locked in our half-off Design &amp; Build Plan: <strong>$200 instead of $400</strong>, and 100% of it comes off your wall when you build with us. When we call, we'll go over your yard, your budget and what you have in mind, so we can make suggestions that actually fit your property.`,
   how: `<strong style="color:#e8792b;">What happens next:</strong><br/>
-    <strong>1. We call you</strong> within 1 business day to go over your answers.<br/>
+    <strong>1. We call you</strong> within 1 business day to talk through your project.<br/>
     <strong>2. Site visit &amp; design.</strong> We measure, check your soil and drainage, and build a 3D design of your wall.<br/>
     <strong>3. Your fixed price.</strong> One clear number for the build, with the $200 credited back.<br/>
     <strong>4. We build.</strong> Designs booked by December 15 get the first build slots after Christmas.`,
