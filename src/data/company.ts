@@ -96,7 +96,7 @@ export const company = {
   // Meta (Facebook) Pixel ID from Events Manager (15–16 digits). Leave '' to
   // disable. When set, PageView fires on every page and a Lead event fires on
   // the thank-you pages (form submitted) — see components/MetaPixel.astro.
-  metaPixelId: '',
+  metaPixelId: '895992603541824',
 
   // Instagram handle shown in the "Follow us" section.
   instagramHandle: 'parmounthomerenovations',
