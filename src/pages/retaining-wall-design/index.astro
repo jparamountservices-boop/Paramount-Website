@@ -35,7 +35,7 @@ const review = reviews.find((r) => (r.tags || []).includes('retaining-wall')) ||
 const included = [
   { t: 'Phone consultation', d: 'We talk through the slope, the problem you’re trying to solve, and your budget before anyone drives out.' },
   { t: 'On-site measure & soil check', d: 'Exact lengths and heights, how water moves across your yard, access for equipment.' },
-  { t: 'Plans for your wall', d: 'Drawn plans showing the wall, steps, and any patio or planting beds on your yard before we dig.' },
+  { t: 'Plans, elevations & materials', d: 'Drawn plans with the grade changes mapped out, plus block, stone and finish options so you pick what fits your yard and budget.' },
   { t: 'Drainage & engineering plan', d: 'Backfill, drain pipe, outlets, and whether your wall height needs an engineer (usually over ~4 ft).' },
   { t: 'Problem check before day one', d: 'Utilities, HOA rules, property lines, tree roots, and runoff onto neighbors, all checked up front.' },
   { t: 'One fixed price', d: 'A single, clear number for the build. No change-order surprises halfway through.' },
@@ -119,8 +119,8 @@ const chip = 'flex cursor-pointer items-center gap-2 rounded-lg border border-[v
           <p class="eyebrow">Retaining Walls · Knoxville & East Tennessee</p>
           <h1 class="mt-3 text-3xl font-black sm:text-4xl lg:text-5xl">See your wall before we build it.</h1>
           <p class="mt-5 max-w-xl text-lg text-[var(--color-concrete)]">
-            Most retaining walls fail because of things nobody checked: drainage, soil, height. We design yours first,
-            with drawn plans, a drainage plan and one fixed price, then our own crew builds it.
+            A wall built without a plan is where shortcuts happen. We map your elevations, drainage and material
+            options first, with drawn plans and one fixed price, then our own crew builds it.
           </p>
 
           <div class="mt-6 max-w-xl rounded-2xl border-2 border-[var(--color-flame)] bg-white p-5">
@@ -247,10 +247,13 @@ const chip = 'flex cursor-pointer items-center gap-2 rounded-lg border border-[v
       <div class="wrap prose-dark max-w-3xl py-14">
         <h2 class="mt-0">Why we design walls before we build them</h2>
         <p>A retaining wall is holding back tons of dirt, and after a hard East Tennessee rain, tons of water. When a wall leans, bulges or blows out, it’s almost never the block. It’s what’s behind and under it.</p>
+        <p>Building a wall without a map is how corners get cut, especially when the price is too cheap. The first thing skipped is usually drainage behind the wall, or not enough of it. That’s the most common reason walls fail early.</p>
         <ul>
+          <li><strong>Elevations.</strong> We map the grade changes across your yard so the wall height, steps and finished levels are right before anything is dug.</li>
           <li><strong>Drainage.</strong> Clean gravel backfill and a drain pipe with a real outlet so water doesn’t build pressure behind the wall.</li>
           <li><strong>Base.</strong> A dug-out, compacted stone base so the first course never settles.</li>
           <li><strong>Reinforcement.</strong> Geogrid tied back into the hill on taller walls, and engineering when the height calls for it.</li>
+          <li><strong>Materials.</strong> Block, natural stone and cap options compared side by side, so you choose with real prices in front of you.</li>
           <li><strong>The whole yard.</strong> Where the water goes after the wall, how you get up and down, and what goes on top.</li>
         </ul>
         <p>That’s what the design plan works out on paper before your yard is torn up. One team designs it and the same team builds it.</p>
